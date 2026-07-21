@@ -1,0 +1,1833 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./src/output.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14/swiper-bundle.min.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- header -->
+    <header class="header poppins-medium">
+        <nav class="bg-white shadow-md py-4">
+            <div class="container mx-auto px-6 flex items-center justify-between">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="#">
+                        <img src="./images/logo.png" alt="Eventara Logo" class="w-[105px] h-[79px]" loading="lazy" />
+                    </a>
+                </div>
+
+                <!-- Desktop Nav -->
+                <ul class="hidden lg:flex gap-[50px] font-medium whitespace-nowrap text-heading font-body">
+                    <li>
+                        <a href="index.html" class="text-[20px] text-[var(--color-electric-700)]">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html" target="_blank"
+                            class="text-[20px] text-electric-600 hover:text-electric-600 transition-colors">Events
+                            <i class="fa-solid fa-angle-down text-xs ml-1"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="courses.html" class="text-[20px] hover:text-warning transition-colors">My Tickets</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-[20px] hover:text-warning transition-colors">About Us</a>
+                    </li>
+                    <li>
+                        <a href="contact.html" target="_blank"
+                            class="text-[20px] hover:text-warning transition-colors">Contact</a>
+                    </li>
+                </ul>
+
+                <!-- Desktop Buttons (Right Side Icons) -->
+                <div class="hidden lg:flex items-center gap-6 text-heading font-body">
+                    <!-- Shopping Bag -->
+                    <a href="#" class="hover:text-warning transition-colors text-xl flex items-center">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </a>
+
+                    <!-- Notification -->
+                    <a href="#" class="hover:text-warning transition-colors text-xl flex items-center">
+                        <i class="fa-regular fa-bell"></i>
+                    </a>
+
+                    <!-- Profile -->
+                    <a href="#" class="flex items-center justify-center hover:opacity-80 transition-opacity">
+                        <img src="./images/user.png" class="w-[50px] h-auto" alt="" />
+                    </a>
+                </div>
+
+                <!-- Hamburger Menu for Mobile -->
+                <button id="navbar-toggle" class="lg:hidden text-2xl text-gray-700">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-navbar" class="hidden fixed inset-0 bg-black/50 z-50">
+            <div id="navbar-slide" class="w-64 h-full bg-white p-6 -translate-x-full transition-transform duration-300">
+                <ul class="flex flex-col gap-6 font-bold text-gray-700">
+                    <li><a href="index.html" class="hover:text-orange-600">HOME</a></li>
+                    <li>
+                        <a href="about.html" target="_blank" class="hover:text-orange-600">Events</a>
+                    </li>
+                    <li>
+                        <a href="courses.html" target="_blank" class="hover:text-orange-600">My Tickets</a>
+                    </li>
+                    <li><a href="#" class="hover:text-orange-600">About Us</a></li>
+                    <li><a href="#" class="hover:text-orange-600">CONTACT</a></li>
+                    <li>
+                        <a href="#" class="inline-block bg-orange-500 text-white px-5 py-2 rounded-lg text-center">
+                            Get In Touch
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- banner -->
+    <section class="hero rounded-[20px] overflow-hidden mt-[10px]">
+        <div class="mx-auto px-6 lg:px-8 py-20 lg:py-28">
+            <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-12">
+                <!-- Left Content -->
+                <div class="text-white">
+                    <p class="uppercase text-[20px] poppins-medium text-pink-300 mb-[5px]">
+                        Discover <span class="text-white">• Book •</span> Experience
+                    </p>
+
+                    <h1 class="mb-[5px] text-[clamp(24px,4vw,40px)] font-bold leading-relaxed oswald-semibold">
+                        Find Amazing Events.
+                        <br />
+                        Book Tickets Instantly.
+                        <br />
+                        Create Unforgettable Memories.
+                    </h1>
+
+                    <p class="text-white/80 text-[clamp(13px,4vw,15px)] mb-[10px] max-w-[755px]">
+                        Discover concerts, sports, comedy shows, workshops, festivals and
+                        more happening near you. Secure your tickets in just a few clicks
+                        and enjoy unforgettable experiences.
+                    </p>
+
+                    <button
+                        class="btn-type-1 transition-all duration-300 rounded-full px-[34px] py-[15px] flex items-center gap-6 text-[24px] font-semibold">
+                        EXPLORE EVENTS
+
+                        <span class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center">
+                            <i class="fa-solid fa-angle-right"></i>
+                        </span>
+                    </button>
+                </div>
+
+                <!-- Right Cards -->
+                <div class="flex flex-col gap-5 oswald-regular w-full items-start mt-10 lg:mt-0 lg:w-auto lg:items-end">
+                    <div
+                        class="backdrop-blur-xl bg-black/30 border border-white/10 rounded-3xl px-[10px] py-[20px] w-[220px] flex items-center gap-5">
+                        <div class="w-14 h-14 rounded-full bg-violet-600 flex items-center justify-center">
+                            <i class="fa-solid fa-ticket text-white"></i>
+                        </div>
+
+                        <div>
+                            <p class="text-white text-3xl font-bold">500+</p>
+                            <span class="text-white opacity-50 text-[16px]">Events</span>
+                        </div>
+                    </div>
+
+                    <div
+                        class="backdrop-blur-xl bg-black/30 border border-white/10 rounded-3xl px-[10px] py-[20px] w-[220px] flex items-center gap-5">
+                        <div class="w-14 h-14 rounded-full bg-violet-600 flex items-center justify-center">
+                            <i class="fa-solid fa-users text-white"></i>
+                        </div>
+
+                        <div>
+                            <p class="text-white text-3xl font-bold">50K+</p>
+                            <span class="text-white opacity-50 text-[16px]">Happy Users</span>
+                        </div>
+                    </div>
+
+                    <div
+                        class="backdrop-blur-xl bg-black/30 border border-white/10 rounded-3xl px-[10px] py-[20px] w-[220px] flex items-center gap-5">
+                        <div class="w-14 h-14 rounded-full bg-violet-600 flex items-center justify-center">
+                            <i class="fa-solid fa-shield-halved text-white"></i>
+                        </div>
+
+                        <div>
+                            <p class="text-white text-3xl font-bold">100+</p>
+                            <span class="text-white opacity-50 text-[16px]">Secure Booking</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Events -->
+    <section>
+        <div class="container mx-auto px-6 py-[100px]">
+            <div class="max-w-[1320px] mx-auto bg-white rounded-2xl shadow-[0px_6px_13px_-1px_rgba(0,0,0,0.25)] p-4">
+                <form class="flex flex-col lg:flex-row items-stretch lg:items-center gap-4">
+                    <!-- Search -->
+                    <div class="relative w-full lg:max-w-[380px]">
+                        <i
+                            class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+
+                        <input type="text" placeholder="Search events, concert, workshops"
+                            class="w-full py-[14px] border-2 border-gray-300 placeholder:text-[var(--color-heading)] text-[15px] rounded-xl poppins-regular pl-12 pr-4 outline-none focus:border-[var(--color-electric-600)]" />
+                    </div>
+
+                    <!-- Location -->
+                    <div class="relative w-full lg:max-w-[300px]">
+                        <!-- Select Box -->
+                        <div id="locationBtn"
+                            class="flex items-center justify-between w-full py-[14px] px-4 border-2 rounded-xl cursor-pointer"
+                            style="border-color: var(--color-border)">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-location-dot" style="color: var(--color-gray)"></i>
+                                <span class="poppins-regular text-[15px]" style="color: var(--color-gray)">
+                                    All locations
+                                </span>
+                            </div>
+
+                            <i class="fa-solid fa-angle-down" style="color: var(--color-gray)"></i>
+                        </div>
+
+                        <!-- Dropdown -->
+                        <div id="locationDropdown"
+                            class="hidden absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[95vw] max-w-[900px] rounded-2xl shadow-xl border p-4 sm:p-5 md:p-6 z-50"
+                            style="
+                  background-color: var(--color-white);
+                  border-color: var(--color-border);
+                ">
+                            <!-- Search -->
+                            <div class="mb-5">
+                                <h3 class="oswald-regular text-[20px] sm:text-[22px] md:text-[24px] mb-3">
+                                    Select location
+                                </h3>
+
+                                <input type="text" placeholder="Select location"
+                                    class="w-full h-[48px] sm:h-[54px] border rounded-xl px-4 outline-none"
+                                    style="border-color: var(--color-border)" />
+                            </div>
+
+                            <!-- Current Location -->
+                            <div class="flex items-center gap-3 mb-8 cursor-pointer">
+                                <i class="fa-solid fa-location-crosshairs text-[20px]"
+                                    style="color: var(--color-electric-600)"></i>
+
+                                <span class="poppins-semibold text-[15px]">
+                                    Use current location
+                                </span>
+                            </div>
+
+                            <!-- Heading -->
+                            <h3 class="poppins-semibold text-[18px] sm:text-[20px] mb-5"
+                                style="color: var(--color-gray)">
+                                Popular cities
+                            </h3>
+
+                            <!-- Cities -->
+                            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
+                                <!-- Mumbai -->
+                                <div class="rounded-2xl p-4 sm:p-5 md:p-6 text-center cursor-pointer"
+                                    style="background-color: var(--color-purple-light)">
+                                    <img src="images/mumbai.png" alt=""
+                                        class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mx-auto mb-3 sm:mb-4" />
+                                    <h4 class="poppins-semibold text-[16px] sm:text-[18px] md:text-[20px]">Mumbai</h4>
+                                </div>
+
+                                <!-- Kolkata -->
+                                <div class="rounded-2xl p-4 sm:p-5 md:p-6 text-center cursor-pointer"
+                                    style="background-color: var(--color-purple-light)">
+                                    <img src="images/kolkata.png" alt=""
+                                        class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mx-auto mb-3 sm:mb-4" />
+                                    <h4 class="poppins-semibold text-[16px] sm:text-[18px] md:text-[20px]">Kolkata</h4>
+                                </div>
+
+                                <!-- Bengaluru -->
+                                <div class="rounded-2xl p-4 sm:p-5 md:p-6 text-center cursor-pointer"
+                                    style="background-color: var(--color-purple-light)">
+                                    <img src="images/bengaluru.png" alt=""
+                                        class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mx-auto mb-3 sm:mb-4" />
+                                    <h4 class="poppins-semibold text-[16px] sm:text-[18px] md:text-[20px]">Bengaluru
+                                    </h4>
+                                </div>
+
+                                <!-- Chennai -->
+                                <div class="rounded-2xl p-4 sm:p-5 md:p-6 text-center cursor-pointer"
+                                    style="background-color: var(--color-purple-light)">
+                                    <img src="images/chennai.png" alt=""
+                                        class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mx-auto mb-3 sm:mb-4" />
+                                    <h4 class="poppins-semibold text-[16px] sm:text-[18px] md:text-[20px]">Chennai</h4>
+                                </div>
+
+                                <!-- Chandigarh -->
+                                <div class="rounded-2xl p-4 sm:p-5 md:p-6 text-center cursor-pointer"
+                                    style="background-color: var(--color-purple-light)">
+                                    <img src="images/chandigarh.png" alt=""
+                                        class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mx-auto mb-3 sm:mb-4" />
+                                    <h4 class="poppins-semibold text-[16px] sm:text-[18px] md:text-[20px]">Chandigarh
+                                    </h4>
+                                </div>
+
+                                <!-- Noida -->
+                                <div class="rounded-2xl p-4 sm:p-5 md:p-6 text-center cursor-pointer"
+                                    style="background-color: var(--color-purple-light)">
+                                    <img src="images/mumbai.png" alt=""
+                                        class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mx-auto mb-3 sm:mb-4" />
+                                    <h4 class="poppins-semibold text-[16px] sm:text-[18px] md:text-[20px]">Noida</h4>
+                                </div>
+
+                                <!-- Kochi -->
+                                <div class="rounded-2xl p-4 sm:p-5 md:p-6 text-center cursor-pointer"
+                                    style="background-color: var(--color-purple-light)">
+                                    <img src="images/kochi.png" alt=""
+                                        class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mx-auto mb-3 sm:mb-4" />
+                                    <h4 class="poppins-semibold text-[16px] sm:text-[18px] md:text-[20px]">Kochi</h4>
+                                </div>
+
+                                <!-- Goa -->
+                                <div class="rounded-2xl p-4 sm:p-5 md:p-6 text-center cursor-pointer"
+                                    style="background-color: var(--color-purple-light)">
+                                    <img src="images/goa.png" alt=""
+                                        class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mx-auto mb-3 sm:mb-4" />
+                                    <h4 class="poppins-semibold text-[16px] sm:text-[18px] md:text-[20px]">Goa</h4>
+                                </div>
+
+                                <!-- Delhi -->
+                                <div class="rounded-2xl p-4 sm:p-5 md:p-6 text-center cursor-pointer"
+                                    style="background-color: var(--color-purple-light)">
+                                    <img src="images/delhi.png" alt=""
+                                        class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mx-auto mb-3 sm:mb-4" />
+                                    <h4 class="poppins-semibold text-[16px] sm:text-[18px] md:text-[20px]">Delhi</h4>
+                                </div>
+
+                                <!-- Pune -->
+                                <div class="rounded-2xl p-4 sm:p-5 md:p-6 text-center cursor-pointer"
+                                    style="background-color: var(--color-purple-light)">
+                                    <img src="images/pune.png" alt=""
+                                        class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mx-auto mb-3 sm:mb-4" />
+                                    <h4 class="poppins-semibold text-[16px] sm:text-[18px] md:text-[20px]">Pune</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Date -->
+                    <div class="relative w-full lg:max-w-[300px]">
+                        <input type="date"
+                            class="w-full py-[14px] border-2 border-gray-300 rounded-xl px-4 outline-none focus:border-[var(--color-electric-600)]" />
+                    </div>
+
+                    <!-- Button -->
+                    <button type="submit"
+                        class="w-full lg:w-[204px] py-[14px] rounded-xl bg-[var(--color-electric-600)] hover:bg-[var(--color-electric-700)] text-white poppins-semibold text-base xl:text-xl transition-all duration-300">
+                        Search Events
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="py-[100px]">
+        <div class="container mx-auto">
+            <div class="max-w-[1320px] mx-auto">
+                <!-- Swiper Container (categorySwiper) -->
+                <div class="swiper categorySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="#"
+                                class="w-[160px] h-[70px] flex items-center gap-3 bg-[var(--color-electric-200)] px-3 py-3 rounded-xl shadow-[0px_6px_13px_-1px_rgba(0,0,0,0.25)]">
+                                <img src="./images/all events.png" alt="All Events"
+                                    class="w-[50px] h-[50px] object-contain" />
+                                <span class="poppins-regular text-base text-[var(--color-electric-600)]">
+                                    All Events
+                                </span>
+                            </a>
+                        </div>
+
+                        <!-- Slide: Music -->
+                        <div class="swiper-slide">
+                            <a href="#"
+                                class="w-[158.33px] h-[70px] flex items-center gap-3 bg-white px-2 py-3 rounded-xl shadow-[0px_6px_13px_-1px_rgba(0,0,0,0.25)]">
+                                <img src="./images/music.png" alt="Music" class="w-[50px] h-[50px] object-contain" />
+                                <span class="poppins-regular text-base text-[var(--color-heading)]">
+                                    Music
+                                </span>
+                            </a>
+                        </div>
+
+                        <!-- Slide: Sports -->
+                        <div class="swiper-slide">
+                            <a href="#"
+                                class="w-[158.33px] h-[70px] flex items-center gap-3 bg-white px-2 py-3 rounded-xl shadow-[0px_6px_13px_-1px_rgba(0,0,0,0.25)]">
+                                <img src="./images/sports.png" alt="Sports" class="w-[50px] h-[50px] object-contain" />
+                                <span class="poppins-regular text-base text-[var(--color-heading)]">
+                                    Sports
+                                </span>
+                            </a>
+                        </div>
+
+                        <!-- Slide: Comedy -->
+                        <div class="swiper-slide">
+                            <a href="#"
+                                class="w-[158.33px] h-[70px] flex items-center gap-3 bg-white px-2 py-3 rounded-xl shadow-[0px_6px_13px_-1px_rgba(0,0,0,0.25)]">
+                                <img src="./images/comedy.png" alt="Comedy" class="w-[50px] h-[50px] object-contain" />
+                                <span class="poppins-regular text-base text-[var(--color-heading)]">
+                                    Comedy
+                                </span>
+                            </a>
+                        </div>
+
+                        <!-- Slide: Workshops -->
+                        <div class="swiper-slide">
+                            <a href="#"
+                                class="w-[158.33px] h-[70px] flex items-center gap-3 bg-white px-2 py-3 rounded-xl shadow-[0px_6px_13px_-1px_rgba(0,0,0,0.25)]">
+                                <img src="./images/workshops.png" alt="Workshops"
+                                    class="w-[50px] h-[50px] object-contain" />
+                                <span class="poppins-regular text-base text-[var(--color-heading)]">
+                                    Workshops
+                                </span>
+                            </a>
+                        </div>
+
+                        <!-- Slide: Food & Drinks -->
+                        <div class="swiper-slide">
+                            <a href="#"
+                                class="w-[158.33px] h-[70px] flex items-center gap-3 bg-white px-2 py-3 rounded-xl shadow-[0px_6px_13px_-1px_rgba(0,0,0,0.25)]">
+                                <img src="./images/food.png" alt="Food & Drinks"
+                                    class="w-[50px] h-[50px] object-contain" />
+                                <span class="poppins-regular text-base text-[var(--color-heading)]">
+                                    Food & Drinks
+                                </span>
+                            </a>
+                        </div>
+
+                        <!-- Slide: Art & Theater -->
+                        <div class="swiper-slide">
+                            <a href="#"
+                                class="w-[158.33px] h-[70px] flex items-center gap-3 bg-white px-2 py-3 rounded-xl shadow-[0px_6px_13px_-1px_rgba(0,0,0,0.25)]">
+                                <img src="./images/art.png" alt="Art & Theater"
+                                    class="w-[50px] h-[50px] object-contain" />
+                                <span class="poppins-regular text-base text-[var(--color-heading)]">
+                                    Art & Theater
+                                </span>
+                            </a>
+                        </div>
+
+                        <!-- Slide: More -->
+                        <div class="swiper-slide">
+                            <a href="#"
+                                class="w-[70px] h-[70px] flex items-center justify-center rounded-xl bg-white shadow-[0px_6px_13px_-1px_rgba(0,0,0,0.25)]">
+                                <span
+                                    class="w-[50px] h-[50px] rounded-full bg-[var(--color-border)] flex items-center justify-center">
+                                    <i class="fa-solid fa-ellipsis text-[18px] text-[var(--color-heading)]"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--  Featured Events -->
+    <section>
+        <div class="container mx-auto">
+            <div class="max-w-[1320px] mx-auto">
+                <!-- Heading -->
+                <div class="flex items-center justify-between mb-10">
+                    <h2 class="oswald-bold text-[48px] leading-none text-[var(--color-heading)]">
+                        Featured Events
+                    </h2>
+
+                    <a href="#" class="poppins-medium text-base text-[var(--color-violetred-700)] underline">
+                        View Details
+                    </a>
+                </div>
+
+                <!-- Swiper -->
+                <div class="swiper featured-event-slider">
+                    <div class="swiper-wrapper">
+                        <!-- Card 1 -->
+                        <div class="swiper-slide !w-[322px]">
+                            <div
+                                class="bg-white rounded-[20px] overflow-hidden shadow-[0px_6px_13px_-1px_rgba(0,0,0,0.25)]">
+                                <!-- Image -->
+                                <div class="relative">
+                                    <a href=""><img src="./images/Image (20).png" alt=""
+                                            class="w-full h-auto object-cover" /></a>
+
+                                    <!-- Date -->
+                                    <div
+                                        class="absolute top-4 left-4 w-[46px] h-[46px] rounded-lg bg-white flex flex-col items-center justify-center">
+                                        <span
+                                            class="poppins-semibold text-[12px] leading-none text-[var(--color-violetred-500)]">
+                                            20
+                                        </span>
+
+                                        <span
+                                            class="poppins-medium text-[11px] leading-none text-[var(--color-electric-700)] mt-1 uppercase">
+                                            June
+                                        </span>
+                                    </div>
+
+                                    <!-- Wishlist -->
+                                    <a href="#"
+                                        class="absolute top-4 right-4 w-[36px] h-[36px] rounded-full bg-black/20 backdrop-blur-sm flex items-center justify-center">
+                                        <i class="fa-regular fa-heart text-white text-sm"></i>
+                                    </a>
+                                </div>
+
+                                <!-- Content -->
+                                <div class="p-5">
+                                    <h3 class="poppins-semibold text-[20px] text-[var(--color-heading)] mb-2">
+                                        Arijit Singh Live Concert
+                                    </h3>
+
+                                    <div class="flex items-center gap-2 mb-5">
+                                        <i class="fa-solid fa-location-dot text-[12px] text-[var(--color-gray)]"></i>
+
+                                        <span class="poppins-regular text-[16px] text-[var(--color-gray)]">
+                                            DY Patil Stadium, Mumbai
+                                        </span>
+                                    </div>
+
+                                    <!-- Bottom -->
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <span class="poppins-semibold text-[18px] text-[var(--color-heading)]">
+                                                From
+                                            </span>
+
+                                            <span
+                                                class="poppins-bold text-[22px] text-[var(--color-electric-600)] ml-1">
+                                                ₹1,499
+                                            </span>
+                                        </div>
+
+                                        <a href="#"
+                                            class="w-[50px] h-[50px] rounded-full bg-[var(--color-electric-600)] flex items-center justify-center hover:bg-[var(--color-electric-700)] duration-300">
+                                            <i class="fa-solid fa-plus text-white"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="swiper-slide !w-[322px]">
+                            <div
+                                class="bg-white rounded-[20px] overflow-hidden shadow-[0px_6px_13px_-1px_rgba(0,0,0,0.15)]">
+                                <div class="relative">
+                                    <a href="">
+                                        <img src="./images/Image (21).png" alt=""
+                                            class="w-full h-auto object-cover" /></a>
+
+                                    <div
+                                        class="absolute top-4 left-4 w-[46px] h-[46px] rounded-lg bg-white flex flex-col items-center justify-center">
+                                        <span
+                                            class="poppins-semibold text-[12px] text-[var(--color-violetred-500)]">25</span>
+                                        <span
+                                            class="poppins-medium text-[11px] text-[var(--color-electric-700)] uppercase">June</span>
+                                    </div>
+
+                                    <a href="#"
+                                        class="absolute top-4 right-4 w-[32px] h-[32px] rounded-full bg-black/20 flex items-center justify-center">
+                                        <i class="fa-regular fa-heart text-white text-sm"></i>
+                                    </a>
+                                </div>
+
+                                <div class="p-5">
+                                    <h3 class="poppins-semibold text-[20px] text-[var(--color-heading)] mb-2">
+                                        Mumbai Indians vs CSK
+                                    </h3>
+
+                                    <div class="flex items-center gap-2 mb-5">
+                                        <i class="fa-solid fa-location-dot text-[12px] text-[var(--color-gray)]"></i>
+                                        <span class="poppins-regular text-[16px] text-[var(--color-gray)]">
+                                            Nehru Stadium, Karnataka
+                                        </span>
+                                    </div>
+
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <span class="poppins-semibold text-[18px]">From</span>
+                                            <span
+                                                class="poppins-bold text-[22px] text-[var(--color-electric-600)] ml-1">₹799</span>
+                                        </div>
+
+                                        <a href="#"
+                                            class="w-[48px] h-[48px] rounded-full bg-[var(--color-electric-600)] flex items-center justify-center">
+                                            <i class="fa-solid fa-plus text-white"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- card 3 -->
+                        <div class="swiper-slide !w-[322px]">
+                            <div
+                                class="bg-white rounded-[20px] overflow-hidden shadow-[0px_6px_13px_-1px_rgba(0,0,0,0.15)]">
+                                <div class="relative">
+                                    <a href=""><img src="./images/Image (22).png" alt=""
+                                            class="w-full h-auto object-cover" /></a>
+
+                                    <div
+                                        class="absolute top-4 left-4 w-[46px] h-[46px] rounded-lg bg-white flex flex-col items-center justify-center">
+                                        <span
+                                            class="poppins-semibold text-[12px] text-[var(--color-violetred-500)]">29</span>
+                                        <span
+                                            class="poppins-medium text-[11px] text-[var(--color-electric-700)] uppercase">June</span>
+                                    </div>
+
+                                    <a href="#"
+                                        class="absolute top-4 right-4 w-[32px] h-[32px] rounded-full bg-black/20 flex items-center justify-center">
+                                        <i class="fa-regular fa-heart text-white text-sm"></i>
+                                    </a>
+                                </div>
+
+                                <div class="p-5">
+                                    <h3 class="poppins-semibold text-[20px] text-[var(--color-heading)] mb-2">
+                                        Stand up comedy Night
+                                    </h3>
+
+                                    <div class="flex items-center gap-2 mb-5">
+                                        <i class="fa-solid fa-location-dot text-[12px] text-[var(--color-gray)]"></i>
+                                        <span class="poppins-regular text-[16px] text-[var(--color-gray)]">
+                                            The comedy club, Pune
+                                        </span>
+                                    </div>
+
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <span class="poppins-semibold text-[18px]">From</span>
+                                            <span
+                                                class="poppins-bold text-[22px] text-[var(--color-electric-600)] ml-1">₹1,999</span>
+                                        </div>
+
+                                        <a href="#"
+                                            class="w-[50px] h-[50px] rounded-full bg-[var(--color-electric-600)] flex items-center justify-center">
+                                            <i class="fa-solid fa-plus text-white"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- card 4 -->
+                        <div class="swiper-slide !w-[322px]">
+                            <div
+                                class="bg-white rounded-[20px] overflow-hidden shadow-[0px_6px_13px_-1px_rgba(0,0,0,0.15)]">
+                                <div class="relative">
+                                    <a href=""><img src="./images/Frame 1214.png" alt=""
+                                            class="w-full h-auto object-cover" /></a>
+
+                                    <div
+                                        class="absolute top-4 left-4 w-[46px] h-[46px] rounded-lg bg-white flex flex-col items-center justify-center">
+                                        <span
+                                            class="poppins-semibold text-[12px] text-[var(--color-violetred-500)]">5</span>
+                                        <span
+                                            class="poppins-medium text-[11px] text-[var(--color-electric-700)] uppercase">July</span>
+                                    </div>
+
+                                    <a href="#"
+                                        class="absolute top-4 right-4 w-[32px] h-[32px] rounded-full bg-black/20 flex items-center justify-center">
+                                        <i class="fa-regular fa-heart text-white text-sm"></i>
+                                    </a>
+                                </div>
+
+                                <div class="p-5">
+                                    <h3 class="poppins-semibold text-[20px] text-[var(--color-heading)] mb-2">
+                                        Canvas Painting workshop
+                                    </h3>
+
+                                    <div class="flex items-center gap-2 mb-5">
+                                        <i class="fa-solid fa-location-dot text-[12px] text-[var(--color-gray)]"></i>
+                                        <span class="poppins-regular text-[16px] text-[var(--color-gray)]">
+                                            Art Studio, Bengaluru
+                                        </span>
+                                    </div>
+
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <span class="poppins-semibold text-[18px]">From</span>
+                                            <span
+                                                class="poppins-bold text-[22px] text-[var(--color-electric-600)] ml-1">₹2,499</span>
+                                        </div>
+
+                                        <a href="#"
+                                            class="w-[50px] h-[50px] rounded-full bg-[var(--color-electric-600)] flex items-center justify-center">
+                                            <i class="fa-solid fa-plus text-white"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ticket Section -->
+    <section class="mt-20">
+        <div class="container">
+            <div class="ticket-section relative overflow-hidden rounded-[40px]">
+                <!-- Left Scallop -->
+                <div class="hidden lg:flex absolute left-0 top-0 h-full flex-col justify-between -translate-x-1/2 z-20">
+                    <span class="w-16 h-16 rounded-full bg-white"></span>
+                    <span class="w-16 h-16 rounded-full bg-white"></span>
+                    <span class="w-16 h-16 rounded-full bg-white"></span>
+                    <span class="w-16 h-16 rounded-full bg-white"></span>
+                    <span class="w-16 h-16 rounded-full bg-white"></span>
+                    <span class="w-16 h-16 rounded-full bg-white"></span>
+                </div>
+
+                <div
+                    class="grid grid-cols-1 md:grid-cols-[1fr_320px] lg:grid-cols-[1fr_420px] gap-8 lg:gap-12 p-6 md:p-8 lg:p-12 items-center">
+                    <!-- LEFT -->
+                    <div>
+                        <!-- Countdown -->
+                        <div class="flex justify-between sm:justify-start sm:gap-5 md:gap-6 lg:gap-7 mb-8 lg:mb-10">
+                            <div class="text-center">
+                                <h3
+                                    class="oswald-medium text-white text-[42px] sm:text-[52px] md:text-[60px] lg:text-[80px] leading-none">
+                                    02
+                                </h3>
+                                <p class="oswald-medium text-white text-[16px] md:text-[20px] lg:text-[30px]">
+                                    Days
+                                </p>
+                            </div>
+
+                            <div class="oswald-medium text-white text-[30px] md:text-[40px] lg:text-[60px]">
+                                :
+                            </div>
+
+                            <div class="text-center">
+                                <h3
+                                    class="oswald-medium text-white text-[42px] sm:text-[52px] md:text-[60px] lg:text-[80px] leading-none">
+                                    09
+                                </h3>
+                                <p class="oswald-medium text-white text-[16px] md:text-[20px] lg:text-[30px]">
+                                    Hours
+                                </p>
+                            </div>
+
+                            <div class="oswald-medium text-white text-[30px] md:text-[40px] lg:text-[60px]">
+                                :
+                            </div>
+
+                            <div class="text-center">
+                                <h3
+                                    class="oswald-medium text-white text-[42px] sm:text-[52px] md:text-[60px] lg:text-[80px] leading-none">
+                                    52
+                                </h3>
+                                <p class="oswald-medium text-white text-[16px] md:text-[20px] lg:text-[30px]">
+                                    Min
+                                </p>
+                            </div>
+
+                            <div class="oswald-medium text-white text-[30px] md:text-[40px] lg:text-[60px]">
+                                :
+                            </div>
+
+                            <div class="text-center">
+                                <h3
+                                    class="oswald-medium text-white text-[42px] sm:text-[52px] md:text-[60px] lg:text-[80px] leading-none">
+                                    40
+                                </h3>
+                                <p class="oswald-medium text-white text-[16px] md:text-[20px] lg:text-[30px]">
+                                    Sec
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Heading -->
+                        <div class="flex justify-between items-start gap-8 mb-8">
+                            <div>
+                                <h3
+                                    class="oswald-medium text-white text-[36px] sm:text-[44px] md:text-[48px] lg:text-[60px] leading-none">
+                                    Secure your
+                                </h3>
+
+                                <h3
+                                    class="oswald-medium text-white text-[36px] sm:text-[44px] md:text-[48px] lg:text-[60px] leading-none mt-3 lg:mt-5">
+                                    Spot Today
+                                </h3>
+                            </div>
+
+                            <!-- Desktop Only -->
+                            <div class="hidden lg:flex flex-col gap-3 shrink-0">
+                                <div class="flex items-center gap-3">
+                                    <i class="fa-solid fa-ticket text-[#EE4291] text-xl -rotate-45"></i>
+                                    <span class="poppins-regular text-white text-[15px]">
+                                        Limited Seats Available
+                                    </span>
+                                </div>
+
+                                <div class="flex items-center gap-3">
+                                    <i class="fa-solid fa-ticket text-[#EE4291] text-xl -rotate-45"></i>
+                                    <span class="poppins-regular text-white text-[15px]">
+                                        Limited Seats Available
+                                    </span>
+                                </div>
+
+                                <div class="flex items-center gap-3">
+                                    <i class="fa-solid fa-ticket text-[#EE4291] text-xl -rotate-45"></i>
+                                    <span class="poppins-regular text-white text-[15px]">
+                                        Limited Seats Available
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Event Name -->
+                        <div class="relative inline-block">
+                            <p
+                                class="oswald-semibold text-[56px] sm:text-[72px] md:text-[82px] lg:text-[110px] leading-none bg-gradient-to-r from-[#3C5CFF] to-[#7A8DFF] bg-clip-text text-transparent">
+                                EVENTARA 26
+                            </p>
+
+                            <img src="./images/gyt.png"
+                                class="hidden lg:block absolute -right-45 -bottom-5 w-[155px] animate-slow-spin"
+                                alt="Grab Your Ticket" />
+                        </div>
+                    </div>
+
+                    <!-- RIGHT -->
+                    <div class="relative">
+                        <div
+                            class="hidden lg:block absolute -left-8 top-0 bottom-0 border-l-[8px] border-dashed border-white/70">
+                        </div>
+
+                        <img src="./images/t-img.png"
+                            class="rounded-2xl w-full h-[250px] md:h-[320px] lg:h-[360px] object-cover" alt="" />
+
+                        <button
+                            class="btn-type-1 mt-6 lg:mt-8 w-full justify-center flex items-center gap-5 lg:gap-8 px-6 lg:px-10 py-4 lg:py-5 text-[20px] md:text-[24px] lg:text-[28px]">
+                            Buy Now
+
+                            <span
+                                class="w-12 h-12 lg:w-14 lg:h-14 bg-white rounded-full text-black flex items-center justify-center">
+                                <i class="fa-solid fa-angle-right"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Biggest Releases -->
+    <section class="py-[60px] md:py-[80px] lg:py-[100px]">
+        <div class="container mx-auto px-4">
+            <div class="max-w-[1320px] mx-auto">
+                <!-- Heading -->
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 lg:gap-8 mb-6 lg:mb-10">
+                    <!-- Left Content -->
+                    <h2
+                        class="oswald-semibold text-[36px] sm:text-[44px] md:text-[52px] lg:text-[64px] leading-[120%] lg:leading-[70px] max-w-[600px] lg:shrink-0 text-[var(--color-black)]">
+                        Watch the Biggest Releases
+                    </h2>
+
+                    <!-- Right Content -->
+                    <div class="right-content lg:shrink-0">
+                        <p
+                            class="poppins-medium block leading-[26px] sm:leading-[30px] lg:leading-[32px] max-w-[600px] mb-6">
+                            Discover why Meetzi is more than just another event — it’s
+                            where innovation, art, and technology collide.
+                        </p>
+
+                        <a href="#"
+                            class="poppins-semibold inline-block text-[16px] sm:text-[18px] lg:text-[20px] text-white rounded-[10px] bg-[#7c3aed] px-6 sm:px-8 lg:px-9 py-2.5 lg:py-3">
+                            Search Events
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Card 1 -->
+                    <div class="bg-black rounded-[20px] p-3 group">
+                        <h3
+                            class="oswald-semibold text-[28px] sm:text-[32px] lg:text-[40px] leading-[130%] lg:leading-[60px] text-white max-w-[400px] mb-6">
+                            5 Things to Know Before Attending 2025
+                        </h3>
+
+                        <div class="flex justify-end mb-8">
+                            <img src="images/movie-poster(1).png" alt=""
+                                class="w-[160px] h-[160px] md:w-[140px] md:h-[140px] lg:w-[160px] lg:h-[160px] object-cover transition-all duration-500 ease-in-out group-hover:scale-110" />
+                        </div>
+
+                        <div class="flex justify-center">
+                            <a href="#"
+                                class="inline-flex items-center rounded-full bg-[var(--color-violetred-600)] px-2 py-2">
+                                <span class="poppins-medium text-white text-[16px] lg:text-[18px] px-4 lg:px-5">
+                                    View Details
+                                </span>
+
+                                <span class="w-10 h-10 rounded-full bg-white flex items-center justify-center">
+                                    <i class="fa-solid fa-chevron-right text-[14px] text-[var(--color-heading)]"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="bg-black rounded-[20px] p-5 group">
+                        <h3
+                            class="oswald-semibold text-[28px] sm:text-[32px] lg:text-[40px] leading-[130%] lg:leading-[60px] text-white max-w-[400px] mb-6">
+                            Meet the Creative Minds Behind 2025
+                        </h3>
+
+                        <div class="flex justify-end mb-8">
+                            <img src="images/movie-poster(2).png" alt=""
+                                class="w-[160px] h-[160px] md:w-[140px] md:h-[140px] lg:w-[160px] lg:h-[160px] object-cover transition-all duration-500 ease-in-out group-hover:scale-110" />
+                        </div>
+
+                        <div class="flex justify-center">
+                            <a href="#"
+                                class="inline-flex items-center rounded-full bg-[var(--color-violetred-600)] px-2 py-2">
+                                <span class="poppins-medium text-white text-[16px] lg:text-[18px] px-4 lg:px-5">
+                                    View Details
+                                </span>
+
+                                <span class="w-10 h-10 rounded-full bg-white flex items-center justify-center">
+                                    <i class="fa-solid fa-chevron-right text-[14px] text-[var(--color-heading)]"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="bg-black rounded-[20px] p-5 group sm:col-span-2 lg:col-span-1">
+                        <h3
+                            class="oswald-semibold text-[28px] sm:text-[32px] lg:text-[40px] leading-[130%] lg:leading-[60px] text-white max-w-[400px] mb-6">
+                            Why Eventara Is the Must-Attend Event
+                        </h3>
+
+                        <div class="flex justify-end mb-8">
+                            <img src="images/movie-poster(3).png" alt=""
+                                class="w-[160px] h-[160px] md:w-[140px] md:h-[140px] lg:w-[160px] lg:h-[160px] object-cover transition-all duration-500 ease-in-out group-hover:scale-110" />
+                        </div>
+
+                        <div class="flex justify-center">
+                            <a href="#"
+                                class="inline-flex items-center rounded-full bg-[var(--color-violetred-600)] px-2 py-2">
+                                <span class="poppins-medium text-white text-[16px] lg:text-[18px] px-4 lg:px-5">
+                                    View Details
+                                </span>
+
+                                <span class="w-10 h-10 rounded-full bg-white flex items-center justify-center">
+                                    <i class="fa-solid fa-chevron-right text-[14px] text-[var(--color-heading)]"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- popular events -->
+    <section class="py-12 md:py-20 lg:py-[100px]">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-[1320px] mx-auto">
+                <!-- Heading -->
+                <div class="flex items-center justify-between mb-6 md:mb-10">
+                    <h2
+                        class="oswald-semibold text-[28px] sm:text-[38px] md:text-[48px] xl:text-[40px] leading-none text-[var(--color-black)]">
+                        Popular Events
+                    </h2>
+                </div>
+
+                <!-- Swiper -->
+                <div class="swiper featured-event-slider">
+                    <div class="swiper-wrapper">
+                        <!-- Card 1 -->
+                        <div class="swiper-slide !w-[280px] sm:!w-[322px]">
+                            <div
+                                class="bg-white rounded-[20px] overflow-hidden shadow-[0px_6px_13px_-1px_rgba(0,0,0,0.25)]">
+                                <!-- Image -->
+                                <div class="relative">
+                                    <a href=""><img src="./images/popular events (1).png" alt=""
+                                            class="w-full h-auto object-cover" /></a>
+
+                                    <!-- Date -->
+                                    <div
+                                        class="absolute top-4 left-4 w-[46px] h-[46px] rounded-lg bg-white flex flex-col items-center justify-center">
+                                        <span
+                                            class="poppins-semibold text-[12px] leading-none text-[var(--color-violetred-500)]">
+                                            20
+                                        </span>
+
+                                        <span
+                                            class="poppins-medium text-[11px] leading-none text-[var(--color-electric-700)] mt-1 uppercase">
+                                            June
+                                        </span>
+                                    </div>
+
+                                    <!-- Wishlist -->
+                                    <a href="#"
+                                        class="absolute top-4 right-4 w-[36px] h-[36px] rounded-full bg-black/20 backdrop-blur-sm flex items-center justify-center">
+                                        <i class="fa-regular fa-heart text-white text-sm"></i>
+                                    </a>
+                                </div>
+
+                                <!-- Content -->
+                                <div class="p-5 flex flex-col h-[240px]">
+                                    <h3
+                                        class="poppins-semibold text-[20px] text-[var(--color-heading)] mb-2 min-h-[72px]">
+                                        Kisi Ko Batana Mat Ft. Anubhav Singh Bassi
+                                    </h3>
+
+                                    <div class="flex items-center gap-2 mb-5">
+                                        <i class="fa-solid fa-location-dot text-[12px] text-[var(--color-gray)]"></i>
+
+                                        <span class="poppins-regular text-[16px] text-[var(--color-gray)]">
+                                            Deep Smriti Auditorium: Jaipur
+                                        </span>
+                                    </div>
+
+                                    <!-- Bottom -->
+                                    <div class="flex items-center justify-between mt-auto">
+                                        <div>
+                                            <span class="poppins-semibold text-[18px] text-[var(--color-heading)]">
+                                                From
+                                            </span>
+
+                                            <span
+                                                class="poppins-bold text-[22px] text-[var(--color-electric-600)] ml-1">
+                                                ₹1,499
+                                            </span>
+                                        </div>
+
+                                        <a href="#"
+                                            class="w-[50px] h-[50px] rounded-full bg-[var(--color-electric-600)] flex items-center justify-center hover:bg-[var(--color-electric-700)] duration-300">
+                                            <i class="fa-solid fa-plus text-white"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="swiper-slide !w-[280px] sm:!w-[322px]">
+                            <div
+                                class="bg-white rounded-[20px] overflow-hidden shadow-[0px_6px_13px_-1px_rgba(0,0,0,0.15)]">
+                                <div class="relative">
+                                    <a href="">
+                                        <img src="./images/popular events (2).png" alt=""
+                                            class="w-full h-auto object-cover" /></a>
+
+                                    <div
+                                        class="absolute top-4 left-4 w-[46px] h-[46px] rounded-lg bg-white flex flex-col items-center justify-center">
+                                        <span
+                                            class="poppins-semibold text-[12px] text-[var(--color-violetred-500)]">25</span>
+                                        <span
+                                            class="poppins-medium text-[11px] text-[var(--color-electric-700)] uppercase">June</span>
+                                    </div>
+
+                                    <a href="#"
+                                        class="absolute top-4 right-4 w-[32px] h-[32px] rounded-full bg-black/20 flex items-center justify-center">
+                                        <i class="fa-regular fa-heart text-white text-sm"></i>
+                                    </a>
+                                </div>
+
+                                <div class="p-5 flex flex-col h-[240px]">
+                                    <h3
+                                        class="poppins-semibold text-[20px] text-[var(--color-heading)] mb-2 min-h-[72px]">
+                                        Gaane Fusione Season 4 - Burmania
+                                    </h3>
+
+                                    <div class="flex items-center gap-2 mb-5">
+                                        <i class="fa-solid fa-location-dot text-[12px] text-[var(--color-gray)]"></i>
+                                        <span class="poppins-regular text-[16px] text-[var(--color-gray)]">
+                                            Southern Avenue, Kolkata
+                                        </span>
+                                    </div>
+
+                                    <div class="flex items-center justify-between mt-auto">
+                                        <div>
+                                            <span class="poppins-semibold text-[18px]">From</span>
+                                            <span
+                                                class="poppins-bold text-[22px] text-[var(--color-electric-600)] ml-1">₹799</span>
+                                        </div>
+
+                                        <a href="#"
+                                            class="w-[48px] h-[48px] rounded-full bg-[var(--color-electric-600)] flex items-center justify-center">
+                                            <i class="fa-solid fa-plus text-white"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- card 3 -->
+                        <div class="swiper-slide !w-[280px] sm:!w-[322px]">
+                            <div
+                                class="bg-white rounded-[20px] overflow-hidden shadow-[0px_6px_13px_-1px_rgba(0,0,0,0.15)]">
+                                <div class="relative">
+                                    <a href=""><img src="./images/popular events (3).png" alt=""
+                                            class="w-full h-auto object-cover" /></a>
+
+                                    <div
+                                        class="absolute top-4 left-4 w-[46px] h-[46px] rounded-lg bg-white flex flex-col items-center justify-center">
+                                        <span
+                                            class="poppins-semibold text-[12px] text-[var(--color-violetred-500)]">29</span>
+                                        <span
+                                            class="poppins-medium text-[11px] text-[var(--color-electric-700)] uppercase">June</span>
+                                    </div>
+
+                                    <a href="#"
+                                        class="absolute top-4 right-4 w-[32px] h-[32px] rounded-full bg-black/20 flex items-center justify-center">
+                                        <i class="fa-regular fa-heart text-white text-sm"></i>
+                                    </a>
+                                </div>
+
+                                <div class="p-5 flex flex-col h-[240px]">
+                                    <h3
+                                        class="poppins-semibold text-[20px] text-[var(--color-heading)] mb-2 min-h-[72px]">
+                                        Bollywood Banger Ft. Dj Black
+                                    </h3>
+
+                                    <div class="flex items-center gap-2 mb-5">
+                                        <i class="fa-solid fa-location-dot text-[12px] text-[var(--color-gray)]"></i>
+                                        <span class="poppins-regular text-[16px] text-[var(--color-gray)]">
+                                            The Lalit Great Eastern: Kolkata
+                                        </span>
+                                    </div>
+
+                                    <div class="flex items-center justify-between mt-auto">
+                                        <div>
+                                            <span class="poppins-semibold text-[18px]">From</span>
+                                            <span
+                                                class="poppins-bold text-[22px] text-[var(--color-electric-600)] ml-1">₹1,999</span>
+                                        </div>
+
+                                        <a href="#"
+                                            class="w-[50px] h-[50px] rounded-full bg-[var(--color-electric-600)] flex items-center justify-center">
+                                            <i class="fa-solid fa-plus text-white"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- card 4 -->
+                        <div class="swiper-slide !w-[280px] sm:!w-[322px]">
+                            <div
+                                class="bg-white rounded-[20px] overflow-hidden shadow-[0px_6px_13px_-1px_rgba(0,0,0,0.15)]">
+                                <div class="relative">
+                                    <a href=""><img src="./images/popular events (4).png" alt=""
+                                            class="w-full h-auto object-cover" /></a>
+
+                                    <div
+                                        class="absolute top-4 left-4 w-[46px] h-[46px] rounded-lg bg-white flex flex-col items-center justify-center">
+                                        <span
+                                            class="poppins-semibold text-[12px] text-[var(--color-violetred-500)]">5</span>
+                                        <span
+                                            class="poppins-medium text-[11px] text-[var(--color-electric-700)] uppercase">July</span>
+                                    </div>
+
+                                    <a href="#"
+                                        class="absolute top-4 right-4 w-[32px] h-[32px] rounded-full bg-black/20 flex items-center justify-center">
+                                        <i class="fa-regular fa-heart text-white text-sm"></i>
+                                    </a>
+                                </div>
+
+                                <div class="p-5 flex flex-col h-[240px]">
+                                    <h3
+                                        class="poppins-semibold text-[20px] text-[var(--color-heading)] mb-2 min-h-[72px]">
+                                        Sun Burn Festival with Bollywood
+                                    </h3>
+
+                                    <div class="flex items-center gap-2 mb-5">
+                                        <i class="fa-solid fa-location-dot text-[12px] text-[var(--color-gray)]"></i>
+                                        <span class="poppins-regular text-[16px] text-[var(--color-gray)]">
+                                            Art Studio, Bengaluru
+                                        </span>
+                                    </div>
+
+                                    <div class="flex items-center justify-between mt-auto">
+                                        <div>
+                                            <span class="poppins-semibold text-[18px]">From</span>
+                                            <span
+                                                class="poppins-bold text-[22px] text-[var(--color-electric-600)] ml-1">₹2,499</span>
+                                        </div>
+
+                                        <a href="#"
+                                            class="w-[50px] h-[50px] rounded-full bg-[var(--color-electric-600)] flex items-center justify-center">
+                                            <i class="fa-solid fa-plus text-white"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Inspiring Minds Section -->
+    <section class="w-full py-12 md:py-20 lg:py-[100px]">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-[1320px] mx-auto">
+                <!-- Heading -->
+                <div class="text-center mb-8 md:mb-16">
+                    <h2
+                        class="oswald-semibold text-[36px] sm:text-[48px] md:text-[64px] leading-[44px] sm:leading-[60px] md:leading-[80px] text-[var(--color-black)]">
+                        Inspiring <br />
+                        Minds On Stage
+                    </h2>
+                </div>
+
+                <!-- Cards -->
+                <div>
+                    <!-- Card 1 -->
+                    <div
+                        class="inspiring-card group grid grid-cols-1 lg:grid-cols-[380px_300px_1fr] xl:grid-cols-[420px_300px_1fr] items-start gap-x-8 lg:gap-x-12 xl:gap-x-16 gap-y-8 py-6 md:py-8 border-b-2 border-[var(--color-border)]">
+                        <!-- Date -->
+                        <div class="flex items-center justify-center lg:justify-start gap-4 sm:gap-6 md:gap-10">
+                            <h3 class="poppins-medium text-[28px] sm:text-[34px] md:text-[40px] whitespace-nowrap">
+                                April 15
+                            </h3>
+
+                            <p
+                                class="oswald-regular text-[16px] sm:text-[20px] md:text-[24px] text-[var(--color-gray)] whitespace-nowrap">
+                                Thursday - 7:00 pm
+                            </p>
+                        </div>
+
+                        <!-- Image -->
+                        <div
+                            class="w-full max-w-[300px] aspect-square lg:w-[300px] lg:h-[300px] overflow-hidden rounded-[20px] mx-auto lg:mx-0">
+                            <img src="images/Inspiring image (1).jpg" alt=""
+                                class="w-full h-full object-cover blur-md group-hover:blur-0 transition-all duration-500" />
+                        </div>
+
+                        <!-- Content -->
+                        <div class="w-full max-w-xl lg:max-w-[380px] mx-auto lg:mx-0 text-center lg:text-left">
+                            <h3
+                                class="oswald-semibold text-[28px] sm:text-[34px] md:text-[40px] text-[var(--color-black)] mb-2 md:mb-3">
+                                Daniel Kwon
+                            </h3>
+
+                            <h4
+                                class="poppins-medium text-[16px] sm:text-[18px] md:text-[20px] text-[var(--color-black)] mb-3 md:mb-5">
+                                Creative Director at Neon Labs
+                            </h4>
+
+                            <p
+                                class="poppins-medium text-[15px] sm:text-[16px] md:text-[18px] leading-[26px] sm:leading-[28px] md:leading-[32px] text-[var(--color-gray)]">
+                                Daniel Kwon art, technology, and storytelling to create
+                                impactful brand experiences. She has led award-winning
+                                campaigns for Fortune 500 companies and mentors.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div
+                        class="inspiring-card group grid grid-cols-1 lg:grid-cols-[380px_300px_1fr] xl:grid-cols-[420px_300px_1fr] items-start gap-x-8 lg:gap-x-12 xl:gap-x-16 gap-y-8 py-6 md:py-8 border-b-2 border-[var(--color-border)]">
+                        <!-- Date -->
+                        <div class="flex items-center justify-center lg:justify-start gap-4 sm:gap-6 md:gap-10">
+                            <h3 class="poppins-medium text-[28px] sm:text-[34px] md:text-[40px] whitespace-nowrap">
+                                April 16
+                            </h3>
+
+                            <p
+                                class="oswald-regular text-[16px] sm:text-[20px] md:text-[24px] text-[var(--color-gray)] whitespace-nowrap">
+                                Friday - 2:00 pm
+                            </p>
+                        </div>
+
+                        <!-- Image -->
+                        <div
+                            class="w-full max-w-[300px] aspect-square lg:w-[300px] lg:h-[300px] overflow-hidden rounded-[20px] mx-auto lg:mx-0">
+                            <img src="images/Inspiring image (2).jpg" alt=""
+                                class="w-full h-full object-cover blur-md group-hover:blur-0 transition-all duration-500" />
+                        </div>
+
+                        <!-- Content -->
+                        <div class="w-full max-w-xl lg:max-w-[380px] mx-auto lg:mx-0 text-center lg:text-left">
+                            <h3
+                                class="oswald-semibold text-[28px] sm:text-[34px] md:text-[40px] text-[var(--color-black)] mb-2 md:mb-3">
+                                Jacob Jones
+                            </h3>
+
+                            <h4 class="poppins-medium text-[16px] sm:text-[18px] md:text-[20px] mb-3 md:mb-5">
+                                Founder of CreateRise
+                            </h4>
+
+                            <p
+                                class="poppins-medium text-[15px] sm:text-[16px] md:text-[18px] leading-[26px] sm:leading-[28px] md:leading-[32px] text-[var(--color-gray)]">
+                                Former Google UX leader, Daniel now helps startups craft
+                                intuitive products. His talks deliver actionable insights on
+                                user psychology and minimalist design.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div
+                        class="inspiring-card group grid grid-cols-1 lg:grid-cols-[380px_300px_1fr] xl:grid-cols-[420px_300px_1fr] items-start gap-x-8 lg:gap-x-12 xl:gap-x-16 gap-y-8 py-6 md:py-8 border-b-2 border-[var(--color-border)]">
+                        <!-- Date -->
+                        <div class="flex items-center justify-center lg:justify-start gap-4 sm:gap-6 md:gap-10">
+                            <h3 class="poppins-medium text-[28px] sm:text-[34px] md:text-[40px] whitespace-nowrap">
+                                May 18
+                            </h3>
+
+                            <p
+                                class="oswald-regular text-[16px] sm:text-[20px] md:text-[24px] text-[var(--color-gray)] whitespace-nowrap">
+                                Thursday - 9:00 pm
+                            </p>
+                        </div>
+
+                        <!-- Image -->
+                        <div
+                            class="w-full max-w-[300px] aspect-square lg:w-[300px] lg:h-[300px] overflow-hidden rounded-[20px] mx-auto lg:mx-0">
+                            <img src="images/Inspiring image (3).jpg" alt=""
+                                class="w-full h-full object-cover blur-md group-hover:blur-0 transition-all duration-500" />
+                        </div>
+
+                        <!-- Content -->
+                        <div class="w-full max-w-xl lg:max-w-[380px] mx-auto lg:mx-0 text-center lg:text-left">
+                            <h3
+                                class="oswald-semibold text-[28px] sm:text-[34px] md:text-[40px] text-[var(--color-black)] mb-2 md:mb-3">
+                                Ralph Edwards
+                            </h3>
+
+                            <h4 class="poppins-medium text-[16px] sm:text-[18px] md:text-[20px] mb-3 md:mb-5">
+                                Product Designer, Ex-Google
+                            </h4>
+
+                            <p
+                                class="poppins-medium text-[15px] sm:text-[16px] md:text-[18px] leading-[26px] sm:leading-[28px] md:leading-[32px] text-[var(--color-gray)]">
+                                Ralph Edwards is an entrepreneur and strategist, known for
+                                launching creative communities across Asia and building
+                                resilient, high-impact brands.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div
+                        class="inspiring-card group grid grid-cols-1 lg:grid-cols-[380px_300px_1fr] xl:grid-cols-[420px_300px_1fr] items-start gap-x-8 lg:gap-x-12 xl:gap-x-16 gap-y-8 py-6 md:py-8 border-b-2 border-[var(--color-border)]">
+                        <!-- Date -->
+                        <div class="flex items-center justify-center lg:justify-start gap-4 sm:gap-6 md:gap-10">
+                            <h3 class="poppins-medium text-[28px] sm:text-[34px] md:text-[40px] whitespace-nowrap">
+                                June 10
+                            </h3>
+
+                            <p
+                                class="oswald-regular text-[16px] sm:text-[20px] md:text-[24px] text-[var(--color-gray)] whitespace-nowrap">
+                                Thursday - 10:00 pm
+                            </p>
+                        </div>
+
+                        <!-- Image -->
+                        <div
+                            class="w-full max-w-[300px] aspect-square lg:w-[300px] lg:h-[300px] overflow-hidden rounded-[20px] mx-auto lg:mx-0">
+                            <img src="images/Inspiring image (4).jpg" alt=""
+                                class="w-full h-full object-cover blur-md group-hover:blur-0 transition-all duration-500" />
+                        </div>
+
+                        <!-- Content -->
+                        <div class="w-full max-w-xl lg:max-w-[380px] mx-auto lg:mx-0 text-center lg:text-left">
+                            <h3
+                                class="oswald-semibold text-[28px] sm:text-[34px] md:text-[40px] text-[var(--color-black)] mb-2 md:mb-3">
+                                Leon Carter
+                            </h3>
+
+                            <h4 class="poppins-medium text-[16px] sm:text-[18px] md:text-[20px] mb-3 md:mb-5">
+                                AI and Design Researcher at Nova Institute
+                            </h4>
+
+                            <p
+                                class="poppins-medium text-[15px] sm:text-[16px] md:text-[18px] leading-[26px] sm:leading-[28px] md:leading-[32px] text-[var(--color-gray)]">
+                                Leon explores AI and human-centered design, inspiring
+                                audiences to adopt emerging tech responsibly and creatively.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- See all speakers Button -->
+                    <div class="flex justify-center mt-7">
+                        <a href="#"
+                            class="inline-flex items-center rounded-full bg-[var(--color-violetred-600)] px-2 py-2">
+                            <span class="poppins-medium text-white text-[18px] px-5">
+                                See all speakers
+                            </span>
+
+                            <span class="w-10 h-10 rounded-full bg-white flex items-center justify-center">
+                                <i class="fa-solid fa-chevron-right text-[14px] text-[var(--color-heading)]"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent News & Updates -->
+    <section class="py-12 md:py-20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-[1320px] mx-auto">
+                <!-- Heading -->
+                <div class="text-center mb-8 md:mb-16">
+                    <h2
+                        class="oswald-semibold text-[36px] sm:text-[48px] md:text-[64px] leading-[44px] sm:leading-[60px] md:leading-[80px] max-w-[500px] mx-auto text-[var(--color-black)]">
+                        RECENT NEWS & UPDATES
+                    </h2>
+                </div>
+
+                <!-- Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                    <!-- Card 1 -->
+                    <div class="group w-full max-w-[420px] mx-auto lg:mx-0">
+                        <div class="relative overflow-hidden rounded-[20px]">
+                            <img src="images/recent image (1).png" alt="News Image"
+                                class="w-full h-auto object-cover transition-all duration-500 group-hover:scale-105" />
+
+                            <!-- Badge -->
+                            <span
+                                class="absolute top-3 right-3 sm:top-5 sm:right-5 bg-[var(--color-electric-700)] text-white poppins-medium text-[16px] sm:text-[18px] md:text-[20px] px-3 py-1 sm:px-4 rounded-[8px] sm:rounded-[10px]">
+                                Blog
+                            </span>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="pt-5 sm:pt-6">
+                            <h3
+                                class="oswald-regular text-[22px] sm:text-[26px] md:text-[30px] leading-[26px] sm:leading-[30px] md:leading-[30px] text-[var(--color-black)] mb-3 sm:mb-5 transition-all duration-300 group-hover:text-[var(--color-electric-700)]">
+                                The Ultimate Guide to Booking Event Tickets Online
+                            </h3>
+
+                            <div class="flex items-center gap-4 sm:gap-6 md:gap-8">
+                                <span
+                                    class="poppins-semibold text-[14px] sm:text-[16px] md:text-[20px] text-[var(--color-gray)]">
+                                    May 12, 2026
+                                </span>
+
+                                <span
+                                    class="poppins-semibold text-[14px] sm:text-[16px] md:text-[20px] text-[var(--color-gray)]">
+                                    by admin
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="group w-full max-w-[420px] mx-auto lg:mx-0">
+                        <div class="relative overflow-hidden rounded-[20px]">
+                            <img src="images/recent image (2).png" alt="News Image"
+                                class="w-full h-auto object-cover transition-all duration-500 group-hover:scale-105" />
+
+                            <!-- Badge -->
+                            <span
+                                class="absolute top-3 right-3 sm:top-5 sm:right-5 bg-[var(--color-electric-700)] text-white poppins-medium text-[16px] sm:text-[18px] md:text-[20px] px-3 py-1 sm:px-4 rounded-[8px] sm:rounded-[10px]">
+                                Blog
+                            </span>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="pt-5 sm:pt-6">
+                            <h3
+                                class="oswald-regular text-[22px] sm:text-[26px] md:text-[30px] leading-[26px] sm:leading-[30px] md:leading-[30px] text-[var(--color-black)] mb-3 sm:mb-5 transition-all duration-300 group-hover:text-[var(--color-electric-700)]">
+                                How to Plan a Successful Event from Start to Finish
+                            </h3>
+
+                            <div class="flex items-center gap-4 sm:gap-6 md:gap-8">
+                                <span
+                                    class="poppins-semibold text-[14px] sm:text-[16px] md:text-[20px] text-[var(--color-gray)]">
+                                    June 13, 2026
+                                </span>
+
+                                <span
+                                    class="poppins-semibold text-[14px] sm:text-[16px] md:text-[20px] text-[var(--color-gray)]">
+                                    by admin
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="group w-full max-w-[420px] mx-auto lg:mx-0 sm:col-span-2 lg:col-span-1">
+                        <div class="relative overflow-hidden rounded-[20px]">
+                            <img src="images/recent image (3).png" alt="News Image"
+                                class="w-full h-auto object-cover transition-all duration-500 group-hover:scale-105" />
+
+                            <!-- Badge -->
+                            <span
+                                class="absolute top-3 right-3 sm:top-5 sm:right-5 bg-[var(--color-electric-700)] text-white poppins-medium text-[16px] sm:text-[18px] md:text-[20px] px-3 py-1 sm:px-4 rounded-[8px] sm:rounded-[10px]">
+                                Blog
+                            </span>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="pt-5 sm:pt-6">
+                            <h3
+                                class="oswald-regular text-[22px] sm:text-[26px] md:text-[30px] leading-[26px] sm:leading-[30px] md:leading-[30px] text-[var(--color-black)] mb-3 sm:mb-5 transition-all duration-300 group-hover:text-[var(--color-electric-700)]">
+                                Top 10 Music Festivals You Shouldn't Miss This Year
+                            </h3>
+
+                            <div class="flex items-center gap-4 sm:gap-6 md:gap-8">
+                                <span
+                                    class="poppins-semibold text-[14px] sm:text-[16px] md:text-[20px] text-[var(--color-gray)]">
+                                    August 20, 2026
+                                </span>
+
+                                <span
+                                    class="poppins-semibold text-[14px] sm:text-[16px] md:text-[20px] text-[var(--color-gray)]">
+                                    by admin
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Button -->
+                <div class="flex justify-center mt-10 md:mt-16">
+                    <a href="#"
+                        class="inline-flex items-center rounded-full bg-[var(--color-electric-600)] p-1.5 md:p-2 transition-all duration-300 hover:opacity-90">
+                        <span
+                            class="poppins-semibold text-white text-[16px] sm:text-[18px] md:text-[20px] px-4 sm:px-6">
+                            Read All Stories
+                        </span>
+
+                        <span class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white flex items-center justify-center">
+                            <i
+                                class="fa-solid fa-chevron-right text-[12px] md:text-[16px] text-[var(--color-electric-blue)]"></i>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Moments Gallery -->
+    <section class="py-2 overflow-hidden bg-white">
+        <div class="text-center mb-14">
+            <h2 class="oswald-semibold text-[36px] md:text-[44px] lg:text-[64px]">
+                Moments That <br />
+                Made Memories
+            </h2>
+        </div>
+
+        <div class="overflow-hidden">
+            <div class="flex gallery-track gap-5">
+                <!-- First Set -->
+                <div class="shrink-0 w-[180px] sm:w-[220px] md:w-[260px] lg:w-[300px] rounded-3xl overflow-hidden">
+                    <img src="./images/moment-1.png"
+                        class="w-full h-[340px] object-cover hover:scale-110 transition duration-500" />
+                </div>
+
+                <div class="shrink-0 w-[180px] sm:w-[220px] md:w-[260px] lg:w-[300px] rounded-3xl overflow-hidden">
+                    <img src="./images/moment-2.png"
+                        class="w-full h-[340px] object-cover hover:scale-110 transition duration-500" />
+                </div>
+
+                <div class="shrink-0 w-[180px] sm:w-[220px] md:w-[260px] lg:w-[300px] rounded-3xl overflow-hidden">
+                    <img src="./images/moment-3.png"
+                        class="w-full h-[340px] object-cover hover:scale-110 transition duration-500" />
+                </div>
+
+                <div class="shrink-0 w-[180px] sm:w-[220px] md:w-[260px] lg:w-[300px] rounded-3xl overflow-hidden">
+                    <img src="./images/moment-4.png"
+                        class="w-full h-[340px] object-cover hover:scale-110 transition duration-500" />
+                </div>
+
+                <div class="shrink-0 w-[180px] sm:w-[220px] md:w-[260px] lg:w-[300px] rounded-3xl overflow-hidden">
+                    <img src="./images/moment-5.png"
+                        class="w-full h-[340px] object-cover hover:scale-110 transition duration-500" />
+                </div>
+
+                <!-- Duplicate Set -->
+                <div class="shrink-0 w-[180px] sm:w-[220px] md:w-[260px] lg:w-[300px] rounded-3xl overflow-hidden">
+                    <img src="./images/moment-1.png"
+                        class="w-full h-[340px] object-cover hover:scale-110 transition duration-500" />
+                </div>
+
+                <div class="shrink-0 w-[180px] sm:w-[220px] md:w-[260px] lg:w-[300px] rounded-3xl overflow-hidden">
+                    <img src="./images/moment-2.png"
+                        class="w-full h-[340px] object-cover hover:scale-110 transition duration-500" />
+                </div>
+
+                <div class="shrink-0 w-[180px] sm:w-[220px] md:w-[260px] lg:w-[300px] rounded-3xl overflow-hidden">
+                    <img src="./images/moment-3.png"
+                        class="w-full h-[340px] object-cover hover:scale-110 transition duration-500" />
+                </div>
+
+                <div class="shrink-0 w-[180px] sm:w-[220px] md:w-[260px] lg:w-[300px] rounded-3xl overflow-hidden">
+                    <img src="./images/moment-4.png"
+                        class="w-full h-[340px] object-cover hover:scale-110 transition duration-500" />
+                </div>
+
+                <div class="shrink-0 w-[180px] sm:w-[220px] md:w-[260px] lg:w-[300px] rounded-3xl overflow-hidden">
+                    <img src="./images/moment-5.png"
+                        class="w-full h-[340px] object-cover hover:scale-110 transition duration-500" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- sponcers -->
+    <section class="py-[100px] lg:py-32 bg-white">
+        <div class="container">
+            <!-- Heading -->
+            <div class="text-center mb-16 lg:-mb-15 md:-mb-15">
+                <h2 class="oswald-semibold text-[40px] md:text-[52px] lg:text-[64px] leading-normal">
+                    Our Proud
+                    <br />
+                    Partners
+                </h2>
+            </div>
+
+            <!-- Partners Grid -->
+            <div class="mx-auto">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:[&>.mobile-spacer]:hidden">
+                    <!-- Row 1 -->
+                    <div
+                        class="partner-card h-[115px] rounded-2xl border border-[#3A3A3A] flex items-center justify-center">
+                        <img src="./images/sp-1.png" class="w-[157px]" alt="" />
+                    </div>
+
+                    <div
+                        class="mobile-spacer partner-card partner-card-empty h-[115px] rounded-2xl border border-[#3A3A3A] md:hidden">
+                    </div>
+                    <div class="hidden md:block"></div>
+
+                    <div
+                        class="mobile-spacer partner-card partner-card-empty h-[115px] rounded-2xl border border-[#3A3A3A] md:hidden">
+                    </div>
+                    <div class="hidden md:block"></div>
+
+                    <div class="partner-card partner-card-empty h-[115px] rounded-2xl border border-[#3A3A3A]"></div>
+
+                    <!-- Row 2 -->
+                    <div class="partner-card partner-card-empty h-[115px] rounded-2xl border border-[#3A3A3A]"></div>
+
+                    <div
+                        class="partner-card h-[115px] rounded-2xl border border-[#3A3A3A] flex items-center justify-center">
+                        <img src="./images/sp-2.png" class="w-[157px]" alt="" />
+                    </div>
+
+                    <div class="partner-card partner-card-empty h-[115px] rounded-2xl border border-[#3A3A3A]"></div>
+
+                    <div
+                        class="partner-card h-[115px] rounded-2xl border border-[#3A3A3A] flex items-center justify-center">
+                        <img src="./images/sp-3.png" class="w-[157px]" alt="" />
+                    </div>
+
+                    <!-- Row 3 -->
+                    <div
+                        class="partner-card h-[115px] rounded-2xl border border-[#3A3A3A] flex items-center justify-center">
+                        <img src="./images/sp-4.png" class="w-[157px]" alt="" />
+                    </div>
+
+                    <div class="partner-card partner-card-empty h-[115px] rounded-2xl border border-[#3A3A3A]"></div>
+
+                    <div
+                        class="partner-card h-[115px] rounded-2xl border border-[#3A3A3A] flex items-center justify-center">
+                        <img src="./images/sp-5.png" class="w-[157px]" alt="" />
+                    </div>
+
+                    <div class="partner-card partner-card-empty h-[115px] rounded-2xl border border-[#3A3A3A]"></div>
+
+                    <!-- Row 4 -->
+                    <div class="partner-card partner-card-empty h-[115px] rounded-2xl border border-[#3A3A3A]"></div>
+
+                    <div
+                        class="partner-card h-[115px] rounded-2xl border border-[#3A3A3A] flex items-center justify-center">
+                        <img src="./images/sp-6.png" class="w-[157px]" alt="" />
+                    </div>
+
+                    <div class="partner-card partner-card-empty h-[115px] rounded-2xl border border-[#3A3A3A]"></div>
+
+                    <div
+                        class="partner-card h-[115px] rounded-2xl border border-[#3A3A3A] flex items-center justify-center">
+                        <img src="./images/sp-7.png" class="w-[157px]" alt="" />
+                    </div>
+
+                    <!-- Row 5 -->
+                    <div
+                        class="mobile-spacer partner-card partner-card-empty h-[115px] rounded-2xl border border-[#3A3A3A] md:hidden">
+                    </div>
+                    <div class="hidden md:block"></div>
+
+                    <div class="partner-card partner-card-empty h-[115px] rounded-2xl border border-[#3A3A3A]"></div>
+
+                    <div
+                        class="partner-card h-[115px] rounded-2xl border border-[#3A3A3A] flex items-center justify-center">
+                        <img src="./images/sp-8.png" class="w-[157px]" alt="" />
+                    </div>
+
+                    <div class="hidden md:block"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= Footer ================= -->
+    <footer class="relative overflow-hidden bg-[#0B0B0B] text-white pt-24 min-h-[750px] flex flex-col">
+        <!-- Background Watermark -->
+        <p
+            class="footer-watermark oswald-semibold absolute left-1/2 top-[400px] -translate-x-1/2 whitespace-nowrap text-[160px] md:text-[220px] lg:text-[280px] xl:text-[360px] leading-none select-none pointer-events-none">
+            EVENTARA
+        </p>
+
+        <div class="container relative z-10 flex-1 flex flex-col">
+            <!-- Top -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.8fr_.8fr_.8fr_.8fr] gap-16">
+                <!-- Left -->
+                <div>
+                    <h2 class="oswald-semibold text-[40px] leading-none">EVENTARA</h2>
+
+                    <p class="mt-8 max-w-[560px] poppins-regular text-[14px] text-white/75">
+                        Book your favorite events in just a few clicks and experience
+                        memories that last forever. Discover amazing events and book
+                        tickets instantly.
+                    </p>
+
+                    <!-- Social -->
+                    <div class="flex gap-5 mt-12">
+                        <a href="#"
+                            class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transition duration-300 hover:bg-[#EE4291] hover:text-white hover:-translate-y-1">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+
+                        <a href="#"
+                            class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transition duration-300 hover:bg-[#EE4291] hover:text-white hover:-translate-y-1">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+
+                        <a href="#"
+                            class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transition duration-300 hover:bg-[#EE4291] hover:text-white hover:-translate-y-1">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+
+                        <a href="#"
+                            class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transition duration-300 hover:bg-[#EE4291] hover:text-white hover:-translate-y-1">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="poppins-semibold text-[16px] mb-[30px]">Quick Links</h4>
+
+                    <ul class="space-y-5 poppins-regular text-white/70">
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">Home</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">Events</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">My Tickets</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">About Us</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Categories -->
+                <div>
+                    <h4 class="poppins-semibold text-[16px] mb-[30px]">Categories</h4>
+
+                    <ul class="space-y-5 poppins-regular text-white/70">
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">Music</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">Sports</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">Comedy</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">Workshop</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">Arts & Theatre</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h4 class="poppins-semibold text-[16px] mb-[30px]">Support</h4>
+
+                    <ul class="space-y-5 poppins-regular text-white/70">
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">Help Center</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">FAQs</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">Terms & Conditions</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">Privacy Policy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom -->
+            <div class="mt-auto pt-28">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-6 border-t border-white/10 pt-8">
+                    <p class="text-white/50 poppins-regular text-sm">
+                        © 2026 EVENTARA. All Rights Reserved.
+                    </p>
+
+                    <div class="flex flex-wrap items-center justify-center gap-6 text-sm text-white/50 poppins-regular">
+                        <a href="#" class="hover:text-white duration-300">
+                            Privacy Policy
+                        </a>
+
+                        <a href="#" class="hover:text-white duration-300">
+                            Terms & Conditions
+                        </a>
+
+                        <a href="#" class="hover:text-white duration-300">
+                            Cookies Settings
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sticker -->
+        <div class="absolute left-1/2 bottom-[110px] -translate-x-1/2 z-20">
+            <img src="./images/gyt.png" class="w-[150px] animate-slow-spin" />
+        </div>
+    </footer>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@14/swiper-bundle.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="navbar.js"></script>
+    <script src="location.js"></script>
+
+</body>
+
+</html>

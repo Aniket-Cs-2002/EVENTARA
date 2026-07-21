@@ -1,0 +1,413 @@
+@font-face {
+    font-family: "Oswald";
+    src: url("../fonts/Oswald-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Oswald";
+    src: url("../fonts/Oswald-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Oswald";
+    src: url("../fonts/Oswald-medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Oswald";
+    src: url("../fonts/Oswald-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+ 
+
+
+:root{
+    --oswald-regular: "Oswald", sans-serif;
+
+    --oswald-medium: "Oswald", sans-serif;
+
+    --oswald-semibold: "Oswald", sans-serif;
+
+    --oswald-bold: "Oswald", sans-serif;
+
+    --poppins-regular: "Poppins", sans-serif;
+
+    --poppins-medium: "Poppins", sans-serif;
+
+    --poppins-semibold: "Poppins", sans-serif;
+
+    --poppins-bold: "Poppins", sans-serif;
+
+    /* ELECTRIC VIOLET */
+    --color-electric-50: #FBF5FF;
+    --color-electric-100: #F5E9FE;
+    --color-electric-200: #EDD6FE;
+    --color-electric-300: #DFB6FC;
+    --color-electric-400: #CB87F9;
+    --color-electric-500: #B759F3;
+    --color-electric-600: #A437E6;
+    --color-electric-700: #8D26C9;
+    --color-electric-800: #7724A5;
+    --color-electric-900: #611F84;
+    --color-electric-950: #430962;
+    /* VIOLET RED */
+    --color-violetred-50: #FDF2F7;
+    --color-violetred-100: #FDE6F1;
+    --color-violetred-200: #FDCDE5;
+    --color-violetred-300: #FCA5CE;
+    --color-violetred-400: #F96DAC;
+    --color-violetred-500: #F2458E;
+    --color-violetred-600: #E12169;
+    --color-violetred-700: #C4124F;
+    --color-violetred-800: #A21242;
+    --color-violetred-900: #87143A;
+    --color-violetred-950: #53041E;
+    /* COMMON COLORS */
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+    --color-heading: #141B34;
+    --color-text: #252525;
+    --color-gray: #999999;
+    --color-success: #3B906E;
+    --color-warning: #F98535;
+    --color-info: #3A95EE;
+    --color-blue: #3C58FB;
+    --color-blue-light: #7E96FB;
+    --color-bg: #F7F7F7;
+    --color-border: #E0E0E0;
+    --color-purple-light: #E6EAFE;
+    --color-sky-light: #EAF5FD;
+    --color-green-light: #E8FAF0;
+    --color-pink-light: #FEE9EE;
+    --color-orange-light: #FEF0E4;
+}
+
+.oswald-regular {
+    font-family: var(--oswald-regular);
+    font-weight: 400;
+}
+
+.oswald-semibold {
+    font-family: var(--oswald-semibold);
+    font-weight: 600;
+}
+.oswald-medium{
+    font-family: var(--oswald-medium);
+    font-weight:500;
+
+}
+
+.oswald-bold {
+    font-family: var(--oswald-bold);
+    font-weight: 700;
+}
+
+.poppins-regular {
+    font-family: var(--poppins-regular);
+    font-weight: 400;
+
+}
+.poppins-medium {
+    font-family: var(--poppins-medium);
+    font-weight: 500;
+
+}
+.poppins-semibold {
+    font-family: var(--poppins-semibold);
+    font-weight: 600;
+
+}
+.poppins-bold {
+    font-family: var(--poppins-bold);
+    font-weight: 700;
+
+}
+
+.container {
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+ 
+.btn-type-1 {
+    background: linear-gradient(90deg, #EE4291 0%, #AE40E4 100%);
+    background-size: 100% 100%;
+    color: #fff;
+    border-radius: 9999px;
+    transition: background 0.4s ease, transform 0.3s ease;
+    font-family: var(--poppins-medium);
+}
+
+.btn-type-1:hover {
+    background: linear-gradient(90deg, #AE40E4 0%, #EE4291 100%);
+    transform: translateX(6px);
+}
+
+
+
+
+.hero {
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.20) 0%,
+            rgba(0, 0, 0, 0) 100%
+        ),
+        url("../images/banner.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+}
+
+/* .glass-card {
+    border: 1px solid hsla(0, 0%, 100%, 0.35);
+    background: hsla(0, 0%, 0%, 0.57);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    box-shadow:
+        inset 0 0 12px 2px hsla(0, 0%, 100%, 0.18),
+        inset 0 1px 1px hsla(0, 0%, 100%, 0.12),
+        0 10px 30px hsla(0, 0%, 0%, 0.25);
+
+    position: relative;
+    overflow: hidden;
+} */
+
+
+
+.ticket-section{
+    background:
+        linear-gradient(hsla(0, 0%, 0%, 0.451),rgba(0,0,0,.45)),
+        url("../images/tickits-bg.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+/* .ticket-section::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(90deg,
+        rgba(0,0,0,.35),
+        transparent 60%);
+    pointer-events:none;
+} */
+
+
+
+/* category */
+ 
+.categorySwiper .swiper-slide {
+  width: auto !important;
+  height: auto !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+}
+ 
+.categorySwiper {
+  padding-top: 10px;
+  padding-bottom: 25px;
+}
+ 
+.categorySwiper {
+    padding: 15px 0 25px;
+}
+ 
+.categorySwiper .swiper-wrapper {
+    padding-bottom: 10px;
+}
+ 
+ 
+/* Featured Events */
+ 
+ 
+.featured-event-slider {
+    padding: 15px 0 20px;
+}
+ 
+.featured-event-slider .swiper-wrapper {
+    align-items: stretch;
+}
+ 
+.featured-event-slider .swiper-slide {
+    width: 315px !important;
+    height: auto;
+}
+ 
+ 
+.featured-event-slider {
+    padding-bottom: 25px;
+}
+ 
+.featured-event-slider .swiper-wrapper {
+    padding-bottom: 10px;
+}
+
+
+.gallery-track{
+    width: max-content;
+    animation: gallery-scroll 25s linear infinite;
+}
+
+.gallery-track:hover{
+    animation-play-state: paused;
+}
+
+@keyframes gallery-scroll{
+
+    from{
+        transform: translateX(0);
+    }
+
+    to{
+        transform: translateX(-50%);
+    }
+
+}
+
+
+
+
+
+footer{
+    position: relative;
+    background:#0B0B0B;
+}
+.footer-watermark{
+    background: linear-gradient(
+        180deg,
+        #393939 0%,
+        #0B0B0B 65%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+footer::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    background:
+        linear-gradient(
+            to top,
+            rgba(11,11,11,1) 0%,
+            rgba(11,11,11,.95) 18%,
+            rgba(11,11,11,.65) 40%,
+            transparent 70%
+        );
+}
+@keyframes slow-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-slow-spin {
+    animation: slow-spin 12s linear infinite;
+}
+
+
+
+
+.partner-card{
+    transition: all .35s ease;
+}
+
+.partner-card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.08);
+}
+
+.partner-card-empty{
+    position: relative;
+    overflow: hidden;
+    transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
+}
+
+.partner-card-empty::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, #EE4291 0%, #AE40E4 100%);
+    opacity: 0;
+    transition: opacity .35s ease;
+    z-index: 0;
+}
+
+.partner-card-empty:hover{
+    border-color: transparent;
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.12);
+}
+
+.partner-card-empty:hover::before{
+    opacity: 1;
+}
+
+.partner-card-empty > *{
+    position: relative;
+    z-index: 1;
+}
+
+
+
+
+
+.inspiring-card img {
+    filter: blur(8px);
+    transition: filter 0.5s ease;
+}
+ 
+.inspiring-card:hover img {
+    filter: blur(0);
+}
+
+
