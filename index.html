@@ -12,183 +12,281 @@
 </head>
 
 <body>
-    <!-- header -->
+    <!-- Header -->
     <header class="header poppins-medium">
-        <nav class="bg-white shadow-md py-4">
-            <div class="container mx-auto px-6 flex items-center justify-between">
-                <!-- Logo -->
-                <div class="logo">
-                    <a href="#">
-                        <img src="./images/logo.png" alt="Eventara Logo" class="w-[105px] h-[79px]" loading="lazy" />
-                    </a>
-                </div>
-
-                <!-- Desktop Nav -->
-                <ul class="hidden lg:flex gap-[50px] font-medium whitespace-nowrap text-heading font-body">
-                    <li>
-                        <a href="index.html" class="text-[20px] text-[var(--color-electric-700)]">Home</a>
-                    </li>
-                    <li>
-                        <a href="about.html" target="_blank"
-                            class="text-[20px] text-electric-600 hover:text-electric-600 transition-colors">Events
-                            <i class="fa-solid fa-angle-down text-xs ml-1"></i>
+        <nav class="bg-white py-[10px]">
+            <div class="container mx-auto h-full">
+                <div class="flex items-center justify-between gap-6 xl:gap-10 h-full">
+                    <!-- Logo -->
+                    <div class="shrink-0">
+                        <a href="#">
+                            <img src="./images/logo.png" alt="Eventara Logo"
+                                class="w-[80px] sm:w-[90px] xl:w-[105px] h-auto" loading="lazy" />
                         </a>
-                    </li>
-                    <li>
-                        <a href="courses.html" class="text-[20px] hover:text-warning transition-colors">My Tickets</a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-[20px] hover:text-warning transition-colors">About Us</a>
-                    </li>
-                    <li>
-                        <a href="contact.html" target="_blank"
-                            class="text-[20px] hover:text-warning transition-colors">Contact</a>
-                    </li>
-                </ul>
+                    </div>
 
-                <!-- Desktop Buttons (Right Side Icons) -->
-                <div class="hidden lg:flex items-center gap-6 text-heading font-body">
-                    <!-- Shopping Bag -->
-                    <a href="#" class="hover:text-warning transition-colors text-xl flex items-center">
-                        <i class="fa-solid fa-bag-shopping"></i>
-                    </a>
+                    <!-- Desktop Navigation -->
+                    <ul
+                        class="hidden lg:flex  justify-center items-center gap-6 xl:gap-10 2xl:gap-12 whitespace-nowrap">
+                        <li>
+                            <a href="index.html" class="text-[20px] poppins-medium text-[var(--color-electric-700)]">
+                                Home
+                            </a>
+                        </li>
 
-                    <!-- Notification -->
-                    <a href="#" class="hover:text-warning transition-colors text-xl flex items-center">
-                        <i class="fa-regular fa-bell"></i>
-                    </a>
+                        <li>
+                            <a href="about.html" target="_blank"
+                                class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors">
+                                Events
+                            </a>
+                        </li>
 
-                    <!-- Profile -->
-                    <a href="#" class="flex items-center justify-center hover:opacity-80 transition-opacity">
-                        <img src="./images/user.png" class="w-[50px] h-auto" alt="" />
-                    </a>
+                        <li>
+                            <a href="courses.html"
+                                class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors">
+                                My Tickets
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#"
+                                class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors">
+                                About Us
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="contact.html" target="_blank"
+                                class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors">
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Right Side Icons -->
+                    <div class="hidden lg:flex items-center justify-end gap-4 xl:gap-5 flex-shrink-0">
+                        <!-- Shopping Bag -->
+                        <a href="#">
+                            <img src="./images/shopping-basket-01.png" alt="Shopping Bag" class="w-[28px] h-[28px]" />
+                        </a>
+
+                        <!-- Bell -->
+                        <a href="#">
+                            <img src="./images/bell.png" alt="Notification" class="w-[28px] h-[28px]" />
+                        </a>
+
+                        <!-- User -->
+                        <a href="#">
+                            <img src="./images/user.png" alt="User" class="w-[50px] h-[50px]" />
+                        </a>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="navbar-toggle" class="lg:hidden ml-auto text-2xl text-gray-700">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
                 </div>
-
-                <!-- Hamburger Menu for Mobile -->
-                <button id="navbar-toggle" class="lg:hidden text-2xl text-gray-700">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
             </div>
         </nav>
 
         <!-- Mobile Menu -->
-        <div id="mobile-navbar" class="hidden fixed inset-0 bg-black/50 z-50">
-            <div id="navbar-slide" class="w-64 h-full bg-white p-6 -translate-x-full transition-transform duration-300">
-                <ul class="flex flex-col gap-6 font-bold text-gray-700">
-                    <li><a href="index.html" class="hover:text-orange-600">HOME</a></li>
+        <div id="mobile-navbar" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50">
+            <div id="navbar-slide"
+                class="w-[300px] h-full bg-white rounded-r-[24px] shadow-2xl p-6 -translate-x-full transition-transform duration-300 flex flex-col">
+
+                <!-- Header -->
+                <div class="flex items-center justify-between pb-5 border-b border-gray-200">
+                    <img src="./images/logo.png" alt="Eventara" class="w-[95px] h-auto" />
+
+                    <button id="navbar-close" class="text-2xl text-gray-600 hover:text-black">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <!-- Links -->
+                <ul class="flex flex-col gap-2 mt-8">
                     <li>
-                        <a href="about.html" target="_blank" class="hover:text-orange-600">Events</a>
+                        <a href="index.html"
+                            class="flex items-center gap-4 rounded-xl px-4 py-3 hover:bg-violet-50 hover:text-violet-700 transition">
+                            <i data-lucide="house" class="w-5 h-5"></i>
+                            Home
+                        </a>
                     </li>
+
                     <li>
-                        <a href="courses.html" target="_blank" class="hover:text-orange-600">My Tickets</a>
+                        <a href="about.html"
+                            class="flex items-center gap-4 rounded-xl px-4 py-3 hover:bg-violet-50 hover:text-violet-700 transition">
+                            <i data-lucide="calendar-days" class="w-5 h-5"></i>
+                            Events
+                        </a>
                     </li>
-                    <li><a href="#" class="hover:text-orange-600">About Us</a></li>
-                    <li><a href="#" class="hover:text-orange-600">CONTACT</a></li>
+
                     <li>
-                        <a href="#" class="inline-block bg-orange-500 text-white px-5 py-2 rounded-lg text-center">
-                            Get In Touch
+                        <a href="courses.html"
+                            class="flex items-center gap-4 rounded-xl px-4 py-3 hover:bg-violet-50 hover:text-violet-700 transition">
+                            <i data-lucide="ticket" class="w-5 h-5 -rotate-45"></i>
+                            My Tickets
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#"
+                            class="flex items-center gap-4 rounded-xl px-4 py-3 hover:bg-violet-50 hover:text-violet-700 transition">
+                            <i data-lucide="circle-alert" class="w-5 h-5"></i>
+                            About Us
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html"
+                            class="flex items-center gap-4 rounded-xl px-4 py-3 hover:bg-violet-50 hover:text-violet-700 transition">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                            Contact
                         </a>
                     </li>
                 </ul>
+
+                <!-- Bottom CTA -->
+                <div class="mt-auto pt-8">
+                    <a href="#"
+                        class="btn-type-1 w-full flex items-center justify-center gap-3 py-4 rounded-full text-white">
+                        Explore Events
+                        <span class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </span>
+                    </a>
+                </div>
+
             </div>
         </div>
     </header>
 
-    <!-- banner -->
-    <section class="hero rounded-[20px] overflow-hidden mt-[10px]">
-        <div class="mx-auto px-6 lg:px-8 py-20 lg:py-28">
-            <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-12">
-                <!-- Left Content -->
-                <div class="text-white">
-                    <p class="uppercase text-[20px] poppins-medium text-pink-300 mb-[5px]">
-                        Discover <span class="text-white">• Book •</span> Experience
-                    </p>
+    <!-- Hero Banner -->
+    <section class="relative">
 
-                    <h1 class="mb-[5px] text-[clamp(24px,4vw,40px)] font-bold leading-relaxed oswald-semibold">
-                        Find Amazing Events.
-                        <br />
-                        Book Tickets Instantly.
-                        <br />
-                        Create Unforgettable Memories.
-                    </h1>
+        <div
+            class="relative mx-auto mt-5 w-full max-w-[1720px] min-h-[640px] lg:h-[640px] overflow-hidden rounded-none 2xl:rounded-[20px]">
 
-                    <p class="text-white/80 text-[clamp(13px,4vw,15px)] mb-[10px] max-w-[755px]">
-                        Discover concerts, sports, comedy shows, workshops, festivals and
-                        more happening near you. Secure your tickets in just a few clicks
-                        and enjoy unforgettable experiences.
-                    </p>
+            <!-- Slides -->
+            <div id="hero-slider" class="absolute inset-0">
 
-                    <button
-                        class="btn-type-1 transition-all duration-300 rounded-full px-[34px] py-[15px] flex items-center gap-6 text-[24px] font-semibold">
-                        EXPLORE EVENTS
-
-                        <span class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center">
-                            <i class="fa-solid fa-angle-right"></i>
-                        </span>
-                    </button>
+                <div class="hero-slide absolute inset-0 opacity-100 transition-opacity duration-1000 bg-cover bg-center"
+                    style="background-image:url('./images/banner.png')">
                 </div>
 
-                <!-- Right Cards -->
-                <div class="flex flex-col gap-5 oswald-regular w-full items-start mt-10 lg:mt-0 lg:w-auto lg:items-end">
-                    <div
-                        class="backdrop-blur-xl bg-black/30 border border-white/10 rounded-3xl px-[10px] py-[20px] w-[220px] flex items-center gap-5">
-                        <div class="w-14 h-14 rounded-full bg-violet-600 flex items-center justify-center">
-                            <i class="fa-solid fa-ticket text-white"></i>
-                        </div>
+                <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000 bg-cover bg-center"
+                    style="background-image:url('./images/banner-2.png')">
+                </div>
 
-                        <div>
-                            <p class="text-white text-3xl font-bold">500+</p>
-                            <span class="text-white opacity-50 text-[16px]">Events</span>
-                        </div>
+                <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000 bg-cover bg-center"
+                    style="background-image:url('./images/banner3.jpg')">
+                </div>
+
+            </div>
+
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-r from-black/35 via-black/15 to-transparent">
+            </div>
+            <div class="container relative z-10 h-full px-6 lg:px-8">
+                <div
+                    class="flex h-full flex-col lg:flex-row items-start lg:items-center justify-between gap-8 lg:gap-10 py-8 lg:py-0">
+
+                    <!-- Left Content -->
+                    <div class="text-white w-full lg:flex-1 max-w-[760px] text-left">
+                        <p class="uppercase text-[20px] poppins-medium text-pink-300 mb-[5px]">
+                            Discover <span class="text-white">• Book •</span> Experience
+                        </p>
+
+                        <h1 class="mb-[5px] text-[clamp(24px,4vw,40px)] font-bold leading-relaxed oswald-semibold">
+                            Find Amazing Events.
+                            <br />
+                            Book Tickets Instantly.
+                            <br />
+                            Create Unforgettable Memories.
+                        </h1>
+
+                        <p class="text-white/80 text-[clamp(13px,4vw,15px)] mb-[10px] max-w-[755px]">
+                            Discover concerts, sports, comedy shows, workshops, festivals and
+                            more happening near you. Secure your tickets in just a few clicks
+                            and enjoy unforgettable experiences.
+                        </p>
+
+                        <button
+                            class="btn-type-1 transition-all duration-300 rounded-full self-start px-6 sm:px-8 lg:px-[34px] py-3 lg:py-[15px] inline-flex items-center justify-center gap-4 lg:gap-6 text-[18px] sm:text-[20px] lg:text-[24px] font-semibold">
+                            EXPLORE EVENTS
+                            <span class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center">
+                                <i class="fa-solid fa-angle-right"></i>
+                            </span>
+                        </button>
                     </div>
 
+                    <!-- Right Cards -->
                     <div
-                        class="backdrop-blur-xl bg-black/30 border border-white/10 rounded-3xl px-[10px] py-[20px] w-[220px] flex items-center gap-5">
-                        <div class="w-14 h-14 rounded-full bg-violet-600 flex items-center justify-center">
-                            <i class="fa-solid fa-users text-white"></i>
+                        class="flex flex-col gap-3 lg:gap-5 oswald-regular w-full lg:w-[220px] xl:w-[240px] items-start mt-6 lg:mt-0 shrink-0">
+                        <div
+                            class="backdrop-blur-xl bg-black/30 border border-white/10 rounded-3xl px-4 py-4 lg:px-5 lg:py-5 w-full max-w-[320px] lg:max-w-none flex items-center gap-3 lg:gap-5">
+                            <div
+                                class="w-11 h-11 lg:w-14 lg:h-14 rounded-full bg-violet-600 flex items-center justify-center">
+                                <i data-lucide="ticket" class="w-6 h-6 text-white -rotate-45"></i>
+                            </div>
+
+                            <div>
+                                <p class="text-white text-2xl lg:text-3xl font-bold">500+</p>
+                                <span class="text-white opacity-50 text-sm lg:text-[16px]">Events</span>
+                            </div>
                         </div>
 
-                        <div>
-                            <p class="text-white text-3xl font-bold">50K+</p>
-                            <span class="text-white opacity-50 text-[16px]">Happy Users</span>
-                        </div>
-                    </div>
+                        <div
+                            class="backdrop-blur-xl bg-black/30 border border-white/10 rounded-3xl px-4 py-4 lg:px-5 lg:py-5 w-full max-w-[320px] lg:max-w-none flex items-center gap-3 lg:gap-5">
+                            <div
+                                class="w-11 h-11 lg:w-14 lg:h-14 rounded-full bg-violet-600 flex items-center justify-center">
+                                <i class="fa-solid fa-users text-white"></i>
+                            </div>
 
-                    <div
-                        class="backdrop-blur-xl bg-black/30 border border-white/10 rounded-3xl px-[10px] py-[20px] w-[220px] flex items-center gap-5">
-                        <div class="w-14 h-14 rounded-full bg-violet-600 flex items-center justify-center">
-                            <i class="fa-solid fa-shield-halved text-white"></i>
+                            <div>
+                                <p class="text-white text-2xl lg:text-3xl font-bold">50K+</p>
+                                <span class="text-white opacity-50 text-sm lg:text-[16px]">Happy Users</span>
+                            </div>
                         </div>
 
-                        <div>
-                            <p class="text-white text-3xl font-bold">100+</p>
-                            <span class="text-white opacity-50 text-[16px]">Secure Booking</span>
+                        <div
+                            class="backdrop-blur-xl bg-black/30 border border-white/10 rounded-3xl px-4 py-4 lg:px-5 lg:py-5 w-full max-w-[320px] lg:max-w-none flex items-center gap-3 lg:gap-5">
+                            <div
+                                class="w-11 h-11 lg:w-14 lg:h-14 rounded-full bg-violet-600 flex items-center justify-center">
+                                <i data-lucide="shield-ellipsis" class="w-6 h-6 text-white"></i>
+                            </div>
+
+                            <div>
+                                <p class="text-white text-2xl lg:text-3xl font-bold">100+</p>
+                                <span class="text-white opacity-50 text-sm lg:text-[16px]">Secure Booking</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </section>
 
     <!-- Search Events -->
-    <section>
-        <div class="container mx-auto px-6 py-[100px]">
-            <div class="max-w-[1320px] mx-auto bg-white rounded-2xl shadow-[0px_6px_13px_-1px_rgba(0,0,0,0.25)] p-4">
-                <form class="flex flex-col lg:flex-row items-stretch lg:items-center gap-4">
+    <section class="relative mt-5 lg:-mt-15 z-20">
+        <div class="container px-4 sm:px-6">
+            <div
+                class="max-w-[1320px] mx-auto bg-white rounded-[10px] shadow-[0_10px_30px_rgba(0,0,0,.12)] p-4 md:p-5 lg:p-6">
+                <form class="grid grid-cols-1 xl:grid-cols-[1.5fr_1fr_1fr_auto] gap-4 items-center">
                     <!-- Search -->
-                    <div class="relative w-full lg:max-w-[380px]">
+                    <div class="relative w-full">
                         <i
                             class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
-
                         <input type="text" placeholder="Search events, concert, workshops"
-                            class="w-full py-[14px] border-2 border-gray-300 placeholder:text-[var(--color-heading)] text-[15px] rounded-xl poppins-regular pl-12 pr-4 outline-none focus:border-[var(--color-electric-600)]" />
+                            class="w-full h-[58px] pl-12 pr-4 rounded-xl border-2 border-[var(--color-border)] outline-none focus:border-[var(--color-electric-600)] text-[15px] poppins-regular" />
                     </div>
 
                     <!-- Location -->
-                    <div class="relative w-full lg:max-w-[300px]">
+                    <div class="relative w-full z-30">
                         <!-- Select Box -->
                         <div id="locationBtn"
-                            class="flex items-center justify-between w-full py-[14px] px-4 border-2 rounded-xl cursor-pointer"
+                            class="flex items-center justify-between w-full h-[58px] px-4 border-2 rounded-xl cursor-pointer"
                             style="border-color: var(--color-border)">
                             <div class="flex items-center gap-3">
                                 <i class="fa-solid fa-location-dot" style="color: var(--color-gray)"></i>
@@ -196,13 +294,11 @@
                                     All locations
                                 </span>
                             </div>
-
                             <i class="fa-solid fa-angle-down" style="color: var(--color-gray)"></i>
                         </div>
-
                         <!-- Dropdown -->
                         <div id="locationDropdown"
-                            class="hidden absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[95vw] max-w-[900px] rounded-2xl shadow-xl border p-4 sm:p-5 md:p-6 z-50"
+                            class="hidden absolute top-[calc(100%+12px)] left-0 w-full xl:w-[900px] xl:left-1/2 xl:-translate-x-1/2 rounded-2xl shadow-xl border p-4 sm:p-5 md:p-6 z-[9999] max-h-[75vh] overflow-y-auto"
                             style="
                   background-color: var(--color-white);
                   border-color: var(--color-border);
@@ -212,28 +308,23 @@
                                 <h3 class="oswald-regular text-[20px] sm:text-[22px] md:text-[24px] mb-3">
                                     Select location
                                 </h3>
-
                                 <input type="text" placeholder="Select location"
                                     class="w-full h-[48px] sm:h-[54px] border rounded-xl px-4 outline-none"
                                     style="border-color: var(--color-border)" />
                             </div>
-
                             <!-- Current Location -->
                             <div class="flex items-center gap-3 mb-8 cursor-pointer">
                                 <i class="fa-solid fa-location-crosshairs text-[20px]"
                                     style="color: var(--color-electric-600)"></i>
-
                                 <span class="poppins-semibold text-[15px]">
                                     Use current location
                                 </span>
                             </div>
-
                             <!-- Heading -->
                             <h3 class="poppins-semibold text-[18px] sm:text-[20px] mb-5"
                                 style="color: var(--color-gray)">
                                 Popular cities
                             </h3>
-
                             <!-- Cities -->
                             <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
                                 <!-- Mumbai -->
@@ -243,7 +334,6 @@
                                         class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mx-auto mb-3 sm:mb-4" />
                                     <h4 class="poppins-semibold text-[16px] sm:text-[18px] md:text-[20px]">Mumbai</h4>
                                 </div>
-
                                 <!-- Kolkata -->
                                 <div class="rounded-2xl p-4 sm:p-5 md:p-6 text-center cursor-pointer"
                                     style="background-color: var(--color-purple-light)">
@@ -251,7 +341,6 @@
                                         class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mx-auto mb-3 sm:mb-4" />
                                     <h4 class="poppins-semibold text-[16px] sm:text-[18px] md:text-[20px]">Kolkata</h4>
                                 </div>
-
                                 <!-- Bengaluru -->
                                 <div class="rounded-2xl p-4 sm:p-5 md:p-6 text-center cursor-pointer"
                                     style="background-color: var(--color-purple-light)">
@@ -260,7 +349,6 @@
                                     <h4 class="poppins-semibold text-[16px] sm:text-[18px] md:text-[20px]">Bengaluru
                                     </h4>
                                 </div>
-
                                 <!-- Chennai -->
                                 <div class="rounded-2xl p-4 sm:p-5 md:p-6 text-center cursor-pointer"
                                     style="background-color: var(--color-purple-light)">
@@ -268,7 +356,6 @@
                                         class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mx-auto mb-3 sm:mb-4" />
                                     <h4 class="poppins-semibold text-[16px] sm:text-[18px] md:text-[20px]">Chennai</h4>
                                 </div>
-
                                 <!-- Chandigarh -->
                                 <div class="rounded-2xl p-4 sm:p-5 md:p-6 text-center cursor-pointer"
                                     style="background-color: var(--color-purple-light)">
@@ -277,7 +364,6 @@
                                     <h4 class="poppins-semibold text-[16px] sm:text-[18px] md:text-[20px]">Chandigarh
                                     </h4>
                                 </div>
-
                                 <!-- Noida -->
                                 <div class="rounded-2xl p-4 sm:p-5 md:p-6 text-center cursor-pointer"
                                     style="background-color: var(--color-purple-light)">
@@ -285,7 +371,6 @@
                                         class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mx-auto mb-3 sm:mb-4" />
                                     <h4 class="poppins-semibold text-[16px] sm:text-[18px] md:text-[20px]">Noida</h4>
                                 </div>
-
                                 <!-- Kochi -->
                                 <div class="rounded-2xl p-4 sm:p-5 md:p-6 text-center cursor-pointer"
                                     style="background-color: var(--color-purple-light)">
@@ -293,7 +378,6 @@
                                         class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mx-auto mb-3 sm:mb-4" />
                                     <h4 class="poppins-semibold text-[16px] sm:text-[18px] md:text-[20px]">Kochi</h4>
                                 </div>
-
                                 <!-- Goa -->
                                 <div class="rounded-2xl p-4 sm:p-5 md:p-6 text-center cursor-pointer"
                                     style="background-color: var(--color-purple-light)">
@@ -301,7 +385,6 @@
                                         class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mx-auto mb-3 sm:mb-4" />
                                     <h4 class="poppins-semibold text-[16px] sm:text-[18px] md:text-[20px]">Goa</h4>
                                 </div>
-
                                 <!-- Delhi -->
                                 <div class="rounded-2xl p-4 sm:p-5 md:p-6 text-center cursor-pointer"
                                     style="background-color: var(--color-purple-light)">
@@ -309,7 +392,6 @@
                                         class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mx-auto mb-3 sm:mb-4" />
                                     <h4 class="poppins-semibold text-[16px] sm:text-[18px] md:text-[20px]">Delhi</h4>
                                 </div>
-
                                 <!-- Pune -->
                                 <div class="rounded-2xl p-4 sm:p-5 md:p-6 text-center cursor-pointer"
                                     style="background-color: var(--color-purple-light)">
@@ -322,14 +404,14 @@
                     </div>
 
                     <!-- Date -->
-                    <div class="relative w-full lg:max-w-[300px]">
+                    <div class="relative w-full">
                         <input type="date"
-                            class="w-full py-[14px] border-2 border-gray-300 rounded-xl px-4 outline-none focus:border-[var(--color-electric-600)]" />
+                            class="w-full h-[58px] px-4 border-2 border-[var(--color-border)] rounded-xl outline-none focus:border-[var(--color-electric-600)]" />
                     </div>
 
                     <!-- Button -->
                     <button type="submit"
-                        class="w-full lg:w-[204px] py-[14px] rounded-xl bg-[var(--color-electric-600)] hover:bg-[var(--color-electric-700)] text-white poppins-semibold text-base xl:text-xl transition-all duration-300">
+                        class="w-full h-[58px] xl:min-w-[200px] rounded-xl bg-[var(--color-electric-600)] hover:bg-[var(--color-electric-700)] text-white poppins-semibold text-base xl:text-xl transition-all duration-300">
                         Search Events
                     </button>
                 </form>
@@ -338,7 +420,7 @@
     </section>
 
     <!-- Categories Section -->
-    <section class="py-[100px]">
+    <section class="py-[50px]">
         <div class="container mx-auto">
             <div class="max-w-[1320px] mx-auto">
                 <!-- Swiper Container (categorySwiper) -->
@@ -395,7 +477,7 @@
                                 <img src="./images/workshops.png" alt="Workshops"
                                     class="w-[50px] h-[50px] object-contain" />
                                 <span class="poppins-regular text-base text-[var(--color-heading)]">
-                                    Workshops
+                                    Worksh<br>ops
                                 </span>
                             </a>
                         </div>
@@ -446,7 +528,7 @@
             <div class="max-w-[1320px] mx-auto">
                 <!-- Heading -->
                 <div class="flex items-center justify-between mb-10">
-                    <h2 class="oswald-bold text-[48px] leading-none text-[var(--color-heading)]">
+                    <h2 class="oswald-bold text-[40px] leading-none text-[var(--color-black)]">
                         Featured Events
                     </h2>
 
@@ -459,9 +541,9 @@
                 <div class="swiper featured-event-slider">
                     <div class="swiper-wrapper">
                         <!-- Card 1 -->
-                        <div class="swiper-slide !w-[322px]">
+                        <div class="swiper-slide !w-[312px]">
                             <div
-                                class="bg-white rounded-[20px] overflow-hidden shadow-[0px_6px_13px_-1px_rgba(0,0,0,0.25)]">
+                                class="bg-white rounded-[20px] overflow-hidden shadow-[4px_0px_0px_0px_rgba(0,0,0,0.08)]">
                                 <!-- Image -->
                                 <div class="relative">
                                     <a href=""><img src="./images/Image (20).png" alt=""
@@ -469,14 +551,14 @@
 
                                     <!-- Date -->
                                     <div
-                                        class="absolute top-4 left-4 w-[46px] h-[46px] rounded-lg bg-white flex flex-col items-center justify-center">
+                                        class="absolute top-4 left-4 w-[56px] h-[56px] rounded-lg bg-white flex flex-col items-center justify-center">
                                         <span
                                             class="poppins-semibold text-[12px] leading-none text-[var(--color-violetred-500)]">
                                             20
                                         </span>
 
                                         <span
-                                            class="poppins-medium text-[11px] leading-none text-[var(--color-electric-700)] mt-1 uppercase">
+                                            class="poppins-medium text-[11px] leading-none text-[var(--color-electric-700)] mt-2 uppercase">
                                             June
                                         </span>
                                     </div>
@@ -494,8 +576,8 @@
                                         Arijit Singh Live Concert
                                     </h3>
 
-                                    <div class="flex items-center gap-2 mb-5">
-                                        <i class="fa-solid fa-location-dot text-[12px] text-[var(--color-gray)]"></i>
+                                    <div class="flex items-center gap-2">
+                                        <i data-lucide="map-pinned" class="w-4 h-4 text-[var(--color-gray)]"></i>
 
                                         <span class="poppins-regular text-[16px] text-[var(--color-gray)]">
                                             DY Patil Stadium, Mumbai
@@ -505,12 +587,12 @@
                                     <!-- Bottom -->
                                     <div class="flex items-center justify-between">
                                         <div>
-                                            <span class="poppins-semibold text-[18px] text-[var(--color-heading)]">
+                                            <span class="poppins-semibold text-[20px] text-[var(--color-heading)]">
                                                 From
                                             </span>
 
                                             <span
-                                                class="poppins-bold text-[22px] text-[var(--color-electric-600)] ml-1">
+                                                class="poppins-bold text-[20px] text-[var(--color-electric-600)] ml-1">
                                                 ₹1,499
                                             </span>
                                         </div>
@@ -525,20 +607,20 @@
                         </div>
 
                         <!-- Card 2 -->
-                        <div class="swiper-slide !w-[322px]">
+                        <div class="swiper-slide !w-[312px]">
                             <div
-                                class="bg-white rounded-[20px] overflow-hidden shadow-[0px_6px_13px_-1px_rgba(0,0,0,0.15)]">
+                                class="bg-white rounded-[20px] overflow-hidden shadow-[4px_0px_0px_0px_rgba(0,0,0,0.08)]">
                                 <div class="relative">
                                     <a href="">
                                         <img src="./images/Image (21).png" alt=""
                                             class="w-full h-auto object-cover" /></a>
 
                                     <div
-                                        class="absolute top-4 left-4 w-[46px] h-[46px] rounded-lg bg-white flex flex-col items-center justify-center">
+                                        class="absolute top-4 left-4 w-[56px] h-[56px] rounded-lg bg-white flex flex-col items-center justify-center">
                                         <span
                                             class="poppins-semibold text-[12px] text-[var(--color-violetred-500)]">25</span>
                                         <span
-                                            class="poppins-medium text-[11px] text-[var(--color-electric-700)] uppercase">June</span>
+                                            class="poppins-medium text-[11px] text-[var(--color-electric-700)] uppercase mt-1">June</span>
                                     </div>
 
                                     <a href="#"
@@ -552,8 +634,8 @@
                                         Mumbai Indians vs CSK
                                     </h3>
 
-                                    <div class="flex items-center gap-2 mb-5">
-                                        <i class="fa-solid fa-location-dot text-[12px] text-[var(--color-gray)]"></i>
+                                    <div class="flex items-center gap-2">
+                                        <i data-lucide="map-pinned" class="w-4 h-4 text-[var(--color-gray)]"></i>
                                         <span class="poppins-regular text-[16px] text-[var(--color-gray)]">
                                             Nehru Stadium, Karnataka
                                         </span>
@@ -561,9 +643,9 @@
 
                                     <div class="flex items-center justify-between">
                                         <div>
-                                            <span class="poppins-semibold text-[18px]">From</span>
+                                            <span class="poppins-semibold text-[20px]">From</span>
                                             <span
-                                                class="poppins-bold text-[22px] text-[var(--color-electric-600)] ml-1">₹799</span>
+                                                class="poppins-bold text-[20px] text-[var(--color-electric-600)] ml-1">₹799</span>
                                         </div>
 
                                         <a href="#"
@@ -575,19 +657,19 @@
                             </div>
                         </div>
                         <!-- card 3 -->
-                        <div class="swiper-slide !w-[322px]">
+                        <div class="swiper-slide !w-[312px]">
                             <div
-                                class="bg-white rounded-[20px] overflow-hidden shadow-[0px_6px_13px_-1px_rgba(0,0,0,0.15)]">
+                                class="bg-white rounded-[20px] overflow-hidden shadow-[4px_0px_0px_0px_rgba(0,0,0,0.08)]">
                                 <div class="relative">
                                     <a href=""><img src="./images/Image (22).png" alt=""
                                             class="w-full h-auto object-cover" /></a>
 
                                     <div
-                                        class="absolute top-4 left-4 w-[46px] h-[46px] rounded-lg bg-white flex flex-col items-center justify-center">
+                                        class="absolute top-4 left-4 w-[56px] h-[56px] rounded-lg bg-white flex flex-col items-center justify-center">
                                         <span
                                             class="poppins-semibold text-[12px] text-[var(--color-violetred-500)]">29</span>
                                         <span
-                                            class="poppins-medium text-[11px] text-[var(--color-electric-700)] uppercase">June</span>
+                                            class="poppins-medium text-[11px] text-[var(--color-electric-700)] uppercase mt-1">June</span>
                                     </div>
 
                                     <a href="#"
@@ -597,12 +679,12 @@
                                 </div>
 
                                 <div class="p-5">
-                                    <h3 class="poppins-semibold text-[20px] text-[var(--color-heading)] mb-2">
+                                    <h3 class="poppins-semibold text-[20px] text-[var(--color-heading)] mb-1">
                                         Stand up comedy Night
                                     </h3>
 
-                                    <div class="flex items-center gap-2 mb-5">
-                                        <i class="fa-solid fa-location-dot text-[12px] text-[var(--color-gray)]"></i>
+                                    <div class="flex items-center gap-2">
+                                        <i data-lucide="map-pinned" class="w-4 h-4 text-[var(--color-gray)]"></i>
                                         <span class="poppins-regular text-[16px] text-[var(--color-gray)]">
                                             The comedy club, Pune
                                         </span>
@@ -610,9 +692,9 @@
 
                                     <div class="flex items-center justify-between">
                                         <div>
-                                            <span class="poppins-semibold text-[18px]">From</span>
+                                            <span class="poppins-semibold text-[20px]">From</span>
                                             <span
-                                                class="poppins-bold text-[22px] text-[var(--color-electric-600)] ml-1">₹1,999</span>
+                                                class="poppins-bold text-[20px] text-[var(--color-electric-600)] ml-1">₹1,999</span>
                                         </div>
 
                                         <a href="#"
@@ -626,17 +708,17 @@
                         <!-- card 4 -->
                         <div class="swiper-slide !w-[322px]">
                             <div
-                                class="bg-white rounded-[20px] overflow-hidden shadow-[0px_6px_13px_-1px_rgba(0,0,0,0.15)]">
+                                class="bg-white rounded-[20px] overflow-hidden shadow-[4px_0px_0px_0px_rgba(0,0,0,0.08)]">
                                 <div class="relative">
                                     <a href=""><img src="./images/Frame 1214.png" alt=""
                                             class="w-full h-auto object-cover" /></a>
 
                                     <div
-                                        class="absolute top-4 left-4 w-[46px] h-[46px] rounded-lg bg-white flex flex-col items-center justify-center">
+                                        class="absolute top-4 left-4 w-[56px] h-[56px] rounded-lg bg-white flex flex-col items-center justify-center">
                                         <span
                                             class="poppins-semibold text-[12px] text-[var(--color-violetred-500)]">5</span>
                                         <span
-                                            class="poppins-medium text-[11px] text-[var(--color-electric-700)] uppercase">July</span>
+                                            class="poppins-medium text-[11px] text-[var(--color-electric-700)] uppercase mt-1">July</span>
                                     </div>
 
                                     <a href="#"
@@ -650,8 +732,8 @@
                                         Canvas Painting workshop
                                     </h3>
 
-                                    <div class="flex items-center gap-2 mb-5">
-                                        <i class="fa-solid fa-location-dot text-[12px] text-[var(--color-gray)]"></i>
+                                    <div class="flex items-center gap-2">
+                                        <i data-lucide="map-pinned" class="w-4 h-4 text-[var(--color-gray)]"></i>
                                         <span class="poppins-regular text-[16px] text-[var(--color-gray)]">
                                             Art Studio, Bengaluru
                                         </span>
@@ -659,9 +741,9 @@
 
                                     <div class="flex items-center justify-between">
                                         <div>
-                                            <span class="poppins-semibold text-[18px]">From</span>
+                                            <span class="poppins-semibold text-[20px]">From</span>
                                             <span
-                                                class="poppins-bold text-[22px] text-[var(--color-electric-600)] ml-1">₹2,499</span>
+                                                class="poppins-bold text-[20px] text-[var(--color-electric-600)] ml-1">₹2,499</span>
                                         </div>
 
                                         <a href="#"
@@ -682,18 +764,29 @@
     <section class="mt-20">
         <div class="container">
             <div class="ticket-section relative overflow-hidden rounded-[40px]">
-                <!-- Left Scallop -->
-                <div class="hidden lg:flex absolute left-0 top-0 h-full flex-col justify-between -translate-x-1/2 z-20">
-                    <span class="w-16 h-16 rounded-full bg-white"></span>
-                    <span class="w-16 h-16 rounded-full bg-white"></span>
-                    <span class="w-16 h-16 rounded-full bg-white"></span>
-                    <span class="w-16 h-16 rounded-full bg-white"></span>
-                    <span class="w-16 h-16 rounded-full bg-white"></span>
-                    <span class="w-16 h-16 rounded-full bg-white"></span>
+                <!-- Mobile Top Scallop -->
+                <div class="flex md:hidden absolute top-0 left-0 right-0 justify-evenly -translate-y-1/2 z-20 px-5">
+                    <span class="w-6 h-6 rounded-full bg-white"></span>
+                    <span class="w-6 h-6 rounded-full bg-white"></span>
+                    <span class="w-6 h-6 rounded-full bg-white"></span>
+                    <span class="w-6 h-6 rounded-full bg-white"></span>
+                    <span class="w-6 h-6 rounded-full bg-white"></span>
+                    <span class="w-6 h-6 rounded-full bg-white"></span>
+                </div>
+
+                <!-- Tablet & Desktop Left Scallop -->
+                <div
+                    class="hidden md:flex absolute left-0 top-0 h-full flex-col justify-evenly -translate-x-1/2 z-20 py-4 lg:py-6">
+                    <span class="w-8 h-8 lg:w-10 lg:h-10 xl:w-16 xl:h-16 rounded-full bg-white"></span>
+                    <span class="w-8 h-8 lg:w-10 lg:h-10 xl:w-16 xl:h-16 rounded-full bg-white"></span>
+                    <span class="w-8 h-8 lg:w-10 lg:h-10 xl:w-16 xl:h-16 rounded-full bg-white"></span>
+                    <span class="w-8 h-8 lg:w-10 lg:h-10 xl:w-16 xl:h-16 rounded-full bg-white"></span>
+                    <span class="w-8 h-8 lg:w-10 lg:h-10 xl:w-16 xl:h-16 rounded-full bg-white"></span>
+                    <span class="w-8 h-8 lg:w-10 lg:h-10 xl:w-16 xl:h-16 rounded-full bg-white"></span>
                 </div>
 
                 <div
-                    class="grid grid-cols-1 md:grid-cols-[1fr_320px] lg:grid-cols-[1fr_420px] gap-8 lg:gap-12 p-6 md:p-8 lg:p-12 items-center">
+                    class="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_280px] lg:grid-cols-[minmax(0,1fr)_360px] xl:grid-cols-[minmax(0,1fr)_420px] gap-6 md:gap-8 lg:gap-10 xl:gap-12 p-5 sm:p-6 md:p-8 lg:p-10 xl:p-12 items-center">
                     <!-- LEFT -->
                     <div>
                         <!-- Countdown -->
@@ -806,11 +899,12 @@
                     <!-- RIGHT -->
                     <div class="relative">
                         <div
-                            class="hidden lg:block absolute -left-8 top-0 bottom-0 border-l-[8px] border-dashed border-white/70">
+                            class="hidden md:block absolute -left-5 lg:-left-8 top-2 bottom-2 border-l-4 lg:border-l-[8px] border-dashed border-white/70">
                         </div>
 
                         <img src="./images/t-img.png"
-                            class="rounded-2xl w-full h-[250px] md:h-[320px] lg:h-[360px] object-cover" alt="" />
+                            class="rounded-2xl w-full aspect-[4/5] md:aspect-[3/4] lg:aspect-[7/8] max-h-[420px] object-cover"
+                            alt="" />
 
                         <button
                             class="btn-type-1 mt-6 lg:mt-8 w-full justify-center flex items-center gap-5 lg:gap-8 px-6 lg:px-10 py-4 lg:py-5 text-[20px] md:text-[24px] lg:text-[28px]">
@@ -832,17 +926,17 @@
         <div class="container mx-auto px-4">
             <div class="max-w-[1320px] mx-auto">
                 <!-- Heading -->
-                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 lg:gap-8 mb-6 lg:mb-10">
+                <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-8 xl:gap-12 mb-8 lg:mb-12">
                     <!-- Left Content -->
                     <h2
-                        class="oswald-semibold text-[36px] sm:text-[44px] md:text-[52px] lg:text-[64px] leading-[120%] lg:leading-[70px] max-w-[600px] lg:shrink-0 text-[var(--color-black)]">
+                        class="oswald-semibold text-[clamp(2.25rem,5vw,4rem)] leading-[1.1] max-w-[650px] text-[var(--color-black)]">
                         Watch the Biggest Releases
                     </h2>
 
                     <!-- Right Content -->
-                    <div class="right-content lg:shrink-0">
+                    <div class="right-content max-w-[635px] xl:max-w-[635px] xl:flex-shrink-0">
                         <p
-                            class="poppins-medium block leading-[26px] sm:leading-[30px] lg:leading-[32px] max-w-[600px] mb-6">
+                            class="poppins-medium text-[15px] md:text-[16px] lg:text-[20px] leading-7 md:leading-8 max-w-full mb-6">
                             Discover why Meetzi is more than just another event — it’s
                             where innovation, art, and technology collide.
                         </p>
@@ -855,22 +949,20 @@
                 </div>
 
                 <!-- Cards -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8 items-stretch">
                     <!-- Card 1 -->
-                    <div class="bg-black rounded-[20px] p-3 group">
-                        <h3
-                            class="oswald-semibold text-[28px] sm:text-[32px] lg:text-[40px] leading-[130%] lg:leading-[60px] text-white max-w-[400px] mb-6">
+                    <div class="bg-black rounded-[20px] p-5 group flex flex-col h-full">
+                        <h3 class="oswald-semibold text-[clamp(1.8rem,3vw,2.5rem)] leading-[1.25] text-white mb-6">
                             5 Things to Know Before Attending 2025
                         </h3>
 
-                        <div class="flex justify-end mb-8">
+                        <div class="flex justify-center md:justify-end mb-8 flex-1 items-center">
                             <img src="images/movie-poster(1).png" alt=""
-                                class="w-[160px] h-[160px] md:w-[140px] md:h-[140px] lg:w-[160px] lg:h-[160px] object-cover transition-all duration-500 ease-in-out group-hover:scale-110" />
+                                class="w-[130px] h-[130px] sm:w-[145px] sm:h-[145px] lg:w-[160px] lg:h-[160px] object-contain transition-all duration-500 ease-in-out group-hover:scale-110" />
                         </div>
 
-                        <div class="flex justify-center">
-                            <a href="#"
-                                class="inline-flex items-center rounded-full bg-[var(--color-violetred-600)] px-2 py-2">
+                        <div class="flex justify-center mt-auto pt-2">
+                            <a href="#" class="inline-flex items-center rounded-full btn-type-1 px-2 py-2">
                                 <span class="poppins-medium text-white text-[16px] lg:text-[18px] px-4 lg:px-5">
                                     View Details
                                 </span>
@@ -883,20 +975,18 @@
                     </div>
 
                     <!-- Card 2 -->
-                    <div class="bg-black rounded-[20px] p-5 group">
-                        <h3
-                            class="oswald-semibold text-[28px] sm:text-[32px] lg:text-[40px] leading-[130%] lg:leading-[60px] text-white max-w-[400px] mb-6">
+                    <div class="bg-black rounded-[20px] p-5 group flex flex-col h-full">
+                        <h3 class="oswald-semibold text-[clamp(1.8rem,3vw,2.5rem)] leading-[1.25] text-white mb-6">
                             Meet the Creative Minds Behind 2025
                         </h3>
 
-                        <div class="flex justify-end mb-8">
+                        <div class="flex justify-center md:justify-end mb-8 flex-1 items-center">
                             <img src="images/movie-poster(2).png" alt=""
-                                class="w-[160px] h-[160px] md:w-[140px] md:h-[140px] lg:w-[160px] lg:h-[160px] object-cover transition-all duration-500 ease-in-out group-hover:scale-110" />
+                                class="w-[130px] h-[130px] sm:w-[145px] sm:h-[145px] lg:w-[160px] lg:h-[160px] object-contain transition-all duration-500 ease-in-out group-hover:scale-110" />
                         </div>
 
-                        <div class="flex justify-center">
-                            <a href="#"
-                                class="inline-flex items-center rounded-full bg-[var(--color-violetred-600)] px-2 py-2">
+                        <div class="flex justify-center mt-auto pt-2">
+                            <a href="#" class="inline-flex items-center rounded-full btn-type-1 px-2 py-2">
                                 <span class="poppins-medium text-white text-[16px] lg:text-[18px] px-4 lg:px-5">
                                     View Details
                                 </span>
@@ -909,20 +999,18 @@
                     </div>
 
                     <!-- Card 3 -->
-                    <div class="bg-black rounded-[20px] p-5 group sm:col-span-2 lg:col-span-1">
-                        <h3
-                            class="oswald-semibold text-[28px] sm:text-[32px] lg:text-[40px] leading-[130%] lg:leading-[60px] text-white max-w-[400px] mb-6">
+                    <div class="bg-black rounded-[20px] p-5 group flex flex-col h-full md:col-span-2 xl:col-span-1">
+                        <h3 class="oswald-semibold text-[clamp(1.8rem,3vw,2.5rem)] leading-[1.25] text-white mb-6">
                             Why Eventara Is the Must-Attend Event
                         </h3>
 
-                        <div class="flex justify-end mb-8">
+                        <div class="flex justify-center md:justify-end mb-8 flex-1 items-center">
                             <img src="images/movie-poster(3).png" alt=""
-                                class="w-[160px] h-[160px] md:w-[140px] md:h-[140px] lg:w-[160px] lg:h-[160px] object-cover transition-all duration-500 ease-in-out group-hover:scale-110" />
+                                class="w-[130px] h-[130px] sm:w-[145px] sm:h-[145px] lg:w-[160px] lg:h-[160px] object-contain transition-all duration-500 ease-in-out group-hover:scale-110" />
                         </div>
 
-                        <div class="flex justify-center">
-                            <a href="#"
-                                class="inline-flex items-center rounded-full bg-[var(--color-violetred-600)] px-2 py-2">
+                        <div class="flex justify-center mt-auto pt-2">
+                            <a href="#" class="inline-flex items-center rounded-full btn-type-1 px-2 py-2">
                                 <span class="poppins-medium text-white text-[16px] lg:text-[18px] px-4 lg:px-5">
                                     View Details
                                 </span>
@@ -954,9 +1042,9 @@
                 <div class="swiper featured-event-slider">
                     <div class="swiper-wrapper">
                         <!-- Card 1 -->
-                        <div class="swiper-slide !w-[280px] sm:!w-[322px]">
+                        <div class="swiper-slide !w-[280px] sm:!w-[312px]">
                             <div
-                                class="bg-white rounded-[20px] overflow-hidden shadow-[0px_6px_13px_-1px_rgba(0,0,0,0.25)]">
+                                class="bg-white rounded-[20px] overflow-hidden shadow-[4px_0px_0px_0px_rgba(0,0,0,0.08)]">
                                 <!-- Image -->
                                 <div class="relative">
                                     <a href=""><img src="./images/popular events (1).png" alt=""
@@ -964,14 +1052,14 @@
 
                                     <!-- Date -->
                                     <div
-                                        class="absolute top-4 left-4 w-[46px] h-[46px] rounded-lg bg-white flex flex-col items-center justify-center">
+                                        class="absolute top-4 left-4 w-[56px] h-[56px] rounded-lg bg-white flex flex-col items-center justify-center">
                                         <span
                                             class="poppins-semibold text-[12px] leading-none text-[var(--color-violetred-500)]">
                                             20
                                         </span>
 
                                         <span
-                                            class="poppins-medium text-[11px] leading-none text-[var(--color-electric-700)] mt-1 uppercase">
+                                            class="poppins-medium text-[11px] leading-none text-[var(--color-electric-700)] mt-2 uppercase">
                                             June
                                         </span>
                                     </div>
@@ -990,8 +1078,8 @@
                                         Kisi Ko Batana Mat Ft. Anubhav Singh Bassi
                                     </h3>
 
-                                    <div class="flex items-center gap-2 mb-5">
-                                        <i class="fa-solid fa-location-dot text-[12px] text-[var(--color-gray)]"></i>
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <i data-lucide="map-pinned" class="w-4 h-4 text-[var(--color-gray)]"></i>
 
                                         <span class="poppins-regular text-[16px] text-[var(--color-gray)]">
                                             Deep Smriti Auditorium: Jaipur
@@ -999,14 +1087,14 @@
                                     </div>
 
                                     <!-- Bottom -->
-                                    <div class="flex items-center justify-between mt-auto">
+                                    <div class="flex items-center justify-between">
                                         <div>
-                                            <span class="poppins-semibold text-[18px] text-[var(--color-heading)]">
+                                            <span class="poppins-semibold text-[20px] text-[var(--color-heading)]">
                                                 From
                                             </span>
 
                                             <span
-                                                class="poppins-bold text-[22px] text-[var(--color-electric-600)] ml-1">
+                                                class="poppins-bold text-[20px] text-[var(--color-electric-600)] ml-1">
                                                 ₹1,499
                                             </span>
                                         </div>
@@ -1021,20 +1109,20 @@
                         </div>
 
                         <!-- Card 2 -->
-                        <div class="swiper-slide !w-[280px] sm:!w-[322px]">
+                        <div class="swiper-slide !w-[280px] sm:!w-[312px]">
                             <div
-                                class="bg-white rounded-[20px] overflow-hidden shadow-[0px_6px_13px_-1px_rgba(0,0,0,0.15)]">
+                                class="bg-white rounded-[20px] overflow-hidden shadow-[4px_0px_0px_0px_rgba(0,0,0,0.08)]">
                                 <div class="relative">
                                     <a href="">
                                         <img src="./images/popular events (2).png" alt=""
                                             class="w-full h-auto object-cover" /></a>
 
                                     <div
-                                        class="absolute top-4 left-4 w-[46px] h-[46px] rounded-lg bg-white flex flex-col items-center justify-center">
+                                        class="absolute top-4 left-4 w-[56px] h-[56px] rounded-lg bg-white flex flex-col items-center justify-center">
                                         <span
                                             class="poppins-semibold text-[12px] text-[var(--color-violetred-500)]">25</span>
                                         <span
-                                            class="poppins-medium text-[11px] text-[var(--color-electric-700)] uppercase">June</span>
+                                            class="poppins-medium text-[11px] text-[var(--color-electric-700)] mt-1 uppercase">June</span>
                                     </div>
 
                                     <a href="#"
@@ -1049,18 +1137,18 @@
                                         Gaane Fusione Season 4 - Burmania
                                     </h3>
 
-                                    <div class="flex items-center gap-2 mb-5">
-                                        <i class="fa-solid fa-location-dot text-[12px] text-[var(--color-gray)]"></i>
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <i data-lucide="map-pinned" class="w-4 h-4 text-[var(--color-gray)]"></i>
                                         <span class="poppins-regular text-[16px] text-[var(--color-gray)]">
                                             Southern Avenue, Kolkata
                                         </span>
                                     </div>
 
-                                    <div class="flex items-center justify-between mt-auto">
+                                    <div class="flex items-center justify-between">
                                         <div>
-                                            <span class="poppins-semibold text-[18px]">From</span>
+                                            <span class="poppins-semibold text-[20px]">From</span>
                                             <span
-                                                class="poppins-bold text-[22px] text-[var(--color-electric-600)] ml-1">₹799</span>
+                                                class="poppins-bold text-[20px] text-[var(--color-electric-600)] ml-1">₹799</span>
                                         </div>
 
                                         <a href="#"
@@ -1072,19 +1160,19 @@
                             </div>
                         </div>
                         <!-- card 3 -->
-                        <div class="swiper-slide !w-[280px] sm:!w-[322px]">
+                        <div class="swiper-slide !w-[280px] sm:!w-[312px]">
                             <div
-                                class="bg-white rounded-[20px] overflow-hidden shadow-[0px_6px_13px_-1px_rgba(0,0,0,0.15)]">
+                                class="bg-white rounded-[20px] overflow-hidden shadow-[4px_0px_0px_0px_rgba(0,0,0,0.08)]">
                                 <div class="relative">
                                     <a href=""><img src="./images/popular events (3).png" alt=""
                                             class="w-full h-auto object-cover" /></a>
 
                                     <div
-                                        class="absolute top-4 left-4 w-[46px] h-[46px] rounded-lg bg-white flex flex-col items-center justify-center">
+                                        class="absolute top-4 left-4 w-[56px] h-[56px] rounded-lg bg-white flex flex-col items-center justify-center">
                                         <span
                                             class="poppins-semibold text-[12px] text-[var(--color-violetred-500)]">29</span>
                                         <span
-                                            class="poppins-medium text-[11px] text-[var(--color-electric-700)] uppercase">June</span>
+                                            class="poppins-medium text-[11px] text-[var(--color-electric-700)] mt-1 uppercase">June</span>
                                     </div>
 
                                     <a href="#"
@@ -1099,18 +1187,18 @@
                                         Bollywood Banger Ft. Dj Black
                                     </h3>
 
-                                    <div class="flex items-center gap-2 mb-5">
-                                        <i class="fa-solid fa-location-dot text-[12px] text-[var(--color-gray)]"></i>
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <i data-lucide="map-pinned" class="w-4 h-4 text-[var(--color-gray)]"></i>
                                         <span class="poppins-regular text-[16px] text-[var(--color-gray)]">
                                             The Lalit Great Eastern: Kolkata
                                         </span>
                                     </div>
 
-                                    <div class="flex items-center justify-between mt-auto">
+                                    <div class="flex items-center justify-between">
                                         <div>
-                                            <span class="poppins-semibold text-[18px]">From</span>
+                                            <span class="poppins-semibold text-[20px]">From</span>
                                             <span
-                                                class="poppins-bold text-[22px] text-[var(--color-electric-600)] ml-1">₹1,999</span>
+                                                class="poppins-bold text-[20px] text-[var(--color-electric-600)] ml-1">₹1,999</span>
                                         </div>
 
                                         <a href="#"
@@ -1124,17 +1212,17 @@
                         <!-- card 4 -->
                         <div class="swiper-slide !w-[280px] sm:!w-[322px]">
                             <div
-                                class="bg-white rounded-[20px] overflow-hidden shadow-[0px_6px_13px_-1px_rgba(0,0,0,0.15)]">
+                                class="bg-white rounded-[20px] overflow-hidden shadow-[4px_0px_0px_0px_rgba(0,0,0,0.08)]">
                                 <div class="relative">
                                     <a href=""><img src="./images/popular events (4).png" alt=""
                                             class="w-full h-auto object-cover" /></a>
 
                                     <div
-                                        class="absolute top-4 left-4 w-[46px] h-[46px] rounded-lg bg-white flex flex-col items-center justify-center">
+                                        class="absolute top-4 left-4 w-[56px] h-[56px] rounded-lg bg-white flex flex-col items-center justify-center">
                                         <span
                                             class="poppins-semibold text-[12px] text-[var(--color-violetred-500)]">5</span>
                                         <span
-                                            class="poppins-medium text-[11px] text-[var(--color-electric-700)] uppercase">July</span>
+                                            class="poppins-medium text-[11px] text-[var(--color-electric-700)] mt-1 uppercase">July</span>
                                     </div>
 
                                     <a href="#"
@@ -1149,18 +1237,18 @@
                                         Sun Burn Festival with Bollywood
                                     </h3>
 
-                                    <div class="flex items-center gap-2 mb-5">
-                                        <i class="fa-solid fa-location-dot text-[12px] text-[var(--color-gray)]"></i>
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <i data-lucide="map-pinned" class="w-4 h-4 text-[var(--color-gray)]"></i>
                                         <span class="poppins-regular text-[16px] text-[var(--color-gray)]">
                                             Art Studio, Bengaluru
                                         </span>
                                     </div>
 
-                                    <div class="flex items-center justify-between mt-auto">
+                                    <div class="flex items-center justify-between">
                                         <div>
-                                            <span class="poppins-semibold text-[18px]">From</span>
+                                            <span class="poppins-semibold text-[20px]">From</span>
                                             <span
-                                                class="poppins-bold text-[22px] text-[var(--color-electric-600)] ml-1">₹2,499</span>
+                                                class="poppins-bold text-[20px] text-[var(--color-electric-600)] ml-1">₹2,499</span>
                                         </div>
 
                                         <a href="#"
@@ -1180,8 +1268,8 @@
 
     <!-- Inspiring Minds Section -->
     <section class="w-full py-12 md:py-20 lg:py-[100px]">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-[1320px] mx-auto">
+        <div class=" mx-auto px-4 sm:px-6 lg:px-8">
+            <div class=" max-w-[1920px] mx-auto">
                 <!-- Heading -->
                 <div class="text-center mb-8 md:mb-16">
                     <h2
@@ -1195,28 +1283,35 @@
                 <div>
                     <!-- Card 1 -->
                     <div
-                        class="inspiring-card group grid grid-cols-1 lg:grid-cols-[380px_300px_1fr] xl:grid-cols-[420px_300px_1fr] items-start gap-x-8 lg:gap-x-12 xl:gap-x-16 gap-y-8 py-6 md:py-8 border-b-2 border-[var(--color-border)]">
+                        class="inspiring-card group grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] items-center gap-x-8 lg:gap-x-12 xl:gap-x-14 2xl:gap-x-14 gap-y-8 py-6 md:py-8 border-b-2 border-[var(--color-border)]">
+
                         <!-- Date -->
-                        <div class="flex items-center justify-center lg:justify-start gap-4 sm:gap-6 md:gap-10">
-                            <h3 class="poppins-medium text-[28px] sm:text-[34px] md:text-[40px] whitespace-nowrap">
-                                April 15
+                        <div
+                            class="flex flex-col xl:flex-row items-center lg:items-center lg:justify-start gap-2 sm:gap-6 h-full">
+                            <h3
+                                class="poppins-medium text-[28px] sm:text-[34px] md:text-[40px]  leading-none xl:w-[290px]">
+                                September 15
                             </h3>
 
                             <p
-                                class="oswald-regular text-[16px] sm:text-[20px] md:text-[24px] text-[var(--color-gray)] whitespace-nowrap">
+                                class="oswald-regular text-[16px] sm:text-[20px] md:text-[24px] text-[var(--color-gray)] whitespace-nowrap leading-none">
+
                                 Thursday - 7:00 pm
+
                             </p>
+
                         </div>
 
                         <!-- Image -->
                         <div
-                            class="w-full max-w-[300px] aspect-square lg:w-[300px] lg:h-[300px] overflow-hidden rounded-[20px] mx-auto lg:mx-0">
+                            class="aspect-square w-[clamp(280px,20vw,500px)] overflow-hidden rounded-[20px] mx-auto flex justify-center items-center">
                             <img src="images/Inspiring image (1).jpg" alt=""
                                 class="w-full h-full object-cover blur-md group-hover:blur-0 transition-all duration-500" />
                         </div>
 
                         <!-- Content -->
-                        <div class="w-full max-w-xl lg:max-w-[380px] mx-auto lg:mx-0 text-center lg:text-left">
+                        <div
+                            class="w-full max-w-[568px] mx-auto lg:ml-auto lg:mr-0 text-center lg:text-left flex flex-col justify-center h-full">
                             <h3
                                 class="oswald-semibold text-[28px] sm:text-[34px] md:text-[40px] text-[var(--color-black)] mb-2 md:mb-3">
                                 Daniel Kwon
@@ -1238,28 +1333,34 @@
 
                     <!-- Card 2 -->
                     <div
-                        class="inspiring-card group grid grid-cols-1 lg:grid-cols-[380px_300px_1fr] xl:grid-cols-[420px_300px_1fr] items-start gap-x-8 lg:gap-x-12 xl:gap-x-16 gap-y-8 py-6 md:py-8 border-b-2 border-[var(--color-border)]">
+                        class="inspiring-card group grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] items-center gap-x-8 lg:gap-x-12 xl:gap-x-16 gap-y-8 py-6 md:py-8 border-b-2 border-[var(--color-border)]">
                         <!-- Date -->
-                        <div class="flex items-center justify-center lg:justify-start gap-4 sm:gap-6 md:gap-10">
-                            <h3 class="poppins-medium text-[28px] sm:text-[34px] md:text-[40px] whitespace-nowrap">
-                                April 16
+                        <div
+                            class="flex flex-col xl:flex-row items-center lg:items-center lg:justify-start gap-2 sm:gap-6 h-full">
+                            <h3
+                                class="poppins-medium text-[28px] sm:text-[34px] md:text-[40px]  leading-none xl:w-[290px]">
+                                August 15
                             </h3>
 
                             <p
-                                class="oswald-regular text-[16px] sm:text-[20px] md:text-[24px] text-[var(--color-gray)] whitespace-nowrap">
-                                Friday - 2:00 pm
+                                class="oswald-regular text-[16px] sm:text-[20px] md:text-[24px] text-[var(--color-gray)] whitespace-nowrap leading-none">
+
+                                Thursday - 7:00 pm
+
                             </p>
+
                         </div>
 
                         <!-- Image -->
                         <div
-                            class="w-full max-w-[300px] aspect-square lg:w-[300px] lg:h-[300px] overflow-hidden rounded-[20px] mx-auto lg:mx-0">
+                            class="aspect-square w-[clamp(280px,20vw,500px)] overflow-hidden rounded-[20px] mx-auto flex justify-center items-center">
                             <img src="images/Inspiring image (2).jpg" alt=""
                                 class="w-full h-full object-cover blur-md group-hover:blur-0 transition-all duration-500" />
                         </div>
 
                         <!-- Content -->
-                        <div class="w-full max-w-xl lg:max-w-[380px] mx-auto lg:mx-0 text-center lg:text-left">
+                        <div
+                            class="w-full max-w-[568px] mx-auto lg:ml-auto lg:mr-0 text-center lg:text-left flex flex-col justify-center h-full">
                             <h3
                                 class="oswald-semibold text-[28px] sm:text-[34px] md:text-[40px] text-[var(--color-black)] mb-2 md:mb-3">
                                 Jacob Jones
@@ -1280,28 +1381,34 @@
 
                     <!-- Card 3 -->
                     <div
-                        class="inspiring-card group grid grid-cols-1 lg:grid-cols-[380px_300px_1fr] xl:grid-cols-[420px_300px_1fr] items-start gap-x-8 lg:gap-x-12 xl:gap-x-16 gap-y-8 py-6 md:py-8 border-b-2 border-[var(--color-border)]">
+                        class="inspiring-card group grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] items-center gap-x-8 lg:gap-x-12 xl:gap-x-16 gap-y-8 py-6 md:py-8 border-b-2 border-[var(--color-border)]">
                         <!-- Date -->
-                        <div class="flex items-center justify-center lg:justify-start gap-4 sm:gap-6 md:gap-10">
-                            <h3 class="poppins-medium text-[28px] sm:text-[34px] md:text-[40px] whitespace-nowrap">
-                                May 18
+                        <div
+                            class="flex flex-col xl:flex-row items-center lg:items-center lg:justify-start gap-2 sm:gap-6 h-full">
+                            <h3
+                                class="poppins-medium text-[28px] sm:text-[34px] md:text-[40px] leading-none xl:w-[290px]">
+                                August 15
                             </h3>
 
                             <p
-                                class="oswald-regular text-[16px] sm:text-[20px] md:text-[24px] text-[var(--color-gray)] whitespace-nowrap">
-                                Thursday - 9:00 pm
+                                class="oswald-regular text-[16px] sm:text-[20px] md:text-[24px] text-[var(--color-gray)] whitespace-nowrap leading-none">
+
+                                Thursday - 7:00 pm
+
                             </p>
+
                         </div>
 
                         <!-- Image -->
                         <div
-                            class="w-full max-w-[300px] aspect-square lg:w-[300px] lg:h-[300px] overflow-hidden rounded-[20px] mx-auto lg:mx-0">
+                            class="aspect-square w-[clamp(280px,20vw,500px)] overflow-hidden rounded-[20px] mx-auto flex justify-center items-center">
                             <img src="images/Inspiring image (3).jpg" alt=""
                                 class="w-full h-full object-cover blur-md group-hover:blur-0 transition-all duration-500" />
                         </div>
 
                         <!-- Content -->
-                        <div class="w-full max-w-xl lg:max-w-[380px] mx-auto lg:mx-0 text-center lg:text-left">
+                        <div
+                            class="w-full max-w-[568px] mx-auto lg:ml-auto lg:mr-0 text-center lg:text-left flex flex-col justify-center h-full">
                             <h3
                                 class="oswald-semibold text-[28px] sm:text-[34px] md:text-[40px] text-[var(--color-black)] mb-2 md:mb-3">
                                 Ralph Edwards
@@ -1322,28 +1429,34 @@
 
                     <!-- Card 4 -->
                     <div
-                        class="inspiring-card group grid grid-cols-1 lg:grid-cols-[380px_300px_1fr] xl:grid-cols-[420px_300px_1fr] items-start gap-x-8 lg:gap-x-12 xl:gap-x-16 gap-y-8 py-6 md:py-8 border-b-2 border-[var(--color-border)]">
+                        class="inspiring-card group grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] items-center gap-x-8 lg:gap-x-12 xl:gap-x-16 gap-y-8 py-6 md:py-8 border-b-2 border-[var(--color-border)]">
                         <!-- Date -->
-                        <div class="flex items-center justify-center lg:justify-start gap-4 sm:gap-6 md:gap-10">
-                            <h3 class="poppins-medium text-[28px] sm:text-[34px] md:text-[40px] whitespace-nowrap">
-                                June 10
+                        <div
+                            class="flex flex-col xl:flex-row items-center lg:items-center lg:justify-start gap-2 sm:gap-6 h-full">
+                            <h3
+                                class="poppins-medium text-[28px] sm:text-[34px] md:text-[40px] xl:w-[290px] leading-none">
+                                August 15
                             </h3>
 
                             <p
-                                class="oswald-regular text-[16px] sm:text-[20px] md:text-[24px] text-[var(--color-gray)] whitespace-nowrap">
-                                Thursday - 10:00 pm
+                                class="oswald-regular text-[16px] sm:text-[20px] md:text-[24px] text-[var(--color-gray)] whitespace-nowrap leading-none">
+
+                                Thursday - 7:00 pm
+
                             </p>
+
                         </div>
 
                         <!-- Image -->
                         <div
-                            class="w-full max-w-[300px] aspect-square lg:w-[300px] lg:h-[300px] overflow-hidden rounded-[20px] mx-auto lg:mx-0">
+                            class="aspect-square w-[clamp(280px,20vw,500px)] overflow-hidden rounded-[20px] mx-auto flex justify-center items-center">
                             <img src="images/Inspiring image (4).jpg" alt=""
                                 class="w-full h-full object-cover blur-md group-hover:blur-0 transition-all duration-500" />
                         </div>
 
                         <!-- Content -->
-                        <div class="w-full max-w-xl lg:max-w-[380px] mx-auto lg:mx-0 text-center lg:text-left">
+                        <div
+                            class="w-full max-w-[568px] mx-auto lg:ml-auto lg:mr-0 text-center lg:text-left flex flex-col justify-center h-full">
                             <h3
                                 class="oswald-semibold text-[28px] sm:text-[34px] md:text-[40px] text-[var(--color-black)] mb-2 md:mb-3">
                                 Leon Carter
@@ -1362,18 +1475,84 @@
                     </div>
 
                     <!-- See all speakers Button -->
-                    <div class="flex justify-center mt-7">
-                        <a href="#"
-                            class="inline-flex items-center rounded-full bg-[var(--color-violetred-600)] px-2 py-2">
-                            <span class="poppins-medium text-white text-[18px] px-5">
-                                See all speakers
-                            </span>
+                    <div class="w-full flex justify-center mt-7">
+    <a href="#"
+        class="inline-flex items-center rounded-full bg-[var(--color-violetred-600)] px-2 py-2">
+        <span class="poppins-medium text-white text-[18px] px-5">
+            See all speakers
+        </span>
 
-                            <span class="w-10 h-10 rounded-full bg-white flex items-center justify-center">
-                                <i class="fa-solid fa-chevron-right text-[14px] text-[var(--color-heading)]"></i>
-                            </span>
-                        </a>
-                    </div>
+        <span class="w-10 h-10 rounded-full bg-white flex items-center justify-center">
+            <i class="fa-solid fa-chevron-right text-[14px] text-[var(--color-heading)]"></i>
+        </span>
+    </a>
+</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Moments Gallery -->
+    <section class="py-2 overflow-hidden bg-white">
+        <div class="text-center mb-14">
+            <h2 class="oswald-semibold text-[36px] md:text-[44px] lg:text-[64px]">
+                Moments That <br />
+                Made Memories
+            </h2>
+        </div>
+
+        <div class="overflow-hidden">
+            <div class="flex gallery-track gap-5">
+                <!-- First Set -->
+                <div class="shrink-0 w-[180px] sm:w-[220px] md:w-[260px] lg:w-[300px] rounded-3xl overflow-hidden">
+                    <img src="./images/moment-1.png"
+                        class="w-full h-[340px] object-cover hover:scale-110 transition duration-500" />
+                </div>
+
+                <div class="shrink-0 w-[180px] sm:w-[220px] md:w-[260px] lg:w-[300px] rounded-3xl overflow-hidden">
+                    <img src="./images/moment-2.png"
+                        class="w-full h-[340px] object-cover hover:scale-110 transition duration-500" />
+                </div>
+
+                <div class="shrink-0 w-[180px] sm:w-[220px] md:w-[260px] lg:w-[300px] rounded-3xl overflow-hidden">
+                    <img src="./images/moment-3.png"
+                        class="w-full h-[340px] object-cover hover:scale-110 transition duration-500" />
+                </div>
+
+                <div class="shrink-0 w-[180px] sm:w-[220px] md:w-[260px] lg:w-[300px] rounded-3xl overflow-hidden">
+                    <img src="./images/moment-4.png"
+                        class="w-full h-[340px] object-cover hover:scale-110 transition duration-500" />
+                </div>
+
+                <div class="shrink-0 w-[180px] sm:w-[220px] md:w-[260px] lg:w-[300px] rounded-3xl overflow-hidden">
+                    <img src="./images/moment-5.png"
+                        class="w-full h-[340px] object-cover hover:scale-110 transition duration-500" />
+                </div>
+
+                <!-- Duplicate Set -->
+                <div class="shrink-0 w-[180px] sm:w-[220px] md:w-[260px] lg:w-[300px] rounded-3xl overflow-hidden">
+                    <img src="./images/moment-1.png"
+                        class="w-full h-[340px] object-cover hover:scale-110 transition duration-500" />
+                </div>
+
+                <div class="shrink-0 w-[180px] sm:w-[220px] md:w-[260px] lg:w-[300px] rounded-3xl overflow-hidden">
+                    <img src="./images/moment-2.png"
+                        class="w-full h-[340px] object-cover hover:scale-110 transition duration-500" />
+                </div>
+
+                <div class="shrink-0 w-[180px] sm:w-[220px] md:w-[260px] lg:w-[300px] rounded-3xl overflow-hidden">
+                    <img src="./images/moment-3.png"
+                        class="w-full h-[340px] object-cover hover:scale-110 transition duration-500" />
+                </div>
+
+                <div class="shrink-0 w-[180px] sm:w-[220px] md:w-[260px] lg:w-[300px] rounded-3xl overflow-hidden">
+                    <img src="./images/moment-4.png"
+                        class="w-full h-[340px] object-cover hover:scale-110 transition duration-500" />
+                </div>
+
+                <div class="shrink-0 w-[180px] sm:w-[220px] md:w-[260px] lg:w-[300px] rounded-3xl overflow-hidden">
+                    <img src="./images/moment-5.png"
+                        class="w-full h-[340px] object-cover hover:scale-110 transition duration-500" />
                 </div>
             </div>
         </div>
@@ -1510,73 +1689,6 @@
                                 class="fa-solid fa-chevron-right text-[12px] md:text-[16px] text-[var(--color-electric-blue)]"></i>
                         </span>
                     </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Moments Gallery -->
-    <section class="py-2 overflow-hidden bg-white">
-        <div class="text-center mb-14">
-            <h2 class="oswald-semibold text-[36px] md:text-[44px] lg:text-[64px]">
-                Moments That <br />
-                Made Memories
-            </h2>
-        </div>
-
-        <div class="overflow-hidden">
-            <div class="flex gallery-track gap-5">
-                <!-- First Set -->
-                <div class="shrink-0 w-[180px] sm:w-[220px] md:w-[260px] lg:w-[300px] rounded-3xl overflow-hidden">
-                    <img src="./images/moment-1.png"
-                        class="w-full h-[340px] object-cover hover:scale-110 transition duration-500" />
-                </div>
-
-                <div class="shrink-0 w-[180px] sm:w-[220px] md:w-[260px] lg:w-[300px] rounded-3xl overflow-hidden">
-                    <img src="./images/moment-2.png"
-                        class="w-full h-[340px] object-cover hover:scale-110 transition duration-500" />
-                </div>
-
-                <div class="shrink-0 w-[180px] sm:w-[220px] md:w-[260px] lg:w-[300px] rounded-3xl overflow-hidden">
-                    <img src="./images/moment-3.png"
-                        class="w-full h-[340px] object-cover hover:scale-110 transition duration-500" />
-                </div>
-
-                <div class="shrink-0 w-[180px] sm:w-[220px] md:w-[260px] lg:w-[300px] rounded-3xl overflow-hidden">
-                    <img src="./images/moment-4.png"
-                        class="w-full h-[340px] object-cover hover:scale-110 transition duration-500" />
-                </div>
-
-                <div class="shrink-0 w-[180px] sm:w-[220px] md:w-[260px] lg:w-[300px] rounded-3xl overflow-hidden">
-                    <img src="./images/moment-5.png"
-                        class="w-full h-[340px] object-cover hover:scale-110 transition duration-500" />
-                </div>
-
-                <!-- Duplicate Set -->
-                <div class="shrink-0 w-[180px] sm:w-[220px] md:w-[260px] lg:w-[300px] rounded-3xl overflow-hidden">
-                    <img src="./images/moment-1.png"
-                        class="w-full h-[340px] object-cover hover:scale-110 transition duration-500" />
-                </div>
-
-                <div class="shrink-0 w-[180px] sm:w-[220px] md:w-[260px] lg:w-[300px] rounded-3xl overflow-hidden">
-                    <img src="./images/moment-2.png"
-                        class="w-full h-[340px] object-cover hover:scale-110 transition duration-500" />
-                </div>
-
-                <div class="shrink-0 w-[180px] sm:w-[220px] md:w-[260px] lg:w-[300px] rounded-3xl overflow-hidden">
-                    <img src="./images/moment-3.png"
-                        class="w-full h-[340px] object-cover hover:scale-110 transition duration-500" />
-                </div>
-
-                <div class="shrink-0 w-[180px] sm:w-[220px] md:w-[260px] lg:w-[300px] rounded-3xl overflow-hidden">
-                    <img src="./images/moment-4.png"
-                        class="w-full h-[340px] object-cover hover:scale-110 transition duration-500" />
-                </div>
-
-                <div class="shrink-0 w-[180px] sm:w-[220px] md:w-[260px] lg:w-[300px] rounded-3xl overflow-hidden">
-                    <img src="./images/moment-5.png"
-                        class="w-full h-[340px] object-cover hover:scale-110 transition duration-500" />
                 </div>
             </div>
         </div>
@@ -1818,15 +1930,19 @@
         </div>
     </footer>
 
-    
+
+
+
 
 
 
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@14/swiper-bundle.min.js"></script>
-
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>lucide.createIcons();</script>
     <script src="navbar.js"></script>
+    <script src="banner.js"></script>
     <script src="location.js"></script>
 
 </body>
