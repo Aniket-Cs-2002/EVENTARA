@@ -399,6 +399,14 @@ footer::before {
     z-index: 1;
 }
 
+.blog{
+    background: linear-gradient(
+    90deg,
+    #F270ED 10%,
+    #9F21EC 82%
+);
+}
+
 
 
 
@@ -411,3 +419,93 @@ footer::before {
 .inspiring-card:hover img {
     filter: blur(0);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*==================================================
+AUTH FORM
+==================================================*/
+
+
+/*==================================================
+PASSWORD
+==================================================*/
+
+.password-field {
+    position: relative;
+}
+
+.password-field input {
+    padding-right: 46px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: #9A9A9A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggle-password:hover {
+    color: var(--color-electric-600);
+}
+
+
+/*==================================================
+FORGOT PASSWORD
+==================================================*/
+
+
+
+.forgot-row a:hover {
+    text-decoration: underline;
+}
+
+
+/*==================================================
+BUTTON
+==================================================*/
+
+
+.auth-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(174,64,228,.25);
+}
+
+/*==================================================
+SOCIAL
+==================================================*/
+.auth-social a:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-electric-600);
+}
+
+
