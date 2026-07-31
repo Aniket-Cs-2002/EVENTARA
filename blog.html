@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="en">
+  <head>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./src/output.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14/swiper-bundle.min.css" />
+    <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+    <title>Blog | Eventara</title>
+</head>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header poppins-medium">
+        <nav class="bg-white py-[10px]">
+            <div class="container mx-auto h-full">
+                <div class="flex items-center justify-between gap-6 xl:gap-10 h-full">
+                    <!-- Logo -->
+                    <div class="shrink-0">
+                        <a href="#">
+                            <img src="./images/logo.png" alt="Eventara Logo"
+                                class="w-[80px] sm:w-[90px] xl:w-[105px] h-auto" loading="lazy" />
+                        </a>
+                    </div>
+
+                    <!-- Desktop Navigation -->
+                    <ul
+                        class="hidden lg:flex  justify-center items-center gap-6 xl:gap-[80px] 2xl:gap-12 whitespace-nowrap">
+                        <li>
+                            <a href="index.html" class="text-[20px] poppins-medium text-[var(--color-electric-700)]">
+                                Home
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="event.html" target="_self"
+                                class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors">
+                                Events
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="courses.html"
+                                class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors">
+                                My Tickets
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#"
+                                class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors">
+                                About Us
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="contact.html" target="_blank"
+                                class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors">
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Right Side Icons -->
+                    <div class="hidden lg:flex items-center justify-end gap-4 xl:gap-5 flex-shrink-0">
+
+                        <i data-lucide="search" class="w-6 h-6 cursor-pointer"></i>
+                        <!-- Shopping Bag -->
+                        <a href="#">
+                            <i data-lucide="handbag"></i>
+                        </a>
+
+                        <!-- Bell -->
+                        <a href="#">
+                            <i class="" data-lucide="bell"></i>
+                        </a>
+
+                        <!-- User -->
+                        <!-- <a href="#">
+                            <img src="./images/user.png" alt="User" class="w-[50px] h-[50px]" />
+                        </a> -->
+                        <a href="./auth.html"
+                            class="poppins-medium text-[20px] cursor-pointer hover:text-[var(--color-electric-700)] transition-colors">
+
+                            Log In / Sign Up
+
+                        </a>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="navbar-toggle" class="lg:hidden ml-auto text-2xl text-gray-700">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-navbar" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50">
+            <div id="navbar-slide"
+                class="w-[300px] h-full bg-white rounded-r-[24px] shadow-2xl p-6 -translate-x-full transition-transform duration-300 flex flex-col">
+
+                <!-- Header -->
+                <div class="flex items-center justify-between pb-5 border-b border-gray-200">
+                    <img src="./images/logo.png" alt="Eventara" class="w-[95px] h-auto" />
+
+                    <button id="navbar-close" class="text-2xl text-gray-600 hover:text-black">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <!-- Links -->
+                <ul class="flex flex-col gap-2 mt-8">
+                    <li>
+                        <a href="index.html"
+                            class="flex items-center gap-4 rounded-xl px-4 py-3 hover:bg-violet-50 hover:text-violet-700 transition">
+                            <i data-lucide="house" class="w-5 h-5"></i>
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="event.html"
+                            class="flex items-center gap-4 rounded-xl px-4 py-3 hover:bg-violet-50 hover:text-violet-700 transition">
+                            <i data-lucide="calendar-days" class="w-5 h-5"></i>
+                            Events
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="courses.html"
+                            class="flex items-center gap-4 rounded-xl px-4 py-3 hover:bg-violet-50 hover:text-violet-700 transition">
+                            <i data-lucide="ticket" class="w-5 h-5 -rotate-45"></i>
+                            My Tickets
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#"
+                            class="flex items-center gap-4 rounded-xl px-4 py-3 hover:bg-violet-50 hover:text-violet-700 transition">
+                            <i data-lucide="circle-alert" class="w-5 h-5"></i>
+                            About Us
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html"
+                            class="flex items-center gap-4 rounded-xl px-4 py-3 hover:bg-violet-50 hover:text-violet-700 transition">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Bottom CTA -->
+                <div class="mt-auto pt-8 flex flex-col gap-4">
+
+                    <a href="./auth.html" class="w-full h-[54px]        rounded-xl border-2 border-[var(--color-electric-600)] text-[var(--color-electric-600)] poppins-medium text-[18px] flex items-center justify-center transition hover:bg-[var(--color-electric-50)]">
+
+                    Log In
+
+                    </a>
+
+                    <a href="./auth.html" class="w-full h-[54px]        rounded-xl border-2 border-[var(--color-electric-600)] text-[var(--color-electric-600)] poppins-medium text-[18px] flex items-center justify-center transition hover:bg-[var(--color-electric-50)]">
+
+                    Sign Up
+
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+    </header>
+ 
+    <div class="bg-[var(--color-electric-100)] py-[20px]">
+      <div class="container mx-auto">
+        <div class="max-w-[1320px] mx-auto">
+          <div class="text-[14px]">
+            Home >
+            <span class="text-[var(--color-electric-600)]">Blog</span>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- heading -->
+    <section class="py-[100px] border-b-2 border-gray-400">
+      <div class="container mx-auto">
+        <div class="max-w-[1320px]">
+          <div class="text-center">
+            <span class="text-[40px] poppins-medium">Blog</span>
+            <h1 class="text-[64px] oswald-semibold">Trending News</h1>
+            <p class="text-[20px] poppins-semibold text-gray-400">
+              The People Behind the Applause: Stories from Our Event Crew
+              <br />While performers often take center stage, every successful
+              event is powered by an incredible crew working behind the scenes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+ 
+    <!-- party trends -->
+    <section class="py-[100px]">
+      <div class="container mx-auto">
+        <div class="max-w-[1320px] mx-auto">
+          <!-- Content -->
+          <div>
+            <span class="text-[20px] poppins-medium text-gray-400 mb-[10px]"
+              >PARTY TRENDS</span
+            >
+ 
+            <h3 class="text-[40px] oswald-regular mb-[10px]">
+              THE ULTIMATE SUMMER MUSIC FESTIVAL EXPERIENCE
+            </h3>
+ 
+            <div class="text-[20px] oswald-regular">
+              <span class="mr-[15px]">by Eventix Team</span>
+              <i class="fa-solid fa-clock-rotate-left"></i>
+              <span class="text-gray-400 ml-1">2 Days ago</span>
+            </div>
+          </div>
+ 
+          <!-- Image -->
+          <figure class="pt-[20px]">
+            <img src="./images/party trends.png" alt="Summer Music Festival" />
+          </figure>
+ 
+          <!-- Description -->
+          <p class="pt-[20px] text-[20px] text-gray-400 oswald-regular">
+            Experience electrifying performances from world-class artists,
+            stunning stage productions, and an unforgettable atmosphere. Whether
+            you're attending with friends or meeting fellow music lovers, this
+            festival promises memories that last a lifetime.
+          </p>
+        </div>
+      </div>
+    </section>
+ 
+    <!-- Night Life -->
+    <section class="py-[87px]">
+      <div class="container mx-auto">
+        <div class="max-w-[1320px] mx-auto">
+          <!-- Content -->
+          <div>
+            <span class="text-[20px] poppins-medium text-gray-400 mb-[10px]"
+              >NIGHTLIFE</span
+            >
+ 
+            <h3 class="text-[40px] oswald-regular mb-[10px]">
+              TOP 10 PARTY DESTINATIONS YOU CAN'T MISS THIS YEAR
+            </h3>
+ 
+            <div class="text-[20px] oswald-regular">
+              <span class="mr-[15px]">by Eventix Team</span>
+              <i class="fa-solid fa-clock-rotate-left"></i>
+              <span class="text-gray-400 ml-1">5 Days ago</span>
+            </div>
+          </div>
+ 
+          <!-- Image -->
+          <figure class="pt-[20px]">
+            <img src="./images/night life.png" alt="Summer Music Festival" />
+          </figure>
+ 
+          <!-- Description -->
+          <p class="pt-[20px] text-[20px] text-gray-400 oswald-regular">
+            From rooftop celebrations to beach festivals and luxury club nights,
+            discover the hottest party destinations featuring incredible DJs,
+            vibrant crowds, and unforgettable entertainment.
+          </p>
+        </div>
+      </div>
+    </section>
+ 
+    <!-- Featured section -->
+    <section class="py-[50px] md:py-[70px] lg:py-[100px]">
+      <div class="container mx-auto">
+        <div class="max-w-[1320px] mx-auto">
+          <div class="text-center">
+            <h2 class="text-[32px] sm:text-[42px] md:text-[52px] lg:text-[64px] oswald-semibold">FEATURED</h2>
+          </div>
+          <!-- Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-12 gap-[20px] lg:gap-[24px] mt-[40px]">
+            <!-- Left Card -->
+            <div class="col-span-1 md:col-span-1 xl:col-span-3">
+              <!-- Card 1 -->
+              <div class="border rounded-[10px] h-auto xl:h-[493px] overflow-hidden">
+                <div class="p-[20px]">
+                  <span class="text-[16px] sm:text-[18px] lg:text-[20px] poppins-semibold text-gray-400">
+                    Food experiences
+                  </span>
+ 
+                  <h3 class="text-[22px] sm:text-[26px] lg:text-[30px] oswald-semibold mt-[10px]">
+                    our food experiences offer something for every taste.
+                  </h3>
+                </div>
+ 
+                <img
+                  src="./images/featured(1).png"
+                  class="w-full h-[220px] sm:h-[250px] xl:h-[272px] object-cover"
+                  alt=""
+                />
+              </div>
+            </div>
+ 
+            <!-- Center 2 -->
+            <div class="col-span-1 md:col-span-1 xl:col-span-6">
+              <div class="border rounded-[10px] h-auto xl:h-[531px] flex flex-col overflow-hidden">
+                <img
+                  src="./images/featured(2).png"
+                  class="w-full h-[220px] sm:h-[260px] lg:h-[300px] object-cover"
+                  alt=""
+                />
+ 
+                <div class="p-[20px]">
+                  <span class="text-[16px] sm:text-[18px] lg:text-[20px] poppins-semibold text-gray-400">
+                    Green Rooms
+                  </span>
+ 
+                  <h3 class="text-[22px] sm:text-[26px] lg:text-[30px] oswald-semibold mt-[10px]">
+                    Theatre Lives On: Why Live Performances Continue to Inspire
+                    Audiences ,What Makes a Music Festival Truly Unforgettable?
+                  </h3>
+                </div>
+              </div>
+            </div>
+ 
+            <div class="col-span-1 md:col-span-2 xl:col-span-3">
+              <!-- Card 3-->
+              <div class="border rounded-[10px] h-auto xl:h-[446px] overflow-hidden">
+                <div class="p-[20px]">
+                  <span class="text-[16px] sm:text-[18px] lg:text-[20px] poppins-semibold text-gray-400">
+                    Food experiences
+                  </span>
+ 
+                  <h3 class="text-[22px] sm:text-[26px] lg:text-[30px] oswald-semibold mt-[10px]">
+                    our food experiences offer something for every taste.
+                  </h3>
+                </div>
+ 
+                <img
+                  src="./images/featured(3).png"
+                  class="w-full h-[220px] sm:h-[250px] xl:h-[272px] object-cover"
+                  alt=""
+                />
+              </div>
+            </div>
+ 
+            <!-- Bottom Left -->
+            <div class="col-span-1 md:col-span-2 xl:col-span-8">
+              <div class="border rounded-[10px] h-auto xl:h-[531px] flex flex-col overflow-hidden">
+                <img
+                  src="./images/featured(4).png"
+                  class="w-full h-[220px] sm:h-[260px] lg:h-[300px] object-cover"
+                  alt=""
+                />
+ 
+                <div class="p-[20px] flex-1">
+                  <span class="text-[16px] sm:text-[18px] lg:text-[20px] poppins-semibold text-gray-400">
+                    Art Installations
+                  </span>
+ 
+                  <h3 class="text-[24px] sm:text-[28px] lg:text-[32px] oswald-semibold mt-[10px]">
+                    Art installations transform event spaces into immersive
+                    visual experiences. From interactive sculptures and
+                    illuminated displays to large-scale murals and digital art
+                    exhibits
+                  </h3>
+                </div>
+              </div>
+            </div>
+ 
+            <!-- Bottom Right -->
+            <div class="col-span-1 md:col-span-2 xl:col-span-4">
+              <div class="border rounded-[10px] h-auto xl:h-[531px] flex flex-col overflow-hidden">
+                <div class="p-[20px]">
+                  <span class="text-[16px] sm:text-[18px] lg:text-[20px] poppins-semibold text-gray-400">
+                    Food experiences
+                  </span>
+ 
+                  <h3 class="text-[24px] sm:text-[28px] lg:text-[32px] oswald-semibold mt-[10px]">
+                    Discover Style, Trends & Creativity
+                  </h3>
+                </div>
+ 
+                <img
+                  src="./images/featured(5).png"
+                  class="w-full h-[250px] sm:h-[300px] lg:h-[357px] object-cover"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+       <!-- ================= Footer ================= -->
+    <footer class="relative overflow-hidden bg-[#0B0B0B] text-white pt-24 min-h-[750px] flex flex-col">
+        <!-- Background Watermark -->
+        <p
+            class="footer-watermark oswald-semibold absolute left-1/2 top-[400px] -translate-x-1/2 whitespace-nowrap text-[160px] md:text-[220px] lg:text-[280px] xl:text-[360px] leading-none select-none pointer-events-none">
+            EVENTARA
+        </p>
+
+        <div class="container relative z-10 flex-1 flex flex-col">
+            <!-- Top -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.8fr_.8fr_.8fr_.8fr] gap-16">
+                <!-- Left -->
+                <div>
+                    <h2 class="oswald-semibold text-[40px] leading-none">EVENTARA</h2>
+
+                    <p class="mt-8 max-w-[560px] poppins-regular text-[14px] text-white/75">
+                        Book your favorite events in just a few clicks and experience
+                        memories that last forever. Discover amazing events and book
+                        tickets instantly.
+                    </p>
+
+                    <!-- Social -->
+                    <div class="flex gap-5 mt-12">
+                        <a href="#"
+                            class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transition duration-300 hover:bg-[#EE4291] hover:text-white hover:-translate-y-1">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+
+                        <a href="#"
+                            class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transition duration-300 hover:bg-[#EE4291] hover:text-white hover:-translate-y-1">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+
+                        <a href="#"
+                            class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transition duration-300 hover:bg-[#EE4291] hover:text-white hover:-translate-y-1">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+
+                        <a href="#"
+                            class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transition duration-300 hover:bg-[#EE4291] hover:text-white hover:-translate-y-1">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="poppins-semibold text-[16px] mb-[30px]">Quick Links</h4>
+
+                    <ul class="space-y-5 poppins-regular text-white/70">
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">Home</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">Events</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">My Tickets</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">About Us</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Categories -->
+                <div>
+                    <h4 class="poppins-semibold text-[16px] mb-[30px]">Categories</h4>
+
+                    <ul class="space-y-5 poppins-regular text-white/70">
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">Music</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">Sports</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">Comedy</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">Workshop</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">Arts & Theatre</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h4 class="poppins-semibold text-[16px] mb-[30px]">Support</h4>
+
+                    <ul class="space-y-5 poppins-regular text-white/70">
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">Help Center</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">FAQs</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">Terms & Conditions</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">Privacy Policy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom -->
+            <div class="mt-auto pt-28">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-6 border-t border-white/10 pt-8">
+                    <p class="text-white/50 poppins-regular text-sm">
+                        © 2026 EVENTARA. All Rights Reserved.
+                    </p>
+
+                    <div class="flex flex-wrap items-center justify-center gap-6 text-sm text-white/50 poppins-regular">
+                        <a href="#" class="hover:text-white duration-300">
+                            Privacy Policy
+                        </a>
+
+                        <a href="#" class="hover:text-white duration-300">
+                            Terms & Conditions
+                        </a>
+
+                        <a href="#" class="hover:text-white duration-300">
+                            Cookies Settings
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sticker -->
+        <div class="absolute left-1/2 bottom-[110px] -translate-x-1/2 z-20">
+            <img src="./images/gyt.png" class="w-[150px] animate-slow-spin" />
+        </div>
+    </footer>
+ 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@14/swiper-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>lucide.createIcons();</script>
+    <script src="navbar.js"></script>
+  </body>
+</html>
+ 
+ 

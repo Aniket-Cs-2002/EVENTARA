@@ -1,0 +1,737 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@14/swiper-bundle.min.css"
+    />
+    <title>Contact | Eventara</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header poppins-medium">
+        <nav class="bg-white py-[10px]">
+            <div class="container mx-auto h-full">
+                <div class="flex items-center justify-between gap-6 xl:gap-10 h-full">
+                    <!-- Logo -->
+                    <div class="shrink-0">
+                        <a href="#">
+                            <img src="./images/logo.png" alt="Eventara Logo"
+                                class="w-[80px] sm:w-[90px] xl:w-[105px] h-auto" loading="lazy" />
+                        </a>
+                    </div>
+
+                    <!-- Desktop Navigation -->
+                    <ul
+                        class="hidden lg:flex  justify-center items-center gap-6 xl:gap-[80px] 2xl:gap-12 whitespace-nowrap">
+                        <li>
+                            <a href="index.html" class="text-[20px] poppins-medium text-[var(--color-electric-700)]">
+                                Home
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="event.html" target="_self"
+                                class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors">
+                                Events
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="courses.html"
+                                class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors">
+                                My Tickets
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#"
+                                class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors">
+                                About Us
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="contact.html" target="_blank"
+                                class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors">
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Right Side Icons -->
+                    <div class="hidden lg:flex items-center justify-end gap-4 xl:gap-5 flex-shrink-0">
+
+                        <i data-lucide="search" class="w-6 h-6 cursor-pointer"></i>
+                        <!-- Shopping Bag -->
+                        <a href="#">
+                            <i data-lucide="handbag"></i>
+                        </a>
+
+                        <!-- Bell -->
+                        <a href="#">
+                            <i class="" data-lucide="bell"></i>
+                        </a>
+
+                        <!-- User -->
+                        <!-- <a href="#">
+                            <img src="./images/user.png" alt="User" class="w-[50px] h-[50px]" />
+                        </a> -->
+                        <a href="./auth.html"
+                            class="poppins-medium text-[20px] cursor-pointer hover:text-[var(--color-electric-700)] transition-colors">
+
+                            Log In / Sign Up
+
+                        </a>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="navbar-toggle" class="lg:hidden ml-auto text-2xl text-gray-700">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-navbar" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50">
+            <div id="navbar-slide"
+                class="w-[300px] h-full bg-white rounded-r-[24px] shadow-2xl p-6 -translate-x-full transition-transform duration-300 flex flex-col">
+
+                <!-- Header -->
+                <div class="flex items-center justify-between pb-5 border-b border-gray-200">
+                    <img src="./images/logo.png" alt="Eventara" class="w-[95px] h-auto" />
+
+                    <button id="navbar-close" class="text-2xl text-gray-600 hover:text-black">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <!-- Links -->
+                <ul class="flex flex-col gap-2 mt-8">
+                    <li>
+                        <a href="index.html"
+                            class="flex items-center gap-4 rounded-xl px-4 py-3 hover:bg-violet-50 hover:text-violet-700 transition">
+                            <i data-lucide="house" class="w-5 h-5"></i>
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="event.html"
+                            class="flex items-center gap-4 rounded-xl px-4 py-3 hover:bg-violet-50 hover:text-violet-700 transition">
+                            <i data-lucide="calendar-days" class="w-5 h-5"></i>
+                            Events
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="courses.html"
+                            class="flex items-center gap-4 rounded-xl px-4 py-3 hover:bg-violet-50 hover:text-violet-700 transition">
+                            <i data-lucide="ticket" class="w-5 h-5 -rotate-45"></i>
+                            My Tickets
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#"
+                            class="flex items-center gap-4 rounded-xl px-4 py-3 hover:bg-violet-50 hover:text-violet-700 transition">
+                            <i data-lucide="circle-alert" class="w-5 h-5"></i>
+                            About Us
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html"
+                            class="flex items-center gap-4 rounded-xl px-4 py-3 hover:bg-violet-50 hover:text-violet-700 transition">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Bottom CTA -->
+                <div class="mt-auto pt-8 flex flex-col gap-4">
+
+                    <a href="./auth.html" class="w-full h-[54px]        rounded-xl border-2 border-[var(--color-electric-600)] text-[var(--color-electric-600)] poppins-medium text-[18px] flex items-center justify-center transition hover:bg-[var(--color-electric-50)]">
+
+                    Log In
+
+                    </a>
+
+                    <a href="./auth.html" class="w-full h-[54px]        rounded-xl border-2 border-[var(--color-electric-600)] text-[var(--color-electric-600)] poppins-medium text-[18px] flex items-center justify-center transition hover:bg-[var(--color-electric-50)]">
+
+                    Sign Up
+
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <div class="bg-[var(--color-electric-100)] py-[20px]">
+      <div class="container mx-auto">
+        <div class="max-w-[1320px] mx-auto">
+          <div class="text-[14px]">
+            Home >
+            <span class="text-[var(--color-electric-600)]">Contact</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- heading -->
+    <section class="py-[100px]">
+      <div class="container mx-auto">
+        <div class="max-w-[1320px]">
+          <div class="text-center">
+            <span class="text-[20px] poppins-medium">Contact</span>
+            <h1 class="text-[68px] oswald-semibold">Get in Touch</h1>
+            <p
+              class="text-[20px] poppins-semibold max-w-[1100px] mx-auto text-gray-400"
+            >
+              Whether you have questions about ticket bookings, event
+              management, partnerships, or technical support, our team is just a
+              message away.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-[100px]">
+      <div class="container mx-auto">
+        <div class="max-w-[1320px] mx-auto">
+          <div class="grid grid-cols-12 gap-[20px]">
+            <!-- Left Form -->
+            <div class="col-span-12 lg:col-span-6">
+              <form>
+                <div class="flex flex-col sm:flex-row gap-[15px] mb-[23px]">
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    class="w-full h-[70px] text-[20px] poppins-medium border bg-[var(--color-light-gray)] border-gray-300 rounded-[4px] px-[16px] outline-none"
+                  />
+
+                  <input
+                    type="text"
+                    placeholder="Phone"
+                    class="w-full h-[70px] text-[20px] poppins-medium border bg-[var(--color-light-gray)] border-gray-300 rounded-[4px] px-[16px] outline-none"
+                  />
+                </div>
+
+                <div class="mb-[23px]">
+                  <input
+                    type="text"
+                    placeholder="Name"
+                    class="w-full h-[70px] text-[20px] poppins-medium border bg-[var(--color-light-gray)] border-gray-300 rounded-[4px] px-[16px] outline-none"
+                  />
+                </div>
+
+                <div class="mb-[23px]">
+                  <textarea
+                    placeholder="Message"
+                    class="w-full h-[110px] text-[20px] poppins-medium border bg-[var(--color-light-gray)] border-gray-300 rounded-[4px] px-[16px] py-[14px] outline-none resize-none"
+                  ></textarea>
+                </div>
+
+                <!-- Button -->
+                <button
+                  class="flex items-center text-[24px] poppins-medium gap-[12px] bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-full px-[24px] py-[10px]"
+                >
+                  Send Message
+
+                  <span
+                    class="w-[34px] h-[34px] bg-white rounded-full flex items-center justify-center text-purple-600"
+                  >
+                    <i class="fa-solid fa-chevron-right text-[12px]"></i>
+                  </span>
+                </button>
+              </form>
+            </div>
+
+            <!-- Right Card -->
+            <div class="col-span-12 lg:col-span-6">
+              <div class="border border-gray-300 rounded-[16px] p-[40px]">
+                <h3 class="text-[32px] oswald-regular mb-[18px]">
+                  Stay Updated
+                </h3>
+
+                <p class="text-[20px] text-gray-500 poppins-medium mb-[25px]">
+                  Never miss the hottest concerts, festivals, sports matches,
+                  and exclusive early-bird ticket offers.
+                </p>
+
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  class="w-full h-[70px] border text-[20px] poppins-medium bg-[var(--color-light-gray)] border-gray-300 rounded-[4px] px-[16px] mb-[16px] outline-none"
+                />
+
+                <button
+                  class="w-full h-[52px] rounded-[4px] poppins-medium text-[20px] text-white bg-gradient-to-r from-purple-600 to-fuchsia-500 font-medium"
+                >
+                  Subscribe Now
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Info Cards -->
+    <section class="py-[100px]">
+      <div class="container mx-auto">
+        <div class="max-w-[1320px] mx-auto">
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px]"
+          >
+            <!-- Card 1 -->
+            <div class="bg-[#F7EFFF] rounded-[16px] shadow-md p-[30px]">
+              <div class="flex gap-[15px]">
+                <div class="mt-[4px]">
+                  <i
+                    class="fa-solid fa-headset text-[30px] text-[var(--color-heading)] mt-[4px]"
+                  ></i>
+                </div>
+
+                <div>
+                  <h3 class="oswald-regular text-[32px]">+91 98765 43210</h3>
+
+                  <p
+                    class="poppins-semibold text-[20px] text-[var(--color-gray)] mt-[10px]"
+                  >
+                    Monday – Saturday
+                  </p>
+
+                  <p
+                    class="poppins-semibold text-[20px] text-[var(--color-gray)]"
+                  >
+                    9:00 AM – 7:00 PM
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-[#F7EFFF] rounded-[16px] shadow-md p-[30px]">
+              <div class="flex gap-[15px]">
+                <div class="mt-[4px]">
+                  <i
+                    class="fa-regular fa-envelope text-[30px] text-[var(--color-heading)] mt-2"
+                  ></i>
+                </div>
+
+                <div>
+                  <h3 class="oswald-regular text-[32px] underline">
+                    support@eventara.com
+                  </h3>
+
+                  <p
+                    class="poppins-semibold text-[20px] text-[var(--color-gray)] mt-[10px]"
+                  >
+                    For booking support, cancellations, partnerships, and
+                    general inquiries.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-[#F7EFFF] rounded-[16px] shadow-md p-[30px]">
+              <div class="flex gap-[15px]">
+                <div class="mt-[4px]">
+                  <i
+                    class="fa-solid fa-location-dot text-[30px] text-[var(--color-heading)] mt-[4px]"
+                  ></i>
+                </div>
+
+                <div>
+                  <h3
+                    class="oswald-regular text-[32px] text-[var(--color-heading)]"
+                  >
+                    Visit Our Office
+                  </h3>
+
+                  <p
+                    class="poppins-semibold text-[20px] text-[var(--color-gray)] mt-[10px]"
+                  >
+                    Eventara Headquarter<br />
+                    Kolkata, West Bengal, India
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Accordion Section-->
+    <section class="py-[100px]">
+      <div class="container mx-auto">
+        <div class="max-w-[1320px] mx-auto">
+          <!-- Heading -->
+          <div class="text-center mb-[20px]">
+            <h2 class="oswald-semibold text-[57px] text-[var(--color-text)]">
+              Frequently Asked Questions
+            </h2>
+
+            <p
+              class="poppins-medium text-[20px] mt-[10px] text-[var(--color-gray)] max-w-[700px] mx-auto"
+            >
+              here are some common questions asked about our brand and services
+              and process to help you better understand
+            </p>
+          </div>
+
+          <!-- Accordion -->
+          <div class="accordion grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Item 1 -->
+            <div
+              class="accordion-item rounded-2xl overflow-hidden border border-[var(--color-border)]"
+            >
+              <div
+                class="accordion-header px-[20px] py-[40px] cursor-pointer flex justify-between items-center"
+              >
+                <span
+                  class="poppins-medium text-[22px] text-[var(--color-text)]"
+                >
+                  How far in advance should I book my event?
+                </span>
+
+                <span
+                  class="icon text-[34px] leading-none transition-transform duration-300 text-[var(--color-electric-600)]"
+                >
+                  +
+                </span>
+              </div>
+
+              <div class="accordion-content hidden px-6 pb-6">
+                <p class="poppins-regular text-[18px] text-[var(--color-gray)]">
+                  Lorem ipsum dolor sit amet consectetur. Massa viverra sagittis
+                  nulla ultricies at enim. Nullam neque nam suscipit ut
+                  senectus.
+                </p>
+              </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div
+              class="accordion-item rounded-2xl overflow-hidden border border-[var(--color-border)]"
+            >
+              <div
+                class="accordion-header px-[20px] py-[40px] cursor-pointer flex justify-between items-center"
+              >
+                <span
+                  class="poppins-medium text-[22px] text-[var(--color-text)]"
+                >
+                  How far in advance should I book my event?
+                </span>
+
+                <span
+                  class="icon text-[34px] leading-none transition-transform duration-300 text-[var(--color-electric-600)]"
+                >
+                  +
+                </span>
+              </div>
+
+              <div class="accordion-content hidden px-6 pb-6">
+                <p class="poppins-regular text-[18px] text-[var(--color-gray)]">
+                  Lorem ipsum dolor sit amet consectetur. Massa viverra sagittis
+                  nulla ultricies at enim. Nullam neque nam suscipit ut
+                  senectus.
+                </p>
+              </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div
+              class="accordion-item rounded-2xl overflow-hidden border border-[var(--color-border)]"
+            >
+              <div
+                class="accordion-header px-[20px] py-[40px] cursor-pointer flex justify-between items-center"
+              >
+                <span
+                  class="poppins-medium text-[22px] text-[var(--color-text)]"
+                >
+                  Do you provide event management?
+                </span>
+
+                <span
+                  class="icon text-[34px] leading-none transition-transform duration-300 text-[var(--color-electric-600)]"
+                >
+                  +
+                </span>
+              </div>
+
+              <div class="accordion-content hidden px-6 pb-6">
+                <p class="poppins-regular text-[18px] text-[var(--color-gray)]">
+                  Lorem ipsum dolor sit amet consectetur. Massa viverra sagittis
+                  nulla ultricies at enim. Nullam neque nam suscipit ut
+                  senectus.
+                </p>
+              </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div
+              class="accordion-item rounded-2xl overflow-hidden border border-[var(--color-border)]"
+            >
+              <div
+                class="accordion-header px-[20px] py-[40px] cursor-pointer flex justify-between items-center"
+              >
+                <span
+                  class="poppins-medium text-[22px] text-[var(--color-text)]"
+                >
+                  Can you customize event packages?
+                </span>
+
+                <span
+                  class="icon text-[34px] leading-none transition-transform duration-300 text-[var(--color-electric-600)]"
+                >
+                  +
+                </span>
+              </div>
+
+              <div class="accordion-content hidden px-6 pb-6">
+                <p class="poppins-regular text-[18px] text-[var(--color-gray)]">
+                  Lorem ipsum dolor sit amet consectetur. Massa viverra sagittis
+                  nulla ultricies at enim. Nullam neque nam suscipit ut
+                  senectus.
+                </p>
+              </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div
+              class="accordion-item rounded-2xl overflow-hidden border border-[var(--color-border)]"
+            >
+              <div
+                class="accordion-header px-[20px] py-[40px] cursor-pointer flex justify-between items-center"
+              >
+                <span
+                  class="poppins-medium text-[22px] text-[var(--color-text)]"
+                >
+                  Do you help celebrity bookings?
+                </span>
+
+                <span
+                  class="icon text-[34px] leading-none transition-transform duration-300 text-[var(--color-electric-600)]"
+                >
+                  +
+                </span>
+              </div>
+
+              <div class="accordion-content hidden px-6 pb-6">
+                <p class="poppins-regular text-[18px] text-[var(--color-gray)]">
+                  Lorem ipsum dolor sit amet consectetur. Massa viverra sagittis
+                  nulla ultricies at enim. Nullam neque nam suscipit ut
+                  senectus.
+                </p>
+              </div>
+            </div>
+
+            <!-- Item 6 -->
+            <div
+              class="accordion-item rounded-2xl overflow-hidden border border-[var(--color-border)]"
+            >
+              <div
+                class="accordion-header px-[20px] py-[40px] cursor-pointer flex justify-between items-center"
+              >
+                <span
+                  class="oswald-semibold text-[22px] text-[var(--color-text)]"
+                >
+                  How can I get a quotation?
+                </span>
+
+                <span
+                  class="icon text-[34px] leading-none transition-transform duration-300 text-[var(--color-electric-600)]"
+                >
+                  +
+                </span>
+              </div>
+
+              <div class="accordion-content hidden px-6 pb-6">
+                <p class="poppins-regular text-[18px] text-[var(--color-gray)]">
+                  Lorem ipsum dolor sit amet consectetur. Massa viverra sagittis
+                  nulla ultricies at enim. Nullam neque nam suscipit ut
+                  senectus.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+        <!-- ================= Footer ================= -->
+    <footer class="relative overflow-hidden bg-[#0B0B0B] text-white pt-24 min-h-[750px] flex flex-col">
+        <!-- Background Watermark -->
+        <p
+            class="footer-watermark oswald-semibold absolute left-1/2 top-[400px] -translate-x-1/2 whitespace-nowrap text-[160px] md:text-[220px] lg:text-[280px] xl:text-[360px] leading-none select-none pointer-events-none">
+            EVENTARA
+        </p>
+
+        <div class="container relative z-10 flex-1 flex flex-col">
+            <!-- Top -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.8fr_.8fr_.8fr_.8fr] gap-16">
+                <!-- Left -->
+                <div>
+                    <h2 class="oswald-semibold text-[40px] leading-none">EVENTARA</h2>
+
+                    <p class="mt-8 max-w-[560px] poppins-regular text-[14px] text-white/75">
+                        Book your favorite events in just a few clicks and experience
+                        memories that last forever. Discover amazing events and book
+                        tickets instantly.
+                    </p>
+
+                    <!-- Social -->
+                    <div class="flex gap-5 mt-12">
+                        <a href="#"
+                            class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transition duration-300 hover:bg-[#EE4291] hover:text-white hover:-translate-y-1">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+
+                        <a href="#"
+                            class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transition duration-300 hover:bg-[#EE4291] hover:text-white hover:-translate-y-1">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+
+                        <a href="#"
+                            class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transition duration-300 hover:bg-[#EE4291] hover:text-white hover:-translate-y-1">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+
+                        <a href="#"
+                            class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transition duration-300 hover:bg-[#EE4291] hover:text-white hover:-translate-y-1">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="poppins-semibold text-[16px] mb-[30px]">Quick Links</h4>
+
+                    <ul class="space-y-5 poppins-regular text-white/70">
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">Home</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">Events</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">My Tickets</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">About Us</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Categories -->
+                <div>
+                    <h4 class="poppins-semibold text-[16px] mb-[30px]">Categories</h4>
+
+                    <ul class="space-y-5 poppins-regular text-white/70">
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">Music</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">Sports</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">Comedy</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">Workshop</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">Arts & Theatre</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h4 class="poppins-semibold text-[16px] mb-[30px]">Support</h4>
+
+                    <ul class="space-y-5 poppins-regular text-white/70">
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">Help Center</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">FAQs</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">Terms & Conditions</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">Privacy Policy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom -->
+            <div class="mt-auto pt-28">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-6 border-t border-white/10 pt-8">
+                    <p class="text-white/50 poppins-regular text-sm">
+                        © 2026 EVENTARA. All Rights Reserved.
+                    </p>
+
+                    <div class="flex flex-wrap items-center justify-center gap-6 text-sm text-white/50 poppins-regular">
+                        <a href="#" class="hover:text-white duration-300">
+                            Privacy Policy
+                        </a>
+
+                        <a href="#" class="hover:text-white duration-300">
+                            Terms & Conditions
+                        </a>
+
+                        <a href="#" class="hover:text-white duration-300">
+                            Cookies Settings
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sticker -->
+        <div class="absolute left-1/2 bottom-[110px] -translate-x-1/2 z-20">
+            <img src="./images/gyt.png" class="w-[150px] animate-slow-spin" />
+        </div>
+    </footer>
+
+    <script>
+      $(document).ready(function () {
+        $(".accordion-header").click(function () {
+          const item = $(this).parent();
+          $(".accordion-item").not(item).removeClass("active");
+          $(".accordion-content")
+            .not(item.find(".accordion-content"))
+            .slideUp(300);
+          item.toggleClass("active");
+          item.find(".accordion-content").stop(true, true).slideToggle(300);
+        });
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@14/swiper-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>lucide.createIcons();</script>
+    <script src="navbar.js"></script>
+  </body>
+</html>
