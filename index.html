@@ -82,12 +82,13 @@
                         <!-- <a href="#">
                             <img src="./images/user.png" alt="User" class="w-[50px] h-[50px]" />
                         </a> -->
-                        <a href="./auth.html"
-                            class="poppins-medium text-[20px] cursor-pointer hover:text-[var(--color-electric-700)] transition-colors">
+                        <button
+                        
+                        class="open-auth-modal poppins-medium text-[20px] cursor-pointer hover:text-[var(--color-electric-700)] transition-colors">
 
-                            Log In / Sign Up
+                        Log In / Sign Up
 
-                        </a>
+                        </button>
                     </div>
 
                     <!-- Mobile Menu Button -->
@@ -158,17 +159,19 @@
                 <!-- Bottom CTA -->
                 <div class="mt-auto pt-8 flex flex-col gap-4">
 
-                    <a href="./auth.html" class="w-full h-[54px]        rounded-xl border-2 border-[var(--color-electric-600)] text-[var(--color-electric-600)] poppins-medium text-[18px] flex items-center justify-center transition hover:bg-[var(--color-electric-50)]">
+                    <button
+                    class="open-auth-modal w-full h-[54px] rounded-xl border-2 border-[var(--color-electric-600)] text-[var(--color-electric-600)] poppins-medium text-[18px] flex items-center justify-center transition hover:bg-[var(--color-electric-50)]">
 
                     Log In
 
-                    </a>
+                    </button>
 
-                    <a href="./auth.html" class="w-full h-[54px]        rounded-xl border-2 border-[var(--color-electric-600)] text-[var(--color-electric-600)] poppins-medium text-[18px] flex items-center justify-center transition hover:bg-[var(--color-electric-50)]">
+                    <button
+                    class="open-auth-modal w-full h-[54px] rounded-xl border-2 border-[var(--color-electric-600)] text-[var(--color-electric-600)] poppins-medium text-[18px] flex items-center justify-center transition hover:bg-[var(--color-electric-50)]">
 
                     Sign Up
 
-                    </a>
+                    </button>
 
                 </div>
 
@@ -180,7 +183,7 @@
     <section class="relative">
 
         <div
-            class="relative mx-auto mt-[10px] w-full max-w-[1720px] min-h-[640px] lg:h-[640px] overflow-hidden rounded-none 2xl:rounded-[20px]">
+            class="relative mx-auto mt-[10px] w-full 2xl:max-w-[1720px] min-h-[640px] lg:h-[640px] xl:max-w-[1400px] xl:rounded-[20px] overflow-hidden rounded-none 2xl:rounded-[20px]">
 
             <!-- Slides -->
             <div id="hero-slider" class="absolute inset-0">
@@ -1938,6 +1941,448 @@
     </footer>
 
 
+    <!-- AUTH MODAL -->
+    <div id="auth-modal" class="auth-modal">
+        <div class="auth-modal-content">
+            <section class="w-full flex justify-center">
+
+        <div class="w-full  h-auto bg-white rounded-[32px] shadow-[0_20px_50px_rgba(15,23,42,0.08)] ">
+
+            <!-- Back -->
+
+            <button type="button" id="back-btn"
+                class="w-[24px] h-[24px] flex items-center justify-center rounded-full hover:bg-gray-100 transition my-[20px] ml-[20px]">
+
+                <i class="fa-solid fa-arrow-left text-[22px] text-[#141B34]"></i>
+
+            </button>
+
+            <!-- Inner Wrapper -->
+
+            <div class="w-full px-[50px]">
+
+
+                <!-- AUTH SECTION -->
+
+                <div id="auth-section">
+
+
+
+                    <!-- Header -->
+
+                    <div class="text-center ">
+
+                        <h1 class="oswald-medium text-[29px] text-[#222222]">
+
+                            Welcome to Eventara
+
+                        </h1>
+
+                        <p class="poppins-regular text-[16px] text-[#727272] mt-[12px] leading-[26px]">
+
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+                        </p>
+
+                    </div>
+                    <!-- Tabs -->
+
+                    <div
+                        class="mt-[15px] h-[70px] border border-[#BFBFBF] rounded-[16px] p-[6px] flex max-w-[520px] mx-auto">
+
+                        <!-- Login -->
+
+                        <button id="login-tab"
+                            class="flex-1 rounded-[12px] bg-[#EAD6F9] poppins-medium text-[20px] text-[#111] shadow-sm transition"
+                            type="button">
+
+                            Log In
+
+                        </button>
+
+                        <!-- Signup -->
+
+                        <button id="signup-tab"
+                            class="flex-1 rounded-[12px] bg-white poppins-medium text-[20px] text-[#111] transition"
+                            type="button">
+
+                            Sign Up
+
+                        </button>
+
+                    </div>
+
+                    <!-- FORM STARTS HERE -->
+                    <form id="login-form" class="mt-[42px] flex flex-col">
+
+                        <!-- Email -->
+
+                        <div class="mb-[20px]">
+
+                            <label class="block poppins-regular text-[20px] text-[#2B2B2B] mb-[10px]">
+
+                                Email address
+
+                            </label>
+
+                            <input type="email" placeholder="Enter your email address"
+                                class="w-full h-[72px] rounded-[14px] border border-[#CFCFCF] px-[22px] text-[16px] poppins-regular text-[#2B2B2B] placeholder:text-[#A6A6A6] outline-none focus:border-[#AE40E4] transition" />
+
+                        </div>
+
+                        <!-- Password -->
+
+                        <div>
+
+                            <label class="block poppins-regular text-[20px] text-[#2B2B2B] mb-[10px]">
+
+                                Password
+
+                            </label>
+
+                            <div class="relative">
+
+                                <input id="login-password" type="password" placeholder="Enter your password"
+                                    class="w-full h-[72px] rounded-[14px] border border-[#CFCFCF] px-[22px] pr-[60px] text-[16px] poppins-regular text-[#2B2B2B] placeholder:text-[#A6A6A6] outline-none focus:border-[#AE40E4] transition" />
+
+                                <button type="button"
+                                    class="toggle-password absolute right-[20px] top-1/2 -translate-y-1/2 text-[#9D9D9D]">
+
+                                    <i class="fa-regular fa-eye-slash text-[22px]"></i>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Forgot -->
+
+                        <div class="flex justify-end mt-[15px]">
+
+                            <a href="#" id="forgot-password-link"
+                                class="poppins-regular text-[15px] text-[#6c6c6c] hover:underline">
+
+                                Forgot password?
+
+                            </a>
+
+                        </div>
+
+                        <!-- Button -->
+
+                        <button type="submit"
+                            class=" mt-[10px] w-full h-[60px] rounded-[5px] poppins-semibold text-[20px] bg-[var(--color-electric-600)] text-white">
+
+                            Log In
+
+                        </button>
+
+                    </form>
+
+                    <!-- SIGNUP FORM -->
+                    <form id="signup-form" class="mt-[42px] flex flex-col hidden">
+
+                        <!-- Full Name -->
+                        <div class="mb-[20px]">
+
+                            <label class="block poppins-regular text-[20px] text-[#2B2B2B] mb-[10px]">
+                                Full Name
+                            </label>
+
+                            <input type="text" placeholder="Enter your full name"
+                                class="w-full h-[72px] rounded-[14px] border border-[#CFCFCF] px-[22px] text-[16px] poppins-regular text-[#2B2B2B] placeholder:text-[#A6A6A6] outline-none focus:border-[#AE40E4] transition">
+
+                        </div>
+
+                        <!-- Email -->
+                        <div class="mb-[20px]">
+
+                            <label class="block poppins-regular text-[20px] text-[#2B2B2B] mb-[10px]">
+                                Email address
+                            </label>
+
+                            <input type="email" placeholder="Enter your email address"
+                                class="w-full h-[72px] rounded-[14px] border border-[#CFCFCF] px-[22px] text-[16px] poppins-regular text-[#2B2B2B] placeholder:text-[#A6A6A6] outline-none focus:border-[#AE40E4] transition">
+
+                        </div>
+
+                        <!-- Password -->
+                        <div class="mb-[20px]">
+
+                            <label class="block poppins-regular text-[20px] text-[#2B2B2B] mb-[10px]">
+                                Password
+                            </label>
+
+                            <div class="relative">
+
+                                <input id="signup-password" type="password" placeholder="Enter your password"
+                                    class="w-full h-[72px] rounded-[14px] border border-[#CFCFCF] px-[22px] pr-[60px] text-[16px] poppins-regular text-[#2B2B2B] placeholder:text-[#A6A6A6] outline-none focus:border-[#AE40E4] transition">
+
+                                <button type="button"
+                                    class="toggle-password absolute right-[20px] top-1/2 -translate-y-1/2 text-[#9D9D9D]">
+
+                                    <i class="fa-regular fa-eye-slash text-[22px]"></i>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Terms & Conditions -->
+
+                        <div class="flex items-start gap-[12px]">
+
+                            <input type="checkbox" id="terms-checkbox"
+                                class="mt-[5px] w-[22px] h-[22px] rounded-[6px] border border-[#D9D9D9] accent-[var(--color-electric-600)] cursor-pointer">
+
+                            <label for="terms-checkbox"
+                                class="poppins-regular text-[15px] leading-[30px] text-[#6C6C6C]">
+
+                                By clicking
+                                <span class="poppins-medium text-[#222]">Sign Up</span>,
+                                you agree to our
+
+                                <a href="#" class="text-[var(--color-electric-600)] hover:underline">
+                                    Terms &amp; Conditions
+                                </a>
+
+                                and
+
+                                <a href="#" class="text-[var(--color-electric-600)] hover:underline">
+                                    Privacy Policy
+                                </a>
+
+                            </label>
+
+                        </div>
+
+                        <!-- Button -->
+
+                        <button type="submit"
+                            class="mt-[10px] w-full h-[60px] rounded-[5px] poppins-semibold text-[20px] bg-[var(--color-electric-600)] text-white">
+
+                            Sign Up
+
+                        </button>
+
+                    </form>
+
+                    <!-- Divider -->
+
+                    <div class="mt-[10px]">
+
+                        <div class="flex items-center gap-[14px]">
+
+                            <div class="flex-1 h-[1px] bg-[#E5E5E5]"></div>
+
+                            <p class="poppins-medium text-[14px] text-[#8D8D8D] whitespace-nowrap">
+
+                                Or continue with
+
+                            </p>
+
+                            <div class="flex-1 h-[1px] bg-[#E5E5E5]"></div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Social -->
+
+                    <div class="flex justify-center items-center gap-[18px] my-[30px]">
+
+                        <!-- Facebook -->
+
+                        <a href="#"
+                            class="w-[46px] h-[46px] rounded-full border border-[#E6E6E6] bg-white flex items-center justify-center hover:border-[#AE40E4] hover:-translate-y-1 transition-all duration-300">
+
+                            <img src="./images/facebook.png" class="w-[46px] h-[46px]" alt="Facebook">
+
+                        </a>
+
+                        <!-- Instagram -->
+
+                        <a href="#"
+                            class="w-[46px] h-[46px] rounded-full border border-[#E6E6E6] bg-white flex items-center justify-center hover:border-[#AE40E4] hover:-translate-y-1 transition-all duration-300">
+
+                            <img src="./images/instagram.png" class="w-[46px] h-[46px]" alt="Instagram">
+
+                        </a>
+
+                        <!-- Google -->
+
+                        <a href="#"
+                            class="w-[46px] h-[46px] rounded-full border border-[#E6E6E6] bg-white flex items-center justify-center hover:border-[#AE40E4] hover:-translate-y-1 transition-all duration-300">
+
+                            <img src="./images/google.png" class="w-[46px] h-[46px]" alt="Google">
+
+                        </a>
+
+                        <!-- X -->
+
+                        <a href="#"
+                            class="w-[46px] h-[46px] rounded-full border border-[#E6E6E6] bg-white flex items-center justify-center hover:border-[#AE40E4] hover:-translate-y-1 transition-all duration-300">
+
+                            <img src="./images/x.png" class="w-[46px] h-[46px]" alt="X">
+
+                        </a>
+
+                    </div>
+
+
+                </div>
+
+                <!-- Forgot password -->
+
+                <div id="forgot-section" class="hidden">
+
+                    <div class="text-center">
+
+                        <h1 class="oswald-medium text-[29px] text-[#222222]">
+                            Confirm Your Email Address
+                        </h1>
+
+                        <p class="poppins-regular text-[16px] text-[#727272] mt-[12px] leading-[26px]">
+                            Enter your email address to receive a one-time password (OTP).
+                        </p>
+
+                    </div>
+
+                    <form id="forgot-form" class="mt-[42px] flex flex-col">
+
+                        <div class="mb-[20px]">
+
+                            <label class="block poppins-regular text-[20px] text-[#2B2B2B] mb-[10px]">
+                                Email address
+                            </label>
+
+                            <input type="email" placeholder="Enter your email address"
+                                class="w-full h-[72px] rounded-[14px] border border-[#CFCFCF] px-[22px] text-[16px] poppins-regular text-[#2B2B2B] placeholder:text-[#A6A6A6] outline-none focus:border-[#AE40E4] transition">
+
+                        </div>
+
+                        <div class="flex justify-end mb-[5px]">
+
+                            <button type="button"
+                                class="text-[var(--color-electric-600)] poppins-medium hover:underline">
+                                Get OTP
+                            </button>
+
+                        </div>
+
+                        <div class="mb-[30px]">
+
+                            <label class="block poppins-regular text-[20px] text-[#2B2B2B] mb-[10px]">
+                                OTP
+                            </label>
+
+                            <input type="text" placeholder="Enter the 6-digit OTP"
+                                class="w-full h-[72px] rounded-[14px] border border-[#CFCFCF] px-[22px] text-[16px] poppins-regular text-[#2B2B2B] placeholder:text-[#A6A6A6] outline-none focus:border-[#AE40E4] transition">
+
+                        </div>
+
+                        <button type="submit"
+                            class="mb-[50px] w-full h-[60px] rounded-[5px] poppins-semibold text-[20px] bg-[var(--color-electric-600)] text-white">
+
+                            Confirm
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+                <!-- CREATE PASSWORD -->
+
+                <div id="create-password-section" class="hidden">
+
+                    <div class="text-center">
+
+                        <h1 class="oswald-medium text-[29px] text-[#222222]">
+                            Change Password
+                        </h1>
+
+                        <p class="poppins-regular text-[16px] text-[#727272] mt-[12px] leading-[26px]">
+                            Create a strong password for your Eventara account.
+                        </p>
+
+                    </div>
+
+                    <form id="create-password-form" class="mt-[42px] flex flex-col">
+
+                        <!-- New Password -->
+
+                        <div class="mb-[20px]">
+
+                            <label class="block poppins-regular text-[20px] text-[#2B2B2B] mb-[10px]">
+                                New Password
+                            </label>
+
+                            <div class="relative">
+
+                                <input id="new-password" type="password" placeholder="Enter your new password"
+                                    class="w-full h-[72px] rounded-[14px] border border-[#CFCFCF] px-[22px] pr-[60px] text-[16px] poppins-regular text-[#2B2B2B] placeholder:text-[#A6A6A6] outline-none focus:border-[#AE40E4] transition">
+
+                                <button type="button"
+                                    class="toggle-password absolute right-[20px] top-1/2 -translate-y-1/2 text-[#9D9D9D]">
+
+                                    <i class="fa-regular fa-eye-slash text-[22px]"></i>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Confirm Password -->
+
+                        <div class="mb-[30px]">
+
+                            <label class="block poppins-regular text-[20px] text-[#2B2B2B] mb-[10px]">
+                                Confirm Password
+                            </label>
+
+                            <div class="relative">
+
+                                <input id="confirm-password" type="password" placeholder="Confirm your password"
+                                    class="w-full h-[72px] rounded-[14px] border border-[#CFCFCF] px-[22px] pr-[60px] text-[16px] poppins-regular text-[#2B2B2B] placeholder:text-[#A6A6A6] outline-none focus:border-[#AE40E4] transition">
+
+                                <button type="button"
+                                    class="toggle-password absolute right-[20px] top-1/2 -translate-y-1/2 text-[#9D9D9D]">
+
+                                    <i class="fa-regular fa-eye-slash text-[22px]"></i>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                        <button type="submit"
+                            class="mb-[50px] w-full h-[60px] rounded-[5px] poppins-semibold text-[20px] bg-[var(--color-electric-600)] text-white">
+
+                            Confirm
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+
+    </section>
+        </div>
+    </div>
+
+
 
 
 
@@ -1951,6 +2396,7 @@
     <script src="navbar.js"></script>
     <script src="banner.js"></script>
     <script src="location.js"></script>
+    <script src="auth.js"></script>
 
 </body>
 

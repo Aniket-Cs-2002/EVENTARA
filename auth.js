@@ -14,8 +14,19 @@ const forgotPasswordLink = document.getElementById("forgot-password-link");
 const loginForm = document.getElementById("login-form");
 const signupForm = document.getElementById("signup-form");
 
+const authModal = document.getElementById("auth-modal");
 
+const openModalBtns = document.querySelectorAll(".open-auth-modal");
 
+openModalBtns.forEach((btn) => {
+
+    btn.addEventListener("click", () => {
+
+        authModal.classList.add("active");
+
+    });
+
+});
 
 function showForgotPassword() {
 
@@ -156,7 +167,6 @@ const backBtn = document.getElementById("back-btn");
 backBtn.addEventListener("click", () => {
 
     // Create Password → Forgot Password
-
     if (!createPasswordSection.classList.contains("hidden")) {
 
         createPasswordSection.classList.add("hidden");
@@ -166,7 +176,6 @@ backBtn.addEventListener("click", () => {
     }
 
     // Forgot Password → Login
-
     if (!forgotSection.classList.contains("hidden")) {
 
         forgotSection.classList.add("hidden");
@@ -177,8 +186,25 @@ backBtn.addEventListener("click", () => {
 
     }
 
-    // Login / Signup → Home
-
-    window.location.href = "./index.html";
+    // Login / Signup → Close Modal
+    authModal.classList.remove("active");
 
 });
+
+authModal.addEventListener("click", (e) => {
+
+    if (e.target === authModal) {
+
+        authModal.classList.remove("active");
+
+    }
+
+});
+
+document
+    .querySelector(".auth-modal-content")
+    .addEventListener("click", (e) => {
+
+        e.stopPropagation();
+
+    });

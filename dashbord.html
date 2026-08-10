@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Eventara | Dashboard</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+
+    <!-- Existing stylesheet -->
+    <link rel="stylesheet" href="./src/style.css" />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              eventara: {
+                50: "#FBF5FF",
+                100: "#F5E9FE",
+                200: "#EDD6FE",
+                300: "#DFB6FC",
+                400: "#CB87F9",
+                500: "#B759F3",
+                600: "#A437E6",
+                700: "#8D26C9",
+                800: "#7724A5",
+                900: "#611F84",
+                950: "#430962",
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body class="dashboard-page bg-[#f7f7f8] text-[#252525]">
+    <div class="min-h-screen flex">
+      <!-- ================================================= -->
+      <!-- SIDEBAR -->
+      <!-- ================================================= -->
+
+      <aside
+        id="sidebar"
+        class="fixed lg:sticky top-0 left-0 z-[100] w-[259px] min-w-[259px] h-screen bg-white border-r border-[#dedede] flex flex-col transition-transform duration-300 -translate-x-full lg:translate-x-0"
+      >
+        <!-- LOGO -->
+        <div
+          class="h-[101px] min-h-[101px]  flex items-center justify-center"
+        >
+          <div
+            class="w-[134px] h-[101px] flex items-center justify-center"
+          >
+            <img
+              src="./images/logo.png"
+              alt="Eventara"
+              class="w-[134px] h-auto object-contain"
+            />
+          </div>
+        </div>
+
+        <!-- NAVIGATION -->
+
+        <nav class="flex-1 px-[30px] pt-[28px] space-y-[8px] overflow-y-auto">
+          <!-- Dashboard -->
+
+          <a
+            href="#"
+            data-page="Dashboard"
+            class="dashboard-nav active flex items-center gap-[18px] h-[50px] px-[14px] rounded-[4px] text-[16px] text-[#8f2ce3] bg-[#f0e5ff] transition-all duration-200"
+          >
+            <i class="fa-solid fa-table-cells-large w-[20px] text-center"></i>
+
+            <span>Dashboard</span>
+          </a>
+
+          <!-- User Details -->
+
+          <a
+            href="#"
+            data-page="User Details"
+            class="dashboard-nav flex items-center gap-[18px] h-[50px] px-[14px] rounded-[4px] text-[16px] text-[#303030] hover:bg-[#f7f0ff] hover:text-[#8f2ce3] transition-all"
+          >
+            <i class="fa-regular fa-user w-[20px] text-center"></i>
+
+            <span>User Details</span>
+          </a>
+
+          <!-- Events -->
+
+          <a
+            href="#"
+            data-page="Events Details"
+            class="dashboard-nav flex items-center gap-[18px] h-[50px] px-[14px] rounded-[4px] text-[16px] text-[#303030] hover:bg-[#f7f0ff] hover:text-[#8f2ce3] transition-all"
+          >
+            <i class="fa-regular fa-calendar-check w-[20px] text-center"></i>
+
+            <span>Events Details</span>
+          </a>
+
+          <!-- Tickets -->
+
+          <a
+            href="#"
+            data-page="Ticket Details"
+            class="dashboard-nav flex items-center gap-[18px] h-[50px] px-[14px] rounded-[4px] text-[16px] text-[#303030] hover:bg-[#f7f0ff] hover:text-[#8f2ce3] transition-all"
+          >
+            <i class="fa-solid fa-ticket w-[20px] text-center"></i>
+
+            <span>Ticket Details</span>
+          </a>
+
+          <!-- Blog -->
+
+          <a
+            href="#"
+            data-page="Blog Section"
+            class="dashboard-nav flex items-center gap-[18px] h-[50px] px-[14px] rounded-[4px] text-[16px] text-[#303030] hover:bg-[#f7f0ff] hover:text-[#8f2ce3] transition-all"
+          >
+            <i class="fa-regular fa-pen-to-square w-[20px] text-center"></i>
+
+            <span>Blog Section</span>
+          </a>
+
+          <!-- Trash -->
+
+          <a
+            href="#"
+            data-page="Trash"
+            class="dashboard-nav flex items-center gap-[18px] h-[50px] px-[14px] rounded-[4px] text-[16px] text-[#303030] hover:bg-[#f7f0ff] hover:text-[#8f2ce3] transition-all"
+          >
+            <i class="fa-regular fa-trash-can w-[20px] text-center"></i>
+
+            <span>Trash</span>
+          </a>
+
+          <!-- Settings -->
+
+          <a
+            href="#"
+            data-page="Settings"
+            class="dashboard-nav flex items-center gap-[18px] h-[50px] px-[14px] rounded-[4px] text-[16px] text-[#303030] hover:bg-[#f7f0ff] hover:text-[#8f2ce3] transition-all"
+          >
+            <i class="fa-solid fa-gear w-[20px] text-center"></i>
+
+            <span>Settings</span>
+          </a>
+
+          <!-- Logout -->
+
+          <a
+            href="#"
+            data-page="Log out"
+            class="dashboard-nav flex items-center gap-[18px] h-[50px] px-[14px] rounded-[4px] text-[16px] text-[#303030] hover:bg-[#f7f0ff] hover:text-[#8f2ce3] transition-all"
+          >
+            <i class="fa-solid fa-right-from-bracket w-[20px] text-center"></i>
+
+            <span>Log out</span>
+          </a>
+        </nav>
+
+        <!-- PROMO CARD -->
+
+        <div class="px-[24px] pb-[24px]">
+          <div
+            class="relative h-[248px] overflow-hidden rounded-[7px] -z-99"
+          >
+            <img
+              src="./images/dashbord-side-nav-img.png"
+              alt=""
+              class="absolute inset-0 w-full h-full object-cover opacity-100"
+            />
+
+            
+
+            <div
+              class="absolute left-[28px] right-[15px] bottom-[17px] text-white"
+            >
+              <h3
+                class="oswald-bold text-[34px] tracking-[2px] leading-none mb-[17px]"
+              >
+                EVENTARA
+              </h3>
+
+              <button
+                class="h-[36px] px-[17px] rounded-full bg-gradient-to-r from-[#ee4291] to-[#ae40e4] text-[11px] font-semibold flex items-center gap-3 hover:translate-x-1 transition-transform"
+              >
+                EXPLORE EVENTS
+
+                <span
+                  class="w-[20px] h-[20px] rounded-full bg-white text-[#9c2fe5] flex items-center justify-center"
+                >
+                  <i class="fa-solid fa-chevron-right text-[8px]"></i>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ADMIN PROFILE -->
+
+        <div class="px-[24px] pb-[10px]">
+          <div
+            class="relative h-[62px] rounded-[7px] border border-[#d7d7d7] bg-white flex items-center px-[10px] gap-[10px]"
+          >
+            <img
+              src="https://randomuser.me/api/portraits/women/44.jpg"
+              alt="Admin"
+              class="w-[40px] h-[40px] rounded-full object-cover"
+            />
+
+            <div class="flex-1 min-w-0">
+              <p class="text-[16px] leading-[20px] font-medium truncate">
+                Admin Profile
+              </p>
+
+              <span class="text-[13px] text-[#999]"> Super Admin </span>
+            </div>
+
+            <button id="profileToggle" class="px-1">
+              <i class="fa-solid fa-chevron-down text-[12px]"></i>
+            </button>
+
+            <!-- PROFILE DROPDOWN -->
+
+            <div
+              id="profileMenu"
+              class="hidden absolute bottom-[70px] left-0 w-full bg-white border border-[#e6e6e6] rounded-lg shadow-xl p-2 z-[200]"
+            >
+              <button
+                class="w-full text-left px-3 py-2 rounded hover:bg-[#f7f0ff] text-sm"
+              >
+                Profile
+              </button>
+
+              <button
+                class="w-full text-left px-3 py-2 rounded hover:bg-[#f7f0ff] text-sm"
+              >
+                Account Settings
+              </button>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- ================================================= -->
+      <!-- MOBILE HEADER -->
+      <!-- ================================================= -->
+
+      <header
+        class="lg:hidden fixed top-0 left-0 right-0 h-[68px] bg-white border-b border-[#e5e5e5] z-[90] flex items-center justify-between px-4"
+      >
+        <img src="./images/logo.png" alt="Eventara" class="w-[78px]" />
+
+        <button
+          id="mobileMenuButton"
+          class="w-[40px] h-[40px] rounded-lg border border-[#ddd] text-[#7724a5]"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </header>
+
+      <!-- ================================================= -->
+      <!-- MAIN -->
+      <!-- ================================================= -->
+
+      <main class="flex-1 min-w-0 min-h-screen bg-[#f7f7f8] lg:pt-0 pt-[68px]">
+        <div
+          class="w-full max-w-[1549px] mx-auto px-[16px] sm:px-[22px] lg:px-[30px] py-[22px] lg:py-[28px]"
+        >
+          <!-- ================================================= -->
+          <!-- HEADER -->
+          <!-- ================================================= -->
+
+          <section
+            class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-[16px]"
+          >
+            <div>
+              <h1
+                class="oswald-semibold text-[36px] sm:text-[38px] leading-[42px] text-[#242424]"
+              >
+                Dashboard
+              </h1>
+
+              <p class="text-[13px] sm:text-[14px] text-[#999] mt-[3px]">
+                Welcome Back, Admin Here’s What’s Happening With Your Events
+              </p>
+            </div>
+
+            <div class="flex items-center gap-[18px] self-end sm:self-auto">
+              <!-- Notification -->
+
+              <button
+                id="notificationBtn"
+                class="relative w-[34px] h-[34px] flex items-center justify-center"
+              >
+                <i class="fa-regular fa-bell text-[22px]"></i>
+
+                <span
+                  class="absolute top-[-2px] right-[-1px] w-[19px] h-[19px] rounded-full bg-[#a22de5] text-white text-[11px] flex items-center justify-center"
+                >
+                  3
+                </span>
+              </button>
+
+              <!-- DATE -->
+
+              <button
+                id="datePickerBtn"
+                class="h-[56px] min-w-[190px] px-[15px] rounded-[6px] border border-[#e7e7e7] bg-white flex items-center justify-between gap-5"
+              >
+                <span class="flex items-center gap-3">
+                  <i class="fa-regular fa-calendar text-[17px]"></i>
+
+                  <span id="dashboardDate"> 26 July 2025 </span>
+                </span>
+
+                <i class="fa-solid fa-chevron-down text-[11px]"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- ================================================= -->
+          <!-- KPI CARDS -->
+          <!-- ================================================= -->
+
+          <section
+            class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-[16px] mb-[16px]"
+          >
+            <!-- CARD 1 -->
+
+            <div
+              class="min-h-[111px] bg-white rounded-[9px] shadow-[0_3px_14px_rgba(0,0,0,.07)] px-[20px] py-[17px] flex items-center gap-[19px]"
+            >
+              <div
+                class="w-[56px] h-[56px] shrink-0 rounded-[9px] bg-[#fde8f0] text-[#f42d76] flex items-center justify-center"
+              >
+                <i class="fa-regular fa-calendar-days text-[27px]"></i>
+              </div>
+
+              <div>
+                <p class="text-[16px] text-[#999]">Total Events</p>
+
+                <strong
+                  class="block oswald-semibold text-[29px] leading-[32px]"
+                >
+                  22
+                </strong>
+
+                <p class="text-[14px] text-[#999]">
+                  <span class="text-[#22ae42] text-[18px]"> ↑ 17% </span>
+
+                  This Month
+                </p>
+              </div>
+            </div>
+
+            <!-- CARD 2 -->
+
+            <div
+              class="min-h-[111px] bg-white rounded-[9px] shadow-[0_3px_14px_rgba(0,0,0,.07)] px-[20px] py-[17px] flex items-center gap-[19px]"
+            >
+              <div
+                class="w-[56px] h-[56px] shrink-0 rounded-[9px] bg-[#f0e2ff] text-[#9b27e7] flex items-center justify-center"
+              >
+                <i class="fa-regular fa-user-group text-[27px]"></i>
+              </div>
+
+              <div>
+                <p class="text-[16px] text-[#999]">Total Users</p>
+
+                <strong
+                  class="block oswald-semibold text-[29px] leading-[32px]"
+                >
+                  3,520
+                </strong>
+
+                <p class="text-[14px] text-[#999]">
+                  <span class="text-[#22ae42] text-[18px]"> ↑ 48% </span>
+
+                  This Month
+                </p>
+              </div>
+            </div>
+
+            <!-- CARD 3 -->
+
+            <div
+              class="min-h-[111px] bg-white rounded-[9px] shadow-[0_3px_14px_rgba(0,0,0,.07)] px-[20px] py-[17px] flex items-center gap-[19px]"
+            >
+              <div
+                class="w-[56px] h-[56px] shrink-0 rounded-[9px] bg-[#ffe9e3] text-[#ff5a22] flex items-center justify-center"
+              >
+                <i class="fa-solid fa-ticket text-[27px]"></i>
+              </div>
+
+              <div>
+                <p class="text-[16px] text-[#999]">Total Tickets Sold</p>
+
+                <strong
+                  class="block oswald-semibold text-[29px] leading-[32px]"
+                >
+                  3,230
+                </strong>
+
+                <p class="text-[14px] text-[#999]">
+                  <span class="text-[#ff3c83] text-[18px]"> ↓ 25% </span>
+
+                  This Month
+                </p>
+              </div>
+            </div>
+
+            <!-- CARD 4 -->
+
+            <div
+              class="min-h-[111px] bg-white rounded-[9px] shadow-[0_3px_14px_rgba(0,0,0,.07)] px-[20px] py-[17px] flex items-center gap-[19px]"
+            >
+              <div
+                class="w-[56px] h-[56px] shrink-0 rounded-[9px] bg-[#e9efff] text-[#3c58fb] flex items-center justify-center"
+              >
+                <span class="text-[31px]"> ₹ </span>
+              </div>
+
+              <div>
+                <p class="text-[16px] text-[#999]">Total Revenue</p>
+
+                <strong
+                  class="block oswald-semibold text-[29px] leading-[32px]"
+                >
+                  9,45,209
+                </strong>
+
+                <p class="text-[14px] text-[#999]">
+                  <span class="text-[#22ae42] text-[18px]"> ↑ 25% </span>
+
+                  This Month
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- ================================================= -->
+          <!-- RECENT EVENTS + TICKET OVERVIEW -->
+          <!-- ================================================= -->
+
+          <section
+            class="grid grid-cols-1 2xl:grid-cols-[minmax(0,2fr)_minmax(390px,1fr)] bg-white border border-[#ececec] rounded-[5px] shadow-[0_2px_12px_rgba(0,0,0,.04)] overflow-hidden mb-[16px]"
+          >
+            <!-- RECENT EVENTS -->
+
+            <div class="p-[16px] lg:p-[20px] min-w-0">
+              <h2 class="oswald-semibold text-[21px] mb-[13px]">
+                Recent Events
+              </h2>
+
+              <div class="overflow-x-auto">
+                <div class="min-w-[730px]">
+                  <!-- TABLE HEADER -->
+
+                  <div
+                    class="grid grid-cols-[1.55fr_1fr_1.2fr_.8fr_.8fr_48px] items-center h-[39px] px-[15px] rounded-[5px] bg-[#f7f7f7] text-[13px] text-[#666]"
+                  >
+                    <span>Event Name</span>
+
+                    <span>Date</span>
+
+                    <span>Location</span>
+
+                    <span>Tickets Sold</span>
+
+                    <span>Revenue</span>
+
+                    <span>Action</span>
+                  </div>
+
+                  <!-- DATA -->
+
+                  <div id="recentEventsRows"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- TICKETS OVERVIEW -->
+
+            <div
+              class="border-t 2xl:border-t-0 2xl:border-l border-[#e8e8e8] p-[18px] lg:p-[20px]"
+            >
+              <div class="flex items-center justify-between mb-[7px]">
+                <h2 class="oswald-semibold text-[21px]">Tickets Overview</h2>
+
+                <button
+                  class="h-[39px] px-[12px] rounded-[6px] border border-[#e6e6e6] text-[14px] bg-white"
+                >
+                  This Month
+
+                  <i class="fa-solid fa-chevron-down text-[10px] ml-2"></i>
+                </button>
+              </div>
+
+              <div
+                class="flex flex-col sm:flex-row items-center justify-center gap-[24px] min-h-[250px]"
+              >
+                <!-- DONUT -->
+
+                <div class="relative w-[225px] h-[225px] shrink-0">
+                  <canvas id="ticketChart"></canvas>
+
+                  <div
+                    class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none"
+                  >
+                    <strong class="oswald-semibold text-[29px]"> 3,260 </strong>
+
+                    <span class="text-[15px] text-[#888]"> Total Tickets </span>
+                  </div>
+                </div>
+
+                <!-- LEGEND -->
+
+                <div class="w-full sm:w-auto min-w-[155px] space-y-[14px]">
+                  <div
+                    class="flex items-center justify-between gap-5 text-[14px]"
+                  >
+                    <span class="flex items-center gap-3">
+                      <i
+                        class="w-[15px] h-[15px] rounded-[4px] bg-[#4a0d70]"
+                      ></i>
+
+                      Sold
+                    </span>
+
+                    <strong class="font-normal"> 2,543 </strong>
+                  </div>
+
+                  <div
+                    class="flex items-center justify-between gap-5 text-[14px]"
+                  >
+                    <span class="flex items-center gap-3">
+                      <i
+                        class="w-[15px] h-[15px] rounded-[4px] bg-[#8123b4]"
+                      ></i>
+
+                      Pending
+                    </span>
+
+                    <strong class="font-normal"> 53 </strong>
+                  </div>
+
+                  <div
+                    class="flex items-center justify-between gap-5 text-[14px]"
+                  >
+                    <span class="flex items-center gap-3">
+                      <i
+                        class="w-[15px] h-[15px] rounded-[4px] bg-[#aa3ce4]"
+                      ></i>
+
+                      Cancel
+                    </span>
+
+                    <strong class="font-normal"> 100 </strong>
+                  </div>
+
+                  <div
+                    class="flex items-center justify-between gap-5 text-[14px]"
+                  >
+                    <span class="flex items-center gap-3">
+                      <i
+                        class="w-[15px] h-[15px] rounded-[4px] bg-[#dca5fa]"
+                      ></i>
+
+                      Refund
+                    </span>
+
+                    <strong class="font-normal"> 50 </strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ================================================= -->
+          <!-- LOWER SECTION -->
+          <!-- ================================================= -->
+
+          <section
+            class="grid grid-cols-1 xl:grid-cols-[minmax(0,1.45fr)_minmax(350px,.95fr)_minmax(300px,.72fr)] bg-white border border-[#ececec] rounded-[5px] shadow-[0_2px_12px_rgba(0,0,0,.04)] overflow-hidden"
+          >
+            <!-- SALES -->
+
+            <div class="p-[18px] lg:p-[20px] min-w-0">
+              <div class="flex items-center justify-between mb-[10px]">
+                <h2 class="oswald-semibold text-[21px]">Sales Overview</h2>
+
+                <button
+                  class="h-[39px] px-[12px] rounded-[6px] border border-[#e6e6e6] text-[14px] bg-white"
+                >
+                  This Month
+
+                  <i class="fa-solid fa-chevron-down text-[10px] ml-2"></i>
+                </button>
+              </div>
+
+              <div class="relative h-[270px] w-full">
+                <canvas id="salesChart"></canvas>
+              </div>
+            </div>
+
+            <!-- TOP EVENTS -->
+
+            <div
+              class="border-t xl:border-t-0 xl:border-l border-[#e8e8e8] p-[18px] lg:p-[20px] min-w-0"
+            >
+              <div class="flex items-center justify-between mb-[13px]">
+                <h2 class="oswald-semibold text-[21px]">Top Events</h2>
+
+                <button
+                  class="h-[39px] px-[12px] rounded-[6px] border border-[#e6e6e6] text-[#9b27e7] bg-white text-[14px]"
+                >
+                  View all
+                </button>
+              </div>
+
+              <div id="topEventsList" class="space-y-[9px]"></div>
+            </div>
+
+            <!-- QUICK ACTION -->
+
+            <div
+              class="border-t xl:border-t-0 xl:border-l border-[#e8e8e8] p-[18px] lg:p-[20px]"
+            >
+              <h2 class="oswald-semibold text-[21px] mb-[19px]">
+                Quick Action
+              </h2>
+
+              <div class="grid grid-cols-2 gap-[12px]">
+                <!-- ACTION 1 -->
+
+                <button
+                  class="h-[91px] rounded-[8px] bg-[#fbf5ff] flex flex-col items-center justify-center gap-[9px] hover:bg-[#f3e6ff] transition"
+                >
+                  <i
+                    class="fa-regular fa-calendar-days text-[29px] text-[#a12de7]"
+                  ></i>
+
+                  <span class="text-[13px]"> Add New Events </span>
+                </button>
+
+                <!-- ACTION 2 -->
+
+                <button
+                  class="h-[91px] rounded-[8px] bg-[#fbf5ff] flex flex-col items-center justify-center gap-[9px] hover:bg-[#f3e6ff] transition"
+                >
+                  <i class="fa-solid fa-ticket text-[29px] text-[#a12de7]"></i>
+
+                  <span class="text-[13px]"> View All Tickets </span>
+                </button>
+
+                <!-- ACTION 3 -->
+
+                <button
+                  class="h-[91px] rounded-[8px] bg-[#fbf5ff] flex flex-col items-center justify-center gap-[9px] hover:bg-[#f3e6ff] transition"
+                >
+                  <i
+                    class="fa-regular fa-user-group text-[29px] text-[#a12de7]"
+                  ></i>
+
+                  <span class="text-[13px]"> View All Users </span>
+                </button>
+
+                <!-- ACTION 4 -->
+
+                <button
+                  class="h-[91px] rounded-[8px] bg-[#fbf5ff] flex flex-col items-center justify-center gap-[9px] hover:bg-[#f3e6ff] transition"
+                >
+                  <i
+                    class="fa-regular fa-trash-can text-[29px] text-[#a12de7]"
+                  ></i>
+
+                  <span class="text-[13px]"> Go to Trash </span>
+                </button>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <!-- ================================================= -->
+    <!-- MOBILE OVERLAY -->
+    <!-- ================================================= -->
+
+    <div
+      id="mobileOverlay"
+      class="fixed inset-0 bg-black/40 z-[80] hidden lg:hidden"
+    ></div>
+
+    <!-- ================================================= -->
+    <!-- TOAST -->
+    <!-- ================================================= -->
+
+    <div
+      id="toast"
+      class="fixed right-5 bottom-5 z-[200] translate-y-20 opacity-0 pointer-events-none bg-[#24102f] text-white px-5 py-3 rounded-lg shadow-xl text-sm transition-all duration-300"
+    ></div>
+
+    <script src="./dashbord.js"></script>
+  </body>
+</html>

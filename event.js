@@ -175,3 +175,18 @@ function stopAuto() {
 
 render();
 // startAuto(); // Auto slider disabled. Manual Next/Previous buttons still work.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
