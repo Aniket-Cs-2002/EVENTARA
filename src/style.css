@@ -56,6 +56,20 @@
 
 
 
+@font-face {
+    font-family: "Outfit";
+    src: url("../fonts/OutfitRegular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Outfit";
+    src: url("../fonts/OutfitSemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+
 :root {
     --oswald-regular: "Oswald", sans-serif;
 
@@ -72,6 +86,10 @@
     --poppins-semibold: "Poppins", sans-serif;
 
     --poppins-bold: "Poppins", sans-serif;
+
+    --outfit-regular: "Outfit", sans-serif;
+
+    --outfit-semibold: "Outfit", sans-serif;
 
     /* ELECTRIC VIOLET */
     --color-electric-50: #FBF5FF;
@@ -160,6 +178,16 @@
     font-family: var(--poppins-bold);
     font-weight: 700;
 
+}
+
+.outwit-regular {
+    font-family: var(--outfit-regular);
+    font-weight: 400;
+
+}
+.outfit-semibold {
+    font-family: var(--outfit-semibold);
+    font-weight: 600;
 }
 
 
@@ -1058,10 +1086,83 @@ backdrop-filter: blur(24px);
 
 }
 
+/* About us */
+/* brand logo swiper */
+  .brandLogoSwiper .swiper-wrapper {
+    transition-timing-function: linear !important;
+  }
 
 
+/* swiper */
+  .eventaraSwiper .swiper-wrapper {
+    transition-timing-function: linear !important;
+  }
 
 
+/* My-tickits */
+
+   /* Hide scrollbar */
+
+        .scrollbar-none::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scrollbar-none {
+            scrollbar-width: none;
+        }
+
+        /* Active tab */
+
+        .active-ticket-tab {
+            border-color: #f2458e !important;
+            color: #e12169 !important;
+        }
+
+        /* Main ticket perforation */
+
+        .ticket-perforation {
+            background: radial-gradient(circle at 0 18px,
+                    #fff 0 15px,
+                    transparent 15.5px) 0 0 / 16px 34px repeat-y;
+        }
+
+        /* Small ticket perforation */
+
+        .mini-perforation {
+            background: radial-gradient(circle at 0 8px,
+                    #fff 0 7px,
+                    transparent 7.5px) 0 0 / 9px 16px repeat-y;
+        }
+
+        /* Small QR */
+
+        .mini-qr {
+            border: 1px solid #fff;
+
+            background:
+                linear-gradient(90deg,
+                    #111 18%,
+                    transparent 18% 34%,
+                    #111 34% 50%,
+                    transparent 50% 66%,
+                    #111 66% 82%,
+                    transparent 82%),
+                linear-gradient(#111 18%,
+                    transparent 18% 34%,
+                    #111 34% 50%,
+                    transparent 50% 66%,
+                    #111 66% 82%,
+                    transparent 82%),
+                #fff;
+        }
+
+        /* Mobile navbar space */
+
+        @media (max-width: 639px) {
+            #navbar-placeholder {
+                height: 72px;
+            }
+        }
 
 
 

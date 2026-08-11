@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Choose Tickets | Eventara</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            min-height: 100%;
+        }
+
+        body {
+            font-family: "Outfit", sans-serif;
+            background: #f8f8f9;
+            color: #111111;
+        }
+
+        button,
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-[#f8f8f9]">
+
+    <!-- =====================================================
+         MAIN CART CONTENT
+         Navbar is intentionally NOT included
+    ====================================================== -->
+
+    <main class="min-h-screen pb-[96px] sm:pb-[104px]">
+
+        <!-- Booking Timer -->
+        <div
+            class="w-full h-[36px] sm:h-[38px]
+                   bg-[#f7e7ff]
+                   border-b border-[#efdafa]
+                   flex items-center justify-center"
+        >
+            <div
+                class="flex items-center justify-center
+                       gap-[7px]
+                       text-[12px] sm:text-[13px]
+                       leading-none"
+            >
+
+                <!-- Clock -->
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="15"
+                    height="15"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="shrink-0 text-black"
+                >
+                    <circle cx="12" cy="12" r="9"></circle>
+                    <polyline points="12 7 12 12 15 14"></polyline>
+                </svg>
+
+                <span class="font-medium text-[#171717]">
+                    Complete your booking in
+                </span>
+
+                <span
+                    id="booking-timer"
+                    class="font-medium text-[#c22cf0] tabular-nums"
+                >
+                    09:59 mins
+                </span>
+
+            </div>
+        </div>
+
+
+        <!-- =================================================
+             CONTENT
+        ================================================== -->
+
+        <section
+            class="mx-auto w-full max-w-[505px]
+                   px-[16px] sm:px-0
+                   pt-[26px] sm:pt-[27px]"
+        >
+
+            <!-- Heading -->
+            <h1
+                class="text-[24px] sm:text-[25px]
+                       leading-[1.15]
+                       font-semibold
+                       tracking-[-0.4px]
+                       mb-[20px]"
+            >
+                Choose Tickets
+            </h1>
+
+
+            <!-- =================================================
+                 TICKET CARD
+            ================================================== -->
+
+            <article
+                class="w-full
+                       rounded-[11px]
+                       border border-[#cfcfcf]
+                       bg-white
+                       px-[22px] sm:px-[23px]
+                       pt-[24px]
+                       pb-[23px]"
+            >
+
+                <!-- Ticket Name -->
+                <div class="flex items-center justify-between gap-4">
+
+                    <div class="min-w-0">
+
+                        <h2
+                            class="text-[15px] sm:text-[16px]
+                                   leading-[20px]
+                                   font-semibold
+                                   text-[#111111]"
+                        >
+                            Early Bird | Diamond
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Price + Quantity -->
+                <div
+                    class="mt-[13px]
+                           flex items-center
+                           justify-between
+                           gap-4"
+                >
+
+                    <!-- Price -->
+                    <p
+                        class="text-[13px] sm:text-[14px]
+                               font-normal
+                               text-[#333333]"
+                    >
+                        ₹ 4,999
+                    </p>
+
+
+                    <!-- Quantity -->
+                    <div
+                        class="h-[29px]
+                               min-w-[87px]
+                               rounded-[7px]
+                               bg-gradient-to-r
+                               from-[#ec3590]
+                               to-[#a734e8]
+                               px-[10px]
+                               flex items-center
+                               justify-between
+                               text-white"
+                    >
+
+                        <!-- Minus -->
+                        <button
+                            id="decrease-ticket"
+                            type="button"
+                            aria-label="Decrease ticket quantity"
+                            class="w-[20px]
+                                   h-[24px]
+                                   flex items-center
+                                   justify-center
+                                   text-[19px]
+                                   leading-none
+                                   font-medium
+                                   hover:opacity-80
+                                   active:scale-90
+                                   transition"
+                        >
+                            −
+                        </button>
+
+
+                        <!-- Count -->
+                        <span
+                            id="ticket-count"
+                            class="w-[20px]
+                                   text-center
+                                   text-[14px]
+                                   leading-none
+                                   font-medium"
+                        >
+                            1
+                        </span>
+
+
+                        <!-- Plus -->
+                        <button
+                            id="increase-ticket"
+                            type="button"
+                            aria-label="Increase ticket quantity"
+                            class="w-[20px]
+                                   h-[24px]
+                                   flex items-center
+                                   justify-center
+                                   text-[19px]
+                                   leading-none
+                                   font-medium
+                                   hover:opacity-80
+                                   active:scale-90
+                                   transition"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Divider -->
+                <div
+                    class="mt-[21px]
+                           h-px
+                           w-full
+                           bg-[#d8d8d8]"
+                ></div>
+
+
+                <!-- Ticket Information -->
+                <ul
+                    class="mt-[20px]
+                           pl-[28px]
+                           space-y-[7px]
+                           list-disc
+                           text-[11px] sm:text-[12px]
+                           leading-[16px]
+                           font-normal
+                           text-[#171717]"
+                >
+
+                    <li class="pl-[1px]">
+                        This ticket grants entry to one individual in the Diamond Zone.
+                    </li>
+
+                    <li class="pl-[1px]">
+                        This is a seated section.
+                    </li>
+
+                    <li class="pl-[1px]">
+                        Seating is available on a first-come, first-served basis.
+                    </li>
+
+                </ul>
+
+            </article>
+
+
+            <!-- Empty Space -->
+            <div class="h-[210px] sm:h-[224px]"></div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FIXED BOTTOM BAR
+    ====================================================== -->
+
+    <footer
+        class="fixed
+               inset-x-0
+               bottom-0
+               z-50
+               h-[72px] sm:h-[73px]
+               bg-white
+               border-t border-[#eeeeee]
+               shadow-[0_-2px_8px_rgba(0,0,0,0.03)]"
+    >
+
+        <div
+            class="mx-auto
+                   h-full
+                   w-full
+                   max-w-[505px]
+                   px-[16px] sm:px-0
+                   flex
+                   items-center
+                   justify-between
+                   gap-6"
+        >
+
+            <!-- Total -->
+            <div
+                class="flex
+                       flex-col
+                       justify-center
+                       min-w-[90px]"
+            >
+
+                <span
+                    id="total-price"
+                    class="text-[16px] sm:text-[17px]
+                           leading-[20px]
+                           font-semibold
+                           text-[#111111]"
+                >
+                    ₹ 4,999
+                </span>
+
+                <span
+                    id="ticket-summary"
+                    class="mt-[1px]
+                           text-[9px] sm:text-[10px]
+                           leading-[13px]
+                           text-[#a0a0a0]"
+                >
+                    1 ticket
+                </span>
+
+            </div>
+
+
+            <!-- Next Button -->
+            <button
+                id="next-button"
+                type="button"
+                class="w-[122px] sm:w-[123px]
+                       h-[44px] sm:h-[45px]
+                       rounded-[7px]
+                       bg-gradient-to-r
+                       from-[#ed3690]
+                       to-[#a735e7]
+                       text-white
+                       text-[16px] sm:text-[17px]
+                       font-semibold
+                       flex
+                       items-center
+                       justify-center
+                       transition-transform
+                       duration-200
+                       hover:scale-[1.02]
+                       active:scale-[0.98]"
+            >
+                Next
+            </button>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+        /* =========================================
+           TICKET QUANTITY
+        ========================================= */
+
+        const ticketPrice = 4999;
+
+        let ticketCount = 1;
+
+        const ticketCountEl =
+            document.getElementById("ticket-count");
+
+        const totalPriceEl =
+            document.getElementById("total-price");
+
+        const ticketSummaryEl =
+            document.getElementById("ticket-summary");
+
+        const decreaseButton =
+            document.getElementById("decrease-ticket");
+
+        const increaseButton =
+            document.getElementById("increase-ticket");
+
+
+        /* =========================================
+           FORMAT PRICE
+        ========================================= */
+
+        function formatPrice(value) {
+
+            return "₹ " + value.toLocaleString("en-IN");
+
+        }
+
+
+        /* =========================================
+           UPDATE UI
+        ========================================= */
+
+        function updateTicketUI() {
+
+            const total =
+                ticketPrice * ticketCount;
+
+            ticketCountEl.textContent =
+                ticketCount;
+
+            totalPriceEl.textContent =
+                formatPrice(total);
+
+            ticketSummaryEl.textContent =
+                `${ticketCount} ${
+                    ticketCount === 1
+                        ? "ticket"
+                        : "tickets"
+                }`;
+
+        }
+
+
+        /* =========================================
+           DECREASE
+        ========================================= */
+
+        decreaseButton.addEventListener(
+            "click",
+            () => {
+
+                if (ticketCount > 1) {
+
+                    ticketCount--;
+
+                    updateTicketUI();
+
+                }
+
+            }
+        );
+
+
+        /* =========================================
+           INCREASE
+        ========================================= */
+
+        increaseButton.addEventListener(
+            "click",
+            () => {
+
+                if (ticketCount < 10) {
+
+                    ticketCount++;
+
+                    updateTicketUI();
+
+                }
+
+            }
+        );
+
+
+        /* =========================================
+           BOOKING TIMER
+        ========================================= */
+
+        let remainingSeconds =
+            9 * 60 + 59;
+
+        const timerElement =
+            document.getElementById("booking-timer");
+
+
+        function updateTimer() {
+
+            const minutes =
+                Math.floor(
+                    remainingSeconds / 60
+                );
+
+            const seconds =
+                remainingSeconds % 60;
+
+
+            timerElement.textContent =
+                `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")} mins`;
+
+
+            if (remainingSeconds > 0) {
+
+                remainingSeconds--;
+
+            }
+
+        }
+
+
+        updateTimer();
+
+        setInterval(
+            updateTimer,
+            1000
+        );
+
+    </script>
+
+</body>
+</html>
