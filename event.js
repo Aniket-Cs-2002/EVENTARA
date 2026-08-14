@@ -81,7 +81,6 @@ function render() {
     fillCard("back3", events[wrap(current + 4)]);
 }
 function animateRender(callback) {
-
     const images = document.querySelectorAll("#event-slider img");
 
     images.forEach(img => {
@@ -89,43 +88,21 @@ function animateRender(callback) {
     });
 
     setTimeout(() => {
+        callback();
 
-        callback();     // render() changes the src
-
-        let loaded = 0;
-
-        images.forEach(img => {
-
-            if (img.complete) {
-                loaded++;
-
-                if (loaded === images.length) {
-                    images.forEach(i => i.style.opacity = "1");
-                }
-
-            } else {
-
-                img.onload = () => {
-
-                    loaded++;
-
-                    if (loaded === images.length) {
-                        images.forEach(i => i.style.opacity = "1");
-                    }
-
-                };
-
-            }
-
+        requestAnimationFrame(() => {
+            images.forEach(img => {
+                img.style.opacity = "1";
+            });
         });
-
-    }, 200);
+    }, 180);
 }
 
 
 function nextSlide() {
 
     if (isAnimating) return;
+
     isAnimating = true;
 
     animateRender(() => {
@@ -135,13 +112,13 @@ function nextSlide() {
 
     setTimeout(() => {
         isAnimating = false;
-    }, 260);
-
+    }, 780);
 }
 
 function prevSlide() {
 
     if (isAnimating) return;
+
     isAnimating = true;
 
     animateRender(() => {
@@ -151,8 +128,7 @@ function prevSlide() {
 
     setTimeout(() => {
         isAnimating = false;
-    }, 260);
-
+    }, 780);
 }
 
 nextBtn.addEventListener("click", nextSlide);
