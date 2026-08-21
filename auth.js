@@ -165,6 +165,32 @@ if (adminLoginLink) {
 // ADMIN LOGIN SUBMIT
 // ==============================
 
+// if (adminLoginForm) {
+
+//     adminLoginForm.addEventListener("submit", (e) => {
+
+//         e.preventDefault();
+
+//         // Admin login successful
+
+//         adminPortalSection.classList.add("hidden");
+
+//         authSection.classList.remove("hidden");
+
+//         switchTab(true);
+
+//         // Close Auth Modal
+
+//         authModal.classList.remove("active");
+
+//     });
+
+// }
+
+// ==============================
+// ADMIN LOGIN SUBMIT
+// ==============================
+
 if (adminLoginForm) {
 
     adminLoginForm.addEventListener("submit", (e) => {
@@ -172,16 +198,7 @@ if (adminLoginForm) {
         e.preventDefault();
 
         // Admin login successful
-
-        adminPortalSection.classList.add("hidden");
-
-        authSection.classList.remove("hidden");
-
-        switchTab(true);
-
-        // Close Auth Modal
-
-        authModal.classList.remove("active");
+        window.location.href = "dashbord.html";
 
     });
 

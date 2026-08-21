@@ -105,3 +105,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 });
+
+/* ===============================
+   NEXT BUTTON
+   =============================== */
+
+const nextButton = document.getElementById("cart-next-btn");
+
+if (nextButton) {
+
+    nextButton.addEventListener("click", function () {
+
+        window.location.href = "order-summery.html";
+
+    });
+
+}

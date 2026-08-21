@@ -79,15 +79,15 @@
       termsCheckbox.addEventListener("change", updateContinueButton);
 
       billingForm.addEventListener("submit", (event) => {
-        event.preventDefault();
+  event.preventDefault();
 
-        if (continueButton.disabled) {
-          return;
-        }
+  if (continueButton.disabled) {
+    return;
+  }
 
-        continueButton.textContent = "PROCESSING...";
+  continueButton.textContent = "PROCESSING...";
 
-        setTimeout(() => {
-          continueButton.textContent = "CONTINUE";
-        }, 900);
-      });
+  setTimeout(() => {
+    window.location.href = "payment.html";
+  }, 900);
+});

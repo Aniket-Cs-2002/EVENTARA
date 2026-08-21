@@ -785,7 +785,11 @@ if (upiBackButton) {
 
   upiBackButton.addEventListener(
     "click",
-    closeUpiModal
+    () => {
+
+      window.location.href = "booking-confirmed.html";
+
+    }
   );
 
 }

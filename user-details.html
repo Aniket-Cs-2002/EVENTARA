@@ -1,0 +1,1836 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Eventara - User Details</title>
+
+  <!-- =====================================================
+       TAILWIND
+  ====================================================== -->
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            poppins: ["Poppins", "sans-serif"],
+            oswald: ["Oswald", "sans-serif"],
+            outfit: ["Outfit", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- =====================================================
+       FONT AWESOME
+  ====================================================== -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  />
+
+  <!-- =====================================================
+       YOUR CSS
+  ====================================================== -->
+
+  <link rel="stylesheet" href="src/style.css" />
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    .scrollbar-none::-webkit-scrollbar {
+      display: none;
+    }
+
+    .scrollbar-none {
+      scrollbar-width: none;
+    }
+
+    /* Smooth mobile sidebar */
+    #sidebar {
+      will-change: transform;
+    }
+
+    /* Table */
+    .user-table-row {
+      transition: background-color 0.15s ease;
+    }
+
+    .user-table-row:hover {
+      background: #fcf9ff;
+    }
+
+    /* Modal */
+    .modal-scroll {
+      scrollbar-width: thin;
+    }
+
+    /* Mobile */
+    @media (max-width: 1023px) {
+      #mainContent {
+        padding-top: 78px;
+      }
+    }
+  </style>
+</head>
+
+
+<body
+  class="bg-[#f4f4f4] font-poppins text-[#252525] antialiased"
+>
+
+
+  <!-- =========================================================
+       SIDEBAR
+  ========================================================== -->
+
+  <aside
+    id="sidebar"
+    class="
+      fixed
+      left-0
+      top-0
+      z-[1000]
+      flex
+      h-screen
+      w-[307px]
+      min-w-[307px]
+      -translate-x-full
+      flex-col
+      border-r
+      border-[#dedede]
+      bg-white
+      transition-transform
+      duration-300
+      lg:translate-x-0
+    "
+  >
+
+    <!-- LOGO -->
+
+    <div
+      class="
+        flex
+        h-[115px]
+        min-h-[115px]
+        items-center
+        justify-center
+      "
+    >
+      <img
+        src="./images/logo.png"
+        alt="Eventara"
+        class="w-[134px] object-contain"
+      />
+    </div>
+
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
+    <nav
+      class="
+        flex-1
+        overflow-y-auto
+        px-[30px]
+        pt-[20px]
+        pb-4
+        scrollbar-none
+      "
+    >
+
+      <div class="space-y-[7px]">
+
+        <!-- Dashboard -->
+
+        <a
+          href="dashbord.html"
+          data-page="Dashboard"
+          class="
+            dashboard-nav
+            flex
+            h-[50px]
+            items-center
+            gap-[18px]
+            rounded-[8px]
+            px-[14px]
+            text-[16px]
+            text-[#303030]
+            transition
+            hover:bg-[#f7f0ff]
+            hover:text-[#8f2ce3]
+          "
+        >
+          <i
+            class="fa-solid fa-table-cells-large w-[20px] text-center"
+          ></i>
+
+          <span>Dashboard</span>
+        </a>
+
+
+        <!-- User Details -->
+
+        <a
+          href="#"
+          data-page="User Details"
+          class="
+            dashboard-nav
+            active
+            flex
+            h-[50px]
+            items-center
+            gap-[18px]
+            rounded-[8px]
+            bg-[#f0e5ff]
+            px-[14px]
+            text-[16px]
+            text-[#8f2ce3]
+            transition
+          "
+        >
+          <i
+            class="fa-regular fa-user w-[20px] text-center"
+          ></i>
+
+          <span>User Details</span>
+        </a>
+
+
+        <!-- Events -->
+
+        <a
+          href="#"
+          data-page="Events Details"
+          class="
+            dashboard-nav
+            flex
+            h-[50px]
+            items-center
+            gap-[18px]
+            rounded-[8px]
+            px-[14px]
+            text-[16px]
+            text-[#303030]
+            transition
+            hover:bg-[#f7f0ff]
+            hover:text-[#8f2ce3]
+          "
+        >
+          <i
+            class="fa-regular fa-calendar-check w-[20px] text-center"
+          ></i>
+
+          <span>Events Details</span>
+        </a>
+
+
+        <!-- Category -->
+
+        <a
+          href="#"
+          data-page="Category Details"
+          class="
+            dashboard-nav
+            flex
+            h-[50px]
+            items-center
+            gap-[18px]
+            rounded-[8px]
+            px-[14px]
+            text-[16px]
+            text-[#303030]
+            transition
+            hover:bg-[#f7f0ff]
+            hover:text-[#8f2ce3]
+          "
+        >
+          <i
+            class="fa-regular fa-calendar-days w-[20px] text-center"
+          ></i>
+
+          <span>Category Details</span>
+        </a>
+
+
+        <!-- Ticket -->
+
+        <a
+          href="#"
+          data-page="Ticket Details"
+          class="
+            dashboard-nav
+            flex
+            h-[50px]
+            items-center
+            gap-[18px]
+            rounded-[8px]
+            px-[14px]
+            text-[16px]
+            text-[#303030]
+            transition
+            hover:bg-[#f7f0ff]
+            hover:text-[#8f2ce3]
+          "
+        >
+          <i
+            class="fa-solid fa-ticket w-[20px] text-center"
+          ></i>
+
+          <span>Ticket Details</span>
+        </a>
+
+
+        <!-- Ticket Tier -->
+
+        <a
+          href="#"
+          data-page="Ticket Tier Details"
+          class="
+            dashboard-nav
+            flex
+            h-[50px]
+            items-center
+            gap-[18px]
+            rounded-[8px]
+            px-[14px]
+            text-[16px]
+            text-[#303030]
+            transition
+            hover:bg-[#f7f0ff]
+            hover:text-[#8f2ce3]
+          "
+        >
+          <i
+            class="fa-solid fa-ticket-simple w-[20px] text-center"
+          ></i>
+
+          <span>Ticket Tier Details</span>
+        </a>
+
+
+        <!-- Blog -->
+
+        <a
+          href="#"
+          data-page="Blog Section"
+          class="
+            dashboard-nav
+            flex
+            h-[50px]
+            items-center
+            gap-[18px]
+            rounded-[8px]
+            px-[14px]
+            text-[16px]
+            text-[#303030]
+            transition
+            hover:bg-[#f7f0ff]
+            hover:text-[#8f2ce3]
+          "
+        >
+          <i
+            class="fa-regular fa-pen-to-square w-[20px] text-center"
+          ></i>
+
+          <span>Blog Section</span>
+        </a>
+
+
+        <!-- Speaker -->
+
+        <a
+          href="#"
+          data-page="Speaker Details"
+          class="
+            dashboard-nav
+            flex
+            h-[50px]
+            items-center
+            gap-[18px]
+            rounded-[8px]
+            px-[14px]
+            text-[16px]
+            text-[#303030]
+            transition
+            hover:bg-[#f7f0ff]
+            hover:text-[#8f2ce3]
+          "
+        >
+          <i
+            class="fa-solid fa-microphone w-[20px] text-center"
+          ></i>
+
+          <span>Speaker Details</span>
+        </a>
+
+
+        <!-- Trash -->
+
+        <a
+          href="#"
+          data-page="Trash"
+          class="
+            dashboard-nav
+            flex
+            h-[50px]
+            items-center
+            gap-[18px]
+            rounded-[8px]
+            px-[14px]
+            text-[16px]
+            text-[#303030]
+            transition
+            hover:bg-[#f7f0ff]
+            hover:text-[#8f2ce3]
+          "
+        >
+          <i
+            class="fa-regular fa-trash-can w-[20px] text-center"
+          ></i>
+
+          <span>Trash</span>
+        </a>
+
+
+        <!-- Logout -->
+
+        <a
+          href="#"
+          id="sidebarLogout"
+          data-page="Log out"
+          class="
+            dashboard-nav
+            flex
+            h-[50px]
+            items-center
+            gap-[18px]
+            rounded-[8px]
+            px-[14px]
+            text-[16px]
+            text-[#303030]
+            transition
+            hover:bg-[#f7f0ff]
+            hover:text-[#8f2ce3]
+          "
+        >
+          <i
+            class="fa-solid fa-right-from-bracket w-[20px] text-center"
+          ></i>
+
+          <span>Log out</span>
+        </a>
+
+      </div>
+
+    </nav>
+
+
+    <!-- =====================================================
+         PROMO
+    ====================================================== -->
+
+    <div class="px-[24px] pb-[22px]">
+
+      <div
+        class="
+          relative
+          h-[242px]
+          overflow-hidden
+          rounded-[7px]
+        "
+      >
+
+        <img
+          src="./images/dashbord-side-nav-img.png"
+          alt=""
+          class="
+            absolute
+            inset-0
+            h-full
+            w-full
+            object-cover
+          "
+        />
+
+        <div
+          class="
+            absolute
+            inset-0
+            bg-gradient-to-t
+            from-[#22052f]/70
+            via-transparent
+            to-transparent
+          "
+        ></div>
+
+        <div
+          class="
+            absolute
+            bottom-[18px]
+            left-[27px]
+            text-white
+          "
+        >
+
+          <h3
+            class="
+              font-oswald
+              text-[34px]
+              font-bold
+              leading-none
+              tracking-[2px]
+            "
+          >
+            EVENTARA
+          </h3>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         ADMIN PROFILE
+    ====================================================== -->
+
+    <div class="px-[20px] pb-[17px]">
+
+      <div class="relative">
+
+        <button
+          id="profileToggle"
+          type="button"
+          class="
+            flex
+            h-[59px]
+            w-full
+            items-center
+            rounded-[8px]
+            border
+            border-[#9b9b9b]
+            bg-white
+            px-[11px]
+            transition
+            hover:bg-[#fafafa]
+          "
+        >
+
+          <img
+            src="https://randomuser.me/api/portraits/men/32.jpg"
+            alt="Admin"
+            class="
+              h-[40px]
+              w-[40px]
+              shrink-0
+              rounded-full
+              object-cover
+            "
+          />
+
+          <span
+            class="
+              ml-[10px]
+              flex-1
+              text-left
+              text-[16px]
+            "
+          >
+            Admin Profile
+          </span>
+
+          <i
+            id="profileChevron"
+            class="
+              fa-solid
+              fa-chevron-down
+              text-[13px]
+              text-[#141b34]
+              transition-transform
+              duration-200
+            "
+          ></i>
+
+        </button>
+
+
+        <!-- PROFILE MENU -->
+
+        <div
+          id="profileMenu"
+          class="
+            absolute
+            bottom-[70px]
+            left-0
+            z-[200]
+            hidden
+            w-full
+            rounded-[14px]
+            bg-[#f6eaff]
+            p-[10px]
+            shadow-[0_8px_25px_rgba(20,27,52,.12)]
+          "
+        >
+
+          <!-- My Profile -->
+
+          <button
+            type="button"
+            class="
+              flex
+              min-h-[78px]
+              w-full
+              items-center
+              gap-[18px]
+              rounded-[12px]
+              bg-white
+              px-[20px]
+              text-left
+            "
+          >
+
+            <i
+              class="
+                fa-regular
+                fa-circle-user
+                w-[24px]
+                text-center
+                text-[22px]
+              "
+            ></i>
+
+            <span class="flex-1 text-[15px]">
+              My Profile
+            </span>
+
+            <i
+              class="fa-solid fa-chevron-right text-[17px]"
+            ></i>
+
+          </button>
+
+
+          <!-- Change Password -->
+
+          <button
+            id="openChangePasswordModal"
+            type="button"
+            class="
+              mt-[10px]
+              flex
+              min-h-[78px]
+              w-full
+              items-center
+              gap-[18px]
+              rounded-[12px]
+              bg-white
+              px-[20px]
+              text-left
+            "
+          >
+
+            <i
+              class="
+                fa-solid
+                fa-arrows-rotate
+                w-[24px]
+                text-center
+                text-[21px]
+              "
+            ></i>
+
+            <span class="flex-1 text-[15px]">
+              Change<br />
+              Password
+            </span>
+
+            <i
+              class="fa-solid fa-chevron-right text-[17px]"
+            ></i>
+
+          </button>
+
+
+          <!-- Logout -->
+
+          <button
+            id="profileLogout"
+            type="button"
+            class="
+              mt-[10px]
+              flex
+              min-h-[78px]
+              w-full
+              items-center
+              gap-[18px]
+              rounded-[12px]
+              bg-white
+              px-[20px]
+              text-left
+            "
+          >
+
+            <i
+              class="
+                fa-solid
+                fa-arrow-right-from-bracket
+                w-[24px]
+                text-center
+                text-[21px]
+              "
+            ></i>
+
+            <span class="flex-1 text-[15px]">
+              Logout
+            </span>
+
+            <i
+              class="fa-solid fa-chevron-right text-[17px]"
+            ></i>
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </aside>
+
+
+  <!-- =========================================================
+       MOBILE OVERLAY
+  ========================================================== -->
+
+  <div
+    id="mobileOverlay"
+    class="
+      fixed
+      inset-0
+      z-[900]
+      hidden
+      bg-black/40
+      opacity-0
+      transition-opacity
+      duration-300
+      lg:hidden
+    "
+  ></div>
+
+
+  <!-- =========================================================
+       MOBILE HEADER
+  ========================================================== -->
+
+  <header
+    class="
+      fixed
+      left-0
+      right-0
+      top-0
+      z-[800]
+      flex
+      h-[68px]
+      items-center
+      justify-between
+      border-b
+      border-[#e5e5e5]
+      bg-white
+      px-4
+      lg:hidden
+    "
+  >
+
+    <img
+      src="./images/logo.png"
+      alt="Eventara"
+      class="w-[78px]"
+    />
+
+    <button
+      id="mobileMenuButton"
+      type="button"
+      class="
+        flex
+        h-[40px]
+        w-[40px]
+        items-center
+        justify-center
+        rounded-[8px]
+        border
+        border-[#ddd]
+        text-[#7724a5]
+      "
+    >
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+  </header>
+
+
+  <!-- =========================================================
+       MAIN CONTENT
+  ========================================================== -->
+
+  <main
+    id="mainContent"
+    class="
+      min-h-screen
+      lg:ml-[307px]
+      bg-[#f4f4f4]
+      px-3
+      pb-6
+      pt-4
+      sm:px-5
+      lg:px-[30px]
+      lg:pt-[24px]
+    "
+  >
+
+    <!-- =====================================================
+         PAGE HEADER
+    ====================================================== -->
+
+    <section>
+
+      <div
+        class="
+          flex
+          flex-col
+          gap-4
+          sm:flex-row
+          sm:items-start
+          sm:justify-between
+        "
+      >
+
+        <div>
+
+          <h1
+            class="
+              font-oswald
+              text-[32px]
+              font-bold
+              leading-none
+              sm:text-[36px]
+              lg:text-[40px]
+            "
+          >
+            User Details
+          </h1>
+
+          <div
+            class="
+              mt-[7px]
+              flex
+              items-center
+              gap-[10px]
+              text-[13px]
+              sm:text-[14px]
+            "
+          >
+
+            <span class="text-[#999]">
+              Dashboard
+            </span>
+
+            <i
+              class="fa-solid fa-chevron-right text-[10px] text-[#333]"
+            ></i>
+
+            <span class="text-[#a437e6]">
+              User Details
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- HEADER RIGHT -->
+
+        <div
+          class="
+            flex
+            items-center
+            gap-3
+            self-end
+            sm:self-auto
+          "
+        >
+
+          <button
+            type="button"
+            class="
+              relative
+              flex
+              h-[42px]
+              w-[42px]
+              items-center
+              justify-center
+            "
+          >
+
+            <i
+              class="fa-regular fa-bell text-[21px]"
+            ></i>
+
+            <span
+              class="
+                absolute
+                right-0
+                top-0
+                flex
+                h-[18px]
+                w-[18px]
+                items-center
+                justify-center
+                rounded-full
+                bg-[#a437e6]
+                text-[10px]
+                text-white
+              "
+            >
+              3
+            </span>
+
+          </button>
+
+
+          <button
+            type="button"
+            class="
+              flex
+              h-[44px]
+              items-center
+              gap-3
+              rounded-[6px]
+              border
+              border-[#ededed]
+              bg-white
+              px-3
+              shadow-sm
+              sm:px-4
+            "
+          >
+
+            <i
+              class="fa-regular fa-calendar-days"
+            ></i>
+
+            <span class="whitespace-nowrap text-[13px] sm:text-[14px]">
+              26 July 2025
+            </span>
+
+            <i
+              class="fa-solid fa-chevron-down text-[11px]"
+            ></i>
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         STAT CARDS
+    ====================================================== -->
+
+    <section
+      class="
+        mt-[18px]
+        grid
+        grid-cols-1
+        gap-3
+        sm:grid-cols-2
+        xl:grid-cols-4
+      "
+    >
+
+      <!-- ACTIVE -->
+
+      <article
+        class="
+          flex
+          min-h-[108px]
+          items-center
+          gap-4
+          rounded-[9px]
+          bg-white
+          px-4
+          shadow-[0_3px_14px_rgba(20,27,52,.08)]
+        "
+      >
+
+        <div
+          class="
+            grid
+            h-[54px]
+            w-[54px]
+            shrink-0
+            place-items-center
+            rounded-[9px]
+            bg-[#f1e4fc]
+            text-[#a437e6]
+          "
+        >
+          <i class="fa-regular fa-user text-[27px]"></i>
+        </div>
+
+        <div>
+
+          <p class="text-[14px] text-[#999]">
+            Active Users
+          </p>
+
+          <p
+            class="
+              mt-1
+              font-oswald
+              text-[28px]
+              font-bold
+              leading-none
+            "
+          >
+            3000
+          </p>
+
+          <p class="mt-2 text-[13px] text-[#999]">
+            <span class="text-[#16a34a]">
+              ↑ 48%
+            </span>
+            This Month
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- INACTIVE -->
+
+      <article
+        class="
+          flex
+          min-h-[108px]
+          items-center
+          gap-4
+          rounded-[9px]
+          bg-white
+          px-4
+          shadow-[0_3px_14px_rgba(20,27,52,.08)]
+        "
+      >
+
+        <div
+          class="
+            grid
+            h-[54px]
+            w-[54px]
+            shrink-0
+            place-items-center
+            rounded-[9px]
+            bg-[#e8f0ff]
+            text-[#1557d6]
+          "
+        >
+          <i class="fa-regular fa-user text-[27px]"></i>
+
+          <span
+            class="
+              absolute
+              ml-[18px]
+              mt-[18px]
+              text-[12px]
+              font-bold
+            "
+          >
+            ×
+          </span>
+
+        </div>
+
+        <div>
+
+          <p class="text-[14px] text-[#999]">
+            Inactive Users
+          </p>
+
+          <p
+            class="
+              mt-1
+              font-oswald
+              text-[28px]
+              font-bold
+              leading-none
+            "
+          >
+            140
+          </p>
+
+          <p class="mt-2 text-[13px] text-[#999]">
+            <span class="text-[#16a34a]">
+              ↑ 25%
+            </span>
+            This Month
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- TOTAL -->
+
+      <article
+        class="
+          flex
+          min-h-[108px]
+          items-center
+          gap-4
+          rounded-[9px]
+          bg-white
+          px-4
+          shadow-[0_3px_14px_rgba(20,27,52,.08)]
+        "
+      >
+
+        <div
+          class="
+            grid
+            h-[54px]
+            w-[54px]
+            shrink-0
+            place-items-center
+            rounded-[9px]
+            bg-[#fde6f1]
+            text-[#f2458e]
+          "
+        >
+          <i class="fa-solid fa-users text-[27px]"></i>
+        </div>
+
+        <div>
+
+          <p class="text-[14px] text-[#999]">
+            Total Users
+          </p>
+
+          <p
+            class="
+              mt-1
+              font-oswald
+              text-[28px]
+              font-bold
+              leading-none
+            "
+          >
+            5,340
+          </p>
+
+          <p class="mt-2 text-[13px] text-[#999]">
+            <span class="text-[#16a34a]">
+              ↑ 17%
+            </span>
+            This Month
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- NEW -->
+
+      <article
+        class="
+          flex
+          min-h-[108px]
+          items-center
+          gap-4
+          rounded-[9px]
+          bg-white
+          px-4
+          shadow-[0_3px_14px_rgba(20,27,52,.08)]
+        "
+      >
+
+        <div
+          class="
+            grid
+            h-[54px]
+            w-[54px]
+            shrink-0
+            place-items-center
+            rounded-[9px]
+            bg-[#fee9e3]
+            text-[#ff6534]
+          "
+        >
+          <i class="fa-regular fa-user text-[27px]"></i>
+
+          <span
+            class="
+              absolute
+              ml-[22px]
+              mt-[19px]
+              text-[13px]
+              font-bold
+            "
+          >
+            +
+          </span>
+
+        </div>
+
+        <div>
+
+          <p class="text-[14px] text-[#999]">
+            New Users
+          </p>
+
+          <p
+            class="
+              mt-1
+              font-oswald
+              text-[28px]
+              font-bold
+              leading-none
+            "
+          >
+            230
+          </p>
+
+          <p class="mt-2 text-[13px] text-[#999]">
+            <span class="text-[#f2458e]">
+              ↓ 25%
+            </span>
+            This Month
+          </p>
+
+        </div>
+
+      </article>
+
+    </section>
+
+
+    <!-- =====================================================
+         USER TABLE CARD
+    ====================================================== -->
+
+    <section
+      class="
+        mt-[18px]
+        rounded-[6px]
+        bg-white
+        p-3
+        shadow-[0_3px_14px_rgba(20,27,52,.08)]
+        sm:p-4
+        lg:p-[15px]
+      "
+    >
+
+      <!-- ===================================================
+           SEARCH / FILTER
+      ==================================================== -->
+
+      <div
+        class="
+          flex
+          flex-col
+          gap-3
+          lg:flex-row
+          lg:items-center
+        "
+      >
+
+        <!-- SEARCH -->
+
+        <div
+          class="
+            relative
+            w-full
+            lg:max-w-[390px]
+          "
+        >
+
+          <i
+            class="
+              fa-regular
+              fa-magnifying-glass
+              absolute
+              left-[14px]
+              top-1/2
+              -translate-y-1/2
+              text-[18px]
+              text-[#141b34]
+            "
+          ></i>
+
+          <input
+            id="userSearch"
+            type="text"
+            placeholder="Search Events by name, locat......."
+            class="
+              h-[42px]
+              w-full
+              rounded-[7px]
+              border
+              border-[#e3e3e3]
+              bg-white
+              pl-[42px]
+              pr-4
+              text-[14px]
+              outline-none
+              shadow-[0_4px_12px_rgba(0,0,0,.08)]
+              transition
+              focus:border-[#a437e6]
+              focus:ring-1
+              focus:ring-[#a437e6]
+            "
+          />
+
+        </div>
+
+
+        <!-- STATUS -->
+
+        <select
+          id="statusFilter"
+          class="
+            h-[42px]
+            w-full
+            rounded-[7px]
+            border
+            border-[#e3e3e3]
+            bg-white
+            px-3
+            text-[14px]
+            outline-none
+            shadow-[0_4px_12px_rgba(0,0,0,.08)]
+            lg:w-[102px]
+          "
+        >
+
+          <option value="all">
+            All Status
+          </option>
+
+          <option value="active">
+            Active
+          </option>
+
+          <option value="inactive">
+            Inactive
+          </option>
+
+        </select>
+
+
+        <!-- FILTER -->
+
+        <button
+          id="filterButton"
+          type="button"
+          class="
+            flex
+            h-[42px]
+            w-full
+            items-center
+            justify-center
+            gap-3
+            rounded-[7px]
+            border
+            border-[#e3e3e3]
+            bg-white
+            px-4
+            text-[14px]
+            shadow-[0_4px_12px_rgba(0,0,0,.08)]
+            transition
+            hover:border-[#a437e6]
+            hover:text-[#a437e6]
+            lg:w-[94px]
+          "
+        >
+
+          <i class="fa-solid fa-filter"></i>
+
+          Filter
+
+        </button>
+
+      </div>
+
+
+      <!-- ===================================================
+           TABLE
+      ==================================================== -->
+
+      <div class="mt-[20px] overflow-x-auto scrollbar-none">
+
+        <div
+          class="
+            min-w-[1050px]
+            overflow-hidden
+            rounded-[6px]
+          "
+        >
+
+          <!-- TABLE HEADER -->
+
+          <div
+            class="
+              grid
+              grid-cols-[38px_2.2fr_1.65fr_1.2fr_1.15fr_1fr_1fr_100px]
+              items-center
+              rounded-[6px]
+              bg-[#f6f6f6]
+              px-[12px]
+              py-[11px]
+              text-[12px]
+              text-[#555]
+            "
+          >
+
+            <div class="flex justify-center">
+              <input
+                id="selectAll"
+                type="checkbox"
+                class="h-[17px] w-[17px] accent-[#a437e6]"
+              />
+            </div>
+
+            <span>User</span>
+
+            <span>Email</span>
+
+            <span>Phone</span>
+
+            <span>Role</span>
+
+            <span>Joined On</span>
+
+            <span>Status</span>
+
+            <span class="text-center">
+              Action
+            </span>
+
+          </div>
+
+
+          <!-- USER ROWS -->
+
+          <div
+            id="userTableBody"
+            class="divide-y divide-[#dedede]"
+          ></div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ===================================================
+           TABLE FOOTER
+      ==================================================== -->
+
+      <div
+        class="
+          mt-[16px]
+          flex
+          flex-col
+          gap-4
+          sm:flex-row
+          sm:items-center
+          sm:justify-between
+        "
+      >
+
+        <p
+          id="userCountText"
+          class="text-[13px] text-[#999]"
+        >
+          Showing 1–10 of 1,250 registered users
+        </p>
+
+
+        <!-- PAGINATION -->
+
+        <div
+          id="pagination"
+          class="
+            flex
+            items-center
+            gap-2
+            overflow-x-auto
+            pb-1
+            scrollbar-none
+          "
+        ></div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================================================
+       CHANGE PASSWORD MODAL
+  ========================================================== -->
+
+  <div
+    id="changePasswordModal"
+    class="
+      fixed
+      inset-0
+      z-[10000]
+      hidden
+      items-center
+      justify-center
+      bg-black/30
+      px-3
+      py-3
+      backdrop-blur-[3px]
+      sm:px-4
+      sm:py-5
+    "
+  >
+
+    <div
+      class="
+        relative
+        max-h-[95vh]
+        w-full
+        max-w-[980px]
+        overflow-y-auto
+        rounded-[26px]
+        bg-white
+        px-6
+        pb-8
+        pt-7
+        shadow-[0_20px_60px_rgba(0,0,0,.28)]
+        sm:px-12
+        md:px-16
+      "
+    >
+
+      <!-- BACK -->
+
+      <button
+        id="changePasswordBack"
+        type="button"
+        class="
+          absolute
+          left-6
+          top-6
+          flex
+          h-[34px]
+          w-[34px]
+          items-center
+          justify-center
+          text-[#141b34]
+        "
+      >
+        <i class="fa-solid fa-arrow-left text-[21px]"></i>
+      </button>
+
+
+      <div
+        class="
+          mt-[65px]
+          text-center
+        "
+      >
+
+        <h2
+          class="
+            font-oswald
+            text-[30px]
+            font-bold
+            leading-none
+            sm:text-[38px]
+            md:text-[42px]
+          "
+        >
+          Change Password
+        </h2>
+
+        <p
+          class="
+            mt-6
+            text-[14px]
+            text-[#777]
+            sm:text-[18px]
+            md:text-[22px]
+          "
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+
+      </div>
+
+
+      <form
+        id="changePasswordForm"
+        class="
+          mx-auto
+          mt-[55px]
+          max-w-[850px]
+        "
+      >
+
+        <label class="block text-[19px] sm:text-[24px]">
+          New Password
+        </label>
+
+        <input
+          id="changePasswordNew"
+          type="password"
+          placeholder="Enter your new password"
+          class="
+            mt-4
+            h-[68px]
+            w-full
+            rounded-[7px]
+            border
+            border-[#777]
+            px-6
+            text-[16px]
+            outline-none
+            focus:border-[#a437e6]
+            focus:ring-1
+            focus:ring-[#a437e6]
+            sm:h-[82px]
+            sm:text-[20px]
+          "
+        />
+
+
+        <label
+          class="
+            mt-[18px]
+            block
+            text-[19px]
+            sm:text-[24px]
+          "
+        >
+          Confirm Password
+        </label>
+
+        <input
+          id="changePasswordConfirm"
+          type="password"
+          placeholder="Enter your password again"
+          class="
+            mt-4
+            h-[68px]
+            w-full
+            rounded-[7px]
+            border
+            border-[#777]
+            px-6
+            text-[16px]
+            outline-none
+            focus:border-[#a437e6]
+            focus:ring-1
+            focus:ring-[#a437e6]
+            sm:h-[82px]
+            sm:text-[20px]
+          "
+        />
+
+
+        <p
+          id="changePasswordError"
+          class="mt-2 hidden text-sm text-[#e12169]"
+        ></p>
+
+
+        <button
+          type="submit"
+          class="
+            mt-6
+            h-[68px]
+            w-full
+            rounded-[6px]
+            bg-[#a437e6]
+            text-[24px]
+            font-semibold
+            text-white
+            transition
+            hover:bg-[#8d26c9]
+            sm:h-[88px]
+            sm:text-[30px]
+          "
+        >
+          Confirm
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================================================
+       LOGOUT MODAL
+  ========================================================== -->
+
+  <div
+    id="logoutModal"
+    class="
+      fixed
+      inset-0
+      z-[10000]
+      hidden
+      items-center
+      justify-center
+      bg-black/35
+      px-3
+      backdrop-blur-[3px]
+    "
+  >
+
+    <div
+      class="
+        relative
+        flex
+        min-h-[430px]
+        w-full
+        max-w-[1430px]
+        flex-col
+        items-center
+        justify-center
+        rounded-[26px]
+        bg-white
+        px-5
+        shadow-[0_20px_60px_rgba(0,0,0,.3)]
+      "
+    >
+
+      <button
+        id="logoutBack"
+        type="button"
+        class="
+          absolute
+          left-[55px]
+          top-[35px]
+          text-[#141b34]
+        "
+      >
+        <i class="fa-solid fa-arrow-left text-[26px]"></i>
+      </button>
+
+
+      <h2
+        class="
+          text-center
+          font-oswald
+          text-[34px]
+          font-bold
+          sm:text-[48px]
+          md:text-[58px]
+        "
+      >
+        Are you sure you want to logout ?
+      </h2>
+
+
+      <div
+        class="
+          mt-[70px]
+          flex
+          flex-col
+          gap-4
+          sm:flex-row
+          sm:gap-[45px]
+        "
+      >
+
+        <button
+          id="logoutNo"
+          type="button"
+          class="
+            h-[100px]
+            w-[210px]
+            rounded-[8px]
+            border
+            border-[#777]
+            bg-[#a437e6]
+            text-[34px]
+            font-semibold
+            text-white
+            transition
+            hover:bg-[#8d26c9]
+          "
+        >
+          No
+        </button>
+
+
+        <button
+          id="logoutYes"
+          type="button"
+          class="
+            h-[100px]
+            w-[210px]
+            rounded-[8px]
+            border
+            border-[#777]
+            bg-white
+            text-[34px]
+            font-semibold
+            text-[#252525]
+            transition
+            hover:bg-[#fafafa]
+          "
+        >
+          Yes
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================================================
+       JAVASCRIPT
+  ========================================================== -->
+
+  <script src="user-details.js"></script>
+
+</body>
+
+</html>

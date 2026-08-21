@@ -3912,3 +3912,5087 @@ $(document).on("click", "#navbar-signup-btn", function () {
 
 }
        
+
+
+
+
+
+<!-- Dashbord -->
+ <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Eventara Admin Dashboard</title>
+
+    <!-- =====================================================
+       TAILWIND
+  ====================================================== -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              poppins: ["Poppins", "sans-serif"],
+
+              oswald: ["Oswald", "sans-serif"],
+
+              outfit: ["Outfit", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- =====================================================
+       FONT AWESOME
+  ====================================================== -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- =====================================================
+       CHART.JS
+  ====================================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+
+    <!-- =====================================================
+       EXISTING CSS
+  ====================================================== -->
+
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="stylesheet" href="src/output.css" />
+  </head>
+
+  <body
+    class="dashboard-page bg-[#f4f4f4] font-poppins text-[#252525] antialiased"
+  >
+    <!-- =========================================================
+     AA — COMMON SIDEBAR
+========================================================= -->
+
+<aside
+  id="sidebar"
+  class="fixed left-0 top-0 z-[10000] flex h-screen w-[307px] min-w-[307px] flex-col border-r border-[#dedede] bg-white transition-transform duration-300 ease-in-out"
+>
+      <!-- LOGO -->
+      <div class="flex h-[101px] min-h-[101px] items-center justify-center">
+        <img
+          src="./images/logo.png"
+          alt="Eventara"
+          class="h-auto w-[134px] object-contain"
+        />
+      </div>
+
+      <!-- NAVIGATION -->
+      <nav class="flex-1 overflow-y-auto px-[30px] pt-[28px] pb-4">
+        <div class="space-y-[8px]">
+          <a
+            href="#"
+            data-page="Dashboard"
+            class="dashboard-nav active flex h-[50px] items-center gap-[18px] rounded-[4px] bg-[#f0e5ff] px-[14px] text-[16px] text-[#8f2ce3]"
+          >
+            <i class="fa-solid fa-table-cells-large w-[20px] text-center"></i>
+            <span>Dashboard</span>
+          </a>
+
+          <a
+            href="#"
+            data-page="User Details"
+            class="dashboard-nav flex h-[50px] items-center gap-[18px] rounded-[4px] px-[14px] text-[16px] text-[#303030] hover:bg-[#f7f0ff] hover:text-[#8f2ce3]"
+          >
+            <i class="fa-regular fa-user w-[20px] text-center"></i>
+            <span>User Details</span>
+          </a>
+
+          <a
+            href="#"
+            data-page="Events Details"
+            class="dashboard-nav flex h-[50px] items-center gap-[18px] rounded-[4px] px-[14px] text-[16px] text-[#303030] hover:bg-[#f7f0ff] hover:text-[#8f2ce3]"
+          >
+            <i class="fa-regular fa-calendar-check w-[20px] text-center"></i>
+            <span>Events Details</span>
+          </a>
+          <a
+            href="#"
+            data-page="Events Details"
+            class="dashboard-nav flex h-[50px] items-center gap-[18px] rounded-[4px] px-[14px] text-[16px] text-[#303030] hover:bg-[#f7f0ff] hover:text-[#8f2ce3]"
+          >
+            <i class="fa-regular fa-calendar-check w-[20px] text-center"></i>
+            <span>Category Details</span>
+          </a>
+
+          <a
+            href="#"
+            data-page="Ticket Details"
+            class="dashboard-nav flex h-[50px] items-center gap-[18px] rounded-[4px] px-[14px] text-[16px] text-[#303030] hover:bg-[#f7f0ff] hover:text-[#8f2ce3]"
+          >
+            <i class="fa-solid fa-ticket w-[20px] text-center"></i>
+            <span>Ticket Details</span>
+          </a>
+          <a
+            href="#"
+            data-page="Ticket Details"
+            class="dashboard-nav flex h-[50px] items-center gap-[18px] rounded-[4px] px-[14px] text-[16px] text-[#303030] hover:bg-[#f7f0ff] hover:text-[#8f2ce3]"
+          >
+            <i class="fa-solid fa-ticket w-[20px] text-center"></i>
+            <span>Ticket Tier Details </span>
+          </a>
+
+          <a
+            href="#"
+            data-page="Blog Section"
+            class="dashboard-nav flex h-[50px] items-center gap-[18px] rounded-[4px] px-[14px] text-[16px] text-[#303030] hover:bg-[#f7f0ff] hover:text-[#8f2ce3]"
+          >
+            <i class="fa-regular fa-pen-to-square w-[20px] text-center"></i>
+            <span>Blog Section</span>
+          </a>
+          <a
+            href="#"
+            data-page="Blog Section"
+            class="dashboard-nav flex h-[50px] items-center gap-[18px] rounded-[4px] px-[14px] text-[16px] text-[#303030] hover:bg-[#f7f0ff] hover:text-[#8f2ce3]"
+          >
+            <i class="fa-regular fa-pen-to-square w-[20px] text-center"></i>
+            <span>Speaker Details</span>
+          </a>
+
+          <a
+            href="#"
+            data-page="Trash"
+            class="dashboard-nav flex h-[50px] items-center gap-[18px] rounded-[4px] px-[14px] text-[16px] text-[#303030] hover:bg-[#f7f0ff] hover:text-[#8f2ce3]"
+          >
+            <i class="fa-regular fa-trash-can w-[20px] text-center"></i>
+            <span>Trash</span>
+          </a>
+
+          <a
+            href="#"
+            data-page="Log out"
+            class="dashboard-nav flex h-[50px] items-center gap-[18px] rounded-[4px] px-[14px] text-[16px] text-[#303030] hover:bg-[#f7f0ff] hover:text-[#8f2ce3]"
+          >
+            <i class="fa-solid fa-right-from-bracket w-[20px] text-center"></i>
+            <span>Log out</span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- PROMO -->
+      <div class="px-[24px] pb-[24px]">
+        <div class="relative h-[248px] overflow-hidden rounded-[7px]">
+          <img
+            src="./images/dashbord-side-nav-img.png"
+            alt=""
+            class="absolute inset-0 h-full w-full object-cover"
+          />
+
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-[#22052f]/80 via-transparent to-transparent"
+          ></div>
+
+          <div
+            class="absolute bottom-[17px] left-[28px] right-[15px] text-white"
+          >
+            <h3
+              class="oswald-bold text-[34px] leading-none tracking-[2px]"
+            >
+              EVENTARA
+            </h3>
+
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- ADMIN PROFILE -->
+      <!-- ================================================= -->
+<!-- ADMIN PROFILE -->
+<!-- ================================================= -->
+
+<div class="px-[20px] pb-[18px]">
+  <div
+    class="relative flex h-[82px] w-full items-center rounded-[12px] border border-[#9b9b9b] bg-white px-[14px]"
+  >
+
+    <!-- PROFILE IMAGE -->
+    <img
+      src="https://randomuser.me/api/portraits/men/32.jpg"
+      alt="Admin"
+      class="h-[40px] w-[40px] shrink-0 rounded-full object-cover"
+    />
+
+    <!-- PROFILE NAME -->
+    <div class="ml-[10px] min-w-0 flex-1">
+      <p
+        class="truncate text-[20px] poppins-regular leading-none text-[#252525]"
+      >
+        Admin Profile
+      </p>
+    </div>
+
+    <!-- ARROW -->
+    <button
+      id="profileToggle"
+      type="button"
+      aria-label="Toggle profile menu"
+      class="flex h-[32px] w-[32px] shrink-0 items-center justify-center text-[#141b34]"
+    >
+      <i
+        id="profileChevron"
+        class="fa-solid fa-chevron-down text-[17px] transition-transform duration-200"
+      ></i>
+    </button>
+
+    <!-- PROFILE DROPDOWN -->
+<!-- ================================================= -->
+<!-- ADMIN PROFILE DROPDOWN -->
+<!-- ================================================= -->
+
+<div
+  id="profileMenu"
+  class="absolute bottom-[92px] left-0 z-[200] hidden w-full rounded-[14px] bg-[#f6eaff] p-[10px] shadow-[0_8px_25px_rgba(20,27,52,.12)]"
+>
+
+  <!-- MY PROFILE -->
+  <button
+    type="button"
+    class="profile-menu-item flex min-h-[88px] w-full items-center gap-[22px] rounded-[14px] bg-white px-[30px] text-left transition hover:bg-[#faf7ff]"
+  >
+
+    <i
+      class="fa-regular fa-circle-user w-[24px] text-center text-[24px] text-[#141b34]"
+    ></i>
+
+    <span
+      class="flex-1 poppins-regular text-[16px] text-[#141b34]"
+    >
+      My Profile
+    </span>
+
+    <i
+      class="fa-solid fa-chevron-right text-[20px] text-[#141b34]"
+    ></i>
+
+  </button>
+
+
+<!-- CHANGE PASSWORD -->
+<button
+  id="openChangePasswordModal"
+  type="button"
+  class="profile-menu-item mt-[14px] flex min-h-[88px] w-full items-center gap-[22px] rounded-[14px] bg-white px-[30px] text-left transition hover:bg-[#faf7ff]"
+>
+  <i
+    class="fa-solid fa-arrows-rotate w-[24px] text-center text-[24px] text-[#141b34]"
+  ></i>
+
+  <span class="flex-1 poppins-regular text-[16px] text-[#141b34]">
+    Change<br />
+    Password
+  </span>
+
+  <i
+    class="fa-solid fa-chevron-right text-[20px] text-[#141b34]"
+  ></i>
+</button>
+
+
+  <!-- LOGOUT -->
+  <button
+    type="button"
+    class="profile-menu-item mt-[14px] flex min-h-[88px] w-full items-center gap-[22px] rounded-[14px] bg-white px-[30px] text-left transition hover:bg-[#faf7ff]"
+  >
+
+    <i
+      class="fa-solid fa-arrow-right-from-bracket w-[24px] text-center text-[24px] text-[#141b34]"
+    ></i>
+
+    <span
+      class="flex-1 poppins-regular text-[16px] text-[#141b34]"
+    >
+      Logout
+    </span>
+
+    <i
+      class="fa-solid fa-chevron-right text-[20px] text-[#141b34]"
+    ></i>
+
+  </button>
+
+</div>
+
+  </div>
+</div>
+    </aside>
+
+    <!-- =========================================================
+     MOBILE OVERLAY
+========================================================= -->
+
+<div
+  id="mobileOverlay"
+  class="fixed inset-0 z-[8990] hidden bg-black/40"
+></div>
+
+<!-- =========================================================
+     MOBILE HEADER
+========================================================= -->
+
+<header
+  id="mobileHeader"
+  class="fixed left-0 right-0 top-0 z-[9000] flex h-[68px] items-center justify-between border-b border-[#e5e5e5] bg-white px-4 lg:hidden"
+>
+  <img
+    src="./images/logo.png"
+    alt="Eventara"
+    class="w-[78px]"
+  />
+
+  <button
+    id="mobileMenuButton"
+    type="button"
+    aria-label="Open menu"
+    class="flex h-[44px] w-[44px] cursor-pointer items-center justify-center rounded-lg border border-[#ddd] bg-white text-[#7724a5] shadow-sm"
+  >
+    <i
+      id="mobileMenuIcon"
+      class="fa-solid fa-bars text-[20px]"
+    ></i>
+  </button>
+</header>
+
+    <!-- =====================================================
+     CHANGE PASSWORD MODAL
+===================================================== -->
+
+<div
+  id="changePasswordModal"
+  class="change-password-modal fixed inset-0 z-[10000] hidden items-center justify-center bg-black/30 px-3 py-3 backdrop-blur-[3px] sm:px-4 sm:py-5"
+  aria-hidden="true"
+>
+  <div
+    class="change-password-modal-card relative w-full max-w-[980px] rounded-[26px] bg-white px-[28px] pb-[30px] pt-[26px] shadow-[0_20px_60px_rgba(0,0,0,.28)] sm:px-[48px] sm:pb-[38px] sm:pt-[30px] md:px-[64px] md:pb-[48px] md:pt-[34px]"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="changePasswordTitle"
+  >
+
+    <!-- BACK BUTTON -->
+
+    <button
+      id="changePasswordBack"
+      type="button"
+      class="absolute left-[24px] top-[25px] flex h-[34px] w-[34px] items-center justify-center text-[#141b34] transition hover:scale-105 sm:left-[30px] sm:top-[30px]"
+      aria-label="Close change password"
+    >
+      <i class="fa-solid fa-arrow-left text-[20px] sm:text-[22px]"></i>
+    </button>
+
+
+    <!-- TITLE -->
+
+    <div class="change-password-heading mt-[72px] text-center sm:mt-[70px]">
+
+      <h2
+        id="changePasswordTitle"
+        class="oswald-bold text-[30px] leading-[1.1] text-black sm:text-[38px] md:text-[42px]"
+      >
+        Change Password
+      </h2>
+
+      <p
+        class="mt-[28px] text-[14px] leading-[1.5] text-[#777] sm:mt-[30px] sm:text-[18px] md:text-[22px]"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+
+    </div>
+
+
+    <!-- FORM -->
+
+    <form
+      id="changePasswordForm"
+      class="mx-auto mt-[64px] max-w-[850px] sm:mt-[70px]"
+    >
+
+      <!-- NEW PASSWORD -->
+
+      <div>
+
+        <label
+          for="changePasswordNew"
+          class="block text-[19px] leading-none text-[#111] sm:text-[24px]"
+        >
+          New Password
+        </label>
+
+        <div class="relative mt-[18px]">
+
+          <input
+            id="changePasswordNew"
+            type="password"
+            placeholder="Enter your new password"
+            autocomplete="new-password"
+            class="change-password-input h-[68px] w-full rounded-[7px] border border-[#777] bg-white px-[24px] pr-[58px] text-[16px] text-[#222] outline-none transition placeholder:text-[#777] focus:border-[#a437e6] focus:ring-1 focus:ring-[#a437e6] sm:h-[82px] sm:px-[25px] sm:text-[20px]"
+          />
+
+          <button
+            type="button"
+            class="change-password-eye absolute right-[16px] top-1/2 flex h-[34px] w-[34px] -translate-y-1/2 items-center justify-center text-[#777]"
+            data-password-target="changePasswordNew"
+          >
+            <i class="fa-regular fa-eye text-[17px]"></i>
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- CONFIRM PASSWORD -->
+
+      <div class="mt-[18px] sm:mt-[20px]">
+
+        <label
+          for="changePasswordConfirm"
+          class="block text-[19px] leading-none text-[#111] sm:text-[24px]"
+        >
+          Confirm Password
+        </label>
+
+        <div class="relative mt-[18px]">
+
+          <input
+            id="changePasswordConfirm"
+            type="password"
+            placeholder="Enter your password again"
+            autocomplete="new-password"
+            class="change-password-input h-[68px] w-full rounded-[7px] border border-[#777] bg-white px-[24px] pr-[58px] text-[16px] text-[#222] outline-none transition placeholder:text-[#777] focus:border-[#a437e6] focus:ring-1 focus:ring-[#a437e6] sm:h-[82px] sm:px-[25px] sm:text-[20px]"
+          />
+
+          <button
+            type="button"
+            class="change-password-eye absolute right-[16px] top-1/2 flex h-[34px] w-[34px] -translate-y-1/2 items-center justify-center text-[#777]"
+            data-password-target="changePasswordConfirm"
+          >
+            <i class="fa-regular fa-eye text-[17px]"></i>
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- ERROR -->
+
+      <p
+        id="changePasswordError"
+        class="mt-[10px] hidden text-[12px] text-[#e12169] sm:text-[14px]"
+      ></p>
+
+
+      <!-- CONFIRM -->
+
+      <button
+        id="confirmChangePassword"
+        type="submit"
+        class="mt-[26px] h-[68px] w-full rounded-[6px] bg-[#a437e6] text-[24px] font-semibold text-white transition hover:bg-[#8d26c9] active:scale-[.995] sm:h-[88px] sm:text-[30px]"
+      >
+        Confirm
+      </button>
+
+    </form>
+
+  </div>
+</div>
+    <!-- =========================================================
+     BB — COMMON HEADER + STAT CARDS
+========================================================= .--> 
+
+    <section id="BB" class="px-3 pt-4 sm:px-5 sm:pt-5 lg:px-7 lg:pt-5">
+      <div
+        class="rounded-[5px] bg-white px-3 py-4 shadow-[0_2px_14px_rgba(20,27,52,.06)] sm:px-4 lg:px-3 lg:py-3"
+      >
+        <!-- HEADER -->
+
+        <div
+          class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between"
+        >
+          <div class="min-w-0">
+            <h1
+              class="oswald-medium text-[32px]  leading-none sm:text-[36px] md:text-[42px]"
+            >
+              Dashboard
+            </h1>
+
+            <p class="poppins-regular mt-1 text-[12px] text-[#a1a1a1] sm:text-[13px] md:text-[16px]">
+              Welcome Back, Admin Here’s What’s Happening With Your Events
+            </p>
+          </div>
+
+          <!-- HEADER RIGHT -->
+
+          <div class="flex shrink-0 items-center gap-3 self-end sm:self-auto">
+            <!-- NOTIFICATION -->
+
+            <button
+              type="button"
+              class="relative grid h-10 w-10 place-items-center"
+            >
+              <i class="fa-regular fa-bell fa-xl"></i>
+
+              <span
+                class="absolute right-0 top-0 grid h-[18px] w-[18px] place-items-center rounded-full bg-[#a437e6] text-[10px] font-medium text-white"
+              >
+                3
+              </span>
+            </button>
+
+            <!-- DATE -->
+
+            <button
+              type="button"
+              class="flex h-11 items-center gap-3 rounded-[6px] border border-[#ededed] bg-white px-3 text-[14px] shadow-sm sm:px-4 sm:text-[15px]"
+            >
+              <i class="fa-regular fa-calendar-days"></i>
+
+              <span>26 July 2025</span>
+
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- METRICS -->
+
+        <div
+          id="metricCards"
+          class="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4"
+        ></div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+     MAIN
+========================================================= -->
+
+    <main>
+      <!-- =======================================================
+       CC — RECENT EVENTS + TICKETS
+  ======================================================== -->
+
+      <section id="CC" class="px-3 pb-3 pt-3 sm:px-5 lg:px-7">
+        <div
+          class="grid grid-cols-1 gap-3 xl:grid-cols-[minmax(0,1.55fr)_minmax(390px,.9fr)]"
+        >
+          <!-- RECENT EVENTS -->
+
+          <article
+            class="min-w-0 rounded-[6px] bg-white p-4 shadow-[0_2px_14px_rgba(20,27,52,.07)]"
+          >
+            <div class="mb-4 flex items-center justify-between">
+              <h2 class="font-oswald text-[21px] font-bold">Recent Events</h2>
+            </div>
+
+            <div class="overflow-x-auto">
+              <div class="min-w-[700px]">
+                <!-- TABLE HEADER -->
+
+                <div
+                  class="grid grid-cols-[1.55fr_1fr_1.15fr_.75fr_.85fr_.38fr] items-center rounded-[5px] bg-[#f6f6f6] px-3 py-2.5 text-[12px] text-[#666]"
+                >
+                  <span>Event Name</span>
+
+                  <span>Date</span>
+
+                  <span>Location</span>
+
+                  <span>Tickets Sold</span>
+
+                  <span>Revenue</span>
+
+                  <span>Action</span>
+                </div>
+
+                <!-- DYNAMIC ROWS -->
+
+                <div
+                  id="recentEventsRows"
+                  class="max-h-[232px] overflow-y-auto pr-1 scrollbar-none"
+                ></div>
+              </div>
+            </div>
+          </article>
+
+          <!-- TICKET OVERVIEW -->
+
+          <article
+            class="min-w-0 rounded-[6px] bg-white p-4 shadow-[0_2px_14px_rgba(20,27,52,.07)]"
+          >
+            <div class="flex items-center justify-between">
+              <h2 class="font-oswald text-[21px] font-bold">
+                Tickets Overview
+              </h2>
+
+              <button
+                type="button"
+                class="flex items-center gap-2 rounded-[6px] border border-[#ededed] px-3 py-2 text-[13px]"
+              >
+                This Month
+
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+            </div>
+
+            <div
+              class="mt-3 flex min-h-[248px] items-center justify-center gap-6 2xl:gap-10"
+            >
+              <!-- DONUT -->
+
+              <div
+                class="relative h-[210px] w-[210px] shrink-0 sm:h-[220px] sm:w-[220px]"
+              >
+                <canvas id="ticketChart"></canvas>
+
+                <div
+                  class="pointer-events-none absolute inset-0 grid place-items-center text-center"
+                >
+                  <div>
+                    <strong
+                      id="ticketTotal"
+                      class="block font-oswald text-[28px] font-bold leading-none"
+                    >
+                      3,260
+                    </strong>
+
+                    <span class="mt-1 block text-[14px] text-[#999]">
+                      Total Tickets
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- LEGEND -->
+
+              <div id="ticketLegend" class="shrink-0 space-y-4"></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- =======================================================
+       DD — SALES + TOP EVENTS + QUICK ACTION
+  ======================================================== -->
+
+      <section id="DD" class="px-3 pb-5 sm:px-5 lg:px-7">
+        <div
+          class="grid grid-cols-1 gap-3 xl:grid-cols-[minmax(0,1.65fr)_minmax(300px,.9fr)_minmax(300px,.9fr)]"
+        >
+          <!-- SALES -->
+
+          <article
+            class="min-w-0 rounded-[6px] bg-white p-4 shadow-[0_2px_14px_rgba(20,27,52,.07)]"
+          >
+            <div class="flex items-center justify-between">
+              <h2 class="font-oswald text-[21px] font-bold">Sales Overview</h2>
+
+              <button
+                type="button"
+                class="flex items-center gap-2 rounded-[6px] border border-[#ededed] px-3 py-2 text-[13px]"
+              >
+                This Month
+
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+            </div>
+
+            <div class="mt-2 h-[250px] w-full sm:h-[265px]">
+              <canvas id="salesChart"></canvas>
+            </div>
+          </article>
+
+          <!-- TOP EVENTS -->
+
+          <article
+            class="min-w-0 rounded-[6px] bg-white p-4 shadow-[0_2px_14px_rgba(20,27,52,.07)]"
+          >
+            <div class="mb-3 flex items-center justify-between">
+              <h2 class="font-oswald text-[21px] font-bold">Top Events</h2>
+
+              <button
+                type="button"
+                class="rounded-[6px] border border-[#ededed] px-3 py-2 text-[13px] text-[#a437e6]"
+              >
+                View all
+              </button>
+            </div>
+
+            <div
+              id="topEventsList"
+              class="max-h-[235px] space-y-1 overflow-y-auto pr-1 scrollbar-none"
+            ></div>
+          </article>
+
+          <!-- QUICK ACTION -->
+
+          <article
+            class="min-w-0 rounded-[6px] bg-white p-4 shadow-[0_2px_14px_rgba(20,27,52,.07)]"
+          >
+            <h2 class="mb-5 font-oswald text-[21px] font-bold">Quick Action</h2>
+
+            <div class="flex w-full justify-center">
+              <div
+                id="quickActions"
+                class="grid w-full max-w-[300px] grid-cols-2 gap-3"
+              ></div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- =========================================================
+     JS
+========================================================= -->
+
+    <script src="dashbord.js"></script>
+    <script>
+
+/* =========================================================
+
+   MOBILE SIDEBAR - STANDALONE
+
+   This works independently from dashbord.js
+
+========================================================= */
+
+(function () {
+
+  function initMobileMenu() {
+
+    const sidebar =
+
+      document.getElementById("sidebar");
+
+    const button =
+
+      document.getElementById("mobileMenuButton");
+
+    const overlay =
+
+      document.getElementById("mobileOverlay");
+
+    const icon =
+
+      document.getElementById("mobileMenuIcon");
+
+    if (!sidebar || !button || !overlay || !icon) {
+
+      console.error(
+
+        "MOBILE MENU ERROR:",
+
+        {
+
+          sidebar: sidebar,
+
+          button: button,
+
+          overlay: overlay,
+
+          icon: icon
+
+        }
+
+      );
+
+      return;
+
+    }
+
+    let opened = false;
+
+    /* =====================================================
+
+       INITIAL STATE
+
+    ===================================================== */
+
+    function setInitialState() {
+
+      if (window.innerWidth < 1024) {
+
+        sidebar.style.transform =
+
+          "translateX(-100%)";
+
+        overlay.style.display =
+
+          "none";
+
+        opened = false;
+
+      } else {
+
+        sidebar.style.transform =
+
+          "translateX(0)";
+
+        overlay.style.display =
+
+          "none";
+
+        opened = false;
+
+      }
+
+    }
+
+    /* =====================================================
+
+       OPEN
+
+    ===================================================== */
+
+    function openMenu() {
+
+      opened = true;
+
+      sidebar.style.transform =
+
+        "translateX(0)";
+
+      sidebar.style.zIndex =
+
+        "10000";
+
+      overlay.style.display =
+
+        "block";
+
+      icon.className =
+
+        "fa-solid fa-xmark text-[20px]";
+
+      button.setAttribute(
+
+        "aria-label",
+
+        "Close menu"
+
+      );
+
+      document.body.style.overflow =
+
+        "hidden";
+
+    }
+
+    /* =====================================================
+
+       CLOSE
+
+    ===================================================== */
+
+    function closeMenu() {
+
+      opened = false;
+
+      sidebar.style.transform =
+
+        "translateX(-100%)";
+
+      overlay.style.display =
+
+        "none";
+
+      icon.className =
+
+        "fa-solid fa-bars text-[20px]";
+
+      button.setAttribute(
+
+        "aria-label",
+
+        "Open menu"
+
+      );
+
+      document.body.style.overflow =
+
+        "";
+
+    }
+
+    /* =====================================================
+
+       BUTTON CLICK
+
+    ===================================================== */
+
+    button.onclick = function (event) {
+
+      event.preventDefault();
+
+      event.stopPropagation();
+
+      if (opened) {
+
+        closeMenu();
+
+      } else {
+
+        openMenu();
+
+      }
+
+    };
+
+    /* =====================================================
+
+       OVERLAY CLICK
+
+    ===================================================== */
+
+    overlay.onclick = function () {
+
+      closeMenu();
+
+    };
+
+    /* =====================================================
+
+       NAV CLICK
+
+    ===================================================== */
+
+    const navigation =
+
+      sidebar.querySelectorAll(
+
+        ".dashboard-nav"
+
+      );
+
+    navigation.forEach(
+
+      function (item) {
+
+        item.addEventListener(
+
+          "click",
+
+          function () {
+
+            if (
+
+              window.innerWidth < 1024
+
+            ) {
+
+              closeMenu();
+
+            }
+
+          }
+
+        );
+
+      }
+
+    );
+
+    /* =====================================================
+
+       ESC KEY
+
+    ===================================================== */
+
+    document.addEventListener(
+
+      "keydown",
+
+      function (event) {
+
+        if (
+
+          event.key === "Escape" &&
+
+          opened
+
+        ) {
+
+          closeMenu();
+
+        }
+
+      }
+
+    );
+
+    /* =====================================================
+
+       WINDOW RESIZE
+
+    ===================================================== */
+
+    window.addEventListener(
+
+      "resize",
+
+      function () {
+
+        if (
+
+          window.innerWidth >= 1024
+
+        ) {
+
+          sidebar.style.transform =
+
+            "translateX(0)";
+
+          overlay.style.display =
+
+            "none";
+
+          opened = false;
+
+          icon.className =
+
+            "fa-solid fa-bars text-[20px]";
+
+          document.body.style.overflow =
+
+            "";
+
+        } else {
+
+          if (!opened) {
+
+            sidebar.style.transform =
+
+              "translateX(-100%)";
+
+          }
+
+        }
+
+      }
+
+    );
+
+    /* INITIALIZE */
+
+    setInitialState();
+
+  }
+
+  /* =======================================================
+
+     WAIT FOR PAGE
+
+  ======================================================= */
+
+  if (
+
+    document.readyState === "loading"
+
+  ) {
+
+    document.addEventListener(
+
+      "DOMContentLoaded",
+
+      initMobileMenu
+
+    );
+
+  } else {
+
+    initMobileMenu();
+
+  }
+
+})();
+
+</script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Dashbord */
+/* =========================================================
+   EVENTARA DASHBOARD — FINAL
+========================================================= */
+
+.dashboard-page {
+    min-height: 100vh;
+    width: 100%;
+    background: #f4f4f4;
+    color: #252525;
+    overflow-x: hidden;
+}
+
+.dashboard-page * {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+#sidebar {
+    will-change: transform;
+}
+
+#sidebar nav {
+    scrollbar-width: thin;
+    scrollbar-color: #d5d5d5 transparent;
+}
+
+#sidebar nav::-webkit-scrollbar {
+    width: 4px;
+}
+
+#sidebar nav::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#sidebar nav::-webkit-scrollbar-thumb {
+    background: #d5d5d5;
+    border-radius: 999px;
+}
+
+
+.dashboard-nav {
+    transition:
+        background-color .2s ease,
+        color .2s ease;
+}
+
+.dashboard-nav.active {
+    background: #f0e5ff !important;
+    color: #8f2ce3 !important;
+}
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 1024px) {
+
+    #sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+
+        width: 259px;
+        min-width: 259px;
+        height: 100vh;
+
+        transform: translateX(0) !important;
+    }
+
+
+    #BB,
+    .dashboard-page > main {
+        width: calc(100% - 259px);
+        margin-left: 259px;
+    }
+
+}
+
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media
+(min-width: 1024px)
+and
+(max-width: 1279px) {
+
+    #BB,
+    #CC,
+    #DD {
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+    }
+
+
+    #metricCards {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+    }
+
+
+    #CC > div {
+        grid-template-columns:
+            1fr !important;
+    }
+
+
+    #DD > div {
+        grid-template-columns:
+            minmax(0, 1.45fr)
+            minmax(280px, .9fr) !important;
+    }
+
+
+    #DD > div > article:last-child {
+        grid-column: 1 / -1;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL DESKTOP
+========================================================= */
+
+@media
+(min-width: 1280px)
+and
+(max-width: 1439px) {
+
+    #CC > div {
+        grid-template-columns:
+            minmax(0, 1.55fr)
+            minmax(350px, .9fr) !important;
+    }
+
+
+    #DD > div {
+        grid-template-columns:
+            minmax(0, 1.55fr)
+            minmax(250px, .9fr)
+            minmax(250px, .9fr) !important;
+    }
+
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1440px) {
+
+    #CC > div {
+        grid-template-columns:
+            minmax(0, 1.55fr)
+            minmax(390px, .9fr) !important;
+    }
+
+
+    #DD > div {
+        grid-template-columns:
+            minmax(0, 1.65fr)
+            minmax(300px, .9fr)
+            minmax(300px, .9fr) !important;
+    }
+
+}
+
+
+/* =========================================================
+   1920PX REFERENCE
+========================================================= */
+
+@media (min-width: 1920px) {
+
+    #BB,
+    #CC,
+    #DD {
+        padding-left: 27px !important;
+        padding-right: 27px !important;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE SIDEBAR
+========================================================= */
+
+@media (max-width: 1023px) {
+
+    #sidebar {
+        position: fixed;
+
+        left: 0;
+        top: 0;
+
+        width: min(259px, 86vw);
+        min-width: min(259px, 86vw);
+
+        height: 100dvh;
+
+        transform: translateX(-100%);
+    }
+
+
+    #BB,
+    .dashboard-page > main {
+        width: 100%;
+        margin-left: 0;
+    }
+
+
+    #BB {
+        padding-top: 84px !important;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE OVERLAY
+========================================================= */
+
+#mobileOverlay {
+    transition: opacity .2s ease;
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+#profileMenu {
+    animation:
+        dashboardProfile
+        .18s
+        ease;
+}
+
+@keyframes dashboardProfile {
+
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   RECENT EVENTS
+========================================================= */
+
+#recentEventsRows {
+
+    height: 232px;
+    max-height: 232px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    scrollbar-width: thin;
+    scrollbar-color: #d5d5d5 transparent;
+}
+
+
+#recentEventsRows > div {
+
+    min-height: 58px;
+
+}
+
+
+#recentEventsRows > div:last-child {
+
+    border-bottom: none;
+
+}
+
+
+#recentEventsRows::-webkit-scrollbar {
+
+    width: 4px;
+
+}
+
+
+#recentEventsRows::-webkit-scrollbar-track {
+
+    background: transparent;
+
+}
+
+
+#recentEventsRows::-webkit-scrollbar-thumb {
+
+    background: #d5d5d5;
+
+    border-radius: 999px;
+
+}
+
+
+/* =========================================================
+   TOP EVENTS
+========================================================= */
+
+#topEventsList {
+
+    height: 235px;
+    max-height: 235px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    scrollbar-width: thin;
+    scrollbar-color: #d5d5d5 transparent;
+}
+
+
+#topEventsList > div {
+
+    min-height: 47px;
+
+}
+
+
+#topEventsList::-webkit-scrollbar {
+
+    width: 4px;
+
+}
+
+
+#topEventsList::-webkit-scrollbar-track {
+
+    background: transparent;
+
+}
+
+
+#topEventsList::-webkit-scrollbar-thumb {
+
+    background: #d5d5d5;
+
+    border-radius: 999px;
+
+}
+
+
+/* =========================================================
+   CHARTS
+========================================================= */
+
+#ticketChart {
+
+    display: block;
+
+    width: 225px !important;
+    height: 225px !important;
+
+    max-width: 100%;
+
+}
+
+
+#salesChart {
+
+    display: block;
+
+    width: 100% !important;
+    height: 270px !important;
+
+    max-width: 100%;
+
+}
+
+
+/* =========================================================
+   QUICK ACTIONS
+========================================================= */
+
+#quickActions {
+
+    width: 100%;
+    max-width: 300px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+#metricCards article,
+#CC article,
+#DD article {
+
+    transition:
+        box-shadow .2s ease;
+
+}
+
+
+#metricCards article:hover,
+#CC article:hover,
+#DD article:hover {
+
+    box-shadow:
+        0 5px 20px
+        rgba(20, 27, 52, .09);
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 767px) {
+
+    #BB,
+    #CC,
+    #DD {
+
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+
+    }
+
+
+    #ticketLegend {
+
+        width: auto;
+
+    }
+
+
+    #ticketChart {
+
+        width: 190px !important;
+        height: 190px !important;
+
+    }
+
+
+    #salesChart {
+
+        height: 240px !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 479px) {
+
+    #BB,
+    #CC,
+    #DD {
+
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+
+    }
+
+
+    #metricCards {
+
+        grid-template-columns:
+            1fr !important;
+
+    }
+
+
+    #quickActions {
+
+        max-width: 300px;
+
+    }
+
+}
+/* =========================================================
+   EVENTARA DASHBOARD — FINAL FIX
+========================================================= */
+
+.dashboard-page {
+    min-height: 100vh;
+    width: 100%;
+    background: #f4f4f4;
+    color: #252525;
+    overflow-x: hidden;
+}
+
+.dashboard-page * {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+#sidebar {
+    will-change: transform;
+}
+
+
+/* DESKTOP */
+
+@media (min-width: 1024px) {
+
+    #sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+
+        width: 307px;
+        min-width: 307px;
+        height: 100vh;
+
+        transform: translateX(0) !important;
+    }
+
+    #BB,
+    .dashboard-page > main {
+        width: calc(100% - 307px);
+        margin-left: 307px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 1023px) {
+
+    #sidebar {
+        position: fixed !important;
+
+        left: 0 !important;
+        top: 0 !important;
+        bottom: 0 !important;
+
+        width: min(259px, 86vw) !important;
+        min-width: min(259px, 86vw) !important;
+
+        height: 100dvh !important;
+
+        transform: translateX(-100%) !important;
+
+        transition:
+            transform .3s ease !important;
+
+        z-index: 100 !important;
+    }
+
+
+    #sidebar.mobile-sidebar-open {
+        transform: translateX(0) !important;
+    }
+
+
+    #BB,
+    .dashboard-page > main {
+        width: 100% !important;
+        margin-left: 0 !important;
+    }
+
+
+    #BB {
+        padding-top: 84px !important;
+    }
+
+
+    #mobileOverlay {
+        display: none;
+        z-index: 80;
+    }
+
+
+    #mobileOverlay.mobile-overlay-open {
+        display: block !important;
+    }
+
+}
+
+
+/* =========================================================
+   DESKTOP OVERLAY
+========================================================= */
+
+@media (min-width: 1024px) {
+
+    #mobileOverlay {
+        display: none !important;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE BODY LOCK
+========================================================= */
+
+body.overflow-hidden {
+    overflow: hidden !important;
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+#profileMenu {
+    animation: dashboardProfile .18s ease;
+}
+
+@keyframes dashboardProfile {
+
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   RECENT EVENTS
+========================================================= */
+
+#recentEventsRows {
+    height: 232px;
+    max-height: 232px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   TOP EVENTS
+========================================================= */
+
+#topEventsList {
+    height: 235px;
+    max-height: 235px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   QUICK ACTION
+========================================================= */
+
+#quickActions {
+    width: 100%;
+    max-width: 300px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================================================
+   CHARTS
+========================================================= */
+
+#ticketChart {
+    display: block;
+
+    width: 225px !important;
+    height: 225px !important;
+
+    max-width: 100%;
+}
+
+#salesChart {
+    display: block;
+
+    width: 100% !important;
+    height: 270px !important;
+
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.scrollbar-none::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-none {
+    scrollbar-width: none;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 767px) {
+
+    #BB,
+    #CC,
+    #DD {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+    }
+
+
+    #ticketChart {
+        width: 190px !important;
+        height: 190px !important;
+    }
+
+
+    #salesChart {
+        height: 240px !important;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 479px) {
+
+    #BB,
+    #CC,
+    #DD {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+
+    #metricCards {
+        grid-template-columns: 1fr !important;
+    }
+
+}
+
+/* =========================================================
+   ADMIN PROFILE — REFERENCE STYLE
+========================================================= */
+
+#profileToggle {
+    outline: none;
+    cursor: pointer;
+}
+
+#profileToggle:focus-visible {
+    outline: 2px solid #a437e6;
+    outline-offset: 2px;
+    border-radius: 6px;
+}
+
+#profileChevron {
+    line-height: 1;
+}
+
+/* Mobile */
+@media (max-width: 639px) {
+
+    #sidebar .px-\[20px\] {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+}
+
+/* =========================================================
+   MOBILE SIDEBAR — FIX
+========================================================= */
+
+@media (max-width: 1023px) {
+
+    #sidebar {
+        position: fixed !important;
+
+        top: 0 !important;
+        left: 0 !important;
+        bottom: 0 !important;
+
+        width: min(307px, calc(100vw - 20px)) !important;
+        min-width: 0 !important;
+        max-width: calc(100vw - 20px) !important;
+
+        height: 100dvh !important;
+
+        z-index: 100 !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+
+        transform: translateX(-100%) !important;
+
+        visibility: hidden;
+        opacity: 0;
+
+        overflow: hidden !important;
+
+        transition:
+            transform .3s ease,
+            opacity .2s ease,
+            visibility 0s linear .3s !important;
+    }
+
+
+    /* =========================
+       OPEN SIDEBAR
+    ========================= */
+
+    #sidebar.mobile-sidebar-open {
+        transform: translateX(0) !important;
+
+        visibility: visible !important;
+
+        opacity: 1 !important;
+
+        transition:
+            transform .3s ease,
+            opacity .2s ease,
+            visibility 0s linear 0s !important;
+    }
+
+
+    /* =========================
+       NAVIGATION SCROLL
+    ========================= */
+
+    #sidebar nav {
+        flex: 1 1 auto !important;
+
+        min-height: 0 !important;
+
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+
+        -webkit-overflow-scrolling: touch;
+
+        overscroll-behavior: contain;
+    }
+
+
+    /* =========================
+       LOGO
+    ========================= */
+
+    #sidebar > div:first-child {
+        flex-shrink: 0 !important;
+    }
+
+
+    /* =========================
+       PROMO + PROFILE
+    ========================= */
+
+    #sidebar > div:nth-last-child(2),
+    #sidebar > div:last-child {
+        flex-shrink: 0 !important;
+    }
+
+
+    /* =========================
+       OVERLAY
+    ========================= */
+
+    #mobileOverlay {
+        z-index: 80 !important;
+    }
+
+
+    #mobileOverlay.mobile-overlay-open {
+        display: block !important;
+        opacity: 1 !important;
+    }
+
+
+    /* =========================
+       PREVENT PAGE SCROLL
+    ========================= */
+
+    body.overflow-hidden {
+        overflow: hidden !important;
+        touch-action: none;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    #sidebar {
+        width: calc(100vw - 12px) !important;
+        max-width: calc(100vw - 12px) !important;
+    }
+
+
+    #sidebar nav {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+
+    #sidebar .dashboard-nav {
+        gap: 14px !important;
+
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+
+        font-size: 15px !important;
+    }
+}
+
+/* =========================================================
+   DASHBOARD MOBILE MENU — FINAL FIX
+========================================================= */
+
+@media screen and (max-width: 1023px) {
+
+    /* SIDEBAR */
+
+    #sidebar {
+        position: fixed !important;
+
+        top: 0 !important;
+        left: 0 !important;
+        bottom: 0 !important;
+
+        width: min(307px, calc(100vw - 16px)) !important;
+        min-width: 0 !important;
+        max-width: calc(100vw - 16px) !important;
+
+        height: 100dvh !important;
+        max-height: 100dvh !important;
+
+        z-index: 1000 !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+
+        transform: translateX(-105%) !important;
+
+        visibility: hidden !important;
+        opacity: 0 !important;
+
+        pointer-events: none !important;
+
+        overflow: hidden !important;
+
+        transition:
+            transform 0.3s ease,
+            opacity 0.2s ease,
+            visibility 0s linear 0.3s !important;
+    }
+
+
+    /* SIDEBAR OPEN */
+
+    #sidebar.mobile-sidebar-open {
+
+        transform: translateX(0) !important;
+
+        visibility: visible !important;
+
+        opacity: 1 !important;
+
+        pointer-events: auto !important;
+
+        transition:
+            transform 0.3s ease,
+            opacity 0.2s ease,
+            visibility 0s linear 0s !important;
+    }
+
+
+    /* NAVIGATION SCROLL */
+
+    #sidebar nav {
+
+        flex: 1 1 auto !important;
+
+        min-height: 0 !important;
+
+        overflow-y: auto !important;
+
+        overflow-x: hidden !important;
+
+        -webkit-overflow-scrolling: touch !important;
+    }
+
+
+    /* OVERLAY */
+
+    #mobileOverlay {
+
+        position: fixed !important;
+
+        inset: 0 !important;
+
+        z-index: 900 !important;
+
+        display: none !important;
+    }
+
+
+    /* OVERLAY OPEN */
+
+    #mobileOverlay.mobile-overlay-open {
+
+        display: block !important;
+
+        opacity: 1 !important;
+
+        pointer-events: auto !important;
+    }
+
+
+    /* MOBILE BUTTON */
+
+    #mobileMenuButton {
+
+        position: relative !important;
+
+        z-index: 1100 !important;
+    }
+
+
+    /* STOP BODY SCROLL */
+
+    body.dashboard-page.overflow-hidden {
+
+        overflow: hidden !important;
+
+        touch-action: none !important;
+    }
+
+}
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media screen and (min-width: 1024px) {
+
+    #sidebar {
+
+        position: fixed !important;
+
+        top: 0 !important;
+        left: 0 !important;
+        bottom: 0 !important;
+
+        width: 307px !important;
+        min-width: 307px !important;
+        max-width: 307px !important;
+
+        height: 100vh !important;
+
+        transform: translateX(0) !important;
+
+        visibility: visible !important;
+
+        opacity: 1 !important;
+
+        pointer-events: auto !important;
+    }
+
+
+    #mobileOverlay {
+
+        display: none !important;
+    }
+
+}
+
+/* =========================================================
+   ADMIN PROFILE DROPDOWN
+========================================================= */
+
+#profileMenu {
+    animation: profileMenuOpen 0.18s ease-out;
+}
+
+#profileMenu .profile-menu-item {
+    font-family: var(--poppins-regular);
+}
+
+#profileMenu .profile-menu-item span {
+    font-family: var(--poppins-regular);
+}
+
+@keyframes profileMenuOpen {
+
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE PROFILE MENU
+========================================================= */
+
+@media (max-width: 639px) {
+
+    #profileMenu {
+
+        bottom: 92px !important;
+
+        width: calc(100vw - 20px) !important;
+
+        max-width: 380px !important;
+
+        left: 50% !important;
+
+        transform: translateX(-50%) !important;
+
+        padding: 10px !important;
+
+        border-radius: 14px !important;
+
+    }
+
+
+    #profileMenu .profile-menu-item {
+
+        min-height: 92px !important;
+
+        padding-left: 22px !important;
+
+        padding-right: 22px !important;
+
+        gap: 16px !important;
+
+    }
+
+
+    #profileMenu .profile-menu-item:nth-child(2) {
+
+        min-height: 125px !important;
+
+    }
+
+
+    #profileMenu .profile-menu-item span {
+
+        font-size: 21px !important;
+
+    }
+
+
+    #profileMenu .profile-menu-item i:first-child {
+
+        width: 34px !important;
+
+        font-size: 28px !important;
+
+    }
+
+
+    #profileMenu .profile-menu-item i:last-child {
+
+        font-size: 19px !important;
+
+    }
+
+}
+/* =========================================================
+   EVENTARA — MOBILE SIDEBAR RESPONSIVE FIX
+========================================================= */
+
+@media (max-width: 1023px) {
+
+    /* SIDEBAR */
+    #sidebar {
+        width: min(307px, 82vw) !important;
+        min-width: min(307px, 82vw) !important;
+        height: 100dvh !important;
+        max-height: 100dvh !important;
+        overflow: hidden !important;
+        transform: translateX(-100%);
+        transition: transform .3s ease !important;
+        box-shadow: 10px 0 30px rgba(20, 27, 52, .12);
+    }
+
+    #sidebar.mobile-sidebar-open {
+        transform: translateX(0) !important;
+    }
+
+
+    /* LOGO */
+
+    #sidebar > div:first-child {
+        height: 86px !important;
+        min-height: 86px !important;
+        flex-shrink: 0 !important;
+    }
+
+    #sidebar > div:first-child img {
+        width: 104px !important;
+        max-width: 42vw !important;
+    }
+
+
+    /* NAVIGATION */
+
+    #sidebar nav {
+        flex: 1 1 auto !important;
+        min-height: 0 !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        padding: 16px 18px 10px !important;
+    }
+
+    #sidebar nav > div {
+        width: 100% !important;
+    }
+
+    #sidebar .dashboard-nav {
+        width: 100% !important;
+        height: 46px !important;
+        min-height: 46px !important;
+
+        gap: 14px !important;
+
+        padding: 0 13px !important;
+
+        border-radius: 8px !important;
+
+        font-size: 15px !important;
+        line-height: 1 !important;
+
+        white-space: nowrap !important;
+    }
+
+    #sidebar .dashboard-nav i {
+        width: 22px !important;
+        min-width: 22px !important;
+
+        font-size: 16px !important;
+
+        text-align: center !important;
+    }
+
+    #sidebar .dashboard-nav span {
+        min-width: 0 !important;
+
+        overflow: hidden !important;
+
+        text-overflow: ellipsis !important;
+
+        white-space: nowrap !important;
+    }
+
+
+    /* PROMO CARD */
+
+    #sidebar > div:nth-last-child(2) {
+        flex-shrink: 0 !important;
+
+        padding: 10px 18px 14px !important;
+    }
+
+    #sidebar > div:nth-last-child(2) > div {
+        height: 190px !important;
+
+        border-radius: 8px !important;
+    }
+
+    #sidebar > div:nth-last-child(2) h3 {
+        font-size: 27px !important;
+        letter-spacing: 1.5px !important;
+    }
+
+
+    /* ADMIN PROFILE */
+
+    #sidebar > div:last-child {
+        flex-shrink: 0 !important;
+
+        padding: 0 18px 12px !important;
+    }
+
+    #sidebar > div:last-child > div {
+        height: 62px !important;
+        min-height: 62px !important;
+
+        border-radius: 9px !important;
+
+        padding: 0 10px !important;
+    }
+
+    #sidebar > div:last-child img {
+        width: 38px !important;
+        height: 38px !important;
+    }
+
+    #sidebar > div:last-child p {
+        font-size: 15px !important;
+    }
+
+
+    #profileToggle {
+        width: 30px !important;
+        height: 30px !important;
+    }
+
+    #profileChevron {
+        font-size: 13px !important;
+    }
+
+
+    /* PROFILE DROPDOWN */
+
+    #profileMenu {
+        left: 50% !important;
+
+        bottom: 72px !important;
+
+        width: calc(100% - 20px) !important;
+
+        max-width: none !important;
+
+        transform: translateX(-50%) !important;
+
+        padding: 7px !important;
+
+        border-radius: 12px !important;
+    }
+
+    #profileMenu .profile-menu-item {
+        min-height: 62px !important;
+
+        gap: 12px !important;
+
+        padding: 0 14px !important;
+
+        border-radius: 10px !important;
+    }
+
+    #profileMenu .profile-menu-item:nth-child(2) {
+        min-height: 76px !important;
+    }
+
+    #profileMenu .profile-menu-item span {
+        font-size: 14px !important;
+
+        line-height: 1.2 !important;
+    }
+
+    #profileMenu .profile-menu-item i:first-child {
+        width: 26px !important;
+
+        min-width: 26px !important;
+
+        font-size: 21px !important;
+    }
+
+    #profileMenu .profile-menu-item i:last-child {
+        font-size: 14px !important;
+    }
+
+
+    /* MOBILE OVERLAY */
+
+    #mobileOverlay {
+        display: block !important;
+
+        pointer-events: none;
+
+        opacity: 0;
+
+        transition: opacity .3s ease !important;
+    }
+
+    #mobileOverlay.mobile-overlay-open {
+        opacity: 1 !important;
+
+        pointer-events: auto !important;
+    }
+
+
+    /* MOBILE HEADER */
+
+    body.dashboard-page {
+        padding-top: 68px;
+    }
+
+    #mobileMenuButton {
+        width: 40px !important;
+        height: 40px !important;
+
+        flex-shrink: 0 !important;
+
+        font-size: 16px !important;
+    }
+
+
+    /* DASHBOARD CONTENT */
+
+    #BB,
+    #CC,
+    #DD {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+    }
+
+    #BB h1 {
+        font-size: clamp(30px, 8vw, 38px) !important;
+    }
+
+
+    /* METRIC CARDS */
+
+    #metricCards {
+        grid-template-columns: 1fr 1fr !important;
+    }
+
+    #metricCards article {
+        min-height: 92px !important;
+
+        padding: 10px !important;
+
+        gap: 9px !important;
+    }
+
+    #metricCards article > div:first-child {
+        width: 42px !important;
+        height: 42px !important;
+
+        min-width: 42px !important;
+    }
+
+    #metricCards article > div:first-child i {
+        width: 22px !important;
+        height: 22px !important;
+
+        font-size: 20px !important;
+    }
+
+    #metricCards article p:first-child {
+        font-size: 11px !important;
+    }
+
+    #metricCards article p:nth-child(2) {
+        font-size: 23px !important;
+    }
+
+    #metricCards article p:last-child {
+        margin-top: 5px !important;
+
+        font-size: 10px !important;
+    }
+
+
+    /* CHART */
+
+    #ticketChart {
+        width: 175px !important;
+        height: 175px !important;
+    }
+
+    #salesChart {
+        height: 230px !important;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 639px) {
+
+    #sidebar {
+        width: min(286px, 84vw) !important;
+        min-width: min(286px, 84vw) !important;
+    }
+
+    #sidebar nav {
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+    }
+
+    #sidebar .dashboard-nav {
+        height: 43px !important;
+        min-height: 43px !important;
+
+        gap: 12px !important;
+
+        font-size: 14px !important;
+    }
+
+    #sidebar .dashboard-nav i {
+        width: 20px !important;
+        min-width: 20px !important;
+
+        font-size: 15px !important;
+    }
+
+
+    /* LOGO */
+
+    #sidebar > div:first-child {
+        height: 78px !important;
+        min-height: 78px !important;
+    }
+
+    #sidebar > div:first-child img {
+        width: 94px !important;
+    }
+
+
+    /* PROMO */
+
+    #sidebar > div:nth-last-child(2) {
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+        padding-bottom: 10px !important;
+    }
+
+    #sidebar > div:nth-last-child(2) > div {
+        height: 150px !important;
+    }
+
+
+    /* PROFILE */
+
+    #sidebar > div:last-child {
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+        padding-bottom: 9px !important;
+    }
+
+    #sidebar > div:last-child > div {
+        height: 56px !important;
+        min-height: 56px !important;
+    }
+
+    #sidebar > div:last-child img {
+        width: 34px !important;
+        height: 34px !important;
+    }
+
+
+    /* METRICS */
+
+    #metricCards {
+        gap: 8px !important;
+    }
+
+    #metricCards article {
+        min-height: 88px !important;
+
+        padding: 8px !important;
+    }
+
+    #metricCards article > div:first-child {
+        width: 38px !important;
+        height: 38px !important;
+
+        min-width: 38px !important;
+    }
+
+    #metricCards article p:nth-child(2) {
+        font-size: 20px !important;
+    }
+
+    #metricCards article p:last-child {
+        display: none !important;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 420px) {
+
+    #sidebar {
+        width: 272px !important;
+        min-width: 272px !important;
+    }
+
+    #metricCards {
+        grid-template-columns: 1fr !important;
+    }
+
+    #metricCards article {
+        min-height: 82px !important;
+    }
+
+}
+/* =========================================================
+   CHANGE PASSWORD MODAL
+========================================================= */
+
+.change-password-modal {
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity .25s ease,
+        visibility .25s ease;
+}
+
+
+.change-password-modal.change-password-modal-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.change-password-modal-card {
+    transform:
+        translateY(12px)
+        scale(.985);
+
+    transition:
+        transform .25s ease;
+}
+
+
+.change-password-modal.change-password-modal-open
+.change-password-modal-card {
+
+    transform:
+        translateY(0)
+        scale(1);
+
+}
+
+
+.change-password-input {
+    font-family:
+        var(--poppins-regular);
+}
+
+
+.change-password-input::placeholder {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 640px) {
+
+    .change-password-modal {
+
+        padding:
+            10px !important;
+
+    }
+
+
+    .change-password-modal-card {
+
+        max-height:
+            calc(100dvh - 20px);
+
+        overflow-y:
+            auto;
+
+        border-radius:
+            22px !important;
+
+        padding-left:
+            22px !important;
+
+        padding-right:
+            22px !important;
+
+        padding-bottom:
+            24px !important;
+
+    }
+
+
+    .change-password-heading {
+
+        margin-top:
+            58px !important;
+
+    }
+
+
+    .change-password-heading h2 {
+
+        font-size:
+            30px !important;
+
+    }
+
+
+    .change-password-heading p {
+
+        margin-top:
+            20px !important;
+
+        font-size:
+            14px !important;
+
+    }
+
+
+    #changePasswordForm {
+
+        margin-top:
+            42px !important;
+
+    }
+
+
+    .change-password-input {
+
+        height:
+            62px !important;
+
+        font-size:
+            15px !important;
+
+    }
+
+
+    #changePasswordForm label {
+
+        font-size:
+            18px !important;
+
+    }
+
+
+    #confirmChangePassword {
+
+        height:
+            62px !important;
+
+        font-size:
+            23px !important;
+
+    }
+
+}
+
+
+
+
+
+
+
+/* =========================================================
+   EVENTARA ADMIN DASHBOARD
+   COMPLETE JAVASCRIPT
+========================================================= */
+
+"use strict";
+
+
+/* =========================================================
+   DASHBOARD DATA
+========================================================= */
+
+const dashboardData = {
+
+  metrics: [
+    {
+      title: "Total Events",
+      value: "22",
+      change: "17%",
+      direction: "up",
+      period: "This Month",
+      icon: "calendar",
+      iconBg: "#FDE6F1",
+      iconColor: "#F2458E"
+    },
+
+    {
+      title: "Total Users",
+      value: "3,520",
+      change: "48%",
+      direction: "up",
+      period: "This Month",
+      icon: "users",
+      iconBg: "#F1E4FC",
+      iconColor: "#A437E6"
+    },
+
+    {
+      title: "Total Tickets Sold",
+      value: "3,230",
+      change: "25%",
+      direction: "down",
+      period: "This Month",
+      icon: "ticket",
+      iconBg: "#FCE8E3",
+      iconColor: "#FF6534"
+    },
+
+    {
+      title: "Total Revenue",
+      value: "9,45,209",
+      change: "25%",
+      direction: "up",
+      period: "This Month",
+      icon: "rupee",
+      iconBg: "#E8EDFC",
+      iconColor: "#315BEA"
+    }
+  ],
+
+
+  recentEvents: [
+
+    {
+      name: "Music Concert 2025",
+      image:
+        "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=120&q=80",
+      date: "03 aug 2026",
+      location: "Kolkata, Salt lake",
+      tickets: "$460",
+      revenue: "$10,452"
+    },
+
+    {
+      name: "Food Festivals",
+      image:
+        "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=120&q=80",
+      date: "10 aug 2026",
+      location: "Mumbai",
+      tickets: "$530",
+      revenue: "$78,152"
+    },
+
+    {
+      name: "Art & Culture Expo",
+      image:
+        "https://images.unsplash.com/photo-1561214115-f2f134cc4912?auto=format&fit=crop&w=120&q=80",
+      date: "17 aug 2026",
+      location: "Delhi",
+      tickets: "$760",
+      revenue: "$53,452"
+    },
+
+    {
+      name: "Tech Summit",
+      image:
+        "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=120&q=80",
+      date: "01 sep 2026",
+      location: "Bangalore",
+      tickets: "$420",
+      revenue: "$90,452"
+    },
+
+    {
+      name: "Startup Expo",
+      image:
+        "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=120&q=80",
+      date: "08 sep 2026",
+      location: "Hyderabad",
+      tickets: "$680",
+      revenue: "$72,300"
+    },
+
+    {
+      name: "Music Night",
+      image:
+        "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=120&q=80",
+      date: "15 sep 2026",
+      location: "Pune",
+      tickets: "$590",
+      revenue: "$61,200"
+    }
+
+  ],
+
+
+  ticketOverview: {
+
+    total: "3,260",
+
+    labels: [
+      "Sold",
+      "Pending",
+      "Cancel",
+      "Refund"
+    ],
+
+    values: [
+      843,
+      153,
+      130,
+      510
+    ],
+
+    colors: [
+      "#431064",
+      "#7425A0",
+      "#A437E6",
+      "#D7B0F3"
+    ]
+
+  },
+
+
+  salesOverview: {
+
+    labels: [
+      "1 Jul",
+      "4 Jul",
+      "8 Jul",
+      "12 Jul",
+      "16 Jul",
+      "20 Jul",
+      "24 Jul"
+    ],
+
+    values: [
+      40,
+      61,
+      46,
+      25,
+      70,
+      13,
+      59
+    ]
+
+  },
+
+
+  topEvents: [
+
+    {
+      name: "Music Concert 2025",
+      tickets: "2,543 Tickets",
+      image:
+        "https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=100&q=80"
+    },
+
+    {
+      name: "Food Festivals",
+      tickets: "2,53 Tickets",
+      image:
+        "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=100&q=80"
+    },
+
+    {
+      name: "Art & Culture Expo",
+      tickets: "1,543 Tickets",
+      image:
+        "https://images.unsplash.com/photo-1561214115-f2f134cc4912?auto=format&fit=crop&w=100&q=80"
+    },
+
+    {
+      name: "Drama Evening",
+      tickets: "5,023 Tickets",
+      image:
+        "https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=100&q=80"
+    },
+
+    {
+      name: "Tech Summit",
+      tickets: "4,120 Tickets",
+      image:
+        "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=100&q=80"
+    },
+
+    {
+      name: "Startup Expo",
+      tickets: "3,870 Tickets",
+      image:
+        "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=100&q=80"
+    }
+
+  ],
+
+
+  quickActions: [
+
+    {
+      label: "Add New Events",
+      icon: "calendar"
+    },
+
+    {
+      label: "View All Tickets",
+      icon: "ticket"
+    },
+
+    {
+      label: "View All Users",
+      icon: "users"
+    },
+
+    {
+      label: "Go to Trash",
+      icon: "trash"
+    }
+
+  ]
+
+};
+
+
+/* =========================================================
+   ICONS
+========================================================= */
+
+const icons = {
+
+  calendar: `
+    <i class="fa-regular fa-calendar-days flex h-10 w-10 items-center justify-center"></i>
+  `,
+
+  users: `
+    <i class="fa-solid fa-users flex h-10 w-10 items-center justify-center"></i>
+  `,
+
+  ticket: `
+    <i class="fa-solid fa-ticket flex h-10 w-10 items-center justify-center"></i>
+  `,
+
+  rupee: `
+    <i class="fa-solid fa-indian-rupee-sign flex h-10 w-10 items-center justify-center"></i>
+  `,
+
+  trash: `
+    <i class="fa-regular fa-trash-can flex h-10 w-10 items-center justify-center"></i>
+  `,
+
+  edit: `
+    <i class="fa-solid fa-pen flex h-5 w-5 items-center justify-center"></i>
+  `
+
+};
+
+
+/* =========================================================
+   METRICS
+========================================================= */
+
+function renderMetrics() {
+
+  const container =
+    document.getElementById("metricCards");
+
+  if (!container) return;
+
+
+  container.innerHTML =
+    dashboardData.metrics
+      .map((card) => {
+
+        const directionClass =
+          card.direction === "up"
+            ? "text-[#16a34a]"
+            : "text-[#f2458e]";
+
+        const arrow =
+          card.direction === "up"
+            ? "↑"
+            : "↓";
+
+
+        return `
+
+          <article
+            class="
+              flex
+              min-h-[108px]
+              items-center
+              gap-3
+              rounded-[9px]
+              border
+              border-[#f0f0f0]
+              bg-white
+              px-3
+              py-4
+              shadow-[0_3px_14px_rgba(20,27,52,.08)]
+              xl:gap-4
+              xl:px-4
+            "
+          >
+
+            <div
+              class="
+                grid
+                h-[54px]
+                w-[54px]
+                shrink-0
+                place-items-center
+                rounded-[9px]
+              "
+              style="
+                background:${card.iconBg};
+                color:${card.iconColor};
+              "
+            >
+              ${icons[card.icon] || ""}
+            </div>
+
+
+            <div class="min-w-0">
+
+              <p
+                class="
+                  truncate
+                  text-[13px]
+                  text-[#999]
+                  xl:text-[14px]
+                "
+              >
+                ${card.title}
+              </p>
+
+
+              <p
+                class="
+                  mt-1
+                  font-oswald
+                  text-[27px]
+                  font-bold
+                  leading-none
+                  xl:text-[29px]
+                "
+              >
+                ${card.value}
+              </p>
+
+
+              <p
+                class="
+                  mt-2
+                  text-[12px]
+                  text-[#999]
+                  xl:text-[13px]
+                "
+              >
+
+                <span
+                  class="${directionClass} font-medium"
+                >
+                  ${arrow} ${card.change}
+                </span>
+
+                <span class="ml-1">
+                  ${card.period}
+                </span>
+
+              </p>
+
+            </div>
+
+          </article>
+
+        `;
+
+      })
+      .join("");
+
+}
+
+
+/* =========================================================
+   RECENT EVENTS
+========================================================= */
+
+function renderRecentEvents() {
+
+  const container =
+    document.getElementById(
+      "recentEventsRows"
+    );
+
+  if (!container) return;
+
+
+  container.innerHTML =
+    dashboardData.recentEvents
+      .map((event) => {
+
+        return `
+
+          <div
+            class="
+              grid
+              min-h-[58px]
+              grid-cols-[1.55fr_1fr_1.15fr_.75fr_.85fr_.38fr]
+              items-center
+              border-b
+              border-[#e7e7e7]
+              px-3
+              text-[13px]
+              text-[#292929]
+              xl:text-[14px]
+            "
+          >
+
+            <div
+              class="
+                flex
+                min-w-0
+                items-center
+                gap-2.5
+                font-medium
+              "
+            >
+
+              <img
+                src="${event.image}"
+                alt=""
+                class="
+                  h-8
+                  w-8
+                  shrink-0
+                  rounded-[5px]
+                  object-cover
+                "
+              />
+
+              <span class="truncate">
+                ${event.name}
+              </span>
+
+            </div>
+
+
+            <span class="whitespace-nowrap">
+              ${event.date}
+            </span>
+
+
+            <span class="truncate">
+              ${event.location}
+            </span>
+
+
+            <span>
+              ${event.tickets}
+            </span>
+
+
+            <span>
+              ${event.revenue}
+            </span>
+
+
+            <button
+              type="button"
+              class="
+                grid
+                h-8
+                w-8
+                place-items-center
+                rounded-[7px]
+                border
+                border-[#e5e5e5]
+                text-[#a437e6]
+                transition
+                hover:bg-[#f7f0fb]
+              "
+            >
+              ${icons.edit}
+            </button>
+
+          </div>
+
+        `;
+
+      })
+      .join("");
+
+}
+
+
+/* =========================================================
+   TICKET LEGEND
+========================================================= */
+
+function renderTicketLegend() {
+
+  const container =
+    document.getElementById(
+      "ticketLegend"
+    );
+
+  if (!container) return;
+
+
+  const data =
+    dashboardData.ticketOverview;
+
+
+  container.innerHTML =
+    data.labels
+      .map((label, index) => {
+
+        return `
+
+          <div
+            class="
+              grid
+              grid-cols-[16px_62px_auto]
+              items-center
+              gap-2
+              text-[13px]
+              xl:grid-cols-[16px_68px_auto]
+              xl:text-[14px]
+            "
+          >
+
+            <span
+              class="
+                h-4
+                w-4
+                rounded-[4px]
+              "
+              style="
+                background:${data.colors[index]};
+              "
+            ></span>
+
+
+            <span>
+              ${label}
+            </span>
+
+
+            <strong
+              class="
+                text-right
+                font-normal
+              "
+            >
+              ${Number(
+                data.values[index]
+              ).toLocaleString("en-IN")}
+            </strong>
+
+          </div>
+
+        `;
+
+      })
+      .join("");
+
+}
+
+
+/* =========================================================
+   TOP EVENTS
+========================================================= */
+
+function renderTopEvents() {
+
+  const container =
+    document.getElementById(
+      "topEventsList"
+    );
+
+  if (!container) return;
+
+
+  container.innerHTML =
+    dashboardData.topEvents
+      .map((event) => {
+
+        return `
+
+          <div
+            class="
+              flex
+              min-h-[47px]
+              items-center
+              gap-2
+              rounded-md
+              px-0.5
+              py-1.5
+              xl:gap-2.5
+            "
+          >
+
+            <img
+              src="${event.image}"
+              alt=""
+              class="
+                h-8
+                w-8
+                shrink-0
+                rounded-[5px]
+                object-cover
+              "
+            />
+
+
+            <span
+              class="
+                min-w-0
+                flex-1
+                truncate
+                text-[13px]
+                font-medium
+                text-[#292929]
+                xl:text-[14px]
+              "
+            >
+              ${event.name}
+            </span>
+
+
+            <span
+              class="
+                shrink-0
+                text-[12px]
+                text-[#333]
+                xl:text-[14px]
+              "
+            >
+              ${event.tickets}
+            </span>
+
+          </div>
+
+        `;
+
+      })
+      .join("");
+
+}
+
+
+/* =========================================================
+   QUICK ACTIONS
+========================================================= */
+
+function renderQuickActions() {
+
+  const container =
+    document.getElementById(
+      "quickActions"
+    );
+
+  if (!container) return;
+
+
+  container.innerHTML =
+    dashboardData.quickActions
+      .map((action) => {
+
+        return `
+
+          <button
+            type="button"
+            class="
+              group
+              flex
+              h-[86px]
+              w-full
+              flex-col
+              items-center
+              justify-center
+              gap-2
+              rounded-[8px]
+              bg-[#faf5fd]
+              px-1
+              text-center
+              transition
+              hover:-translate-y-0.5
+              hover:bg-[#f4e8fb]
+              xl:h-[91px]
+            "
+          >
+
+            <span
+              class="
+                text-[#a437e6]
+                transition
+                group-hover:scale-105
+              "
+            >
+              ${icons[action.icon] || ""}
+            </span>
+
+
+            <span
+              class="
+                text-[12px]
+                leading-tight
+                text-[#333]
+                xl:text-[13px]
+              "
+            >
+              ${action.label}
+            </span>
+
+          </button>
+
+        `;
+
+      })
+      .join("");
+
+}
+
+
+/* =========================================================
+   TICKET CHART
+========================================================= */
+
+function createTicketChart() {
+
+  const canvas =
+    document.getElementById(
+      "ticketChart"
+    );
+
+
+  if (
+    !canvas ||
+    typeof Chart === "undefined"
+  ) {
+    return;
+  }
+
+
+  const existing =
+    Chart.getChart(canvas);
+
+
+  if (existing) {
+    existing.destroy();
+  }
+
+
+  const data =
+    dashboardData.ticketOverview;
+
+
+  new Chart(canvas, {
+
+    type: "doughnut",
+
+    data: {
+
+      labels:
+        data.labels,
+
+      datasets: [
+
+        {
+
+          data:
+            data.values,
+
+          backgroundColor:
+            data.colors,
+
+          borderWidth: 0,
+
+          hoverOffset: 0
+
+        }
+
+      ]
+
+    },
+
+
+    options: {
+
+      responsive: true,
+
+      maintainAspectRatio: false,
+
+      cutout: "66%",
+
+      rotation: -90,
+
+      plugins: {
+
+        legend: {
+
+          display: false
+
+        },
+
+        tooltip: {
+
+          displayColors: false
+
+        }
+
+      }
+
+    }
+
+  });
+
+
+  const total =
+    document.getElementById(
+      "ticketTotal"
+    );
+
+
+  if (total) {
+
+    total.textContent =
+      data.total;
+
+  }
+
+}
+
+
+/* =========================================================
+   SALES CHART
+========================================================= */
+
+function createSalesChart() {
+
+  const canvas =
+    document.getElementById(
+      "salesChart"
+    );
+
+
+  if (
+    !canvas ||
+    typeof Chart === "undefined"
+  ) {
+    return;
+  }
+
+
+  const existing =
+    Chart.getChart(canvas);
+
+
+  if (existing) {
+    existing.destroy();
+  }
+
+
+  const context =
+    canvas.getContext("2d");
+
+
+  if (!context) return;
+
+
+  const gradient =
+    context.createLinearGradient(
+      0,
+      0,
+      0,
+      270
+    );
+
+
+  gradient.addColorStop(
+    0,
+    "rgba(163,122,245,.32)"
+  );
+
+
+  gradient.addColorStop(
+    1,
+    "rgba(163,122,245,.04)"
+  );
+
+
+  new Chart(canvas, {
+
+    type: "line",
+
+    data: {
+
+      labels:
+        dashboardData.salesOverview.labels,
+
+      datasets: [
+
+        {
+
+          data:
+            dashboardData.salesOverview.values,
+
+          borderColor:
+            "#8f7af5",
+
+          backgroundColor:
+            gradient,
+
+          fill: true,
+
+          tension: 0.42,
+
+          borderWidth: 1.6,
+
+          pointRadius: 3,
+
+          pointHoverRadius: 4,
+
+          pointBackgroundColor:
+            "#ffffff",
+
+          pointBorderColor:
+            "#8f7af5",
+
+          pointBorderWidth: 1.5
+
+        }
+
+      ]
+
+    },
+
+
+    options: {
+
+      responsive: true,
+
+      maintainAspectRatio: false,
+
+      interaction: {
+
+        intersect: false,
+
+        mode: "index"
+
+      },
+
+
+      plugins: {
+
+        legend: {
+
+          display: false
+
+        },
+
+        tooltip: {
+
+          displayColors: false
+
+        }
+
+      },
+
+
+      scales: {
+
+        x: {
+
+          grid: {
+
+            color: "#eeeeee",
+
+            borderDash: [
+              2,
+              3
+            ]
+
+          },
+
+          ticks: {
+
+            color: "#777",
+
+            font: {
+
+              family: "Poppins",
+
+              size: 10
+
+            }
+
+          }
+
+        },
+
+
+        y: {
+
+          beginAtZero: true,
+
+          suggestedMax: 100,
+
+          ticks: {
+
+            stepSize: 20,
+
+            color: "#777",
+
+            font: {
+
+              family: "Poppins",
+
+              size: 10
+
+            }
+
+          },
+
+          grid: {
+
+            color: "#eeeeee",
+
+            borderDash: [
+              2,
+              3
+            ]
+
+          },
+
+          border: {
+
+            display: false
+
+          }
+
+        }
+
+      }
+
+    }
+
+  });
+
+}
+
+
+/* =========================================================
+   ADMIN PROFILE DROPDOWN
+========================================================= */
+
+function setupProfileMenu() {
+
+  const button =
+    document.getElementById(
+      "profileToggle"
+    );
+
+  const menu =
+    document.getElementById(
+      "profileMenu"
+    );
+
+  const chevron =
+    document.getElementById(
+      "profileChevron"
+    );
+
+
+  if (!button || !menu) {
+
+    console.warn(
+      "Profile menu elements not found."
+    );
+
+    return;
+
+  }
+
+
+  /* Prevent duplicate listeners */
+
+  if (
+    button.dataset.profileReady === "true"
+  ) {
+
+    return;
+
+  }
+
+
+  button.dataset.profileReady =
+    "true";
+
+
+  function openMenu() {
+
+    menu.classList.remove(
+      "hidden"
+    );
+
+    menu.setAttribute(
+      "aria-hidden",
+      "false"
+    );
+
+
+    if (chevron) {
+
+      chevron.classList.add(
+        "rotate-180"
+      );
+
+    }
+
+  }
+
+
+  function closeMenu() {
+
+    menu.classList.add(
+      "hidden"
+    );
+
+    menu.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+
+    if (chevron) {
+
+      chevron.classList.remove(
+        "rotate-180"
+      );
+
+    }
+
+  }
+
+
+  button.addEventListener(
+    "click",
+    function (event) {
+
+      event.preventDefault();
+
+      event.stopPropagation();
+
+
+      if (
+        menu.classList.contains(
+          "hidden"
+        )
+      ) {
+
+        openMenu();
+
+      } else {
+
+        closeMenu();
+
+      }
+
+    }
+  );
+
+
+  menu.addEventListener(
+    "click",
+    function (event) {
+
+      event.stopPropagation();
+
+    }
+  );
+
+
+  document.addEventListener(
+    "click",
+    function () {
+
+      closeMenu();
+
+    }
+  );
+
+
+  document.addEventListener(
+    "keydown",
+    function (event) {
+
+      if (
+        event.key === "Escape"
+      ) {
+
+        closeMenu();
+
+      }
+
+    }
+  );
+
+}
+
+
+/* =========================================================
+   MOBILE SIDEBAR
+========================================================= */
+
+function setupMobileSidebar() {
+
+  const sidebar = document.getElementById("sidebar");
+  const button = document.getElementById("mobileMenuButton");
+  const overlay = document.getElementById("mobileOverlay");
+
+  if (!sidebar || !button || !overlay) {
+    console.error("Mobile menu elements missing:", {
+      sidebar: !!sidebar,
+      button: !!button,
+      overlay: !!overlay
+    });
+    return;
+  }
+
+  if (button.dataset.mobileReady === "true") {
+    return;
+  }
+
+  button.dataset.mobileReady = "true";
+
+  let isOpen = false;
+
+
+  /* =====================================================
+     OPEN / CLOSE
+  ===================================================== */
+
+  function toggleSidebar(forceState) {
+
+    if (typeof forceState === "boolean") {
+      isOpen = forceState;
+    } else {
+      isOpen = !isOpen;
+    }
+
+
+    /* ===============================
+       DESKTOP
+    =============================== */
+
+    if (window.innerWidth >= 1024) {
+
+      sidebar.style.transform = "translateX(0)";
+      overlay.style.display = "none";
+
+      document.body.classList.remove(
+        "overflow-hidden"
+      );
+
+      return;
+    }
+
+
+    /* ===============================
+       MOBILE OPEN
+    =============================== */
+
+    if (isOpen) {
+
+      sidebar.style.transform =
+        "translateX(0)";
+
+      sidebar.style.visibility =
+        "visible";
+
+      sidebar.style.zIndex =
+        "10000";
+
+
+      overlay.style.display =
+        "block";
+
+      overlay.style.zIndex =
+        "9990";
+
+      overlay.style.opacity =
+        "1";
+
+
+      button.setAttribute(
+        "aria-expanded",
+        "true"
+      );
+
+      button.setAttribute(
+        "aria-label",
+        "Close menu"
+      );
+
+
+      button.innerHTML =
+        '<i class="fa-solid fa-xmark text-[20px]"></i>';
+
+
+      document.body.classList.add(
+        "overflow-hidden"
+      );
+
+    }
+
+
+    /* ===============================
+       MOBILE CLOSE
+    =============================== */
+
+    else {
+
+      sidebar.style.transform =
+        "translateX(-100%)";
+
+
+      overlay.style.opacity =
+        "0";
+
+
+      setTimeout(() => {
+
+        if (!isOpen) {
+
+          overlay.style.display =
+            "none";
+
+        }
+
+      }, 300);
+
+
+      button.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
+      button.setAttribute(
+        "aria-label",
+        "Open menu"
+      );
+
+
+      button.innerHTML =
+        '<i class="fa-solid fa-bars text-[20px]"></i>';
+
+
+      document.body.classList.remove(
+        "overflow-hidden"
+      );
+
+    }
+
+  }
+
+
+  /* =====================================================
+     HAMBURGER
+  ===================================================== */
+
+  button.addEventListener(
+    "click",
+    function (event) {
+
+      event.preventDefault();
+      event.stopPropagation();
+
+      toggleSidebar();
+
+    }
+  );
+
+
+  /* =====================================================
+     OVERLAY
+  ===================================================== */
+
+  overlay.addEventListener(
+    "click",
+    function () {
+
+      toggleSidebar(false);
+
+    }
+  );
+
+
+  /* =====================================================
+     NAVIGATION
+  ===================================================== */
+
+  sidebar
+    .querySelectorAll(".dashboard-nav")
+    .forEach(function (link) {
+
+      link.addEventListener(
+        "click",
+        function () {
+
+          if (
+            window.innerWidth < 1024
+          ) {
+
+            toggleSidebar(false);
+
+          }
+
+        }
+      );
+
+    });
+
+
+  /* =====================================================
+     ESCAPE
+  ===================================================== */
+
+  document.addEventListener(
+    "keydown",
+    function (event) {
+
+      if (
+        event.key === "Escape" &&
+        window.innerWidth < 1024 &&
+        isOpen
+      ) {
+
+        toggleSidebar(false);
+
+      }
+
+    }
+  );
+
+
+  /* =====================================================
+     RESIZE
+  ===================================================== */
+
+  window.addEventListener(
+    "resize",
+    function () {
+
+      if (
+        window.innerWidth >= 1024
+      ) {
+
+        isOpen = false;
+
+        sidebar.style.transform =
+          "translateX(0)";
+
+        overlay.style.display =
+          "none";
+
+        overlay.style.opacity =
+          "0";
+
+        document.body.classList.remove(
+          "overflow-hidden"
+        );
+
+      }
+
+      else {
+
+        if (!isOpen) {
+
+          sidebar.style.transform =
+            "translateX(-100%)";
+
+        }
+
+      }
+
+    }
+  );
+
+
+  /* =====================================================
+     INITIAL MOBILE STATE
+  ===================================================== */
+
+  if (
+    window.innerWidth < 1024
+  ) {
+
+    sidebar.style.transform =
+      "translateX(-100%)";
+
+    sidebar.style.visibility =
+      "visible";
+
+    overlay.style.display =
+      "none";
+
+    overlay.style.opacity =
+      "0";
+
+  }
+
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+function setupNavState() {
+
+  const links =
+    document.querySelectorAll(
+      ".dashboard-nav"
+    );
+
+
+  if (!links.length) {
+    return;
+  }
+
+
+  links.forEach(
+    function (link) {
+
+      if (
+        link.dataset.navReady ===
+        "true"
+      ) {
+
+        return;
+
+      }
+
+
+      link.dataset.navReady =
+        "true";
+
+
+      link.addEventListener(
+        "click",
+        function (event) {
+
+          event.preventDefault();
+
+
+          links.forEach(
+            function (item) {
+
+              item.classList.remove(
+                "active",
+                "bg-[#f0e5ff]",
+                "text-[#8f2ce3]"
+              );
+
+
+              item.classList.add(
+                "text-[#303030]"
+              );
+
+            }
+          );
+
+
+          link.classList.remove(
+            "text-[#303030]"
+          );
+
+
+          link.classList.add(
+            "active",
+            "bg-[#f0e5ff]",
+            "text-[#8f2ce3]"
+          );
+
+        }
+      );
+
+    }
+  );
+
+}
+
+
+/* =========================================================
+   CHANGE PASSWORD MODAL
+========================================================= */
+
+function setupChangePasswordModal() {
+
+  const openButton =
+    document.getElementById(
+      "openChangePasswordModal"
+    );
+
+  const modal =
+    document.getElementById(
+      "changePasswordModal"
+    );
+
+  const backButton =
+    document.getElementById(
+      "changePasswordBack"
+    );
+
+  const form =
+    document.getElementById(
+      "changePasswordForm"
+    );
+
+  const newPassword =
+    document.getElementById(
+      "changePasswordNew"
+    );
+
+  const confirmPassword =
+    document.getElementById(
+      "changePasswordConfirm"
+    );
+
+  const error =
+    document.getElementById(
+      "changePasswordError"
+    );
+
+
+  if (
+    !openButton ||
+    !modal ||
+    !backButton ||
+    !form
+  ) {
+
+    console.warn(
+      "Change Password modal elements not found."
+    );
+
+    return;
+
+  }
+
+
+  if (
+    openButton.dataset.modalReady ===
+    "true"
+  ) {
+
+    return;
+
+  }
+
+
+  openButton.dataset.modalReady =
+    "true";
+
+
+  /* =====================================================
+     OPEN MODAL
+  ===================================================== */
+
+  function openModal(event) {
+
+    if (event) {
+
+      event.preventDefault();
+
+      event.stopPropagation();
+
+    }
+
+
+    modal.classList.remove(
+      "hidden"
+    );
+
+
+    modal.classList.add(
+      "flex"
+    );
+
+
+    modal.classList.add(
+      "change-password-modal-open"
+    );
+
+
+    modal.setAttribute(
+      "aria-hidden",
+      "false"
+    );
+
+
+    document.body.classList.add(
+      "overflow-hidden"
+    );
+
+
+    /* Close profile dropdown */
+
+    const profileMenu =
+      document.getElementById(
+        "profileMenu"
+      );
+
+    const profileChevron =
+      document.getElementById(
+        "profileChevron"
+      );
+
+
+    if (profileMenu) {
+
+      profileMenu.classList.add(
+        "hidden"
+      );
+
+    }
+
+
+    if (profileChevron) {
+
+      profileChevron.classList.remove(
+        "rotate-180"
+      );
+
+    }
+
+
+    setTimeout(
+      function () {
+
+        if (newPassword) {
+
+          newPassword.focus();
+
+        }
+
+      },
+      100
+    );
+
+  }
+
+
+  /* =====================================================
+     CLOSE MODAL
+  ===================================================== */
+
+  function closeModal() {
+
+    modal.classList.remove(
+      "change-password-modal-open"
+    );
+
+
+    modal.classList.remove(
+      "flex"
+    );
+
+
+    modal.classList.add(
+      "hidden"
+    );
+
+
+    modal.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+
+    document.body.classList.remove(
+      "overflow-hidden"
+    );
+
+
+    form.reset();
+
+
+    if (error) {
+
+      error.textContent =
+        "";
+
+      error.classList.add(
+        "hidden"
+      );
+
+    }
+
+  }
+
+
+  /* =====================================================
+     OPEN
+  ===================================================== */
+
+  openButton.addEventListener(
+    "click",
+    openModal
+  );
+
+
+  /* =====================================================
+     BACK
+  ===================================================== */
+
+  backButton.addEventListener(
+    "click",
+    function (event) {
+
+      event.preventDefault();
+
+      event.stopPropagation();
+
+      closeModal();
+
+    }
+  );
+
+
+  /* =====================================================
+     CLICK OUTSIDE
+  ===================================================== */
+
+  modal.addEventListener(
+    "click",
+    function (event) {
+
+      if (
+        event.target === modal
+      ) {
+
+        closeModal();
+
+      }
+
+    }
+  );
+
+
+  /* =====================================================
+     ESCAPE
+  ===================================================== */
+
+  document.addEventListener(
+    "keydown",
+    function (event) {
+
+      if (
+        event.key === "Escape" &&
+        !modal.classList.contains(
+          "hidden"
+        )
+      ) {
+
+        closeModal();
+
+      }
+
+    }
+  );
+
+
+  /* =====================================================
+     SHOW / HIDE PASSWORD
+  ===================================================== */
+
+  modal
+    .querySelectorAll(
+      ".change-password-eye"
+    )
+    .forEach(
+      function (button) {
+
+        button.addEventListener(
+          "click",
+          function (event) {
+
+            event.preventDefault();
+
+            event.stopPropagation();
+
+
+            const targetId =
+              button.dataset
+                .passwordTarget;
+
+
+            const input =
+              document.getElementById(
+                targetId
+              );
+
+
+            const icon =
+              button.querySelector(
+                "i"
+              );
+
+
+            if (
+              !input ||
+              !icon
+            ) {
+
+              return;
+
+            }
+
+
+            const show =
+              input.type ===
+              "password";
+
+
+            input.type =
+              show
+                ? "text"
+                : "password";
+
+
+            icon.classList.toggle(
+              "fa-eye",
+              !show
+            );
+
+
+            icon.classList.toggle(
+              "fa-eye-slash",
+              show
+            );
+
+          }
+        );
+
+      }
+    );
+
+
+  /* =====================================================
+     SUBMIT
+  ===================================================== */
+
+  form.addEventListener(
+    "submit",
+    function (event) {
+
+      event.preventDefault();
+
+
+      const password =
+        newPassword
+          ? newPassword.value.trim()
+          : "";
+
+
+      const confirmation =
+        confirmPassword
+          ? confirmPassword.value.trim()
+          : "";
+
+
+      if (
+        !password ||
+        !confirmation
+      ) {
+
+        if (error) {
+
+          error.textContent =
+            "Please enter both passwords.";
+
+          error.classList.remove(
+            "hidden"
+          );
+
+        }
+
+        return;
+
+      }
+
+
+      if (
+        password !==
+        confirmation
+      ) {
+
+        if (error) {
+
+          error.textContent =
+            "Passwords do not match.";
+
+          error.classList.remove(
+            "hidden"
+          );
+
+        }
+
+        return;
+
+      }
+
+
+      if (error) {
+
+        error.classList.add(
+          "hidden"
+        );
+
+      }
+
+
+      console.log(
+        "Password changed successfully"
+      );
+
+
+      closeModal();
+
+    }
+  );
+
+}
+
+
+/* =========================================================
+   LUCIDE
+========================================================= */
+
+function refreshLucideIcons() {
+
+  if (
+    typeof lucide !== "undefined" &&
+    typeof lucide.createIcons ===
+      "function"
+  ) {
+
+    lucide.createIcons();
+
+  }
+
+}
+
+
+/* =========================================================
+   INITIALIZATION
+   ONLY ONE INITIALIZATION BLOCK
+========================================================= */
+
+document.addEventListener(
+  "DOMContentLoaded",
+  function () {
+
+
+    /* =====================================================
+       DASHBOARD
+    ===================================================== */
+
+    renderMetrics();
+
+    renderRecentEvents();
+
+    renderTicketLegend();
+
+    renderTopEvents();
+
+    renderQuickActions();
+
+
+    /* =====================================================
+       CHARTS
+    ===================================================== */
+
+    createTicketChart();
+
+    createSalesChart();
+
+
+    /* =====================================================
+       SIDEBAR
+    ===================================================== */
+
+    setupProfileMenu();
+
+    setupMobileSidebar();
+
+    setupNavState();
+
+
+    /* =====================================================
+       CHANGE PASSWORD
+    ===================================================== */
+
+    setupChangePasswordModal();
+
+
+    /* =====================================================
+       LUCIDE
+    ===================================================== */
+
+    refreshLucideIcons();
+
+
+  }
+);
