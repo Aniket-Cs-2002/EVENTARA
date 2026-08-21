@@ -1,0 +1,1276 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./src/output.css" />
+    <link rel="stylesheet" href="./src/style.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+    <title>Payment | Eventara</title>
+</head>
+
+<body class="bg-white text-[#141B34]">
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="header poppins-medium">
+        <nav class="bg-white py-[10px] shadow-[0_2px_5px_rgba(0,0,0,0.15)]">
+            <div class="container mx-auto h-full">
+                <div class="flex items-center justify-between gap-6 xl:gap-10 h-full">
+                    <!-- LOGO -->
+
+                    <div class="shrink-0">
+                        <a href="./index.html">
+                            <img src="./images/logo.png" alt="Eventara Logo"
+                                class="w-[80px] sm:w-[90px] xl:w-[105px] h-auto" />
+                        </a>
+                    </div>
+
+                    <!-- DESKTOP NAVIGATION -->
+
+                    <ul
+                        class="hidden lg:flex justify-center items-center gap-6 xl:gap-[80px] 2xl:gap-12 whitespace-nowrap">
+                        <li>
+                            <a href="./index.html"
+                                class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors">
+                                Home
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="./event.html"
+                                class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors">
+                                Events
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="./my-tickits.html"
+                                class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors">
+                                My Tickets
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="./aboutus.html"
+                                class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors">
+                                About Us
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="./contact.html"
+                                class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors">
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- RIGHT ICONS -->
+
+                    <div class="hidden lg:flex items-center justify-end gap-4 xl:gap-5 flex-shrink-0">
+                        <!-- Search -->
+
+                        <button type="button" aria-label="Search" class="flex items-center justify-center">
+                            <i class="fa-solid fa-magnifying-glass text-[20px]"></i>
+                        </button>
+
+                        <!-- Cart -->
+
+                        <a href="./cart.html">
+                            <i class="fa-solid fa-bag-shopping text-[20px]"></i>
+                        </a>
+
+                        <!-- Notification -->
+
+                        <a href="#">
+                            <i class="fa-regular fa-bell text-[20px]"></i>
+                        </a>
+
+                        <!-- User -->
+
+                        <a href="#" class="w-[50px] h-[50px] rounded-full overflow-hidden">
+                            <img src="./images/user.png" alt="User" class="w-full h-full object-cover" />
+                        </a>
+                    </div>
+
+                    <!-- MOBILE MENU -->
+
+                    <button id="payment-mobile-menu-btn" type="button" class="lg:hidden text-2xl">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- MOBILE MENU -->
+
+        <div id="payment-mobile-menu" class="hidden fixed inset-0 z-[9999] bg-black/50">
+            <div id="payment-mobile-panel"
+                class="w-[300px] h-full bg-white rounded-r-[24px] p-6 -translate-x-full transition-transform duration-300">
+                <div class="flex items-center justify-between pb-5 border-b border-gray-200">
+                    <img src="./images/logo.png" alt="Eventara" class="w-[95px]" />
+
+                    <button id="payment-mobile-close" type="button" class="text-2xl">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <div class="flex flex-col gap-2 mt-6">
+                    <a href="./index.html" class="px-4 py-3 rounded-xl hover:bg-purple-50">
+                        Home
+                    </a>
+
+                    <a href="./event.html" class="px-4 py-3 rounded-xl hover:bg-purple-50">
+                        Events
+                    </a>
+
+                    <a href="./my-tickits.html" class="px-4 py-3 rounded-xl hover:bg-purple-50">
+                        My Tickets
+                    </a>
+
+                    <a href="./aboutus.html" class="px-4 py-3 rounded-xl hover:bg-purple-50">
+                        About Us
+                    </a>
+
+                    <a href="./contact.html" class="px-4 py-3 rounded-xl hover:bg-purple-50">
+                        Contact
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- =====================================================
+         PAYMENT PAGE
+    ====================================================== -->
+
+    <main class="w-full bg-white">
+        <div class="w-full max-w-[1320px] mx-auto px-5 sm:px-8 lg:px-0 pt-[90px] pb-[100px]">
+            <!-- =================================================
+             TWO COLUMN LAYOUT
+        ================================================== -->
+
+            <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,980px)_340px] gap-[20px] items-start">
+                <!-- =================================================
+               LEFT : PAYMENT OPTIONS
+          ================================================== -->
+
+                <section>
+                    <!-- Heading -->
+
+                    <h1 class="poppins-semibold text-[20px] leading-[1.2] text-[#333333] mb-[20px]">
+                        PAYMENT OPTIONS
+                    </h1>
+
+                    <!-- PAYMENT ACCORDION -->
+
+                    <div id="payment-options" class="w-full border border-[#B9B9B9] rounded-[8px] overflow-hidden">
+                        <!-- ================= UPI ================= -->
+                        <div class="payment-method">
+                            <button type="button" data-method="upi"
+                                class="payment-method-button selected w-full h-[78px] px-[27px] flex items-center justify-between text-left bg-[#F5E9FE] border-b border-[#B9B9B9]">
+                                <span class="poppins-regular text-[16px] text-[#111111]">
+                                    Pay by any UPI App
+                                </span>
+
+                                <span
+                                    class="payment-radio w-[19px] h-[19px] rounded-full border-[5px] border-[#A437E6]"></span>
+                            </button>
+                        </div>
+
+                        <!-- ================= WALLET ================= -->
+
+                        <div class="payment-method">
+                            <button type="button" data-method="wallet"
+                                class="payment-method-button w-full min-h-[68px] px-[27px] flex items-center justify-between text-left border-b border-[#B9B9B9] bg-white">
+                                <span class="poppins-regular text-[16px] text-[#111111]">
+                                    Wallets
+                                </span>
+
+                                <i class="fa-solid fa-chevron-down wallet-chevron text-[13px] text-[#141B34]"></i>
+                            </button>
+
+                            <div class="payment-content hidden border-b border-[#B9B9B9] bg-[#F5E9FE] px-[27px] pt-[12px] pb-[22px]"
+                                data-content="wallet">
+                                <div class="flex items-center justify-between mb-[10px]">
+                                    <p class="poppins-semibold text-[13px] text-[#111111]">
+                                        Select a wallet to pay
+                                    </p>
+
+                                    <i class="fa-solid fa-chevron-up text-[12px] text-[#999999]"></i>
+                                </div>
+
+                                <div class="border border-[#D0D0D0] rounded-[6px] overflow-hidden bg-white">
+                                    <!-- PHONEPE -->
+
+                                    <button type="button" data-wallet="phonepe"
+                                        class="wallet-option w-full min-h-[72px] px-[14px] flex items-center justify-between border-b border-[#D0D0D0] bg-[#F5E9FE] text-left">
+                                        <span class="flex items-center gap-[14px]">
+                                            <span
+                                                class="w-[40px] h-[40px] shrink-0 rounded-full bg-[#6F20D9] text-white flex items-center justify-center text-[20px] font-bold">
+                                                पे
+                                            </span>
+
+                                            <span class="flex flex-col">
+                                                <span class="poppins-medium text-[15px] text-[#111111]">
+                                                    PhonePe Wallet
+                                                </span>
+
+                                                <span class="poppins-regular text-[12px] text-[#555555]">
+                                                    Balance: ₹1,250.00
+                                                </span>
+                                            </span>
+                                        </span>
+
+                                        <span
+                                            class="wallet-radio w-[19px] h-[19px] shrink-0 rounded-full border-[5px] border-[#A437E6]"></span>
+                                    </button>
+
+                                    <!-- PAYTM -->
+
+                                    <button type="button" data-wallet="paytm"
+                                        class="wallet-option w-full min-h-[72px] px-[14px] flex items-center justify-between border-b border-[#D0D0D0] bg-white text-left">
+                                        <span class="flex items-center gap-[14px]">
+                                            <span
+                                                class="w-[40px] h-[40px] shrink-0 flex items-center justify-center text-[#00AEEF] font-bold text-[13px]">
+                                                paytm
+                                            </span>
+
+                                            <span class="flex flex-col">
+                                                <span class="poppins-medium text-[15px] text-[#111111]">
+                                                    Paytm Wallet
+                                                </span>
+
+                                                <span class="poppins-regular text-[12px] text-[#555555]">
+                                                    Balance: ₹850.50
+                                                </span>
+                                            </span>
+                                        </span>
+
+                                        <span
+                                            class="wallet-radio w-[19px] h-[19px] shrink-0 rounded-full border-[2px] border-[#A8A8A8]"></span>
+                                    </button>
+
+                                    <!-- AMAZON PAY -->
+
+                                    <button type="button" data-wallet="amazon"
+                                        class="wallet-option w-full min-h-[72px] px-[14px] flex items-center justify-between border-b border-[#D0D0D0] bg-white text-left">
+                                        <span class="flex items-center gap-[14px]">
+                                            <span
+                                                class="w-[40px] h-[40px] shrink-0 flex items-center justify-center text-[#222222] text-[15px] font-medium">
+                                                pay<span class="text-[#F6A800]">_</span>
+                                            </span>
+
+                                            <span class="flex flex-col">
+                                                <span class="poppins-medium text-[15px] text-[#111111]">
+                                                    Amazon Pay Balance
+                                                </span>
+
+                                                <span class="poppins-regular text-[12px] text-[#555555]">
+                                                    Balance: ₹620.00
+                                                </span>
+                                            </span>
+                                        </span>
+
+                                        <span
+                                            class="wallet-radio w-[19px] h-[19px] shrink-0 rounded-full border-[2px] border-[#A8A8A8]"></span>
+                                    </button>
+
+                                    <!-- MOBIKWIK -->
+
+                                    <button type="button" data-wallet="mobikwik"
+                                        class="wallet-option w-full min-h-[72px] px-[14px] flex items-center justify-between border-b border-[#D0D0D0] bg-white text-left">
+                                        <span class="flex items-center gap-[14px]">
+                                            <span
+                                                class="w-[40px] h-[40px] shrink-0 rounded-[7px] bg-[#087BD2] text-white flex items-center justify-center font-bold text-[21px] italic">
+                                                M
+                                            </span>
+
+                                            <span class="flex flex-col">
+                                                <span class="poppins-medium text-[15px] text-[#111111]">
+                                                    MobiKwik Wallet
+                                                </span>
+
+                                                <span class="poppins-regular text-[12px] text-[#555555]">
+                                                    Balance: ₹320.75
+                                                </span>
+                                            </span>
+                                        </span>
+
+                                        <span
+                                            class="wallet-radio w-[19px] h-[19px] shrink-0 rounded-full border-[2px] border-[#A8A8A8]"></span>
+                                    </button>
+
+                                    <!-- WALLET BALANCE -->
+
+                                    <div class="min-h-[58px] px-[14px] flex items-center justify-between bg-[#F5E9FE]">
+                                        <label class="flex items-center gap-[10px] cursor-pointer">
+                                            <input id="use-wallet-balance" type="checkbox" checked class="sr-only" />
+
+                                            <span
+                                                class="wallet-checkbox-visual w-[21px] h-[21px] shrink-0 rounded-[3px] bg-[#A437E6] text-white flex items-center justify-center">
+                                                <i class="fa-solid fa-check text-[12px]"></i>
+                                            </span>
+
+                                            <span class="poppins-regular text-[15px] text-[#333333]">
+                                                Use wallet balance
+                                            </span>
+                                        </label>
+
+                                        <strong class="poppins-semibold text-[16px] text-[#111111]">
+                                            ₹5,470.90
+                                        </strong>
+                                    </div>
+
+                                    <p
+                                        class="px-[52px] pb-[13px] bg-[#F5E9FE] poppins-regular text-[11px] text-[#777777]">
+                                        Your total amount will be deducted from the selected
+                                        wallet.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ================= CARDS ================= -->
+<!-- ================= CARDS ================= -->
+
+<div class="payment-method">
+    <button
+        type="button"
+        data-method="card"
+        class="payment-method-button w-full min-h-[68px] px-[27px] flex items-center justify-between text-left border-b border-[#B9B9B9] bg-white"
+    >
+        <span class="poppins-regular text-[16px] text-[#111111]">
+            Credit and Debit Cards
+        </span>
+
+        <span
+            class="payment-radio w-[19px] h-[19px] shrink-0 rounded-full border-[2px] border-[#999999]"
+        ></span>
+    </button>
+
+    <!-- CARD CONTENT -->
+
+    <div
+        class="payment-content hidden border-b border-[#B9B9B9] bg-[#F5E9FE] px-[27px] pt-[12px] pb-[28px]"
+        data-content="card"
+    >
+
+        <p class="poppins-semibold text-[13px] text-[#111111] mb-[10px]">
+            Enter card details
+        </p>
+
+
+        <div
+            class="grid grid-cols-1 xl:grid-cols-[590px_1fr] gap-[28px] items-start"
+        >
+
+            <!-- ================= CARD FORM ================= -->
+
+            <div
+                class="bg-white border border-[#D5D5D5] rounded-[6px] overflow-hidden shadow-[0_1px_4px_rgba(0,0,0,0.05)]"
+            >
+
+                <div class="px-[27px] pt-[14px] pb-[13px]">
+
+                    <!-- CARD LOGOS -->
+
+                    <div
+                        class="flex items-center justify-end gap-[12px] h-[22px] mb-[4px]"
+                    >
+
+                        <span
+                            class="font-bold italic text-[#174EA6] text-[16px]"
+                        >
+                            VISA
+                        </span>
+
+                        <span
+                            class="relative w-[38px] h-[20px] shrink-0"
+                        >
+                            <span
+                                class="absolute left-0 top-0 w-[20px] h-[20px] rounded-full bg-[#EB001B]"
+                            ></span>
+
+                            <span
+                                class="absolute right-0 top-0 w-[20px] h-[20px] rounded-full bg-[#F79E1B]"
+                            ></span>
+                        </span>
+
+                        <span class="text-[#555555] text-[13px]">
+                            ↔
+                        </span>
+
+                        <span
+                            class="font-semibold italic text-[#2359A7] text-[11px]"
+                        >
+                            RuPay
+                        </span>
+
+                    </div>
+
+
+                    <!-- CARD NUMBER -->
+
+                    <label
+                        for="card-number"
+                        class="block poppins-semibold text-[11px] text-[#222222] mb-[5px]"
+                    >
+                        Card Number
+                    </label>
+
+                    <div class="relative">
+
+                        <input
+                            id="card-number"
+                            type="text"
+                            inputmode="numeric"
+                            autocomplete="cc-number"
+                            maxlength="19"
+                            placeholder="1234 5678 9012 3456"
+                            class="w-full h-[45px] border border-[#CFCFCF] rounded-[6px] px-[13px] pr-[43px] outline-none poppins-regular text-[14px] text-[#333333] placeholder:text-[#999999] focus:border-[#A437E6]"
+                        />
+
+                        <i
+                            class="fa-regular fa-credit-card absolute right-[13px] top-1/2 -translate-y-1/2 text-[#999999] text-[15px]"
+                        ></i>
+
+                    </div>
+
+
+                    <!-- CARD HOLDER -->
+
+                    <label
+                        for="card-holder-name"
+                        class="block poppins-semibold text-[11px] text-[#222222] mt-[11px] mb-[5px]"
+                    >
+                        Card Holder Name
+                    </label>
+
+                    <input
+                        id="card-holder-name"
+                        type="text"
+                        autocomplete="cc-name"
+                        placeholder="Priyanka Saha"
+                        class="w-full h-[45px] border border-[#CFCFCF] rounded-[6px] px-[13px] outline-none poppins-regular text-[14px] text-[#333333] placeholder:text-[#999999] focus:border-[#A437E6]"
+                    />
+
+
+                    <!-- EXPIRY + CVV -->
+
+                    <div class="grid grid-cols-2 gap-[28px] mt-[11px]">
+
+                        <div>
+
+                            <label
+                                for="card-expiry"
+                                class="block poppins-semibold text-[11px] text-[#222222] mb-[5px]"
+                            >
+                                Expiry Date
+                            </label>
+
+                            <input
+                                id="card-expiry"
+                                type="text"
+                                inputmode="numeric"
+                                autocomplete="cc-exp"
+                                maxlength="7"
+                                placeholder="MM / YY"
+                                class="w-full h-[45px] border border-[#CFCFCF] rounded-[6px] px-[13px] outline-none poppins-regular text-[14px] text-[#333333] placeholder:text-[#999999] focus:border-[#A437E6]"
+                            />
+
+                        </div>
+
+
+                        <div>
+
+                            <label
+                                for="card-cvv"
+                                class="block poppins-semibold text-[11px] text-[#222222] mb-[5px]"
+                            >
+                                CVV
+                            </label>
+
+                            <div class="relative">
+
+                                <input
+                                    id="card-cvv"
+                                    type="password"
+                                    inputmode="numeric"
+                                    autocomplete="cc-csc"
+                                    maxlength="4"
+                                    placeholder="123"
+                                    class="w-full h-[45px] border border-[#CFCFCF] rounded-[6px] px-[13px] pr-[40px] outline-none poppins-regular text-[14px] text-[#333333] placeholder:text-[#999999] focus:border-[#A437E6]"
+                                />
+
+                                <i
+                                    class="fa-regular fa-circle-question absolute right-[13px] top-1/2 -translate-y-1/2 text-[#999999] text-[15px]"
+                                ></i>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- SAVE CARD -->
+
+                    <label
+                        class="flex items-start gap-[10px] mt-[12px] cursor-pointer"
+                    >
+
+                        <input
+                            id="save-card"
+                            type="checkbox"
+                            checked
+                            class="sr-only"
+                        />
+
+                        <span
+                            id="save-card-visual"
+                            class="w-[21px] h-[21px] shrink-0 rounded-[3px] bg-[#A437E6] text-white flex items-center justify-center mt-[1px]"
+                        >
+                            <i class="fa-solid fa-check text-[12px]"></i>
+                        </span>
+
+                        <span class="flex flex-col">
+
+                            <span
+                                class="poppins-semibold text-[14px] leading-[1.35] text-[#333333]"
+                            >
+                                Save card for faster payments
+                            </span>
+
+                            <span
+                                class="poppins-regular text-[11px] text-[#777777] mt-[2px]"
+                            >
+                                Your card details are secure and encrypted.
+                            </span>
+
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+                <!-- PAY BUTTON -->
+
+                <button
+                    id="pay-card-button"
+                    type="button"
+                    class="w-full h-[51px] bg-gradient-to-r from-[#A437E6] to-[#8D26C9] text-white poppins-semibold text-[17px] flex items-center justify-center gap-[8px] hover:from-[#8D26C9] hover:to-[#A437E6] transition-all duration-300 disabled:opacity-70"
+                >
+
+                    <i class="fa-solid fa-lock text-[13px]"></i>
+
+                    PAY ₹5,470.90
+
+                </button>
+
+            </div>
+
+
+            <!-- ================= SECURITY ================= -->
+
+            <div class="flex flex-col gap-[22px] pt-[8px]">
+
+                <!-- SECURE PAYMENT -->
+
+                <div class="flex items-start gap-[15px]">
+
+                    <span
+                        class="w-[52px] h-[52px] shrink-0 rounded-full bg-[#EDD6FE] flex items-center justify-center"
+                    >
+                        <i
+                            class="fa-solid fa-lock text-[#8D26C9] text-[21px]"
+                        ></i>
+                    </span>
+
+                    <div>
+
+                        <h3
+                            class="poppins-semibold text-[15px] text-[#222222]"
+                        >
+                            Secure Payment
+                        </h3>
+
+                        <p
+                            class="poppins-regular text-[13px] leading-[1.45] text-[#333333] mt-[2px]"
+                        >
+                            Your card details are<br />
+                            100% secure.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PCI DSS -->
+
+                <div class="flex items-start gap-[15px]">
+
+                    <span
+                        class="w-[52px] h-[52px] shrink-0 rounded-full bg-[#EDD6FE] flex items-center justify-center"
+                    >
+                        <i
+                            class="fa-solid fa-shield-halved text-[#8D26C9] text-[21px]"
+                        ></i>
+                    </span>
+
+                    <div>
+
+                        <h3
+                            class="poppins-semibold text-[15px] text-[#222222]"
+                        >
+                            PCI DSS Compliant
+                        </h3>
+
+                        <p
+                            class="poppins-regular text-[13px] leading-[1.45] text-[#333333] mt-[2px]"
+                        >
+                            We use industry-standard<br />
+                            security.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- INSTANT CONFIRMATION -->
+
+                <div class="flex items-start gap-[15px]">
+
+                    <span
+                        class="w-[52px] h-[52px] shrink-0 rounded-full bg-[#EDD6FE] flex items-center justify-center"
+                    >
+                        <i
+                            class="fa-solid fa-bolt text-[#8D26C9] text-[22px]"
+                        ></i>
+                    </span>
+
+                    <div>
+
+                        <h3
+                            class="poppins-semibold text-[15px] text-[#222222]"
+                        >
+                            Instant Confirmation
+                        </h3>
+
+                        <p
+                            class="poppins-regular text-[13px] leading-[1.45] text-[#333333] mt-[2px]"
+                        >
+                            Get instant booking<br />
+                            confirmation.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= NETBANKING ================= -->
+
+<div class="payment-method">
+
+    <!-- NETBANKING HEADER -->
+
+    <button
+        type="button"
+        data-method="netbanking"
+        class="payment-method-button w-full min-h-[68px] px-[27px] flex items-center justify-between text-left bg-white border-b border-[#B9B9B9]"
+    >
+
+        <span class="poppins-regular text-[16px] text-[#111111]">
+            Netbanking
+        </span>
+
+        <span
+            class="payment-radio w-[19px] h-[19px] shrink-0 rounded-full border-[2px] border-[#999999]"
+        ></span>
+
+    </button>
+
+
+    <!-- NETBANKING CONTENT -->
+
+    <div
+        class="payment-content hidden border-b border-[#B9B9B9] bg-[#F5E9FE] px-[27px] pt-[14px] pb-[25px]"
+        data-content="netbanking"
+    >
+
+        <!-- TITLE -->
+
+        <p
+            class="poppins-semibold text-[13px] text-[#111111] mb-[10px]"
+        >
+            Select your bank
+        </p>
+
+
+        <!-- SEARCH -->
+
+        <div class="relative w-full mb-[14px]">
+
+            <i
+                class="fa-solid fa-magnifying-glass absolute left-[14px] top-1/2 -translate-y-1/2 text-[#777777] text-[14px]"
+            ></i>
+
+            <input
+                id="bank-search"
+                type="text"
+                placeholder="Search your bank"
+                autocomplete="off"
+                class="w-full h-[39px] rounded-[6px] border border-[#D0D0D0] bg-white pl-[38px] pr-[14px] outline-none poppins-regular text-[13px] text-[#333333] placeholder:text-[#999999] focus:border-[#A437E6]"
+            />
+
+        </div>
+
+
+        <!-- BANK GRID -->
+
+        <div
+            id="bank-list"
+            class="grid grid-cols-1 sm:grid-cols-2 gap-[5px]"
+        >
+
+            <!-- SBI -->
+
+            <button
+                type="button"
+                data-bank="State Bank of India"
+                class="bank-option h-[58px] px-[14px] flex items-center justify-between rounded-[7px] border border-[#D0D0D0] bg-[#F5E9FE] text-left"
+            >
+
+                <span class="flex items-center gap-[14px] min-w-0">
+
+                    <span
+                        class="w-[36px] h-[36px] shrink-0 rounded-full bg-[#0A9FDB] flex items-center justify-center"
+                    >
+                        <span
+                            class="w-[15px] h-[15px] border-[2px] border-white rotate-45"
+                        ></span>
+                    </span>
+
+                    <span
+                        class="poppins-medium text-[14px] text-[#222222] truncate"
+                    >
+                        State Bank of India
+                    </span>
+
+                </span>
+
+                <span
+                    class="bank-radio w-[19px] h-[19px] shrink-0 rounded-full border-[5px] border-[#A437E6]"
+                ></span>
+
+            </button>
+
+
+            <!-- HDFC -->
+
+            <button
+                type="button"
+                data-bank="HDFC Bank"
+                class="bank-option h-[58px] px-[14px] flex items-center justify-between rounded-[7px] border border-[#D0D0D0] bg-white text-left"
+            >
+
+                <span class="flex items-center gap-[14px] min-w-0">
+
+                    <span
+                        class="w-[36px] h-[36px] shrink-0 flex items-center justify-center"
+                    >
+                        <span
+                            class="w-[27px] h-[27px] border-[4px] border-[#E31B23]"
+                        ></span>
+                    </span>
+
+                    <span
+                        class="poppins-medium text-[14px] text-[#222222]"
+                    >
+                        HDFC Bank
+                    </span>
+
+                </span>
+
+                <span
+                    class="bank-radio w-[19px] h-[19px] shrink-0 rounded-full border-[2px] border-[#A8A8A8]"
+                ></span>
+
+            </button>
+
+
+            <!-- ICICI -->
+
+            <button
+                type="button"
+                data-bank="ICICI Bank"
+                class="bank-option h-[58px] px-[14px] flex items-center justify-between rounded-[7px] border border-[#D0D0D0] bg-white text-left"
+            >
+
+                <span class="flex items-center gap-[14px]">
+
+                    <span
+                        class="w-[36px] h-[36px] shrink-0 flex items-center justify-center text-[#E02B32] text-[27px] font-bold italic"
+                    >
+                        i
+                    </span>
+
+                    <span
+                        class="poppins-medium text-[14px] text-[#222222]"
+                    >
+                        ICICI Bank
+                    </span>
+
+                </span>
+
+                <span
+                    class="bank-radio w-[19px] h-[19px] shrink-0 rounded-full border-[2px] border-[#A8A8A8]"
+                ></span>
+
+            </button>
+
+
+            <!-- AXIS -->
+
+            <button
+                type="button"
+                data-bank="Axis Bank"
+                class="bank-option h-[58px] px-[14px] flex items-center justify-between rounded-[7px] border border-[#D0D0D0] bg-white text-left"
+            >
+
+                <span class="flex items-center gap-[14px]">
+
+                    <span
+                        class="w-[36px] h-[36px] shrink-0 flex items-center justify-center text-[#A0005B] text-[28px] font-bold"
+                    >
+                        A
+                    </span>
+
+                    <span
+                        class="poppins-medium text-[14px] text-[#222222]"
+                    >
+                        Axis Bank
+                    </span>
+
+                </span>
+
+                <span
+                    class="bank-radio w-[19px] h-[19px] shrink-0 rounded-full border-[2px] border-[#A8A8A8]"
+                ></span>
+
+            </button>
+
+
+            <!-- KOTAK -->
+
+            <button
+                type="button"
+                data-bank="Kotak Mahindra Bank"
+                class="bank-option h-[58px] px-[14px] flex items-center justify-between rounded-[7px] border border-[#D0D0D0] bg-white text-left"
+            >
+
+                <span class="flex items-center gap-[14px]">
+
+                    <span
+                        class="w-[36px] h-[36px] shrink-0 rounded-full border-[4px] border-[#173B76] flex items-center justify-center text-[#173B76] font-bold text-[13px]"
+                    >
+                        K
+                    </span>
+
+                    <span
+                        class="poppins-medium text-[14px] text-[#222222]"
+                    >
+                        Kotak Mahindra Bank
+                    </span>
+
+                </span>
+
+                <span
+                    class="bank-radio w-[19px] h-[19px] shrink-0 rounded-full border-[2px] border-[#A8A8A8]"
+                ></span>
+
+            </button>
+
+
+            <!-- PNB -->
+
+            <button
+                type="button"
+                data-bank="Punjab National Bank"
+                class="bank-option h-[58px] px-[14px] flex items-center justify-between rounded-[7px] border border-[#D0D0D0] bg-white text-left"
+            >
+
+                <span class="flex items-center gap-[14px]">
+
+                    <span
+                        class="w-[36px] h-[36px] shrink-0 rounded-[4px] bg-[#C7183B] flex items-center justify-center text-[#F4B400] font-bold text-[18px]"
+                    >
+                        प
+                    </span>
+
+                    <span
+                        class="poppins-medium text-[14px] text-[#222222]"
+                    >
+                        Punjab National Bank
+                    </span>
+
+                </span>
+
+                <span
+                    class="bank-radio w-[19px] h-[19px] shrink-0 rounded-full border-[2px] border-[#A8A8A8]"
+                ></span>
+
+            </button>
+
+
+            <!-- BANK OF BARODA -->
+
+            <button
+                type="button"
+                data-bank="Bank of Baroda"
+                class="bank-option h-[58px] px-[14px] flex items-center justify-between rounded-[7px] border border-[#D0D0D0] bg-white text-left"
+            >
+
+                <span class="flex items-center gap-[14px]">
+
+                    <span
+                        class="w-[36px] h-[36px] shrink-0 flex items-center justify-center text-[#F15A24] text-[27px] font-bold italic"
+                    >
+                        B
+                    </span>
+
+                    <span
+                        class="poppins-medium text-[14px] text-[#222222]"
+                    >
+                        Bank of Baroda
+                    </span>
+
+                </span>
+
+                <span
+                    class="bank-radio w-[19px] h-[19px] shrink-0 rounded-full border-[2px] border-[#A8A8A8]"
+                ></span>
+
+            </button>
+
+
+            <!-- CANARA -->
+
+            <button
+                type="button"
+                data-bank="Canara Bank"
+                class="bank-option h-[58px] px-[14px] flex items-center justify-between rounded-[7px] border border-[#D0D0D0] bg-white text-left"
+            >
+
+                <span class="flex items-center gap-[14px]">
+
+                    <span
+                        class="w-[36px] h-[36px] shrink-0 flex items-center justify-center text-[#1792D0] text-[25px] font-bold"
+                    >
+                        △
+                    </span>
+
+                    <span
+                        class="poppins-medium text-[14px] text-[#222222]"
+                    >
+                        Canara Bank
+                    </span>
+
+                </span>
+
+                <span
+                    class="bank-radio w-[19px] h-[19px] shrink-0 rounded-full border-[2px] border-[#A8A8A8]"
+                ></span>
+
+            </button>
+
+        </div>
+
+
+        <!-- SECURITY NOTE -->
+
+        <div
+            class="flex items-center gap-[9px] mt-[16px] mb-[13px]"
+        >
+
+            <i
+                class="fa-solid fa-lock text-[#333333] text-[14px]"
+            ></i>
+
+            <p
+                class="poppins-regular text-[12px] sm:text-[13px] text-[#333333]"
+            >
+                You will be redirected to your bank's secure website
+                to complete the payment.
+            </p>
+
+        </div>
+
+
+        <!-- PROCEED BUTTON -->
+
+        <button
+            type="button"
+            id="netbanking-pay-button"
+            class="w-full h-[50px] rounded-[6px] bg-gradient-to-r from-[#A437E6] to-[#8D26C9] text-white poppins-medium text-[16px] sm:text-[18px] flex items-center justify-center gap-[10px] hover:from-[#8D26C9] hover:to-[#A437E6] transition-all duration-300"
+        >
+
+            <i class="fa-solid fa-lock text-[14px]"></i>
+
+            PROCEED TO PAY ₹5,470.90
+
+        </button>
+
+    </div>
+
+</div>
+                    </div>
+
+                    <!-- =================================================
+                 GIFT CARD
+            ================================================== -->
+
+                    <div class="mt-[18px] border border-[#B9B9B9] rounded-[8px] overflow-hidden">
+                        <div class="h-[68px] px-[27px] flex items-center justify-between">
+                            <span class="poppins-regular text-[16px] text-[#111111]">
+                                Have a gift card?
+                            </span>
+
+                            <button type="button" id="gift-card-button"
+                                class="poppins-semibold text-[13px] text-[#A437E6] hover:text-[#8D26C9]">
+                                APPLY GIFT CARD
+                            </button>
+                        </div>
+
+                        <!-- GIFT CARD FORM -->
+
+                        <div id="gift-card-panel" class="hidden px-[27px] pb-[20px]">
+                            <div class="flex gap-3">
+                                <input id="gift-card-input" type="text" placeholder="Enter gift card code"
+                                    class="flex-1 h-[44px] border border-[#D2D2D2] rounded-[6px] px-4 outline-none text-[13px] focus:border-[#A437E6]" />
+
+                                <button id="apply-gift-card" type="button"
+                                    class="px-5 bg-[#A437E6] text-white rounded-[6px] text-[13px]">
+                                    Apply
+                                </button>
+                            </div>
+
+                            <p id="gift-card-message" class="hidden text-[12px] mt-2 text-[#777777]"></p>
+                        </div>
+                    </div>
+
+                    <!-- =================================================
+                 EVENTARA NOTES
+            ================================================== -->
+
+                    <div class="mt-[42px]">
+                        <h2 class="oswald-semibold text-[24px] text-[#A437E6] mb-[20px]">
+                            EVENTARA
+                        </h2>
+
+                        <p class="poppins-semibold text-[11px] text-[#777777] mb-[17px]">
+                            NOTE:
+                        </p>
+
+                        <div class="flex flex-col gap-[15px] text-[#999999] text-[11px] leading-[1.5] poppins-regular">
+                            <p>
+                                1. Registrations/Tickets once booked cannot be exchanged,
+                                cancelled or refunded.
+                            </p>
+
+                            <p>
+                                2. In case of Credit/Debit Card bookings, the Credit/Debit
+                                Card and Card holder must be present at the ticket counter
+                                while collecting the ticket(s).
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- =================================================
+               RIGHT : BILLING DETAILS
+          ================================================== -->
+
+                <aside>
+                    <h2 class="poppins-semibold text-[20px] leading-[1.2] text-[#333333] mb-[20px]">
+                        BILLING DETAILS
+                    </h2>
+
+                    <!-- EVENT DETAILS -->
+
+                    <div class="border border-[#999999] rounded-[4px] px-[18px] py-[12px]">
+                        <h3 class="poppins-semibold text-[15px] leading-[1.35] text-[#111111]">
+                            Kal ki Chinta Nahi Karta ft. Ravi Gupta
+                        </h3>
+
+                        <p class="poppins-regular text-[12px] text-[#111111] mt-[3px]">
+                            Sat, 1 Aug, 2026 | 07:00 PM
+                        </p>
+
+                        <p class="poppins-semibold text-[11px] text-[#111111] mt-[7px]">
+                            DIAMOND- A1,A2
+                        </p>
+                    </div>
+
+                    <!-- PRICE SUMMARY -->
+
+                    <div class="mt-[20px] border border-[#999999] rounded-[4px] overflow-hidden">
+                        <!-- Ticket Price -->
+
+                        <div class="min-h-[38px] px-[18px] flex items-center justify-between border-b border-[#B9B9B9]">
+                            <span class="poppins-semibold text-[13px] text-[#111111]">
+                                Ticket Price
+                                <span class="poppins-regular text-[#999999]">
+                                    (Incl. of all taxes)
+                                </span>
+                            </span>
+
+                            <strong class="poppins-semibold text-[13px] text-[#111111]">
+                                4,999.00
+                            </strong>
+                        </div>
+
+                        <!-- Convenience Fees -->
+
+                        <div class="min-h-[38px] px-[18px] flex items-center justify-between border-b border-[#B9B9B9]">
+                            <span class="poppins-semibold text-[13px] text-[#111111]">
+                                Convenience fees
+                            </span>
+
+                            <strong class="poppins-semibold text-[13px] text-[#111111]">
+                                471.90
+                            </strong>
+                        </div>
+
+                        <!-- Order Total -->
+
+                        <div class="min-h-[38px] px-[18px] flex items-center justify-between">
+                            <strong class="poppins-semibold text-[13px] text-[#111111]">
+                                Order Total
+                            </strong>
+
+                            <strong class="poppins-semibold text-[13px] text-[#111111]">
+                                5470.90
+                            </strong>
+                        </div>
+                    </div>
+
+                    <!-- BOOK BUTTON -->
+
+                    <button id="book-ticket-button" type="button"
+                        class="w-full h-[56px] mt-[20px] rounded-[6px] bg-gradient-to-r from-[#EE4291] to-[#AE40E4] hover:from-[#AE40E4] hover:to-[#EE4291] text-white poppins-medium text-[18px] transition-all duration-300">
+                        BOOK TICKET
+                    </button>
+                </aside>
+            </div>
+        </div>
+
+        <!-- UPI PAYMENT MODAL -->
+        <div id="upi-payment-modal"
+            class="hidden fixed inset-0 z-[10000] items-center justify-center bg-black/25 backdrop-blur-[2px] px-3 py-4">
+            <div
+                class="relative w-full max-w-[535px] min-h-[640px] bg-white rounded-[10px] shadow-[0_15px_50px_rgba(0,0,0,0.20)] px-[25px] sm:px-[45px] py-[28px] flex flex-col items-center text-center">
+                <p class="poppins-semibold text-[16px] sm:text-[17px] leading-[1.4] text-[#8D26C9] max-w-[455px]">
+                    Don't press back button or refresh screen until the payment is
+                    complete
+                </p>
+
+                <p id="upi-countdown" class="poppins-semibold text-[13px] text-[#3B906E] mt-[27px]">
+                    Ends in 2:00
+                </p>
+
+                <p class="poppins-semibold text-[13px] text-black mt-[26px]">
+                    Pay with any UPI app
+                </p>
+
+                <!-- QR -->
+                <div class="mt-[28px] w-[285px] h-[285px] flex items-center justify-center">
+                    <svg viewBox="0 0 210 210" class="w-full h-full" xmlns="http://www.w3.org/2000/svg"
+                        shape-rendering="crispEdges">
+                        <rect width="210" height="210" fill="white" />
+
+                        <g fill="black">
+                            <!-- TOP LEFT -->
+                            <rect x="12" y="12" width="62" height="10" />
+                            <rect x="12" y="12" width="10" height="62" />
+                            <rect x="64" y="12" width="10" height="62" />
+                            <rect x="12" y="64" width="62" height="10" />
+                            <rect x="28" y="28" width="30" height="30" />
+                            <rect x="38" y="38" width="10" height="10" fill="white" />
+
+                            <!-- TOP RIGHT -->
+                            <rect x="136" y="12" width="62" height="10" />
+                            <rect x="136" y="12" width="10" height="62" />
+                            <rect x="188" y="12" width="10" height="62" />
+                            <rect x="136" y="64" width="62" height="10" />
+                            <rect x="152" y="28" width="30" height="30" />
+                            <rect x="162" y="38" width="10" height="10" fill="white" />
+
+                            <!-- BOTTOM LEFT -->
+                            <rect x="12" y="136" width="62" height="10" />
+                            <rect x="12" y="136" width="10" height="62" />
+                            <rect x="64" y="136" width="10" height="62" />
+                            <rect x="12" y="188" width="62" height="10" />
+                            <rect x="28" y="152" width="30" height="30" />
+                            <rect x="38" y="162" width="10" height="10" fill="white" />
+
+                            <!-- CENTER -->
+                            <rect x="84" y="30" width="12" height="42" />
+                            <rect x="102" y="30" width="12" height="42" />
+                            <rect x="84" y="72" width="30" height="12" />
+                            <rect x="102" y="84" width="12" height="32" />
+                            <rect x="84" y="104" width="12" height="28" />
+                            <rect x="96" y="116" width="42" height="12" />
+                            <rect x="126" y="84" width="12" height="44" />
+                            <rect x="144" y="92" width="18" height="18" />
+                            <rect x="168" y="84" width="12" height="30" />
+                            <rect x="78" y="138" width="20" height="12" />
+                            <rect x="102" y="138" width="18" height="18" />
+                            <rect x="126" y="144" width="12" height="24" />
+                            <rect x="144" y="138" width="36" height="12" />
+                            <rect x="180" y="126" width="18" height="42" />
+                            <rect x="90" y="174" width="12" height="24" />
+                            <rect x="108" y="174" width="42" height="12" />
+                            <rect x="150" y="174" width="30" height="24" />
+                        </g>
+                    </svg>
+                </div>
+
+                <p
+                    class="poppins-regular text-[12px] sm:text-[13px] leading-[1.55] text-[#111111] max-w-[350px] mt-[34px]">
+                    Scan the QR from your mobile using any UPI app such as PhonePe,
+                    Google Pay, Paytm, CRED, Amazon Pay, BHIM etc.
+                </p>
+
+                <button id="upi-back-button" type="button"
+                    class="w-[207px] h-[44px] mt-[30px] border border-[#A437E6] rounded-[5px] text-[#A437E6] poppins-regular text-[12px] hover:bg-[#F5E9FE] transition-colors">
+                    Back To Payment Screen
+                </button>
+            </div>
+        </div>
+
+
+
+    </main>
+
+    <script src="./payment.js"></script>
+</body>
+
+</html>

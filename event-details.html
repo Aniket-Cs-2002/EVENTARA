@@ -1,0 +1,1785 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@14/swiper-bundle.min.css"
+    />
+    <title>Event-Details | Eventara</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <!-- After Login -->
+    <header class="header poppins-medium">
+        <nav class="bg-white py-[10px]">
+            <div class="container mx-auto h-full">
+                <div class="flex items-center justify-between gap-6 xl:gap-10 h-full">
+                    <!-- Logo -->
+                    <div class="shrink-0">
+                        <a href="./index.html">
+                            <img src="./images/logo.png" alt="Eventara Logo"
+                                class="w-[80px] sm:w-[90px] xl:w-[105px] h-auto" loading="lazy" />
+                        </a>
+                    </div>
+
+                    <!-- Desktop Navigation -->
+                    <ul
+                        class="hidden lg:flex justify-center items-center gap-6 xl:gap-[80px] 2xl:gap-12 whitespace-nowrap">
+                        <li>
+                            <a href="./index.html" class="text-[20px] poppins-medium text-[var(--color-electric-700)]">
+                                Home
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="./event.html" target="_self"
+                                class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors">
+                                Events
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="./my-tickits.html"
+                                class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors">
+                                My Tickets
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="aboutus.html"
+                                class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors">
+                                About Us
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="contact.html" target="_blank"
+                                class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors">
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Right Side Icons -->
+                    <div class="hidden lg:flex items-center justify-end gap-4 xl:gap-5 flex-shrink-0">
+                        <button type="button" id="navbar-search-btn" aria-label="Open search"
+                            class="flex items-center justify-center">
+                            <i data-lucide="search" class="w-6 h-6 cursor-pointer"></i>
+                        </button>
+                        <!-- Shopping Bag -->
+                        <a href="./cart.html">
+                            <i data-lucide="handbag"></i>
+                        </a>
+
+                        <!-- Bell -->
+                        <a href="#">
+                            <i class="" data-lucide="bell"></i>
+                        </a>
+
+                        <!-- User -->
+                        <!-- User Profile -->
+                        <div class="relative" id="profile-dropdown-wrapper">
+                            <!-- Profile Button -->
+                            <button type="button" id="profile-dropdown-btn"
+                                class="block rounded-full focus:outline-none cursor-pointer"
+                                aria-label="Open profile menu" aria-expanded="false">
+                                <img src="./images/user.png" alt="User" class="w-[50px] h-[50px]" />
+                            </button>
+
+                            <!-- Profile Dropdown -->
+                            <div id="profile-dropdown"
+                                class="absolute right-0 top-[calc(100%+14px)] w-[430px] max-h-[calc(100vh-110px)] overflow-y-auto bg-[#F9EEFF] rounded-[28px] shadow-[0_12px_35px_rgba(0,0,0,0.18)] border border-[#E9D5FF] px-[20px] z-[9999] opacity-0 invisible pointer-events-none translate-y-[-8px] scale-[0.98] origin-top-right transition-all duration-200 ease-out">
+                                <!-- =========================
+             PROFILE HEADER
+        ========================== -->
+
+                                <p class="outfit-semibold text-[20px] text-[#141B34] mt-[20px] mb-[20px]">
+                                    Profile
+                                </p>
+
+                                <div class="bg-white rounded-[24px] overflow-hidden">
+
+                                    <!-- User -->
+                                    <div class="flex flex-col items-center justify-center px-[20px] py-[30px]">
+                                        <img src="./images/user.png" alt="Profile"
+                                            class="w-[80px] h-[80px] rounded-full object-cover " />
+
+                                        <h3 class="outfit-semibold text-[20px] text-[#000000] mt-[22px]">
+                                            Eve Rozier
+                                        </h3>
+
+                                        <p class="outfit-regular text-[15px] text-[#000000] opacity-50 mt-[4px]">
+                                            abc@gmail.com
+                                        </p>
+
+                                        <!-- Edit Profile -->
+                                        <button type="button"
+                                            class="mt-[22px] px-[73px] py-[19px] rounded-[10px] bg-[#C477F0] text-white outfit-medium text-[15px] flex items-center justify-center gap-4 hover:bg-[#B45BE8] transition-colors duration-300">
+                                            Edit profile
+
+                                            <i class="fa-solid fa-pen text-[15px]"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- =========================
+             FIRST MENU GROUP
+        ========================== -->
+
+                                <div class="mt-[12px] flex flex-col gap-[8px]">
+                                    <!-- My Tickets -->
+                                    <a href="./my-tickits.html"
+                                        class=" w-full grid grid-cols-[44px_minmax(0,1fr)_32px] items-center gap-[14px] p-[20px] bg-white rounded-[10px] text-[#141B34] outfit-regular text-[15px] transition-all duration-200 hover:bg-[#FCF7FF] hover:-translate-y-[1px] [&>i:first-child]:justify-self-center">
+                                        <i data-lucide="ticket" class="w-[24px] h-[24px]"> </i>
+
+                                        <span> My Tickets </span>
+
+                                        <i data-lucide="chevron-right"
+                                            class="justify-self-end w-[24px] h-[24px] p-[4px] border-2 border-[#141B34] rounded-full">
+                                        </i>
+                                    </a>
+
+                                    <!-- Cart -->
+                                    <a href="./cart.html"
+                                        class=" w-full grid grid-cols-[44px_minmax(0,1fr)_32px] items-center gap-[14px] p-[20px] bg-white rounded-[10px] text-[#141B34] outfit-regular text-[15px] transition-all duration-200 hover:bg-[#FCF7FF] hover:-translate-y-[1px] [&>i:first-child]:justify-self-center">
+                                        <i data-lucide="shopping-bag" class="w-[24px] h-[24px]"> </i>
+
+                                        <span> My Cart </span>
+
+                                        <i data-lucide="chevron-right"
+                                            class="justify-self-end w-[24px] h-[24px] p-[4px] border-2 border-[#141B34] rounded-full">
+                                        </i>
+                                    </a>
+
+                                    <!-- Wishlist -->
+                                    <a href="./wishlist.html"
+                                        class=" w-full grid grid-cols-[44px_minmax(0,1fr)_32px] items-center gap-[14px] p-[20px] bg-white rounded-[10px] text-[#141B34] outfit-regular text-[15px] transition-all duration-200 hover:bg-[#FCF7FF] hover:-translate-y-[1px] [&>i:first-child]:justify-self-center">
+                                        <i data-lucide="heart" class="w-[24px] h-[24px]"> </i>
+
+                                        <span> Wishlist </span>
+
+                                        <i data-lucide="chevron-right"
+                                            class="justify-self-end w-[24px] h-[24px] p-[4px] border-2 border-[#141B34] rounded-full">
+                                        </i>
+                                    </a>
+                                </div>
+
+                                <!-- Divider -->
+                                <div class="my-[12px] h-[1px] bg-[#transparent]"></div>
+
+                                <!-- =========================
+             SECOND MENU GROUP
+        ========================== -->
+
+                                <div class="flex flex-col gap-[8px]">
+                                    
+                                    <!-- Get Help -->
+                                    <a href="./contact.html"
+                                        class=" w-full grid grid-cols-[44px_minmax(0,1fr)_32px] items-center gap-[14px] p-[20px] bg-white rounded-[10px] text-[#141B34] outfit-regular text-[15px] transition-all duration-200 hover:bg-[#FCF7FF] hover:-translate-y-[1px] [&>i:first-child]:justify-self-center">
+                                        <i data-lucide="headphones" class="w-[24px] h-[24px]">
+                                        </i>
+
+                                        <span> Get Help </span>
+
+                                        <i data-lucide="chevron-right"
+                                            class="justify-self-end w-[24px] h-[24px] p-[4px] border-2 border-[#141B34] rounded-full">
+                                        </i>
+                                    </a>
+
+                                    <!-- Change Password -->
+                                    <a href="#"
+                                        class=" w-full grid grid-cols-[44px_minmax(0,1fr)_32px] items-center gap-[14px] p-[20px] bg-white rounded-[10px] text-[#141B34] outfit-regular text-[15px] transition-all duration-200 hover:bg-[#FCF7FF] hover:-translate-y-[1px] [&>i:first-child]:justify-self-center">
+                                        <i data-lucide="shield" class="w-[24px] h-[24px]"> </i>
+
+                                        <span>
+                                            Change
+                                            Password
+                                        </span>
+
+                                        <i data-lucide="chevron-right"
+                                            class="justify-self-end w-[24px] h-[24px] p-[4px] border-2 border-[#141B34] rounded-full">
+                                        </i>
+                                    </a>
+
+                                    <!-- Logout -->
+                                    <a href="#"
+                                        class=" w-full grid grid-cols-[44px_minmax(0,1fr)_32px] items-center gap-[14px] p-[20px] bg-white rounded-[10px] text-[#141B34] outfit-regular text-[15px] transition-all duration-200 hover:bg-[#FCF7FF] hover:-translate-y-[1px] [&>i:first-child]:justify-self-center mb-[60px]">
+                                        <i data-lucide="log-out" class="w-[24px] h-[24px]"> </i>
+
+                                        <span>
+                                            Logout
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="navbar-toggle" class="lg:hidden ml-auto text-2xl text-gray-700">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- After Login Mobile View -->
+        <div id="mobile-navbar" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50">
+
+            <div id="navbar-slide"
+                class="w-[300px] h-full bg-white rounded-r-[24px] shadow-2xl p-6
+                -translate-x-full transition-transform duration-300
+                flex flex-col overflow-y-auto">
+
+                <!-- Header -->
+                <div class="flex items-center justify-between pb-5 border-b border-gray-200 shrink-0">
+
+                    <img src="./images/logo.png"
+                        alt="Eventara"
+                        class="w-[95px] h-auto" />
+
+                    <button id="navbar-close"
+                        class="text-2xl text-gray-600 hover:text-black">
+
+                        <i class="fa-solid fa-xmark"></i>
+
+                    </button>
+
+                </div>
+
+
+                <!-- Profile -->
+                <div class="flex items-center gap-3 py-6 border-b border-gray-200">
+
+                    <img src="./images/user.png"
+                        alt="Profile"
+                        class="w-[52px] h-[52px] rounded-full object-cover" />
+
+                    <div class="min-w-0">
+
+                        <h3 class="outfit-semibold text-[17px] text-[#141B34] truncate">
+                            Eve Rozier
+                        </h3>
+
+                        <p class="outfit-regular text-[13px] text-gray-500 truncate">
+                            abc@gmail.com
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Navigation -->
+                <ul class="flex flex-col gap-2 mt-6">
+
+                    <!-- Home -->
+                    <li>
+                        <a href="index.html"
+                            class="flex items-center gap-4 rounded-xl px-4 py-3
+                            bg-violet-50 text-violet-700 transition">
+
+                            <i data-lucide="house"
+                                class="w-5 h-5"></i>
+
+                            <span>Home</span>
+
+                        </a>
+                    </li>
+
+
+                    <!-- Events -->
+                    <li>
+                        <a href="event.html"
+                            class="flex items-center gap-4 rounded-xl px-4 py-3
+                            hover:bg-violet-50 hover:text-violet-700 transition">
+
+                            <i data-lucide="calendar-days"
+                                class="w-5 h-5"></i>
+
+                            <span>Events</span>
+
+                        </a>
+                    </li>
+
+
+                    <!-- My Tickets -->
+                    <li>
+                        <a href="./my-tickits.html"
+                            class="flex items-center gap-4 rounded-xl px-4 py-3
+                            hover:bg-violet-50 hover:text-violet-700 transition">
+
+                            <i data-lucide="ticket"
+                                class="w-5 h-5"></i>
+
+                            <span>My Tickets</span>
+
+                        </a>
+                    </li>
+
+
+                    <!-- Wishlist -->
+                    <li>
+                        <a href="#"
+                            class="flex items-center gap-4 rounded-xl px-4 py-3
+                            hover:bg-violet-50 hover:text-violet-700 transition">
+
+                            <i data-lucide="heart"
+                                class="w-5 h-5"></i>
+
+                            <span>Wishlist</span>
+
+                        </a>
+                    </li>
+
+
+                    <!-- About -->
+                    <li>
+                        <a href="aboutus.html"
+                            class="flex items-center gap-4 rounded-xl px-4 py-3
+                            hover:bg-violet-50 hover:text-violet-700 transition">
+
+                            <i data-lucide="circle-alert"
+                                class="w-5 h-5"></i>
+
+                            <span>About Us</span>
+
+                        </a>
+                    </li>
+
+
+                    <!-- Contact -->
+                    <li>
+                        <a href="contact.html"
+                            class="flex items-center gap-4 rounded-xl px-4 py-3
+                            hover:bg-violet-50 hover:text-violet-700 transition">
+
+                            <i data-lucide="mail"
+                                class="w-5 h-5"></i>
+
+                            <span>Contact</span>
+
+                        </a>
+                    </li>
+
+                </ul>
+
+
+                <!-- Account Options -->
+                <div class="mt-6 pt-5 border-t border-gray-200 flex flex-col gap-2">
+                    <!-- Help -->
+                    <a href="#"
+                        class="flex items-center gap-4 rounded-xl px-4 py-3
+                        hover:bg-violet-50 hover:text-violet-700 transition">
+
+                        <i data-lucide="headphones"
+                            class="w-5 h-5"></i>
+
+                        <span>Get Help</span>
+
+                    </a>
+
+
+                    <!-- Change Password -->
+                    <a href="#"
+                        class="flex items-center gap-4 rounded-xl px-4 py-3
+                        hover:bg-violet-50 hover:text-violet-700 transition">
+
+                        <i data-lucide="shield"
+                            class="w-5 h-5"></i>
+
+                        <span>Change Password</span>
+
+                    </a>
+
+
+                    <!-- Logout -->
+                    <a href="#"
+                        class="flex items-center gap-4 rounded-xl px-4 py-3
+                        text-red-500 hover:bg-red-50 transition">
+
+                        <i data-lucide="log-out"
+                            class="w-5 h-5"></i>
+
+                        <span>Logout</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+    </header>
+    
+    <main>
+      <div class="bg-[var(--color-electric-100)] py-[20px]">
+        <div class="container mx-auto">
+          <div class="max-w-[1320px] mx-auto">
+            <div class="text-[14px]">
+              Home > Event > 
+              <span class="text-[var(--color-electric-600)]">Event Details Page</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event Details Section -->
+      <section class="py-[60px] md:py-[80px] lg:py-[100px]">
+        <div class="container mx-auto px-[20px]">
+          <div
+            class="w-full max-w-[1320px] mx-auto px-[15px] sm:px-[20px] lg:px-0"
+          >
+            <!-- Heading -->
+            <div class="flex items-center justify-between gap-[15px] mb-[30px]">
+              <h1
+                class="oswald-bold text-[34px] sm:text-[44px] md:text-[54px] lg:text-[68px]"
+              >
+                Guns N’ Roses Live in Kolkata
+              </h1>
+
+              <div class="flex items-center gap-[15px] sm:gap-[20px] shrink-0">
+                <i
+                  class="fa-solid fa-share-nodes text-[24px] text-[var(--color-text)]"
+                ></i>
+
+                <i
+                  class="fa-regular fa-heart text-[24px] text-[var(--color-text)]"
+                ></i>
+              </div>
+            </div>
+
+            <!-- Main Cards -->
+            <div
+              class="grid grid-cols-1 lg:grid-cols-[minmax(0,1.407fr)_minmax(0,1fr)] gap-[20px] lg:gap-[30px]"
+            >
+              <!-- LEFT CARD  -->
+              <div
+                class="w-full h-[500px] sm:h-[560px] md:h-[620px] lg:h-[654px] rounded-[20px] overflow-hidden bg-no-repeat bg-center bg-[length:100%_100%]"
+                style="background-image: url(images/live-image.png)"
+              >
+                <div class="h-full p-[20px] sm:p-[30px] flex flex-col">
+                  <!-- Description -->
+                  <div>
+                    <p
+                      class="oswald-medium text-[24px] sm:text-[30px] md:text-[36px] lg:text-[42px] text-[var(--color-white)]"
+                    >
+                      Experience one unforgettable night with one of the
+                      greatest rock bands of all time.
+                    </p>
+                  </div>
+
+                  <!-- Bottom -->
+                  <div class="mt-auto">
+                    <div class="flex items-center gap-[8px] mb-[13px]">
+                    
+                      <img src="./images/date-icon.png" alt="">
+                      <span
+                        class="oswald-medium text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] text-[var(--color-white)]"
+                      >
+                        Sunday, 20 July 2025
+                      </span>
+                    </div>
+
+                    <div class="flex items-center gap-[8px] mb-[13px]">
+                      <img src="./images/time-icon.png" alt="">
+
+                      <span
+                        class="poppins-regular text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] text-[var(--color-white)]"
+                      >
+                        6:00 PM onwards
+                      </span>
+                    </div>
+
+                    <div
+                      class="flex flex-wrap items-center justify-between gap-[10px]"
+                    >
+                      <div class="flex items-center gap-[8px]">
+                        <img src="./images/loc-ping.png" alt="">
+
+                        <span
+                          class="poppins-regular text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] text-[var(--color-white)]"
+                        >
+                          Salt Lake Stadium, Kolkata
+                        </span>
+                      </div>
+
+                      <div
+                        class="flex items-center gap-[7px] px-[20px] py-[20px] rounded-[10px] border-l border-r border-[var(--color-white)]/30 bg-[var(--color-black)]/30"
+                      >
+                        <i
+                          class="fa-solid fa-star text-[15px] text-yellow-400"
+                        ></i>
+                        <i
+                          class="fa-solid fa-star text-[15px] text-yellow-400"
+                        ></i>
+                        <i
+                          class="fa-solid fa-star text-[15px] text-yellow-400"
+                        ></i>
+                        <i
+                          class="fa-solid fa-star text-[15px] text-yellow-400"
+                        ></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- RIGHT CARD -->
+              <div
+                class="w-full h-[500px] sm:h-[560px] md:h-[620px] lg:h-[654px] rounded-[20px] border border-[var(--color-border)] bg-[var(--color-white)] p-[15px] sm:p-[20px] flex flex-col"
+              >
+                <!-- Date & Time -->
+                <div
+                  class="flex items-start gap-[15px] sm:gap-[20px] md:gap-[24px] mb-[25px]"
+                >
+                  <img
+                    src="images/date.svg"
+                    alt="Date & Time"
+                    class="w-[55px] h-[55px] sm:w-[65px] sm:h-[65px] md:w-[70px] md:h-[70px] shrink-0"
+                  />
+
+                  <div>
+                    <h3
+                      class="poppins-semibold text-[18px] sm:text-[20px] text-[var(--color-black)] mb-[8px] sm:mb-[10px]"
+                    >
+                      Date & Time
+                    </h3>
+
+                    <p
+                      class="poppins-regular text-[15px] sm:text-[18px] md:text-[20px] text-[#000000] opacity-50 mb-[8px] sm:mb-[10px]"
+                    >
+                      Sunday, 20 July 2025
+                    </p>
+
+                    <p
+                      class="poppins-regular text-[20px] text-[#000000] opacity-50"
+                    >
+                      6:00 PM onwards
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Venue -->
+                <div
+                  class="flex items-start gap-[15px] sm:gap-[20px] md:gap-[24px] mb-[25px]"
+                >
+                  <img
+                    src="images/location.svg"
+                    alt="Date & Time"
+                    class="w-[55px] h-[55px] sm:w-[65px] sm:h-[65px] md:w-[70px] md:h-[70px] shrink-0"
+                  />
+
+                  <div>
+                    <h3
+                      class="poppins-semibold text-[18px] sm:text-[20px] text-[var(--color-black)] mb-[8px] sm:mb-[10px]"
+                    >
+                      Venue
+                    </h3>
+
+                    <p
+                      class="poppins-regular text-[15px] sm:text-[18px] md:text-[20px] text-[#000000] opacity-50  mb-[8px] sm:mb-[10px]"
+                    >
+                      Salt Lake Stadium, Kolkata
+                    </p>
+
+                    <p
+                      class="poppins-regular text-[15px] sm:text-[18px] md:text-[20px] text-[#000000] opacity-50 "
+                    >
+                      West Bengal
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Age Limit -->
+                <div
+                  class="flex items-start gap-[15px] sm:gap-[20px] md:gap-[24px] mb-[25px]"
+                >
+                  <img
+                    src="images/age-limit.svg"
+                    alt="Date & Time"
+                    class="w-[55px] h-[55px] sm:w-[65px] sm:h-[65px] md:w-[70px] md:h-[70px] shrink-0"
+                  />
+
+                  <div>
+                    <h3
+                      class="poppins-semibold text-[18px] sm:text-[20px] text-[var(--color-black)] mb-[8px] sm:mb-[10px]"
+                    >
+                      Age limit
+                    </h3>
+
+                    <p
+                      class="poppins-regular text-[15px] sm:text-[18px] md:text-[20px] text-[#000000] opacity-50  mb-[8px] sm:mb-[10px]"
+                    >
+                      18+ only
+                    </p>
+
+                    <p
+                      class="poppins-regular text-[15px] sm:text-[18px] md:text-[20px] text-[#000000] opacity-50 "
+                    >
+                      With id card
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Language -->
+                <div class="flex items-start gap-[24px]">
+                  <img
+                    src="images/language.svg"
+                    alt="Date & Time"
+                    class="w-[55px] h-[55px] sm:w-[65px] sm:h-[65px] md:w-[70px] md:h-[70px] shrink-0"
+                  />
+
+                  <div>
+                    <h3
+                      class="poppins-semibold text-[18px] sm:text-[20px] text-[var(--color-black)] mb-[8px] sm:mb-[10px]"
+                    >
+                      Language
+                    </h3>
+
+                    <p
+                      class="poppins-regular text-[15px] sm:text-[18px] md:text-[20px] text-[#000000] opacity-50 "
+                    >
+                      English, Hindi, Bengali
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Price -->
+                <div class="mt-auto flex items-end justify-between">
+                  <div>
+                    <p
+                      class="oswald-medium text-[22px] sm:text-[26px] md:text-[32px] text-[var(--color-electric-600)]"
+                    >
+                      Starts From
+                    </p>
+
+                    <p
+                      class="oswald-medium text-[24px] sm:text-[28px] md:text-[32px] text-[var(--color-violetred-600)]"
+                    >
+                      1,499/-
+                    </p>
+                  </div>
+
+                  <button
+                    type="button"
+                    class="poppins-semibold text-[16px] sm:text-[18px] md:text-[20px] text-[var(--color-white)] bg-[#7D39F3] px-[20px] sm:px-[25px] md:px-[50px] py-[12px] sm:py-[15px] rounded-[10px] shrink-0"
+                  >
+                    Book Now
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Event Tags -->
+            <div class="flex flex-wrap items-center gap-[20px] mt-[20px]">
+              <!-- Live Music -->
+              <div
+                class="poppins-regular text-[16px] sm:text-[15px] lg:text-[16px] text-[var(--color-white)] bg-[var(--color-electric-950)] px-[10px] sm:px-[14px] lg:px-[15px] py-[10px] sm:py-[14px] lg:py-[15px] rounded-[8px] shadow-[0_3px_4px_rgba(0,0,0,0.35)]"
+              >
+                Live Music
+              </div>
+
+              <!-- Limited Seats -->
+              <div
+                class="poppins-regular text-[16px] sm:text-[15px] lg:text-[16px] text-[var(--color-white)] bg-[var(--color-electric-950)] px-[10px] sm:px-[14px] lg:px-[15px] py-[10px] sm:py-[14px] lg:py-[15px] rounded-[8px] shadow-[0_3px_4px_rgba(0,0,0,0.35)]"
+              >
+                Limited Seats
+              </div>
+
+              <!-- Interested -->
+              <div
+                class="poppins-regular text-[16px] sm:text-[15px] lg:text-[16px] text-[var(--color-white)] bg-[var(--color-electric-950)] px-[10px] sm:px-[14px] lg:px-[15px] py-[10px] sm:py-[14px] lg:py-[15px] rounded-[8px] shadow-[0_3px_4px_rgba(0,0,0,0.35)]"
+              >
+                2.5K+ Like
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Event Details Section -->
+      <section class="py-[100px]">
+        <div class="container mx-auto px-[15px]">
+          <div class="max-w-[1320px] mx-auto">
+            <!-- Tabs -->
+            <div
+              class="flex items-center gap-[30px] mb-[10px] overflow-x-auto whitespace-nowrap"
+            >
+              <!-- About -->
+              <a
+                href="#about"
+                class="poppins-semibold text-[20px] text-[var(--color-black)] px-[20px] py-[10px] border-t-[2px] border-b-[2px] border-[var(--color-violetred-500)] border-x-transparent rounded-[16px] transition-all duration-300 whitespace-nowrap"
+              >
+                About
+              </a>
+
+              <!-- Venue -->
+              <a
+                href="#venue"
+                class="poppins-semibold text-[20px] text-[var(--color-gray)] px-[20px] py-[10px] border-t-[2px] border-b-[2px] border-transparent border-x-transparent rounded-[16px] hover:border-t-[var(--color-violetred-500)] hover:border-b-[var(--color-violetred-500)] hover:text-[var(--color-black)] transition-all duration-300 whitespace-nowrap"
+              >
+                Venue
+              </a>
+
+              <!-- Tickets -->
+              <a
+                href="#tickets"
+                class="poppins-semibold text-[20px] text-[var(--color-gray)] px-[20px] py-[10px] border-t-[2px] border-b-[2px] border-transparent border-x-transparent rounded-[16px] hover:border-t-[var(--color-violetred-500)] hover:border-b-[var(--color-violetred-500)] hover:text-[var(--color-black)] transition-all duration-300 whitespace-nowrap"
+              >
+                Tickets
+              </a>
+
+              <!-- Artists -->
+              <a
+                href="#artists"
+                class="poppins-semibold text-[20px] text-[var(--color-gray)] px-[20px] py-[10px] border-t-[2px] border-b-[2px] border-transparent border-x-transparent rounded-[16px] hover:border-t-[var(--color-violetred-500)] hover:border-b-[var(--color-violetred-500)] hover:text-[var(--color-black)] transition-all duration-300 whitespace-nowrap"
+              >
+                Artists
+              </a>
+            </div>
+
+            <!-- Main Two Column Layout -->
+            <div
+              class="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-[40px] lg:gap-[60px]"
+            >
+              <!-- LEFT COLUMN -->
+              <div>
+                <!-- About Box -->
+                <div
+                  id="about"
+                  class="border-y border-[var(--color-border)] rounded-[20px] px-[10px] pt-[15px] pb-[30px]"
+                >
+                  <!-- Heading -->
+                  <h2
+                    class="oswald-semibold text-[32px] sm:text-[36px] md:text-[52px] mt-[10px] text-[var(--color-black)]"
+                  >
+                    About The Event
+                  </h2>
+
+                  <!-- Description -->
+                  <div
+                    class="poppins-regular text-[16px] sm:text-[20px] text-[#000000] opacity-50 mt-[20px]"
+                  >
+                    <p>
+                      Get ready for an electrifying evening as Guns N' Roses
+                      takes the stage in Kolkata for a spectacular live
+                      performance.
+                    </p>
+
+                    <p class="mt-[20px]">
+                      From legendary classics like Sweet Child O' Mine, November
+                      Rain, and Welcome to the Jungle to fan-favorite anthems,
+                      this concert promises an unforgettable experience filled
+                      with powerful performances, breathtaking visuals, and an
+                      atmosphere that every rock fan will remember.
+                    </p>
+
+                    <p class="mt-[20px]">
+                      Whether you're a lifelong fan or attending your first rock
+                      concert, this event is designed to deliver an incredible
+                      night of music and entertainment.
+                    </p>
+                  </div>
+
+                  <!-- Features -->
+                  <div
+                    class="hidden sm:flex items-center gap-x-[18px] mt-[30px]"
+                  >
+                    <!-- Huge Protection -->
+                    <div class="flex items-center gap-[6px] whitespace-nowrap">
+                      <img
+                        src="images/huge-protection.svg"
+                        alt="Huge Protection"
+                        class="w-[24px] h-[24px] shrink-0"
+                      />
+
+                      <span
+                        class="poppins-regular text-[13px] sm:text-[20px] text-[var(--color-text)] whitespace-nowrap"
+                      >
+                        Huge Protection
+                      </span>
+                    </div>
+
+                    <!-- Food & Beverage -->
+                    <div class="flex items-center gap-[6px] whitespace-nowrap">
+                      <img
+                        src="images/food-beverage.svg"
+                        alt="Food & Beverage"
+                        class="w-[24px] h-[24px] shrink-0"
+                      />
+
+                      <span
+                        class="poppins-regular text-[13px] sm:text-[20px] text-[var(--color-text)] whitespace-nowrap"
+                      >
+                        Food &amp; Beverage
+                      </span>
+                    </div>
+
+                    <!-- Secure Booking -->
+                    <div class="flex items-center gap-[6px] whitespace-nowrap">
+                      <img
+                        src="images/secure-booking.svg"
+                        alt="Secure Booking"
+                        class="w-[24px] h-[24px] shrink-0"
+                      />
+
+                      <span
+                        class="poppins-regular text-[13px] sm:text-[20px] text-[var(--color-text)] whitespace-nowrap"
+                      >
+                        Secure Booking
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Venue Box -->
+                <div
+                  id="venue"
+                  class="border-y border-[var(--color-border)] rounded-[20px] p-[10px] mt-[89px]"
+                >
+                  <!-- Heading -->
+                  <h2
+                    class="oswald-semibold text-[32px] sm:text-[36px] md:text-[52px] mt-[10px] text-[var(--color-black)]"
+                  >
+                    Venue Information
+                  </h2>
+
+                  <!-- Venue Content -->
+                  <div
+                    class="flex flex-col sm:flex-row items-start gap-[20px] mt-[20px]"
+                  >
+                    <!-- Venue Image -->
+                    <div class="w-full sm:w-[50%]">
+                      <img
+                        src="images/venue.png"
+                        alt="Salt Lake Stadium"
+                        class="w-full h-[367px] object-cover rounded-[8px]"
+                      />
+                    </div>
+
+                    <!-- Venue Details -->
+                    <div class="w-full sm:w-[50%]">
+                      <!-- Venue Name -->
+                      <h3
+                        class="oswald-medium text-[28px] sm:text-[32px] text-[var(--color-text)]"
+                      >
+                        Salt Lake Stadium
+                      </h3>
+
+                      <!-- Location -->
+                      <p
+                        class="poppins-medium text-[15px] sm:text-[20px] text-[#000000] opacity-50 mt-[10px]"
+                      >
+                        Kolkata, West Bengal
+                      </p>
+
+                      <!-- Facilities Heading -->
+                      <p
+                        class="poppins-regular text-[18px] sm:text-[20px] text-[var(--color-text)] mt-[10px]"
+                      >
+                        Venue Facilities
+                      </p>
+
+                      <!-- Facilities -->
+                      <ul class="mt-[10px] space-y-[10px]">
+                        <!-- Parking -->
+                        <li
+                          class="flex items-center gap-[10px]  text-[18px] sm:text-[20px]"
+                        >
+                          <i
+                            class="fa-solid fa-circle text-[10px] text-[var(--color-electric-600)]"
+                          ></i>
+
+                          <span class="poppins-regular text-[#000000] opacity-50">Parking Available</span>
+                        </li>
+
+                        <!-- Food Court -->
+                        <li
+                          class="flex items-center gap-[10px] text-[18px] sm:text-[20px]"
+                        >
+                          <i
+                            class="fa-solid fa-circle text-[10px] text-[var(--color-electric-600)]"
+                          ></i>
+
+                          <span class="poppins-regular text-[#000000] opacity-50">Food Court</span>
+                        </li>
+
+                        <!-- Wheelchair -->
+                        <li
+                          class="flex items-center gap-[10px] text-[18px] sm:text-[20px] "
+                        >
+                          <i
+                            class="fa-solid fa-circle text-[10px] text-[var(--color-electric-600)]"
+                          ></i>
+
+                          <span class="poppins-regular text-[#000000] opacity-50">Wheelchair Accessible</span>
+                        </li>
+
+                        <!-- First Aid -->
+                        <li
+                          class="flex items-center gap-[10px] text-[18px] sm:text-[20px] "
+                        >
+                          <i
+                            class="fa-solid fa-circle text-[10px] text-[var(--color-electric-600)]"
+                          ></i>
+
+                          <span class="poppins-regular text-[#000000] opacity-50">First Aid Center</span>
+                        </li>
+
+                        <!-- Drinking Water -->
+                        <li
+                          class="flex items-center gap-[10px]  text-[18px] sm:text-[20px] "
+                        >
+                          <i
+                            class="fa-solid fa-circle text-[10px] text-[var(--color-electric-600)]"
+                          ></i>
+
+                          <span class="poppins-regular text-[#000000] opacity-50">Drinking Water Stations</span>
+                        </li>
+                      </ul>
+
+                      <!-- Map -->
+                      <a
+                        href="https://www.google.com/maps/search/?api=1&query=Salt+Lake+Stadium+Kolkata"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-block poppins-regular text-[17px] sm:text-[17px] text-[#E12169] mt-[10px]"
+                      >
+                        View On Map
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Artist Box -->
+                <div
+                  id="artists"
+                  class="border-y border-[var(--color-border)] rounded-[20px] p-[10px] mt-[89px]"
+                >
+                  <!-- Heading -->
+                  <h2
+                    class="oswald-semibold text-[32px] sm:text-[36px] md:text-[52px] mt-[10px] text-[var(--color-black)]"
+                  >
+                    About Artist
+                  </h2>
+
+                  <!-- Artist Content -->
+                  <div
+                    class="flex flex-col sm:flex-row items-center gap-[20px] mt-[10px]"
+                  >
+                    <!-- Artist Image -->
+                    <div class="w-full sm:w-[50%] flex justify-center">
+                      <img
+                        src="images/artist.png"
+                        alt="Jasmin Bhasin"
+                        class="w-[220px] h-[220px] sm:w-[240px] sm:h-[240px] md:w-[340px] md:h-[335px] object-cover rounded-full"
+                      />
+                    </div>
+
+                    <!-- Artist Details -->
+                    <div class="w-full sm:w-[50%] text-center sm:text-right">
+                      <!-- Artist Name -->
+                      <h3
+                        class="oswald-medium text-[24px] sm:text-[28px] md:text-[32px] text-[var(--color-text)]"
+                      >
+                        Guns N' Roses
+                      </h3>
+
+                      <!-- Artist Description -->
+                      <p
+                        class="poppins-regular text-[18px] sm:text-[20px]  text-[#000000] opacity-50 mt-[10px]"
+                      >
+                        One of the world's most iconic rock bands, Guns N' Roses
+                        has entertained millions of fans across the globe with
+                        legendary albums, timeless songs, and unforgettable live
+                        performances.
+                      </p>
+
+                      <!-- Artist Link -->
+                      <a
+                        href="#"
+                        class="inline-block poppins-regular text-[15px] sm:text-[17px] text-[#F2458E] mt-[10px] transition duration-300 hover:text-[var(--color-violetred-700)]"
+                      >
+                        View Artist Details
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- RIGHT COLUMN -->
+              <div id="tickets">
+                <!-- Ticket Heading -->
+                <h2
+                  class="oswald-semibold text-[38px] sm:text-[46px] md:text-[52px] text-[var(--color-black)] mb-[20px]"
+                >
+                  Ticket Categories
+                </h2>
+
+                <!-- ================= SILVER ================= -->
+                <div
+                  class="flex border border-[var(--color-border)] rounded-[12px] overflow-hidden min-h-[359px] mb-[10px] p-[10px]"
+                >
+                  <!-- Color Strip -->
+                  <div
+                    class="w-[45px] sm:w-[50px] ml-[40px] mr-[10px] shrink-0 bg-[var(--color-electric-200)] rounded-[10px]"
+                  ></div>
+
+                  <!-- Content -->
+                  <div class="px-[12px] py-[5px]">
+                    <h3
+                      class="oswald-medium text-[38px] sm:text-[42px] text-[var(--color-text)]"
+                    >
+                      Silver Balcony
+                    </h3>
+
+                    <p
+                      class="oswald-medium text-[32px] text-[#FC5264] mt-[10px]"
+                    >
+                      ₹1,499
+                    </p>
+
+                    <p
+                      class="poppins-semibold text-[18px] sm:text-[20px] text-[#430962] mt-[10px]"
+                    >
+                      Perfect for enjoying the concert with excellent value.
+                    </p>
+
+                    <ul class="mt-[10px] space-y-[20px]">
+                      <li
+                        class="flex items-center gap-[10px] poppins-regular text-[18px] sm:text-[20px] "
+                      >
+                        <i
+                          class="fa-solid fa-circle text-[10px] text-[var(--color-violetred-500)]"
+                        ></i>
+                        <span class="text-[#000000] opacity-50">Standard Standing Area</span>
+                      </li>
+
+                      <li
+                        class="flex items-center gap-[10px] poppins-regular text-[18px] sm:text-[20px]"
+                      >
+                        <i
+                          class="fa-solid fa-circle text-[10px] text-[var(--color-violetred-500)]"
+                        ></i>
+                        <span class="text-[#000000] opacity-50">Food Court Access</span>
+                      </li>
+
+                      <li
+                        class="flex items-center gap-[10px] poppins-regular text-[18px] sm:text-[20px]"
+                      >
+                        <i
+                          class="fa-solid fa-circle text-[10px] text-[var(--color-violetred-500)]"
+                        ></i>
+                        <span class="text-[#000000] opacity-50">Restroom Access</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- ================= GOLD ================= -->
+                <div
+                  class="flex border border-[var(--color-border)] rounded-[12px] overflow-hidden min-h-[359px] mb-[10px] p-[10px]"
+                >
+                  <!-- Color Strip -->
+                  <div
+                    class="w-[45px] sm:w-[50px] ml-[40px] mr-[10px] shrink-0 bg-[var(--color-electric-400)] rounded-[10px]"
+                  ></div>
+
+                  <!-- Content -->
+                  <div class="px-[12px] py-[5px]">
+                    <h3
+                      class="oswald-medium text-[38px] sm:text-[42px] text-[var(--color-text)]"
+                    >
+                      Gold
+                    </h3>
+
+                    <p
+                      class="oswald-medium text-[32px] text-[#FC5264] mt-[10px]"
+                    >
+                      ₹1,999
+                    </p>
+
+                    <p
+                      class="poppins-semibold text-[18px] sm:text-[20px] text-[#430962] mt-[10px]"
+                    >
+                      A closer experience with premium <br />
+                      viewing.
+                    </p>
+
+                    <ul class="mt-[10px] space-y-[20px]">
+                      <li
+                        class="flex items-center gap-[10px] poppins-regular text-[18px] sm:text-[20px] "
+                      >
+                        <i
+                          class="fa-solid fa-circle text-[10px] text-[var(--color-violetred-500)]"
+                        ></i>
+                        <span class="text-[#000000] opacity-50">Front Standing Zone</span>
+                      </li>
+
+                      <li
+                        class="flex items-center gap-[10px] poppins-regular text-[18px] sm:text-[20px] "
+                      >
+                        <i
+                          class="fa-solid fa-circle text-[10px] text-[var(--color-violetred-500)]"
+                        ></i>
+                        <span class="text-[#000000] opacity-50">Faster Entry</span>
+                      </li>
+
+                      <li
+                        class="flex items-center gap-[10px] poppins-regular text-[18px] sm:text-[20px] "
+                      >
+                        <i
+                          class="fa-solid fa-circle text-[10px] text-[var(--color-violetred-500)]"
+                        ></i>
+                        <span class="text-[#000000] opacity-50">Merchandise Counter Access</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- ================= PLATINUM ================= -->
+                <div
+                  class="flex border border-[var(--color-border)] rounded-[12px] overflow-hidden min-h-[359px] mb-[10px] p-[10px]"
+                >
+                  <!-- Color Strip -->
+                  <div
+                    class="w-[45px] sm:w-[50px] ml-[40px] mr-[10px] shrink-0 bg-[var(--color-electric-700)] rounded-[10px]"
+                  ></div>
+
+                  <!-- Content -->
+                  <div class="px-[12px] py-[5px]">
+                    <h3
+                      class="oswald-medium text-[38px] sm:text-[42px] text-[var(--color-text)]"
+                    >
+                      Platinum
+                    </h3>
+
+                    <p
+                      class="oswald-medium text-[32px] text-[#FC5264] mt-[10px]"
+                    >
+                      ₹2,999
+                    </p>
+
+                    <p
+                      class="poppins-semibold text-[18px] sm:text-[20px] text-[#430962] mt-[10px]"
+                    >
+                      Perfect for enjoying the concert with excellent value.
+                    </p>
+
+                    <ul class="mt-[10px] space-y-[20px]">
+                      <li
+                        class="flex items-center gap-[10px] poppins-regular text-[18px] sm:text-[20px] "
+                      >
+                        <i
+                          class="fa-solid fa-circle text-[10px] text-[var(--color-violetred-500)]"
+                        ></i>
+                        <span class="text-[#000000] opacity-50">The ultimate concert experience.</span>
+                      </li>
+
+                      <li
+                        class="flex items-center gap-[10px] poppins-regular text-[18px] sm:text-[20px]"
+                      >
+                        <i
+                          class="fa-solid fa-circle text-[10px] text-[var(--color-violetred-500)]"
+                        ></i>
+                        <span class="text-[#000000] opacity-50">Dedicated Entrance</span>
+                      </li>
+
+                      <li
+                        class="flex items-center gap-[10px] poppins-regular text-[18px] sm:text-[20px] "
+                      >
+                        <i
+                          class="fa-solid fa-circle text-[10px] text-[var(--color-violetred-500)]"
+                        ></i>
+                        <span class="text-[#000000] opacity-50">VIP Lounge</span>
+                      </li>
+
+                      <li
+                        class="flex items-center gap-[10px] poppins-regular text-[18px] sm:text-[20px] ]"
+                      >
+                        <i
+                          class="fa-solid fa-circle text-[10px] text-[var(--color-violetred-500)]"
+                        ></i>
+                        <span class="text-[#000000] opacity-50">Complimentary Refreshments</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- ================= DIAMOND ================= -->
+                <div
+                  class="flex border border-[var(--color-border)] rounded-[12px] overflow-hidden min-h-[359px] mb-[10px] p-[10px]"
+                >
+                  <!-- Color Strip -->
+                  <div
+                    class="w-[45px] sm:w-[50px] ml-[40px] mr-[10px] shrink-0 bg-[var(--color-electric-900)] rounded-[10px]"
+                  ></div>
+
+                  <!-- Content -->
+                  <div class="px-[12px] py-[5px]">
+                    <h3
+                      class="oswald-medium text-[38px] sm:text-[42px] text-[var(--color-text)]"
+                    >
+                      Diamond
+                    </h3>
+
+                    <p
+                      class="oswald-medium text-[32px] text-[#FC5264] mt-[10px]"
+                    >
+                      ₹4,999
+                    </p>
+
+                    <p
+                      class="poppins-semibold text-[18px] sm:text-[20px] text-[#430962] mt-[10px]"
+                    >
+                      Experience the concert from the best seat in the house.
+                    </p>
+
+                    <ul class="mt-[10px] space-y-[20px]">
+                      <li
+                        class="flex items-center gap-[10px] poppins-regular text-[18px] sm:text-[20px] "
+                      >
+                        <i
+                          class="fa-solid fa-circle text-[10px] text-[var(--color-violetred-500)]"
+                        ></i>
+                        <span class="text-[#000000] opacity-50">VIP Experience Seekers</span>
+                      </li>
+
+                      <li
+                        class="flex items-center gap-[10px] poppins-regular text-[18px] sm:text-[20px] "
+                      >
+                        <i
+                          class="fa-solid fa-circle text-[10px] text-[var(--color-violetred-500)]"
+                        ></i>
+                        <span class="text-[#000000] opacity-50">Dedicated Entrance</span>
+                      </li>
+
+                      <li
+                        class="flex items-center gap-[10px] poppins-regular text-[18px] sm:text-[20px] "
+                      >
+                        <i
+                          class="fa-solid fa-circle text-[10px] text-[var(--color-violetred-500)]"
+                        ></i>
+                        <span class="text-[#000000] opacity-50">VIP Lounge</span>
+                      </li>
+
+                      <li
+                        class="flex items-center gap-[10px] poppins-regular text-[18px] sm:text-[20px] "
+                      >
+                        <i
+                          class="fa-solid fa-circle text-[10px] text-[var(--color-violetred-500)]"
+                        ></i>
+                        <span class="text-[#000000] opacity-50">Complimentary Refreshments</span>
+                      </li>
+
+                      <li
+                        class="flex items-center gap-[10px] poppins-regular text-[18px] sm:text-[20px] "
+                      >
+                        <i
+                          class="fa-solid fa-circle text-[10px] text-[var(--color-violetred-500)]"
+                        ></i>
+                        <span class="text-[#000000] opacity-50">Priority Support</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+    <!--  Featured Events -->
+    <section class="pb-[65px]">
+        <div class="container mx-auto">
+            <div class="max-w-[1320px] mx-auto">
+                <!-- Heading -->
+                <div class="flex items-center justify-between mb-10">
+                    <h2 class="oswald-semibold text-[40px] leading-none text-[var(--color-black)]">
+                        Featured Events
+                    </h2>
+
+                    <a href="#" class="poppins-regular text-base text-[var(--color-violetred-600)] underline">
+                        View Details
+                    </a>
+                </div>
+
+                <!-- Swiper -->
+                <div class="swiper featured-event-slider">
+                    <div class="swiper-wrapper">
+                        <!-- Card 1 -->
+                        <div class="swiper-slide !w-[312px]">
+                            <div
+                                class="bg-white rounded-[20px] overflow-hidden shadow-[4px_0px_0px_0px_rgba(0,0,0,0.08)]">
+                                <!-- Image -->
+                                <div class="relative">
+                                    <a href=""><img src="./images/Image (20).png" alt=""
+                                            class="w-full h-auto object-cover" /></a>
+
+                                    <!-- Date -->
+                                    <div
+                                        class="absolute top-4 left-4 w-[56px] h-[56px] rounded-lg bg-white flex flex-col items-center justify-center">
+                                        <span
+                                            class="poppins-semibold text-[12px] leading-none text-[var(--color-violetred-500)]">
+                                            20
+                                        </span>
+
+                                        <span
+                                            class="poppins-medium text-[11px] leading-none text-[var(--color-electric-700)] mt-2 uppercase">
+                                            June
+                                        </span>
+                                    </div>
+
+                                    <!-- Wishlist -->
+                                    <a href="#"
+                                        class="absolute top-4 right-4 w-[36px] h-[36px] rounded-full bg-black/20 backdrop-blur-sm flex items-center justify-center">
+                                        <i class="fa-regular fa-heart text-white text-sm"></i>
+                                    </a>
+
+                                    <!-- Popular Event Rating -->
+
+<div class="flex items-center gap-1 px-5 -mt-[30px] relative z-10">
+
+    <i class="fa-solid fa-star text-[#FFC107] text-[15px]"></i>
+
+    <i class="fa-solid fa-star text-[#FFC107] text-[15px]"></i>
+
+    <i class="fa-solid fa-star text-[#FFC107] text-[15px]"></i>
+
+    <i class="fa-solid fa-star text-[#FFC107] text-[15px]"></i>
+
+    <i class="fa-solid fa-star text-[#FFC107] text-[15px]"></i>
+
+</div>
+                                </div>
+
+                                <!-- Content -->
+                                <div class="p-5">
+                                    <h3 class="poppins-semibold text-[20px] text-[var(--color-heading)] mb-2">
+                                        Arijit Singh Live Concert
+                                    </h3>
+
+                                    <div class="flex items-center gap-2">
+                                        <i data-lucide="map-pinned" class="w-4 h-4 text-[var(--color-gray)]"></i>
+
+                                        <span class="poppins-medium text-[16px] text-[var(--color-gray)]">
+                                            DY Patil Stadium, Mumbai
+                                        </span>
+                                    </div>
+
+                                    <!-- Bottom -->
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <span class="poppins-semibold text-[20px] text-[var(--color-heading)]">
+                                                From
+                                            </span>
+
+                                            <span class="poppins-semibold text-[20px] text-[#8E67F8] ml-1">
+                                                ₹1,499
+                                            </span>
+                                        </div>
+
+                                        <a href="#"
+                                            class="w-[50px] h-[50px] rounded-full bg-[var(--color-electric-600)] flex items-center justify-center hover:bg-[var(--color-electric-700)] duration-300">
+                                            <i class="fa-solid fa-plus text-white"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="swiper-slide !w-[312px]">
+                            <div
+                                class="bg-white rounded-[20px] overflow-hidden shadow-[4px_0px_0px_0px_rgba(0,0,0,0.08)]">
+                                <div class="relative">
+                                    <a href="">
+                                        <img src="./images/Image (21).png" alt=""
+                                            class="w-full h-auto object-cover" /></a>
+
+                                    <div
+                                        class="absolute top-4 left-4 w-[56px] h-[56px] rounded-lg bg-white flex flex-col items-center justify-center">
+                                        <span
+                                            class="poppins-semibold text-[12px] text-[var(--color-violetred-500)]">25</span>
+                                        <span
+                                            class="poppins-medium text-[11px] text-[var(--color-electric-700)] uppercase mt-1">June</span>
+                                    </div>
+
+                                    <a href="#"
+                                        class="absolute top-4 right-4 w-[32px] h-[32px] rounded-full bg-black/20 flex items-center justify-center">
+                                        <i class="fa-regular fa-heart text-white text-sm"></i>
+                                    </a>
+
+
+                    <!-- Popular Event Rating -->
+
+                    <div
+                      class="flex items-center gap-1 px-5 -mt-[30px] relative z-10"
+                    >
+                      <i
+                        class="fa-solid fa-star text-[#FFC107] text-[15px]"
+                      ></i>
+
+                      <i
+                        class="fa-solid fa-star text-[#FFC107] text-[15px]"
+                      ></i>
+
+                      <i
+                        class="fa-solid fa-star text-[#FFC107] text-[15px]"
+                      ></i>
+
+                      <i
+                        class="fa-solid fa-star text-[#FFC107] text-[15px]"
+                      ></i>
+
+                      <i
+                        class="fa-solid fa-star text-[#FFC107] text-[15px]"
+                      ></i>
+                    </div>
+                                </div>
+
+                                <div class="p-5">
+                                    <h3 class="poppins-semibold text-[20px] text-[var(--color-heading)] mb-2">
+                                        Mumbai Indians vs CSK
+                                    </h3>
+
+                                    <div class="flex items-center gap-2">
+                                        <i data-lucide="map-pinned" class="w-4 h-4 text-[var(--color-gray)]"></i>
+                                        <span class="poppins-medium text-[16px] text-[var(--color-gray)]">
+                                            Nehru Stadium, Karnataka
+                                        </span>
+                                    </div>
+
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <span class="poppins-semibold text-[20px]">From</span>
+                                            <span class="poppins-semibold text-[20px] text-[#8E67F8] ml-1">₹799</span>
+                                        </div>
+
+                                        <a href="#"
+                                            class="w-[48px] h-[48px] rounded-full bg-[var(--color-electric-600)] flex items-center justify-center">
+                                            <i class="fa-solid fa-plus text-white"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- card 3 -->
+                        <div class="swiper-slide !w-[312px]">
+                            <div
+                                class="bg-white rounded-[20px] overflow-hidden shadow-[4px_0px_0px_0px_rgba(0,0,0,0.08)]">
+                                <div class="relative">
+                                    <a href=""><img src="./images/Image (22).png" alt=""
+                                            class="w-full h-auto object-cover" /></a>
+
+                                    <div
+                                        class="absolute top-4 left-4 w-[56px] h-[56px] rounded-lg bg-white flex flex-col items-center justify-center">
+                                        <span
+                                            class="poppins-semibold text-[12px] text-[var(--color-violetred-500)]">29</span>
+                                        <span
+                                            class="poppins-medium text-[11px] text-[var(--color-electric-700)] uppercase mt-1">June</span>
+                                    </div>
+
+                                    <a href="#"
+                                        class="absolute top-4 right-4 w-[32px] h-[32px] rounded-full bg-black/20 flex items-center justify-center">
+                                        <i class="fa-regular fa-heart text-white text-sm"></i>
+                                    </a>
+
+
+                    <!-- Popular Event Rating -->
+
+                    <div
+                      class="flex items-center gap-1 px-5 -mt-[30px] relative z-10"
+                    >
+                      <i
+                        class="fa-solid fa-star text-[#FFC107] text-[15px]"
+                      ></i>
+
+                      <i
+                        class="fa-solid fa-star text-[#FFC107] text-[15px]"
+                      ></i>
+
+                      <i
+                        class="fa-solid fa-star text-[#FFC107] text-[15px]"
+                      ></i>
+
+                      <i
+                        class="fa-solid fa-star text-[#FFC107] text-[15px]"
+                      ></i>
+
+                      <i
+                        class="fa-solid fa-star text-[#FFC107] text-[15px]"
+                      ></i>
+                    </div>
+                                </div>
+
+                                <div class="p-5">
+                                    <h3 class="poppins-semibold text-[20px] text-[var(--color-heading)] mb-1">
+                                        Stand up comedy Night
+                                    </h3>
+
+                                    <div class="flex items-center gap-2">
+                                        <i data-lucide="map-pinned" class="w-4 h-4 text-[var(--color-gray)]"></i>
+                                        <span class="poppins-medium text-[16px] text-[var(--color-gray)]">
+                                            The comedy club, Pune
+                                        </span>
+                                    </div>
+
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <span class="poppins-semibold text-[20px]">From</span>
+                                            <span class="poppins-semibold text-[20px] text-[#8E67F8] ml-1">₹1,999</span>
+                                        </div>
+
+                                        <a href="#"
+                                            class="w-[50px] h-[50px] rounded-full bg-[var(--color-electric-600)] flex items-center justify-center">
+                                            <i class="fa-solid fa-plus text-white"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- card 4 -->
+                        <div class="swiper-slide !w-[322px]">
+                            <div
+                                class="bg-white rounded-[20px] overflow-hidden shadow-[4px_0px_0px_0px_rgba(0,0,0,0.08)]">
+                                <div class="relative">
+                                    <a href=""><img src="./images/Frame 1214.png" alt=""
+                                            class="w-full h-auto object-cover" /></a>
+
+                                    <div
+                                        class="absolute top-4 left-4 w-[56px] h-[56px] rounded-lg bg-white flex flex-col items-center justify-center">
+                                        <span
+                                            class="poppins-semibold text-[12px] text-[var(--color-violetred-500)]">5</span>
+                                        <span
+                                            class="poppins-medium text-[11px] text-[var(--color-electric-700)] uppercase mt-1">July</span>
+                                    </div>
+
+                                    <a href="#"
+                                        class="absolute top-4 right-4 w-[32px] h-[32px] rounded-full bg-black/20 flex items-center justify-center">
+                                        <i class="fa-regular fa-heart text-white text-sm"></i>
+                                    </a>
+
+
+                    <!-- Popular Event Rating -->
+
+                    <div
+                      class="flex items-center gap-1 px-5 -mt-[30px] relative z-10"
+                    >
+                      <i
+                        class="fa-solid fa-star text-[#FFC107] text-[15px]"
+                      ></i>
+
+                      <i
+                        class="fa-solid fa-star text-[#FFC107] text-[15px]"
+                      ></i>
+
+
+                      <i
+                        class="fa-solid fa-star text-[#FFC107] text-[15px]"
+                      ></i>
+
+                      <i
+                        class="fa-solid fa-star text-[#FFC107] text-[15px]"
+                      ></i>
+
+                      <i
+                        class="fa-solid fa-star text-[#FFC107] text-[15px]"
+                      ></i>
+                    </div>
+                                </div>
+
+                                <div class="p-5">
+                                    <h3 class="poppins-semibold text-[20px] text-[var(--color-heading)] mb-2">
+                                        Canvas Painting workshop
+                                    </h3>
+
+                                    <div class="flex items-center gap-2">
+                                        <i data-lucide="map-pinned" class="w-4 h-4 text-[var(--color-gray)]"></i>
+                                        <span class="poppins-medium text-[16px] text-[var(--color-gray)]">
+                                            Art Studio, Bengaluru
+                                        </span>
+                                    </div>
+
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <span class="poppins-semibold text-[20px]">From</span>
+                                            <span class="poppins-semibold text-[20px] text-[#8E67F8] ml-1">₹2,499</span>
+                                        </div>
+
+                                        <a href="#"
+                                            class="w-[50px] h-[50px] rounded-full bg-[var(--color-electric-600)] flex items-center justify-center">
+                                            <i class="fa-solid fa-plus text-white"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= Footer ================= -->
+    <footer class="relative overflow-hidden bg-[#0B0B0B] text-white pt-24 min-h-[750px] flex flex-col">
+        <!-- Background Watermark -->
+        <p
+            class="footer-watermark oswald-semibold absolute left-1/2 top-[400px] -translate-x-1/2 whitespace-nowrap text-[160px] md:text-[220px] lg:text-[280px] xl:text-[360px] leading-none select-none pointer-events-none">
+            EVENTARA
+        </p>
+
+        <div class="container relative z-10 flex-1 flex flex-col">
+            <!-- Top -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.8fr_.8fr_.8fr_.8fr] gap-16">
+                <!-- Left -->
+                <div>
+                    <h2 class="oswald-semibold text-[40px] leading-none">EVENTARA</h2>
+
+                    <p class="mt-8 max-w-[560px] poppins-regular text-[14px] text-white/75">
+                        Book your favorite events in just a few clicks and experience
+                        memories that last forever. Discover amazing events and book
+                        tickets instantly.
+                    </p>
+
+                    <!-- Social -->
+                    <div class="flex gap-5 mt-12">
+                        <a href="#"
+                            class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transition duration-300 hover:bg-[#EE4291] hover:text-white hover:-translate-y-1">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+
+                        <a href="#"
+                            class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transition duration-300 hover:bg-[#EE4291] hover:text-white hover:-translate-y-1">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+
+                        <a href="#"
+                            class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transition duration-300 hover:bg-[#EE4291] hover:text-white hover:-translate-y-1">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+
+                        <a href="#"
+                            class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transition duration-300 hover:bg-[#EE4291] hover:text-white hover:-translate-y-1">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="poppins-semibold text-[16px] mb-[30px]">Quick Links</h4>
+
+                    <ul class="space-y-5 poppins-regular text-white/70">
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">Home</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">Events</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">My Tickets</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">About Us</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Categories -->
+                <div>
+                    <h4 class="poppins-semibold text-[16px] mb-[30px]">Categories</h4>
+
+                    <ul class="space-y-5 poppins-regular text-white/70">
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">Music</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">Sports</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">Comedy</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">Workshop</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">Arts & Theatre</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h4 class="poppins-semibold text-[16px] mb-[30px]">Support</h4>
+
+                    <ul class="space-y-5 poppins-regular text-white/70">
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">Help Center</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">FAQs</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">Terms & Conditions</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-[#EE4291] duration-300 text-[14px]">Privacy Policy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom -->
+            <div class="mt-auto pt-28">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-6 border-t border-white/10 pt-8">
+                    <p class="text-white/50 poppins-regular text-sm">
+                        © 2026 EVENTARA. All Rights Reserved.
+                    </p>
+
+                    <div class="flex flex-wrap items-center justify-center gap-6 text-sm text-white/50 poppins-regular">
+                        <a href="#" class="hover:text-white duration-300">
+                            Privacy Policy
+                        </a>
+
+                        <a href="#" class="hover:text-white duration-300">
+                            Terms & Conditions
+                        </a>
+
+                        <a href="#" class="hover:text-white duration-300">
+                            Cookies Settings
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sticker -->
+        <div class="absolute left-1/2 bottom-[110px] -translate-x-1/2 z-20">
+            <img src="./images/gyt.png" class="w-[150px] animate-slow-spin" />
+        </div>
+    </footer>
+
+    
+
+    
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@14/swiper-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script src="./navbar.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>

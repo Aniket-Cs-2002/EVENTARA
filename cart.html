@@ -1,527 +1,665 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
 
-    <title>Choose Tickets | Eventara</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Tailwind -->
+    <title>Cart | Eventara</title>
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Outfit -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Font Awesome -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap"
-        rel="stylesheet"
-    >
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-        html,
-        body {
-            margin: 0;
-            min-height: 100%;
-        }
+    <!-- Your Main CSS -->
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
 
-        body {
-            font-family: "Outfit", sans-serif;
-            background: #f8f8f9;
-            color: #111111;
-        }
-
-        button,
-        a {
-            -webkit-tap-highlight-color: transparent;
-        }
-    </style>
-</head>
-
-<body class="min-h-screen bg-[#f8f8f9]">
-
-    <!-- =====================================================
-         MAIN CART CONTENT
-         Navbar is intentionally NOT included
-    ====================================================== -->
-
-    <main class="min-h-screen pb-[96px] sm:pb-[104px]">
-
-        <!-- Booking Timer -->
-        <div
-            class="w-full h-[36px] sm:h-[38px]
-                   bg-[#f7e7ff]
-                   border-b border-[#efdafa]
-                   flex items-center justify-center"
-        >
-            <div
-                class="flex items-center justify-center
-                       gap-[7px]
-                       text-[12px] sm:text-[13px]
-                       leading-none"
-            >
-
-                <!-- Clock -->
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="15"
-                    height="15"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="shrink-0 text-black"
-                >
-                    <circle cx="12" cy="12" r="9"></circle>
-                    <polyline points="12 7 12 12 15 14"></polyline>
-                </svg>
-
-                <span class="font-medium text-[#171717]">
-                    Complete your booking in
-                </span>
-
-                <span
-                    id="booking-timer"
-                    class="font-medium text-[#c22cf0] tabular-nums"
-                >
-                    09:59 mins
-                </span>
-
+  <body>
+    <!-- After Login -->
+    <header class="header poppins-medium">
+      <nav class="bg-white py-[10px]">
+        <div class="container mx-auto h-full">
+          <div class="flex items-center justify-between gap-6 xl:gap-10 h-full">
+            <!-- Logo -->
+            <div class="shrink-0">
+              <a href="./index.html">
+                <img
+                  src="./images/logo.png"
+                  alt="Eventara Logo"
+                  class="w-[80px] sm:w-[90px] xl:w-[105px] h-auto"
+                  loading="lazy"
+                />
+              </a>
             </div>
+
+            <!-- Desktop Navigation -->
+            <ul
+              class="hidden lg:flex justify-center items-center gap-6 xl:gap-[80px] 2xl:gap-12 whitespace-nowrap"
+            >
+              <li>
+                <a
+                  href="./index.html"
+                  class="text-[20px] poppins-medium text-[var(--color-electric-700)]"
+                >
+                  Home
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="./event.html"
+                  target="_self"
+                  class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors"
+                >
+                  Events
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="./my-tickits.html"
+                  class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors"
+                >
+                  My Tickets
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="aboutus.html"
+                  class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors"
+                >
+                  About Us
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="contact.html"
+                  target="_blank"
+                  class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors"
+                >
+                  Contact
+                </a>
+              </li>
+            </ul>
+
+            <!-- Right Side Icons -->
+            <div
+              class="hidden lg:flex items-center justify-end gap-4 xl:gap-5 flex-shrink-0"
+            >
+              <button
+                type="button"
+                id="navbar-search-btn"
+                aria-label="Open search"
+                class="flex items-center justify-center"
+              >
+                <i data-lucide="search" class="w-6 h-6 cursor-pointer"></i>
+              </button>
+              <!-- Shopping Bag -->
+              <a href="#">
+                <i data-lucide="handbag"></i>
+              </a>
+
+              <!-- Bell -->
+              <a href="#">
+                <i class="" data-lucide="bell"></i>
+              </a>
+
+              <!-- User -->
+              <!-- User Profile -->
+              <div class="relative" id="profile-dropdown-wrapper">
+                <!-- Profile Button -->
+                <button
+                  type="button"
+                  id="profile-dropdown-btn"
+                  class="block rounded-full focus:outline-none cursor-pointer"
+                  aria-label="Open profile menu"
+                  aria-expanded="false"
+                >
+                  <img
+                    src="./images/user.png"
+                    alt="User"
+                    class="w-[50px] h-[50px]"
+                  />
+                </button>
+
+                <!-- Profile Dropdown -->
+                <div
+                  id="profile-dropdown"
+                  class="absolute right-0 top-[calc(100%+14px)] w-[430px] max-h-[calc(100vh-110px)] overflow-y-auto bg-[#F9EEFF] rounded-[28px] shadow-[0_12px_35px_rgba(0,0,0,0.18)] border border-[#E9D5FF] px-[20px] z-[9999] opacity-0 invisible pointer-events-none translate-y-[-8px] scale-[0.98] origin-top-right transition-all duration-200 ease-out"
+                >
+                  <!-- =========================
+             PROFILE HEADER
+        ========================== -->
+
+                  <p
+                    class="outfit-semibold text-[20px] text-[#141B34] mt-[20px] mb-[20px]"
+                  >
+                    Profile
+                  </p>
+
+                  <div class="bg-white rounded-[24px] overflow-hidden">
+                    <!-- User -->
+                    <div
+                      class="flex flex-col items-center justify-center px-[20px] py-[30px]"
+                    >
+                      <img
+                        src="./images/user.png"
+                        alt="Profile"
+                        class="w-[80px] h-[80px] rounded-full object-cover"
+                      />
+
+                      <h3
+                        class="outfit-semibold text-[20px] text-[#000000] mt-[22px]"
+                      >
+                        Eve Rozier
+                      </h3>
+
+                      <p
+                        class="outfit-regular text-[15px] text-[#000000] opacity-50 mt-[4px]"
+                      >
+                        abc@gmail.com
+                      </p>
+
+                      <!-- Edit Profile -->
+                      <button
+                        type="button"
+                        class="mt-[22px] px-[73px] py-[19px] rounded-[10px] bg-[#C477F0] text-white outfit-medium text-[15px] flex items-center justify-center gap-4 hover:bg-[#B45BE8] transition-colors duration-300"
+                      >
+                        Edit profile
+
+                        <i class="fa-solid fa-pen text-[15px]"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- =========================
+             FIRST MENU GROUP
+        ========================== -->
+
+                  <div class="mt-[12px] flex flex-col gap-[8px]">
+                    <!-- My Tickets -->
+                    <a
+                      href="#"
+                      class="w-full grid grid-cols-[44px_minmax(0,1fr)_32px] items-center gap-[14px] p-[20px] bg-white rounded-[10px] text-[#141B34] outfit-regular text-[15px] transition-all duration-200 hover:bg-[#FCF7FF] hover:-translate-y-[1px] [&>i:first-child]:justify-self-center"
+                    >
+                      <i data-lucide="ticket" class="w-[24px] h-[24px]"> </i>
+
+                      <span> My Tickets </span>
+
+                      <i
+                        data-lucide="chevron-right"
+                        class="justify-self-end w-[24px] h-[24px] p-[4px] border-2 border-[#141B34] rounded-full"
+                      >
+                      </i>
+                    </a>
+
+                    <!-- Cart -->
+                    <a
+                      href="#"
+                      class="w-full grid grid-cols-[44px_minmax(0,1fr)_32px] items-center gap-[14px] p-[20px] bg-white rounded-[10px] text-[#141B34] outfit-regular text-[15px] transition-all duration-200 hover:bg-[#FCF7FF] hover:-translate-y-[1px] [&>i:first-child]:justify-self-center"
+                    >
+                      <i data-lucide="shopping-bag" class="w-[24px] h-[24px]">
+                      </i>
+
+                      <span> My Cart </span>
+
+                      <i
+                        data-lucide="chevron-right"
+                        class="justify-self-end w-[24px] h-[24px] p-[4px] border-2 border-[#141B34] rounded-full"
+                      >
+                      </i>
+                    </a>
+
+                    <!-- Wishlist -->
+                    <a
+                      href="#"
+                      class="w-full grid grid-cols-[44px_minmax(0,1fr)_32px] items-center gap-[14px] p-[20px] bg-white rounded-[10px] text-[#141B34] outfit-regular text-[15px] transition-all duration-200 hover:bg-[#FCF7FF] hover:-translate-y-[1px] [&>i:first-child]:justify-self-center"
+                    >
+                      <i data-lucide="heart" class="w-[24px] h-[24px]"> </i>
+
+                      <span> Wishlist </span>
+
+                      <i
+                        data-lucide="chevron-right"
+                        class="justify-self-end w-[24px] h-[24px] p-[4px] border-2 border-[#141B34] rounded-full"
+                      >
+                      </i>
+                    </a>
+                  </div>
+
+                  <!-- Divider -->
+                  <div class="my-[12px] h-[1px] bg-[#transparent]"></div>
+
+                  <!-- =========================
+             SECOND MENU GROUP
+        ========================== -->
+
+                  <div class="flex flex-col gap-[8px]">
+                    <!-- Get Help -->
+                    <a
+                      href="#"
+                      class="w-full grid grid-cols-[44px_minmax(0,1fr)_32px] items-center gap-[14px] p-[20px] bg-white rounded-[10px] text-[#141B34] outfit-regular text-[15px] transition-all duration-200 hover:bg-[#FCF7FF] hover:-translate-y-[1px] [&>i:first-child]:justify-self-center"
+                    >
+                      <i data-lucide="headphones" class="w-[24px] h-[24px]">
+                      </i>
+
+                      <span> Get Help </span>
+
+                      <i
+                        data-lucide="chevron-right"
+                        class="justify-self-end w-[24px] h-[24px] p-[4px] border-2 border-[#141B34] rounded-full"
+                      >
+                      </i>
+                    </a>
+
+                    <!-- Change Password -->
+                    <a
+                      href="#"
+                      class="w-full grid grid-cols-[44px_minmax(0,1fr)_32px] items-center gap-[14px] p-[20px] bg-white rounded-[10px] text-[#141B34] outfit-regular text-[15px] transition-all duration-200 hover:bg-[#FCF7FF] hover:-translate-y-[1px] [&>i:first-child]:justify-self-center"
+                    >
+                      <i data-lucide="shield" class="w-[24px] h-[24px]"> </i>
+
+                      <span> Change Password </span>
+
+                      <i
+                        data-lucide="chevron-right"
+                        class="justify-self-end w-[24px] h-[24px] p-[4px] border-2 border-[#141B34] rounded-full"
+                      >
+                      </i>
+                    </a>
+
+                    <!-- Logout -->
+                    <a
+                      href="#"
+                      class="w-full grid grid-cols-[44px_minmax(0,1fr)_32px] items-center gap-[14px] p-[20px] bg-white rounded-[10px] text-[#141B34] outfit-regular text-[15px] transition-all duration-200 hover:bg-[#FCF7FF] hover:-translate-y-[1px] [&>i:first-child]:justify-self-center mb-[60px]"
+                    >
+                      <i data-lucide="log-out" class="w-[24px] h-[24px]"> </i>
+
+                      <span> Logout </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button
+              id="navbar-toggle"
+              class="lg:hidden ml-auto text-2xl text-gray-700"
+            >
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
         </div>
+      </nav>
 
-
-        <!-- =================================================
-             CONTENT
-        ================================================== -->
-
-        <section
-            class="mx-auto w-full max-w-[505px]
-                   px-[16px] sm:px-0
-                   pt-[26px] sm:pt-[27px]"
+      <!-- After Login Mobile View -->
+      <div
+        id="mobile-navbar"
+        class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50"
+      >
+        <div
+          id="navbar-slide"
+          class="w-[300px] h-full bg-white rounded-r-[24px] shadow-2xl p-6 -translate-x-full transition-transform duration-300 flex flex-col overflow-y-auto"
         >
+          <!-- Header -->
+          <div
+            class="flex items-center justify-between pb-5 border-b border-gray-200 shrink-0"
+          >
+            <img
+              src="./images/logo.png"
+              alt="Eventara"
+              class="w-[95px] h-auto"
+            />
 
-            <!-- Heading -->
-            <h1
-                class="text-[24px] sm:text-[25px]
-                       leading-[1.15]
-                       font-semibold
-                       tracking-[-0.4px]
-                       mb-[20px]"
+            <button
+              id="navbar-close"
+              class="text-2xl text-gray-600 hover:text-black"
             >
-                Choose Tickets
-            </h1>
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
 
+          <!-- Profile -->
+          <div class="flex items-center gap-3 py-6 border-b border-gray-200">
+            <img
+              src="./images/user.png"
+              alt="Profile"
+              class="w-[52px] h-[52px] rounded-full object-cover"
+            />
 
-            <!-- =================================================
-                 TICKET CARD
-            ================================================== -->
+            <div class="min-w-0">
+              <h3 class="outfit-semibold text-[17px] text-[#141B34] truncate">
+                Eve Rozier
+              </h3>
 
-            <article
-                class="w-full
-                       rounded-[11px]
-                       border border-[#cfcfcf]
-                       bg-white
-                       px-[22px] sm:px-[23px]
-                       pt-[24px]
-                       pb-[23px]"
+              <p class="outfit-regular text-[13px] text-gray-500 truncate">
+                abc@gmail.com
+              </p>
+            </div>
+          </div>
+
+          <!-- Navigation -->
+          <ul class="flex flex-col gap-2 mt-6">
+            <!-- Home -->
+            <li>
+              <a
+                href="index.html"
+                class="flex items-center gap-4 rounded-xl px-4 py-3 bg-violet-50 text-violet-700 transition"
+              >
+                <i data-lucide="house" class="w-5 h-5"></i>
+
+                <span>Home</span>
+              </a>
+            </li>
+
+            <!-- Events -->
+            <li>
+              <a
+                href="event.html"
+                class="flex items-center gap-4 rounded-xl px-4 py-3 hover:bg-violet-50 hover:text-violet-700 transition"
+              >
+                <i data-lucide="calendar-days" class="w-5 h-5"></i>
+
+                <span>Events</span>
+              </a>
+            </li>
+
+            <!-- My Tickets -->
+            <li>
+              <a
+                href="./my-tickits.html"
+                class="flex items-center gap-4 rounded-xl px-4 py-3 hover:bg-violet-50 hover:text-violet-700 transition"
+              >
+                <i data-lucide="ticket" class="w-5 h-5"></i>
+
+                <span>My Tickets</span>
+              </a>
+            </li>
+
+            <!-- Wishlist -->
+            <li>
+              <a
+                href="#"
+                class="flex items-center gap-4 rounded-xl px-4 py-3 hover:bg-violet-50 hover:text-violet-700 transition"
+              >
+                <i data-lucide="heart" class="w-5 h-5"></i>
+
+                <span>Wishlist</span>
+              </a>
+            </li>
+
+            <!-- About -->
+            <li>
+              <a
+                href="aboutus.html"
+                class="flex items-center gap-4 rounded-xl px-4 py-3 hover:bg-violet-50 hover:text-violet-700 transition"
+              >
+                <i data-lucide="circle-alert" class="w-5 h-5"></i>
+
+                <span>About Us</span>
+              </a>
+            </li>
+
+            <!-- Contact -->
+            <li>
+              <a
+                href="contact.html"
+                class="flex items-center gap-4 rounded-xl px-4 py-3 hover:bg-violet-50 hover:text-violet-700 transition"
+              >
+                <i data-lucide="mail" class="w-5 h-5"></i>
+
+                <span>Contact</span>
+              </a>
+            </li>
+          </ul>
+
+          <!-- Account Options -->
+          <div class="mt-6 pt-5 border-t border-gray-200 flex flex-col gap-2">
+            <!-- Help -->
+            <a
+              href="#"
+              class="flex items-center gap-4 rounded-xl px-4 py-3 hover:bg-violet-50 hover:text-violet-700 transition"
             >
+              <i data-lucide="headphones" class="w-5 h-5"></i>
 
-                <!-- Ticket Name -->
-                <div class="flex items-center justify-between gap-4">
+              <span>Get Help</span>
+            </a>
+
+            <!-- Change Password -->
+            <a
+              href="#"
+              class="flex items-center gap-4 rounded-xl px-4 py-3 hover:bg-violet-50 hover:text-violet-700 transition"
+            >
+              <i data-lucide="shield" class="w-5 h-5"></i>
+
+              <span>Change Password</span>
+            </a>
+
+            <!-- Logout -->
+            <a
+              href="#"
+              class="flex items-center gap-4 rounded-xl px-4 py-3 text-red-500 hover:bg-red-50 transition"
+            >
+              <i data-lucide="log-out" class="w-5 h-5"></i>
+
+              <span>Logout</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Search Overlay -->
+    <div
+      id="search-overlay"
+      class="fixed inset-0 z-[10000] hidden bg-black/35 backdrop-blur-[2px] items-start justify-center pt-[110px] px-[24px]"
+    >
+      <div
+        id="search-box"
+        class="w-full max-w-[986px] h-[78px] bg-white rounded-full flex items-center pl-[32px] pr-[18px] shadow-[0_10px_35px_rgba(0,0,0,0.12)]"
+      >
+        <input
+          id="navbar-search-input"
+          type="text"
+          placeholder="Search..."
+          autocomplete="off"
+          class="flex-1 min-w-0 h-full bg-transparent outline-none border-none text-[22px] text-[#141B34] outfit-semibold placeholder:text-[#858585]"
+        />
+
+        <button
+          type="button"
+          id="search-submit-btn"
+          aria-label="Search"
+          class="w-[58px] h-[58px] shrink-0 rounded-full bg-[#A437E6] hover:bg-[#8D26C9] text-white flex items-center justify-center transition-colors duration-200"
+        >
+          <i data-lucide="search" class="w-[30px] h-[30px]"></i>
+        </button>
+      </div>
+    </div>
+
+
+    <main class="bg-[#FAFAFA] min-h-[calc(100vh-80px)] pb-[125px]">
+
+
+      <section class="bg-[#F7E8FF] h-[54px] flex items-center">
+        <div class="container mx-auto">
+          <div
+            class="max-w-[1320px] mx-auto flex items-center gap-[6px] text-[14px] poppins-regular"
+          >
+            <a
+              href="index.html"
+              class="text-[#252525] hover:text-[var(--color-electric-600)] transition-colors"
+            >
+              Home
+            </a>
+
+            <i
+              data-lucide="chevron-right"
+              class="w-[15px] h-[15px] text-[#777777]"
+            >
+            </i>
+
+            <span class="text-[var(--color-electric-600)]"> Cart </span>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="py-[90px] md:py-[100px]">
+        <div class="container mx-auto">
+          <div class="max-w-[1320px] mx-auto">
+
+
+            <div class="w-full max-w-[640px] mx-auto">
+              <!-- Selected Items Heading -->
+
+              <h1
+                class="poppins-semibold text-[32px] md:text-[34px] text-[#000000] mb-[26px]"
+              >
+                1/1 items selected
+              </h1>
+
+              <article
+                class="bg-white border border-[#CFCFCF] rounded-[16px] overflow-hidden"
+              >
+                <div class="p-[28px] md:p-[30px]">
+
+                  <div class="flex items-start justify-between gap-[20px]">
+                    <!-- Ticket Details -->
 
                     <div class="min-w-0">
+                      <h2
+                        class="poppins-semibold text-[20px] md:text-[21px] text-[#111111] leading-[1.25]"
+                      >
+                        Early Bird | Diamond
+                      </h2>
 
-                        <h2
-                            class="text-[15px] sm:text-[16px]
-                                   leading-[20px]
-                                   font-semibold
-                                   text-[#111111]"
-                        >
-                            Early Bird | Diamond
-                        </h2>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Price + Quantity -->
-                <div
-                    class="mt-[13px]
-                           flex items-center
-                           justify-between
-                           gap-4"
-                >
-
-                    <!-- Price -->
-                    <p
-                        class="text-[13px] sm:text-[14px]
-                               font-normal
-                               text-[#333333]"
-                    >
+                      <p
+                        class=" text-[18px] md:text-[19px] text-[#252525] mt-[22px] opacity-90"
+                      >
                         ₹ 4,999
-                    </p>
-
-
-                    <!-- Quantity -->
-                    <div
-                        class="h-[29px]
-                               min-w-[87px]
-                               rounded-[7px]
-                               bg-gradient-to-r
-                               from-[#ec3590]
-                               to-[#a734e8]
-                               px-[10px]
-                               flex items-center
-                               justify-between
-                               text-white"
-                    >
-
-                        <!-- Minus -->
-                        <button
-                            id="decrease-ticket"
-                            type="button"
-                            aria-label="Decrease ticket quantity"
-                            class="w-[20px]
-                                   h-[24px]
-                                   flex items-center
-                                   justify-center
-                                   text-[19px]
-                                   leading-none
-                                   font-medium
-                                   hover:opacity-80
-                                   active:scale-90
-                                   transition"
-                        >
-                            −
-                        </button>
-
-
-                        <!-- Count -->
-                        <span
-                            id="ticket-count"
-                            class="w-[20px]
-                                   text-center
-                                   text-[14px]
-                                   leading-none
-                                   font-medium"
-                        >
-                            1
-                        </span>
-
-
-                        <!-- Plus -->
-                        <button
-                            id="increase-ticket"
-                            type="button"
-                            aria-label="Increase ticket quantity"
-                            class="w-[20px]
-                                   h-[24px]
-                                   flex items-center
-                                   justify-center
-                                   text-[19px]
-                                   leading-none
-                                   font-medium
-                                   hover:opacity-80
-                                   active:scale-90
-                                   transition"
-                        >
-                            +
-                        </button>
-
+                      </p>
                     </div>
+                    <div
+                      class="shrink-0 flex items-center justify-center h-[38px] rounded-[9px] bg-[#A437E6] text-white overflow-hidden"
+                    >
+                      <!-- Minus -->
 
+                      <button
+                        type="button"
+                        id="decrease-quantity"
+                        class="w-[38px] h-[38px] flex items-center justify-center hover:bg-[#8D26C9] transition-colors"
+                        aria-label="Decrease quantity"
+                      >
+                        <i class="fa-solid fa-minus text-[14px]"> </i>
+                      </button>
+
+                      <!-- Quantity -->
+
+                      <span
+                        id="quantity"
+                        class="w-[34px] text-center oswald-semibold text-[18px]"
+                      >
+                        1
+                      </span>
+
+                      <!-- Plus -->
+
+                      <button
+                        type="button"
+                        id="increase-quantity"
+                        class="w-[38px] h-[38px] flex items-center justify-center hover:bg-[#8D26C9] transition-colors"
+                        aria-label="Increase quantity"
+                      >
+                        <i class="fa-solid fa-plus text-[14px]"> </i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="h-[1px] bg-[#E0E0E0] mt-[28px] mb-[27px]"></div>
+
+                  <ul
+                    class="list-disc pl-[25px] space-y-[9px] poppins-medium text-[14px] md:text-[15px] text-[#000000] "
+                  >
+                    <li>
+                      This ticket grants entry to one individual in the Diamond
+                      Zone.
+                    </li>
+
+                    <li>This is a seated section.</li>
+
+                    <li>
+                      Seating is available on a first-come, first-served basis.
+                    </li>
+                  </ul>
                 </div>
-
-
-                <!-- Divider -->
-                <div
-                    class="mt-[21px]
-                           h-px
-                           w-full
-                           bg-[#d8d8d8]"
-                ></div>
-
-
-                <!-- Ticket Information -->
-                <ul
-                    class="mt-[20px]
-                           pl-[28px]
-                           space-y-[7px]
-                           list-disc
-                           text-[11px] sm:text-[12px]
-                           leading-[16px]
-                           font-normal
-                           text-[#171717]"
-                >
-
-                    <li class="pl-[1px]">
-                        This ticket grants entry to one individual in the Diamond Zone.
-                    </li>
-
-                    <li class="pl-[1px]">
-                        This is a seated section.
-                    </li>
-
-                    <li class="pl-[1px]">
-                        Seating is available on a first-come, first-served basis.
-                    </li>
-
-                </ul>
-
-            </article>
-
-
-            <!-- Empty Space -->
-            <div class="h-[210px] sm:h-[224px]"></div>
-
-        </section>
-
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
 
-    <!-- =====================================================
-         FIXED BOTTOM BAR
-    ====================================================== -->
-
-    <footer
-        class="fixed
-               inset-x-0
-               bottom-0
-               z-50
-               h-[72px] sm:h-[73px]
-               bg-white
-               border-t border-[#eeeeee]
-               shadow-[0_-2px_8px_rgba(0,0,0,0.03)]"
+    <div
+      class="fixed bottom-0 left-0 right-0 z-[1000] bg-white border-t border-[#EEEEEE] shadow-[0_-4px_18px_rgba(0,0,0,0.05)]"
     >
-
+      <div class="container mx-auto">
         <div
-            class="mx-auto
-                   h-full
-                   w-full
-                   max-w-[505px]
-                   px-[16px] sm:px-0
-                   flex
-                   items-center
-                   justify-between
-                   gap-6"
+          class="max-w-[640px] mx-auto min-h-[92px] flex items-center justify-between gap-[25px] px-[10px] sm:px-0"
         >
 
-            <!-- Total -->
-            <div
-                class="flex
-                       flex-col
-                       justify-center
-                       min-w-[90px]"
+
+          <div>
+            <p
+              id="cart-total"
+              class="oswald-semibold text-[20px] md:text-[21px] text-[#111111] leading-none"
             >
+              ₹ 4,999
+            </p>
 
-                <span
-                    id="total-price"
-                    class="text-[16px] sm:text-[17px]
-                           leading-[20px]
-                           font-semibold
-                           text-[#111111]"
-                >
-                    ₹ 4,999
-                </span>
-
-                <span
-                    id="ticket-summary"
-                    class="mt-[1px]
-                           text-[9px] sm:text-[10px]
-                           leading-[13px]
-                           text-[#a0a0a0]"
-                >
-                    1 ticket
-                </span>
-
-            </div>
-
-
-            <!-- Next Button -->
-            <button
-                id="next-button"
-                type="button"
-                class="w-[122px] sm:w-[123px]
-                       h-[44px] sm:h-[45px]
-                       rounded-[7px]
-                       bg-gradient-to-r
-                       from-[#ed3690]
-                       to-[#a735e7]
-                       text-white
-                       text-[16px] sm:text-[17px]
-                       font-semibold
-                       flex
-                       items-center
-                       justify-center
-                       transition-transform
-                       duration-200
-                       hover:scale-[1.02]
-                       active:scale-[0.98]"
+            <p
+              id="ticket-count"
+              class="poppins-regular text-[14px] text-[#B3B3B3] mt-[8px]"
             >
-                Next
-            </button>
+              1 ticket
+            </p>
+          </div>
 
+          <!-- =========================
+                     NEXT BUTTON
+                     ========================= -->
+
+          <button
+            type="button"
+            id="cart-next-btn"
+            class="w-[155px] h-[56px] rounded-[9px] bg-gradient-to-r from-[#EE4291] to-[#AE40E4] text-white oswald-semibold text-[22px] flex items-center justify-center hover:opacity-90 hover:-translate-y-[1px] transition-all duration-300"
+          >
+            Next
+          </button>
         </div>
+      </div>
+    </div>
 
-    </footer>
-
-
-    <!-- =====================================================
-         JAVASCRIPT
-    ====================================================== -->
-
+    <script src="https://cdn.jsdelivr.net/npm/swiper@14/swiper-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script>
-
-        /* =========================================
-           TICKET QUANTITY
-        ========================================= */
-
-        const ticketPrice = 4999;
-
-        let ticketCount = 1;
-
-        const ticketCountEl =
-            document.getElementById("ticket-count");
-
-        const totalPriceEl =
-            document.getElementById("total-price");
-
-        const ticketSummaryEl =
-            document.getElementById("ticket-summary");
-
-        const decreaseButton =
-            document.getElementById("decrease-ticket");
-
-        const increaseButton =
-            document.getElementById("increase-ticket");
-
-
-        /* =========================================
-           FORMAT PRICE
-        ========================================= */
-
-        function formatPrice(value) {
-
-            return "₹ " + value.toLocaleString("en-IN");
-
-        }
-
-
-        /* =========================================
-           UPDATE UI
-        ========================================= */
-
-        function updateTicketUI() {
-
-            const total =
-                ticketPrice * ticketCount;
-
-            ticketCountEl.textContent =
-                ticketCount;
-
-            totalPriceEl.textContent =
-                formatPrice(total);
-
-            ticketSummaryEl.textContent =
-                `${ticketCount} ${
-                    ticketCount === 1
-                        ? "ticket"
-                        : "tickets"
-                }`;
-
-        }
-
-
-        /* =========================================
-           DECREASE
-        ========================================= */
-
-        decreaseButton.addEventListener(
-            "click",
-            () => {
-
-                if (ticketCount > 1) {
-
-                    ticketCount--;
-
-                    updateTicketUI();
-
-                }
-
-            }
-        );
-
-
-        /* =========================================
-           INCREASE
-        ========================================= */
-
-        increaseButton.addEventListener(
-            "click",
-            () => {
-
-                if (ticketCount < 10) {
-
-                    ticketCount++;
-
-                    updateTicketUI();
-
-                }
-
-            }
-        );
-
-
-        /* =========================================
-           BOOKING TIMER
-        ========================================= */
-
-        let remainingSeconds =
-            9 * 60 + 59;
-
-        const timerElement =
-            document.getElementById("booking-timer");
-
-
-        function updateTimer() {
-
-            const minutes =
-                Math.floor(
-                    remainingSeconds / 60
-                );
-
-            const seconds =
-                remainingSeconds % 60;
-
-
-            timerElement.textContent =
-                `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")} mins`;
-
-
-            if (remainingSeconds > 0) {
-
-                remainingSeconds--;
-
-            }
-
-        }
-
-
-        updateTimer();
-
-        setInterval(
-            updateTimer,
-            1000
-        );
-
+      lucide.createIcons();
     </script>
-
-</body>
+    <script src="navbar.js"></script>
+    <script src="cart.js"></script>
+  </body>
 </html>

@@ -14,13 +14,14 @@
 
 <body>
     <!-- Header -->
+    <!-- After Login -->
     <header class="header poppins-medium">
         <nav class="bg-white py-[10px]">
             <div class="container mx-auto h-full">
                 <div class="flex items-center justify-between gap-6 xl:gap-10 h-full">
                     <!-- Logo -->
                     <div class="shrink-0">
-                        <a href="#">
+                        <a href="./index.html">
                             <img src="./images/logo.png" alt="Eventara Logo"
                                 class="w-[80px] sm:w-[90px] xl:w-[105px] h-auto" loading="lazy" />
                         </a>
@@ -30,27 +31,27 @@
                     <ul
                         class="hidden lg:flex justify-center items-center gap-6 xl:gap-[80px] 2xl:gap-12 whitespace-nowrap">
                         <li>
-                            <a href="index.html" class="text-[20px] poppins-medium text-[var(--color-electric-700)]">
+                            <a href="./index.html" class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors">
                                 Home
                             </a>
                         </li>
 
                         <li>
-                            <a href="event.html" target="_self"
-                                class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors">
+                            <a href="./event.html" target="_self"
+                                class="text-[20px] poppins-medium text-[var(--color-electric-700)]">
                                 Events
                             </a>
                         </li>
 
                         <li>
-                            <a href="courses.html"
+                            <a href="./my-tickits.html"
                                 class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors">
                                 My Tickets
                             </a>
                         </li>
 
                         <li>
-                            <a href="#"
+                            <a href="aboutus.html"
                                 class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors">
                                 About Us
                             </a>
@@ -66,7 +67,10 @@
 
                     <!-- Right Side Icons -->
                     <div class="hidden lg:flex items-center justify-end gap-4 xl:gap-5 flex-shrink-0">
-                        <i data-lucide="search" class="w-6 h-6 cursor-pointer"></i>
+                        <button type="button" id="navbar-search-btn" aria-label="Open search"
+                            class="flex items-center justify-center">
+                            <i data-lucide="search" class="w-6 h-6 cursor-pointer"></i>
+                        </button>
                         <!-- Shopping Bag -->
                         <a href="#">
                             <i data-lucide="handbag"></i>
@@ -78,13 +82,142 @@
                         </a>
 
                         <!-- User -->
-                        <!-- <a href="#">
-                            <img src="./images/user.png" alt="User" class="w-[50px] h-[50px]" />
-                        </a> -->
-                        <button
-                            class="open-auth-modal poppins-medium text-[20px] cursor-pointer hover:text-[var(--color-electric-700)] transition-colors">
-                            Log In / Sign Up
-                        </button>
+                        <!-- User Profile -->
+                        <div class="relative" id="profile-dropdown-wrapper">
+                            <!-- Profile Button -->
+                            <button type="button" id="profile-dropdown-btn"
+                                class="block rounded-full focus:outline-none cursor-pointer"
+                                aria-label="Open profile menu" aria-expanded="false">
+                                <img src="./images/user.png" alt="User" class="w-[50px] h-[50px]" />
+                            </button>
+
+                            <!-- Profile Dropdown -->
+                            <div id="profile-dropdown"
+                                class="absolute right-0 top-[calc(100%+14px)] w-[430px] max-h-[calc(100vh-110px)] overflow-y-auto bg-[#F9EEFF] rounded-[28px] shadow-[0_12px_35px_rgba(0,0,0,0.18)] border border-[#E9D5FF] px-[20px] z-[9999] opacity-0 invisible pointer-events-none translate-y-[-8px] scale-[0.98] origin-top-right transition-all duration-200 ease-out">
+                                <!-- =========================
+             PROFILE HEADER
+        ========================== -->
+
+                                <p class="outfit-semibold text-[20px] text-[#141B34] mt-[20px] mb-[20px]">
+                                    Profile
+                                </p>
+
+                                <div class="bg-white rounded-[24px] overflow-hidden">
+
+                                    <!-- User -->
+                                    <div class="flex flex-col items-center justify-center px-[20px] py-[30px]">
+                                        <img src="./images/user.png" alt="Profile"
+                                            class="w-[80px] h-[80px] rounded-full object-cover " />
+
+                                        <h3 class="outfit-semibold text-[20px] text-[#000000] mt-[22px]">
+                                            Eve Rozier
+                                        </h3>
+
+                                        <p class="outfit-regular text-[15px] text-[#000000] opacity-50 mt-[4px]">
+                                            abc@gmail.com
+                                        </p>
+
+                                        <!-- Edit Profile -->
+                                        <button type="button"
+                                            class="mt-[22px] px-[73px] py-[19px] rounded-[10px] bg-[#C477F0] text-white outfit-medium text-[15px] flex items-center justify-center gap-4 hover:bg-[#B45BE8] transition-colors duration-300">
+                                            Edit profile
+
+                                            <i class="fa-solid fa-pen text-[15px]"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- =========================
+             FIRST MENU GROUP
+        ========================== -->
+
+                                <div class="mt-[12px] flex flex-col gap-[8px]">
+                                    <!-- My Tickets -->
+                                    <a href="#"
+                                        class=" w-full grid grid-cols-[44px_minmax(0,1fr)_32px] items-center gap-[14px] p-[20px] bg-white rounded-[10px] text-[#141B34] outfit-regular text-[15px] transition-all duration-200 hover:bg-[#FCF7FF] hover:-translate-y-[1px] [&>i:first-child]:justify-self-center">
+                                        <i data-lucide="ticket" class="w-[24px] h-[24px]"> </i>
+
+                                        <span> My Tickets </span>
+
+                                        <i data-lucide="chevron-right"
+                                            class="justify-self-end w-[24px] h-[24px] p-[4px] border-2 border-[#141B34] rounded-full">
+                                        </i>
+                                    </a>
+
+                                    <!-- Cart -->
+                                    <a href="#"
+                                        class=" w-full grid grid-cols-[44px_minmax(0,1fr)_32px] items-center gap-[14px] p-[20px] bg-white rounded-[10px] text-[#141B34] outfit-regular text-[15px] transition-all duration-200 hover:bg-[#FCF7FF] hover:-translate-y-[1px] [&>i:first-child]:justify-self-center">
+                                        <i data-lucide="shopping-bag" class="w-[24px] h-[24px]"> </i>
+
+                                        <span> My Cart </span>
+
+                                        <i data-lucide="chevron-right"
+                                            class="justify-self-end w-[24px] h-[24px] p-[4px] border-2 border-[#141B34] rounded-full">
+                                        </i>
+                                    </a>
+
+                                    <!-- Wishlist -->
+                                    <a href="#"
+                                        class=" w-full grid grid-cols-[44px_minmax(0,1fr)_32px] items-center gap-[14px] p-[20px] bg-white rounded-[10px] text-[#141B34] outfit-regular text-[15px] transition-all duration-200 hover:bg-[#FCF7FF] hover:-translate-y-[1px] [&>i:first-child]:justify-self-center">
+                                        <i data-lucide="heart" class="w-[24px] h-[24px]"> </i>
+
+                                        <span> Wishlist </span>
+
+                                        <i data-lucide="chevron-right"
+                                            class="justify-self-end w-[24px] h-[24px] p-[4px] border-2 border-[#141B34] rounded-full">
+                                        </i>
+                                    </a>
+                                </div>
+
+                                <!-- Divider -->
+                                <div class="my-[12px] h-[1px] bg-[#transparent]"></div>
+
+                                <!-- =========================
+             SECOND MENU GROUP
+        ========================== -->
+
+                                <div class="flex flex-col gap-[8px]">
+                                    
+                                    <!-- Get Help -->
+                                    <a href="#"
+                                        class=" w-full grid grid-cols-[44px_minmax(0,1fr)_32px] items-center gap-[14px] p-[20px] bg-white rounded-[10px] text-[#141B34] outfit-regular text-[15px] transition-all duration-200 hover:bg-[#FCF7FF] hover:-translate-y-[1px] [&>i:first-child]:justify-self-center">
+                                        <i data-lucide="headphones" class="w-[24px] h-[24px]">
+                                        </i>
+
+                                        <span> Get Help </span>
+
+                                        <i data-lucide="chevron-right"
+                                            class="justify-self-end w-[24px] h-[24px] p-[4px] border-2 border-[#141B34] rounded-full">
+                                        </i>
+                                    </a>
+
+                                    <!-- Change Password -->
+                                    <a href="#"
+                                        class=" w-full grid grid-cols-[44px_minmax(0,1fr)_32px] items-center gap-[14px] p-[20px] bg-white rounded-[10px] text-[#141B34] outfit-regular text-[15px] transition-all duration-200 hover:bg-[#FCF7FF] hover:-translate-y-[1px] [&>i:first-child]:justify-self-center">
+                                        <i data-lucide="shield" class="w-[24px] h-[24px]"> </i>
+
+                                        <span>
+                                            Change
+                                            Password
+                                        </span>
+
+                                        <i data-lucide="chevron-right"
+                                            class="justify-self-end w-[24px] h-[24px] p-[4px] border-2 border-[#141B34] rounded-full">
+                                        </i>
+                                    </a>
+
+                                    <!-- Logout -->
+                                    <a href="#"
+                                        class=" w-full grid grid-cols-[44px_minmax(0,1fr)_32px] items-center gap-[14px] p-[20px] bg-white rounded-[10px] text-[#141B34] outfit-regular text-[15px] transition-all duration-200 hover:bg-[#FCF7FF] hover:-translate-y-[1px] [&>i:first-child]:justify-self-center mb-[60px]">
+                                        <i data-lucide="log-out" class="w-[24px] h-[24px]"> </i>
+
+                                        <span>
+                                            Logout
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Mobile Menu Button -->
@@ -95,77 +228,211 @@
             </div>
         </nav>
 
-        <!-- Mobile Menu -->
+        <!-- After Login Mobile View -->
         <div id="mobile-navbar" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50">
-            <div id="navbar-slide"
-                class="w-[300px] h-full bg-white rounded-r-[24px] shadow-2xl p-6 -translate-x-full transition-transform duration-300 flex flex-col">
-                <!-- Header -->
-                <div class="flex items-center justify-between pb-5 border-b border-gray-200">
-                    <img src="./images/logo.png" alt="Eventara" class="w-[95px] h-auto" />
 
-                    <button id="navbar-close" class="text-2xl text-gray-600 hover:text-black">
+            <div id="navbar-slide"
+                class="w-[300px] h-full bg-white rounded-r-[24px] shadow-2xl p-6
+                -translate-x-full transition-transform duration-300
+                flex flex-col overflow-y-auto">
+
+                <!-- Header -->
+                <div class="flex items-center justify-between pb-5 border-b border-gray-200 shrink-0">
+
+                    <img src="./images/logo.png"
+                        alt="Eventara"
+                        class="w-[95px] h-auto" />
+
+                    <button id="navbar-close"
+                        class="text-2xl text-gray-600 hover:text-black">
+
                         <i class="fa-solid fa-xmark"></i>
+
                     </button>
+
                 </div>
 
-                <!-- Links -->
-                <ul class="flex flex-col gap-2 mt-8">
+
+                <!-- Profile -->
+                <div class="flex items-center gap-3 py-6 border-b border-gray-200">
+
+                    <img src="./images/user.png"
+                        alt="Profile"
+                        class="w-[52px] h-[52px] rounded-full object-cover" />
+
+                    <div class="min-w-0">
+
+                        <h3 class="outfit-semibold text-[17px] text-[#141B34] truncate">
+                            Eve Rozier
+                        </h3>
+
+                        <p class="outfit-regular text-[13px] text-gray-500 truncate">
+                            abc@gmail.com
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Navigation -->
+                <ul class="flex flex-col gap-2 mt-6">
+
+                    <!-- Home -->
                     <li>
                         <a href="index.html"
-                            class="flex items-center gap-4 rounded-xl px-4 py-3 hover:bg-violet-50 hover:text-violet-700 transition">
-                            <i data-lucide="house" class="w-5 h-5"></i>
-                            Home
+                            class="flex items-center gap-4 rounded-xl px-4 py-3
+                            bg-violet-50 text-violet-700 transition">
+
+                            <i data-lucide="house"
+                                class="w-5 h-5"></i>
+
+                            <span>Home</span>
+
                         </a>
                     </li>
 
+
+                    <!-- Events -->
                     <li>
                         <a href="event.html"
-                            class="flex items-center gap-4 rounded-xl px-4 py-3 hover:bg-violet-50 hover:text-violet-700 transition">
-                            <i data-lucide="calendar-days" class="w-5 h-5"></i>
-                            Events
+                            class="flex items-center gap-4 rounded-xl px-4 py-3
+                            hover:bg-violet-50 hover:text-violet-700 transition">
+
+                            <i data-lucide="calendar-days"
+                                class="w-5 h-5"></i>
+
+                            <span>Events</span>
+
                         </a>
                     </li>
 
+
+                    <!-- My Tickets -->
                     <li>
-                        <a href="courses.html"
-                            class="flex items-center gap-4 rounded-xl px-4 py-3 hover:bg-violet-50 hover:text-violet-700 transition">
-                            <i data-lucide="ticket" class="w-5 h-5 -rotate-45"></i>
-                            My Tickets
+                        <a href="./my-tickits.html"
+                            class="flex items-center gap-4 rounded-xl px-4 py-3
+                            hover:bg-violet-50 hover:text-violet-700 transition">
+
+                            <i data-lucide="ticket"
+                                class="w-5 h-5"></i>
+
+                            <span>My Tickets</span>
+
                         </a>
                     </li>
 
+
+                    <!-- Wishlist -->
                     <li>
                         <a href="#"
-                            class="flex items-center gap-4 rounded-xl px-4 py-3 hover:bg-violet-50 hover:text-violet-700 transition">
-                            <i data-lucide="circle-alert" class="w-5 h-5"></i>
-                            About Us
+                            class="flex items-center gap-4 rounded-xl px-4 py-3
+                            hover:bg-violet-50 hover:text-violet-700 transition">
+
+                            <i data-lucide="heart"
+                                class="w-5 h-5"></i>
+
+                            <span>Wishlist</span>
+
                         </a>
                     </li>
 
+
+                    <!-- About -->
+                    <li>
+                        <a href="aboutus.html"
+                            class="flex items-center gap-4 rounded-xl px-4 py-3
+                            hover:bg-violet-50 hover:text-violet-700 transition">
+
+                            <i data-lucide="circle-alert"
+                                class="w-5 h-5"></i>
+
+                            <span>About Us</span>
+
+                        </a>
+                    </li>
+
+
+                    <!-- Contact -->
                     <li>
                         <a href="contact.html"
-                            class="flex items-center gap-4 rounded-xl px-4 py-3 hover:bg-violet-50 hover:text-violet-700 transition">
-                            <i data-lucide="mail" class="w-5 h-5"></i>
-                            Contact
+                            class="flex items-center gap-4 rounded-xl px-4 py-3
+                            hover:bg-violet-50 hover:text-violet-700 transition">
+
+                            <i data-lucide="mail"
+                                class="w-5 h-5"></i>
+
+                            <span>Contact</span>
+
                         </a>
                     </li>
+
                 </ul>
 
-                <!-- Bottom CTA -->
-                <div class="mt-auto pt-8 flex flex-col gap-4">
-                    <button
-                        class="open-auth-modal w-full h-[54px] rounded-xl border-2 border-[var(--color-electric-600)] text-[var(--color-electric-600)] poppins-medium text-[18px] flex items-center justify-center transition hover:bg-[var(--color-electric-50)]">
-                        Log In
-                    </button>
 
-                    <button
-                        class="open-auth-modal w-full h-[54px] rounded-xl border-2 border-[var(--color-electric-600)] text-[var(--color-electric-600)] poppins-medium text-[18px] flex items-center justify-center transition hover:bg-[var(--color-electric-50)]">
-                        Sign Up
-                    </button>
+                <!-- Account Options -->
+                <div class="mt-6 pt-5 border-t border-gray-200 flex flex-col gap-2">
+                    <!-- Help -->
+                    <a href="#"
+                        class="flex items-center gap-4 rounded-xl px-4 py-3
+                        hover:bg-violet-50 hover:text-violet-700 transition">
+
+                        <i data-lucide="headphones"
+                            class="w-5 h-5"></i>
+
+                        <span>Get Help</span>
+
+                    </a>
+
+
+                    <!-- Change Password -->
+                    <a href="#"
+                        class="flex items-center gap-4 rounded-xl px-4 py-3
+                        hover:bg-violet-50 hover:text-violet-700 transition">
+
+                        <i data-lucide="shield"
+                            class="w-5 h-5"></i>
+
+                        <span>Change Password</span>
+
+                    </a>
+
+
+                    <!-- Logout -->
+                    <a href="#"
+                        class="flex items-center gap-4 rounded-xl px-4 py-3
+                        text-red-500 hover:bg-red-50 transition">
+
+                        <i data-lucide="log-out"
+                            class="w-5 h-5"></i>
+
+                        <span>Logout</span>
+
+                    </a>
+
                 </div>
+
             </div>
+
         </div>
     </header>
+
+
+    <!-- Search Overlay -->
+    <div id="search-overlay"
+        class="fixed inset-0 z-[10000] hidden bg-black/35 backdrop-blur-[2px] items-start justify-center pt-[110px] px-[24px]">
+        <div id="search-box"
+            class="w-full max-w-[986px] h-[78px] bg-white rounded-full flex items-center pl-[32px] pr-[18px] shadow-[0_10px_35px_rgba(0,0,0,0.12)]">
+            <input id="navbar-search-input" type="text" placeholder="Search..." autocomplete="off"
+                class="flex-1 min-w-0 h-full bg-transparent outline-none border-none text-[22px] text-[#141B34] outfit-semibold placeholder:text-[#858585]" />
+
+            <button type="button" id="search-submit-btn" aria-label="Search"
+                class="w-[58px] h-[58px] shrink-0 rounded-full bg-[#A437E6] hover:bg-[#8D26C9] text-white flex items-center justify-center transition-colors duration-200">
+                <i data-lucide="search" class="w-[30px] h-[30px]"></i>
+            </button>
+        </div>
+    </div>
+
 
     <div class="bg-[var(--color-electric-100)] py-[20px]">
         <div class="container mx-auto">

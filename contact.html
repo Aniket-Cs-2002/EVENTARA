@@ -15,14 +15,14 @@
     <title>Contact | Eventara</title>
   </head>
   <body>
-    <!-- Header -->
+    <!-- Before Login -->
     <header class="header poppins-medium">
         <nav class="bg-white py-[10px]">
             <div class="container mx-auto h-full">
                 <div class="flex items-center justify-between gap-6 xl:gap-10 h-full">
                     <!-- Logo -->
                     <div class="shrink-0">
-                        <a href="#">
+                        <a href="./index.html">
                             <img src="./images/logo.png" alt="Eventara Logo"
                                 class="w-[80px] sm:w-[90px] xl:w-[105px] h-auto" loading="lazy" />
                         </a>
@@ -30,9 +30,9 @@
 
                     <!-- Desktop Navigation -->
                     <ul
-                        class="hidden lg:flex justify-center items-center gap-6 xl:gap-[80px] 2xl:gap-12 whitespace-nowrap">
+                        class="hidden lg:flex  justify-center items-center gap-6 xl:gap-[80px] 2xl:gap-12 whitespace-nowrap">
                         <li>
-                            <a href="index.html" class="text-[20px] poppins-medium text-[var(--color-electric-700)]">
+                            <a href="index.html" class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors">
                                 Home
                             </a>
                         </li>
@@ -45,22 +45,22 @@
                         </li>
 
                         <li>
-                            <a href="courses.html"
+                            <a href="./my-tickits.html"
                                 class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors">
                                 My Tickets
                             </a>
                         </li>
 
                         <li>
-                            <a href="#"
-                                class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors">
+                            <a href="./aboutus.html"
+                                class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors]">
                                 About Us
                             </a>
                         </li>
 
                         <li>
                             <a href="contact.html" target="_blank"
-                                class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors">
+                                class="text-[20px] poppins-medium text-[var(--color-electric-700)]">
                                 Contact
                             </a>
                         </li>
@@ -68,7 +68,11 @@
 
                     <!-- Right Side Icons -->
                     <div class="hidden lg:flex items-center justify-end gap-4 xl:gap-5 flex-shrink-0">
-                        <i data-lucide="search" class="w-6 h-6 cursor-pointer"></i>
+
+                        <button type="button" id="navbar-search-btn" aria-label="Open search"
+    class="flex items-center justify-center">
+    <i data-lucide="search" class="w-6 h-6 cursor-pointer"></i>
+</button>
                         <!-- Shopping Bag -->
                         <a href="#">
                             <i data-lucide="handbag"></i>
@@ -83,10 +87,35 @@
                         <!-- <a href="#">
                             <img src="./images/user.png" alt="User" class="w-[50px] h-[50px]" />
                         </a> -->
-                        <button
-                            class="open-auth-modal poppins-medium text-[20px] cursor-pointer hover:text-[var(--color-electric-700)] transition-colors">
-                            Log In / Sign Up
-                        </button>
+                        <!-- Auth Buttons -->
+<div class="flex items-center gap-[24px]">
+
+    <!-- Login -->
+    <button
+        type="button"
+        id="navbar-login-btn"
+        class="poppins-semibold text-[20px] lg:text-[20px]
+        text-[var(--color-electric-600)]
+        hover:text-[var(--color-electric-700)]
+        transition-colors duration-300 cursor-pointer">
+        Log In
+    </button>
+
+    <!-- Sign Up -->
+    <button
+        type="button"
+        id="navbar-signup-btn"
+        class="poppins-semibold text-[20px]lg:text-[20px]
+        text-white
+        bg-[var(--color-electric-600)]
+        hover:bg-[var(--color-electric-700)]
+        rounded-[5px]
+        px-[10px] py-[5px]
+        transition-colors duration-300 cursor-pointer">
+        Sign Up
+    </button>
+
+</div>
                     </div>
 
                     <!-- Mobile Menu Button -->
@@ -97,10 +126,11 @@
             </div>
         </nav>
 
-        <!-- Mobile Menu -->
+        <!-- Before login Mobile Menu -->
         <div id="mobile-navbar" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50">
             <div id="navbar-slide"
                 class="w-[300px] h-full bg-white rounded-r-[24px] shadow-2xl p-6 -translate-x-full transition-transform duration-300 flex flex-col">
+
                 <!-- Header -->
                 <div class="flex items-center justify-between pb-5 border-b border-gray-200">
                     <img src="./images/logo.png" alt="Eventara" class="w-[95px] h-auto" />
@@ -155,19 +185,41 @@
 
                 <!-- Bottom CTA -->
                 <div class="mt-auto pt-8 flex flex-col gap-4">
+
                     <button
-                        class="open-auth-modal w-full h-[54px] rounded-xl border-2 border-[var(--color-electric-600)] text-[var(--color-electric-600)] poppins-medium text-[18px] flex items-center justify-center transition hover:bg-[var(--color-electric-50)]">
-                        Log In
+                    class="open-auth-modal w-full h-[54px] rounded-xl border-2 border-[var(--color-electric-600)] text-[var(--color-electric-600)] poppins-medium text-[18px] flex items-center justify-center transition hover:bg-[var(--color-electric-50)]">
+
+                    Log In
+
                     </button>
 
                     <button
-                        class="open-auth-modal w-full h-[54px] rounded-xl border-2 border-[var(--color-electric-600)] text-[var(--color-electric-600)] poppins-medium text-[18px] flex items-center justify-center transition hover:bg-[var(--color-electric-50)]">
-                        Sign Up
+                    class="open-auth-modal w-full h-[54px] rounded-xl border-2 border-[var(--color-electric-600)] text-[var(--color-electric-600)] poppins-medium text-[18px] flex items-center justify-center transition hover:bg-[var(--color-electric-50)]">
+
+                    Sign Up
+
                     </button>
+
                 </div>
+
             </div>
         </div>
     </header>
+
+    <!-- Search Overlay -->
+    <div id="search-overlay"
+        class="fixed inset-0 z-[10000] hidden bg-black/35 backdrop-blur-[2px] items-start justify-center pt-[110px] px-[24px]">
+        <div id="search-box"
+            class="w-full max-w-[986px] h-[78px] bg-white rounded-full flex items-center pl-[32px] pr-[18px] shadow-[0_10px_35px_rgba(0,0,0,0.12)]">
+            <input id="navbar-search-input" type="text" placeholder="Search..." autocomplete="off"
+                class="flex-1 min-w-0 h-full bg-transparent outline-none border-none text-[22px] text-[#141B34] outfit-semibold placeholder:text-[#858585]" />
+
+            <button type="button" id="search-submit-btn" aria-label="Search"
+                class="w-[58px] h-[58px] shrink-0 rounded-full bg-[#A437E6] hover:bg-[#8D26C9] text-white flex items-center justify-center transition-colors duration-200">
+                <i data-lucide="search" class="w-[30px] h-[30px]"></i>
+            </button>
+        </div>
+    </div>
 
     <div class="bg-[var(--color-electric-100)] py-[20px]">
       <div class="container mx-auto">
@@ -185,10 +237,10 @@
       <div class="container mx-auto">
         <div class="max-w-[1320px]">
           <div class="text-center">
-            <span class="text-[20px] poppins-medium">Contact</span>
-            <h1 class="text-[68px] oswald-semibold">Get in Touch</h1>
+            <span class="text-[20px] poppins-semibold">Contact</span>
+            <h1 class="text-[68px] oswald-bold">Get in Touch</h1>
             <p
-              class="text-[20px] poppins-semibold max-w-[1100px] mx-auto text-gray-400"
+              class="text-[20px] poppins-medium max-w-[1300px] mx-auto text-[#252525] opacity-50"
             >
               Whether you have questions about ticket bookings, event
               management, partnerships, or technical support, our team is just a
@@ -211,13 +263,13 @@
                   <input
                     type="email"
                     placeholder="Email"
-                    class="w-full h-[70px] text-[20px] poppins-medium border bg-[var(--color-light-gray)] border-gray-300 rounded-[4px] px-[16px] outline-none"
+                    class="w-full h-[70px] text-[20px] poppins-medium border bg-[var(--color-light-gray)] border-gray-300 rounded-[4px] px-[16px] outline-none shadow-xl"
                   />
 
                   <input
                     type="text"
                     placeholder="Phone"
-                    class="w-full h-[70px] text-[20px] poppins-medium border bg-[var(--color-light-gray)] border-gray-300 rounded-[4px] px-[16px] outline-none"
+                    class="w-full h-[70px] text-[20px] poppins-medium border bg-[var(--color-light-gray)] border-gray-300 rounded-[4px] px-[16px] outline-none shadow-xl"
                   />
                 </div>
 
@@ -225,20 +277,20 @@
                   <input
                     type="text"
                     placeholder="Name"
-                    class="w-full h-[70px] text-[20px] poppins-medium border bg-[var(--color-light-gray)] border-gray-300 rounded-[4px] px-[16px] outline-none"
+                    class="w-full h-[70px] text-[20px] poppins-medium border bg-[var(--color-light-gray)] border-gray-300 rounded-[4px] px-[16px] outline-none shadow-xl"
                   />
                 </div>
 
                 <div class="mb-[23px]">
                   <textarea
                     placeholder="Message"
-                    class="w-full h-[110px] text-[20px] poppins-medium border bg-[var(--color-light-gray)] border-gray-300 rounded-[4px] px-[16px] py-[14px] outline-none resize-none"
+                    class="w-full h-[110px] text-[20px] poppins-medium border bg-[var(--color-light-gray)] border-gray-300 rounded-[4px] px-[16px] py-[14px] outline-none resize-none shadow-xl"
                   ></textarea>
                 </div>
 
                 <!-- Button -->
                 <button
-                  class="flex items-center text-[24px] poppins-medium gap-[12px] bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-full px-[24px] py-[10px]"
+                  class="flex items-center text-[24px] poppins-medium gap-[12px] bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-full px-[24px] py-[10px] btn-type-1"
                 >
                   Send Message
 
@@ -254,11 +306,11 @@
             <!-- Right Card -->
             <div class="col-span-12 lg:col-span-6">
               <div class="border border-gray-300 rounded-[16px] p-[40px]">
-                <h3 class="text-[32px] oswald-regular mb-[18px]">
+                <h3 class="text-[32px] oswald-medium mb-[18px]">
                   Stay Updated
                 </h3>
 
-                <p class="text-[20px] text-gray-500 poppins-medium mb-[25px]">
+                <p class="text-[20px] text-[#252525] opacity-50 poppins-regular mb-[25px]">
                   Never miss the hottest concerts, festivals, sports matches,
                   and exclusive early-bird ticket offers.
                 </p>
@@ -266,11 +318,11 @@
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  class="w-full h-[70px] border text-[20px] poppins-medium bg-[var(--color-light-gray)] border-gray-300 rounded-[4px] px-[16px] mb-[16px] outline-none"
+                  class="w-full h-[70px] border text-[20px] poppins-medium bg-[var(--color-light-gray)] border-gray-300 rounded-[4px] px-[16px] mb-[16px] outline-none shadow-xl"
                 />
 
                 <button
-                  class="w-full h-[52px] rounded-[4px] poppins-medium text-[20px] text-white bg-gradient-to-r from-purple-600 to-fuchsia-500 font-medium"
+                  class="w-full h-[52px] rounded-[4px] poppins-medium text-[20px] text-white  bg-[#A437E6]"
                 >
                   Subscribe Now
                 </button>
@@ -290,24 +342,23 @@
           >
             <!-- Card 1 -->
             <div class="bg-[#F7EFFF] rounded-[16px] shadow-md p-[30px]">
-              <div class="flex gap-[15px]">
-                <div class="mt-[4px]">
-                  <i
-                    class="fa-solid fa-headset text-[30px] text-[var(--color-heading)] mt-[4px]"
-                  ></i>
+              <div class=" gap-[15px]">
+                <div class="mt-[4px] flex items-center">
+                  <img src="./images/contact-1.png" alt="" class="w-[45px] h-auto">
+                  <h3 class="oswald-medium text-[32px] ml-2">+91 98765 43210</h3>
                 </div>
 
                 <div>
-                  <h3 class="oswald-regular text-[32px]">+91 98765 43210</h3>
+                  
 
                   <p
-                    class="poppins-semibold text-[20px] text-[var(--color-gray)] mt-[10px]"
+                    class="poppins-semibold text-[20px] text-[#252525] opacity-60 mt-[10px]"
                   >
                     Monday – Saturday
                   </p>
 
                   <p
-                    class="poppins-semibold text-[20px] text-[var(--color-gray)]"
+                    class="poppins-semibold text-[20px] text-[#252525] opacity-60"
                   >
                     9:00 AM – 7:00 PM
                   </p>
@@ -317,20 +368,19 @@
 
             <!-- Card 2 -->
             <div class="bg-[#F7EFFF] rounded-[16px] shadow-md p-[30px]">
-              <div class="flex gap-[15px]">
-                <div class="mt-[4px]">
-                  <i
-                    class="fa-regular fa-envelope text-[30px] text-[var(--color-heading)] mt-2"
-                  ></i>
+              <div class="gap-[15px]">
+                <div class="mt-[4px] flex items-center">
+                  <img src="./images/contact-2.png" alt="" class="w-[45px] h-auto">
+                  <h3 class="oswald-medium text-[32px] ml-2 underline">
+                    support@eventara.com
+                  </h3>
                 </div>
 
                 <div>
-                  <h3 class="oswald-regular text-[32px] underline">
-                    support@eventara.com
-                  </h3>
+                  
 
                   <p
-                    class="poppins-semibold text-[20px] text-[var(--color-gray)] mt-[10px]"
+                    class="poppins-semibold text-[20px] text-[#252525] opacity-60 mt-[10px]"
                   >
                     For booking support, cancellations, partnerships, and
                     general inquiries.
@@ -341,22 +391,21 @@
 
             <!-- Card 3 -->
             <div class="bg-[#F7EFFF] rounded-[16px] shadow-md p-[30px]">
-              <div class="flex gap-[15px]">
-                <div class="mt-[4px]">
-                  <i
-                    class="fa-solid fa-location-dot text-[30px] text-[var(--color-heading)] mt-[4px]"
-                  ></i>
-                </div>
-
-                <div>
+              <div class="gap-[15px]">
+                <div class="mt-[4px] flex items-center">  
+                  <img src="./images/contact-3.png" alt="" class="w-[45px] h-auto ">
                   <h3
-                    class="oswald-regular text-[32px] text-[var(--color-heading)]"
+                    class="oswald-medium text-[32px] ml-2"
                   >
                     Visit Our Office
                   </h3>
+                </div>
+
+                <div>
+                  
 
                   <p
-                    class="poppins-semibold text-[20px] text-[var(--color-gray)] mt-[10px]"
+                    class="poppins-semibold text-[20px] text-[#252525] opacity-60 mt-[10px]"
                   >
                     Eventara Headquarter<br />
                     Kolkata, West Bengal, India
@@ -375,12 +424,12 @@
         <div class="max-w-[1320px] mx-auto">
           <!-- Heading -->
           <div class="text-center mb-[20px]">
-            <h2 class="oswald-semibold text-[57px] text-[var(--color-text)]">
+            <h2 class="oswald-semibold text-[52px] text-[var(--color-text)]">
               Frequently Asked Questions
             </h2>
 
             <p
-              class="poppins-medium text-[20px] mt-[10px] text-[var(--color-gray)] max-w-[700px] mx-auto"
+              class="poppins-regular text-[20px] mt-[10px] text-[#252525] opacity-50 max-w-[700px] mx-auto"
             >
               here are some common questions asked about our brand and services
               and process to help you better understand
@@ -397,7 +446,7 @@
                 class="accordion-header px-[20px] py-[40px] cursor-pointer flex justify-between items-center"
               >
                 <span
-                  class="poppins-medium text-[22px] text-[var(--color-text)]"
+                  class="oswald-medium text-[28px] text-[var(--color-text)]"
                 >
                   How far in advance should I book my event?
                 </span>
@@ -426,7 +475,7 @@
                 class="accordion-header px-[20px] py-[40px] cursor-pointer flex justify-between items-center"
               >
                 <span
-                  class="poppins-medium text-[22px] text-[var(--color-text)]"
+                  class="oswald-medium text-[28px] text-[var(--color-text)]"
                 >
                   How far in advance should I book my event?
                 </span>
@@ -455,7 +504,7 @@
                 class="accordion-header px-[20px] py-[40px] cursor-pointer flex justify-between items-center"
               >
                 <span
-                  class="poppins-medium text-[22px] text-[var(--color-text)]"
+                  class="oswald-medium text-[28px] text-[var(--color-text)]"
                 >
                   Do you provide event management?
                 </span>
@@ -484,7 +533,7 @@
                 class="accordion-header px-[20px] py-[40px] cursor-pointer flex justify-between items-center"
               >
                 <span
-                  class="poppins-medium text-[22px] text-[var(--color-text)]"
+                  class="oswald-medium text-[28px] text-[var(--color-text)]"
                 >
                   Can you customize event packages?
                 </span>
@@ -513,7 +562,7 @@
                 class="accordion-header px-[20px] py-[40px] cursor-pointer flex justify-between items-center"
               >
                 <span
-                  class="poppins-medium text-[22px] text-[var(--color-text)]"
+                  class="oswald-medium text-[28px] text-[var(--color-text)]"
                 >
                   Do you help celebrity bookings?
                 </span>
@@ -542,7 +591,7 @@
                 class="accordion-header px-[20px] py-[40px] cursor-pointer flex justify-between items-center"
               >
                 <span
-                  class="oswald-semibold text-[22px] text-[var(--color-text)]"
+                  class="oswald-medium text-[28px] text-[var(--color-text)]"
                 >
                   How can I get a quotation?
                 </span>

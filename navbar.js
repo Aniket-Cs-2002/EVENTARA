@@ -4,69 +4,84 @@ $(document).ready(function () {
   const $navbarSlide = $("#navbar-slide");
 
 
-
   /* ===========================
-   SEARCH OVERLAY
-=========================== */
+     SEARCH OVERLAY
+  =========================== */
 
-const $searchOverlay = $("#search-overlay");
-const $searchInput = $("#navbar-search-input");
+  const $searchOverlay = $("#search-overlay");
+  const $searchInput = $("#navbar-search-input");
 
-function openSearchOverlay() {
-  $searchOverlay
-    .removeClass("hidden")
-    .addClass("flex");
 
-  requestAnimationFrame(() => {
-    $searchInput.trigger("focus");
+  function openSearchOverlay() {
+
+    $searchOverlay
+      .removeClass("hidden")
+      .addClass("flex");
+
+    requestAnimationFrame(() => {
+
+      $searchInput.trigger("focus");
+
+    });
+
+  }
+
+
+  function closeSearchOverlay() {
+
+    $searchOverlay
+      .removeClass("flex")
+      .addClass("hidden");
+
+  }
+
+
+  // Open Search
+
+  $(document).on(
+    "click",
+    "#navbar-search-btn",
+    function (e) {
+
+      e.stopPropagation();
+
+      openSearchOverlay();
+
+    }
+  );
+
+
+  // Close Search Outside
+
+  $(document).on(
+    "click",
+    "#search-overlay",
+    function (e) {
+
+      if ($(e.target).is("#search-overlay")) {
+
+        closeSearchOverlay();
+
+      }
+
+    }
+  );
+
+
+  // Close Search with Escape
+
+  $(document).on("keydown", function (e) {
+
+    if (
+      e.key === "Escape" &&
+      !$searchOverlay.hasClass("hidden")
+    ) {
+
+      closeSearchOverlay();
+
+    }
+
   });
-}
-
-function closeSearchOverlay() {
-  $searchOverlay
-    .removeClass("flex")
-    .addClass("hidden");
-}
-
-
-/* Open Search */
-
-$(document).on("click", "#navbar-search-btn", function (e) {
-
-  e.stopPropagation();
-
-  openSearchOverlay();
-
-});
-
-
-/* Close when clicking outside */
-
-$(document).on("click", "#search-overlay", function (e) {
-
-  if ($(e.target).is("#search-overlay")) {
-
-    closeSearchOverlay();
-
-  }
-
-});
-
-
-/* Close with Escape */
-
-$(document).on("keydown", function (e) {
-
-  if (
-    e.key === "Escape" &&
-    !$searchOverlay.hasClass("hidden")
-  ) {
-
-    closeSearchOverlay();
-
-  }
-
-});
 
 
   /* ===========================
@@ -95,6 +110,7 @@ $(document).on("keydown", function (e) {
 
 
   // Profile Button
+
   $(document).on(
     "click",
     "#profile-dropdown-btn",
@@ -131,7 +147,8 @@ $(document).on("keydown", function (e) {
   );
 
 
-  // Click Outside
+  // Click Outside Profile
+
   $(document).on("click", function (e) {
 
     if (
@@ -147,7 +164,8 @@ $(document).on("keydown", function (e) {
   });
 
 
-  // Escape
+  // Escape Profile
+
   $(document).on("keydown", function (e) {
 
     if (e.key === "Escape") {
@@ -159,7 +177,12 @@ $(document).on("keydown", function (e) {
   });
 
 
+  /* ===========================
+     MOBILE NAVBAR
+  =========================== */
+
   // Open Mobile Menu
+
   $("#navbar-toggle").on("click", function () {
 
     $mobileNavbar.removeClass("hidden");
@@ -176,11 +199,13 @@ $(document).on("keydown", function (e) {
 
 
   // Close Mobile Menu
+
   function closeMobileMenu() {
 
     $navbarSlide
       .removeClass("translate-x-0")
       .addClass("-translate-x-full");
+
 
     setTimeout(() => {
 
@@ -192,6 +217,7 @@ $(document).on("keydown", function (e) {
 
 
   // Close Button
+
   $("#navbar-close").on("click", function () {
 
     closeMobileMenu();
@@ -200,6 +226,7 @@ $(document).on("keydown", function (e) {
 
 
   // Click Outside Drawer
+
   $mobileNavbar.on("click", function (e) {
 
     if ($(e.target).is("#mobile-navbar")) {
@@ -212,6 +239,7 @@ $(document).on("keydown", function (e) {
 
 
   // Close after clicking menu link
+
   $("#mobile-navbar a").on("click", function () {
 
     closeMobileMenu();
@@ -220,6 +248,7 @@ $(document).on("keydown", function (e) {
 
 
   // Escape Mobile Menu
+
   $(document).on("keydown", function (e) {
 
     if (
@@ -233,56 +262,378 @@ $(document).on("keydown", function (e) {
 
   });
 
-});
-
-/* ===========================
-   Category Slider
+  /* ===========================
+   CHANGE PASSWORD MODAL
 =========================== */
 
-const categorySwiper = new Swiper(".categorySwiper", {
-  slidesPerView: "auto",
-  spaceBetween: 16,
-  centerInsufficientSlides: true,
-  freeMode: true,
-  grabCursor: true,
+const $changePasswordModal =
+  $("#change-password-modal");
+
+const $changePasswordBackBtn =
+  $("#change-password-back-btn");
+
+const $changePasswordConfirmBtn =
+  $("#change-password-confirm-btn");
+
+
+function openChangePasswordModal() {
+
+  $changePasswordModal
+    .removeClass("hidden")
+    .addClass("flex");
+
+}
+
+
+function closeChangePasswordModal() {
+
+  $changePasswordModal
+    .removeClass("flex")
+    .addClass("hidden");
+
+}
+
+
+/* OPEN */
+
+$(document).on(
+  "click",
+  "#change-password-btn, #mobile-change-password-btn",
+  function (e) {
+
+    e.preventDefault();
+    e.stopPropagation();
+
+    closeProfileDropdown();
+    closeMobileMenu();
+
+    openChangePasswordModal();
+
+  }
+);
+
+
+/* BACK BUTTON */
+
+$changePasswordBackBtn.on(
+  "click",
+  function () {
+
+    closeChangePasswordModal();
+
+  }
+);
+
+
+/* CLICK OUTSIDE */
+
+$changePasswordModal.on(
+  "click",
+  function (e) {
+
+    if (
+      $(e.target).is(
+        "#change-password-modal"
+      )
+    ) {
+
+      closeChangePasswordModal();
+
+    }
+
+  }
+);
+
+
+/* CONFIRM */
+
+$changePasswordConfirmBtn.on(
+  "click",
+  function () {
+
+    const newPassword =
+      $("#change-password-new")
+        .val()
+        .trim();
+
+    const confirmPassword =
+      $("#change-password-confirm")
+        .val()
+        .trim();
+
+
+    if (
+      !newPassword ||
+      !confirmPassword
+    ) {
+
+      alert(
+        "Please enter both passwords."
+      );
+
+      return;
+
+    }
+
+
+    if (
+      newPassword !== confirmPassword
+    ) {
+
+      alert(
+        "Passwords do not match."
+      );
+
+      return;
+
+    }
+
+
+    // Password is valid
+
+    closeChangePasswordModal();
+
+  }
+);
+
+
+/* ESCAPE */
+
+$(document).on(
+  "keydown",
+  function (e) {
+
+    if (
+      e.key === "Escape" &&
+      !$changePasswordModal.hasClass(
+        "hidden"
+      )
+    ) {
+
+      closeChangePasswordModal();
+
+    }
+
+  }
+);
+
+
+  /* ===========================
+     LOGOUT CONFIRMATION MODAL
+  =========================== */
+
+  const $logoutModal =
+    $("#logout-modal");
+
+  const $logoutBackBtn =
+    $("#logout-back-btn");
+
+  const $logoutNoBtn =
+    $("#logout-no-btn");
+
+  const $logoutYesBtn =
+    $("#logout-yes-btn");
+
+
+  // Open Logout Modal
+
+  function openLogoutModal() {
+
+    $logoutModal
+      .removeClass("hidden")
+      .addClass("flex");
+
+  }
+
+
+  // Close Logout Modal
+
+  function closeLogoutModal() {
+
+    $logoutModal
+      .removeClass("flex")
+      .addClass("hidden");
+
+  }
+
+
+  // Desktop + Mobile Logout
+
+  $(document).on(
+    "click",
+    "#logout-btn, #mobile-logout-btn",
+    function (e) {
+
+      e.preventDefault();
+
+      e.stopPropagation();
+
+
+      // Close profile dropdown
+
+      closeProfileDropdown();
+
+
+      // Close mobile menu
+
+      closeMobileMenu();
+
+
+      // Open logout confirmation
+
+      openLogoutModal();
+
+    }
+  );
+
+
+  // NO
+
+  $logoutNoBtn.on(
+    "click",
+    function () {
+
+      closeLogoutModal();
+
+    }
+  );
+
+
+  // BACK
+
+  $logoutBackBtn.on(
+    "click",
+    function () {
+
+      closeLogoutModal();
+
+    }
+  );
+
+
+  // YES
+
+  $logoutYesBtn.on(
+    "click",
+    function () {
+
+      /*
+       * For now:
+       * Close the modal only.
+       * Stay on the same page.
+       */
+
+      closeLogoutModal();
+
+    }
+  );
+
+
+  // Click outside modal
+
+  $logoutModal.on(
+    "click",
+    function (e) {
+
+      if (
+        $(e.target).is("#logout-modal")
+      ) {
+
+        closeLogoutModal();
+
+      }
+
+    }
+  );
+
+
+  // Escape Logout Modal
+
+  $(document).on(
+    "keydown",
+    function (e) {
+
+      if (
+        e.key === "Escape" &&
+        !$logoutModal.hasClass("hidden")
+      ) {
+
+        closeLogoutModal();
+
+      }
+
+    }
+  );
+
 });
+
 
 /* ===========================
-   Featured Event Slider
+   CATEGORY SLIDER
 =========================== */
 
-const featuredEventSlider = new Swiper(".featured-event-slider", {
-  slidesPerView: "auto",
-  spaceBetween: 20,
-  freeMode: true,
-  grabCursor: true,
-  watchOverflow: true,
-});
+const categorySwiper = new Swiper(
+  ".categorySwiper",
+  {
+    slidesPerView: "auto",
+    spaceBetween: 16,
+    centerInsufficientSlides: true,
+    freeMode: true,
+    grabCursor: true,
+  }
+);
 
+
+/* ===========================
+   FEATURED EVENT SLIDER
+=========================== */
+
+const featuredEventSlider = new Swiper(
+  ".featured-event-slider",
+  {
+    slidesPerView: "auto",
+    spaceBetween: 20,
+    freeMode: true,
+    grabCursor: true,
+    watchOverflow: true,
+  }
+);
 
 
 /* ===========================
    NAVBAR AUTH BUTTONS
 =========================== */
 
+
 // Navbar Login
-$(document).on("click", "#navbar-login-btn", function () {
 
-    $("#auth-modal").addClass("active");
+$(document).on(
+  "click",
+  "#navbar-login-btn",
+  function () {
 
-    $("#login-tab").trigger("click");
+    $("#auth-modal")
+      .addClass("active");
 
-});
+    $("#login-tab")
+      .trigger("click");
+
+  }
+);
 
 
 // Navbar Sign Up
-$(document).on("click", "#navbar-signup-btn", function () {
 
-    $("#auth-modal").addClass("active");
+$(document).on(
+  "click",
+  "#navbar-signup-btn",
+  function () {
 
-    $("#signup-tab").trigger("click");
+    $("#auth-modal")
+      .addClass("active");
 
-});
+    $("#signup-tab")
+      .trigger("click");
 
-
-
+  }
+);

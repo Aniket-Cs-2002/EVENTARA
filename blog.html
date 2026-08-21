@@ -13,14 +13,14 @@
 </head>
   </head>
   <body>
-    <!-- Header -->
+    <!-- Before Login -->
     <header class="header poppins-medium">
         <nav class="bg-white py-[10px]">
             <div class="container mx-auto h-full">
                 <div class="flex items-center justify-between gap-6 xl:gap-10 h-full">
                     <!-- Logo -->
                     <div class="shrink-0">
-                        <a href="#">
+                        <a href="./index.html">
                             <img src="./images/logo.png" alt="Eventara Logo"
                                 class="w-[80px] sm:w-[90px] xl:w-[105px] h-auto" loading="lazy" />
                         </a>
@@ -30,7 +30,7 @@
                     <ul
                         class="hidden lg:flex  justify-center items-center gap-6 xl:gap-[80px] 2xl:gap-12 whitespace-nowrap">
                         <li>
-                            <a href="index.html" class="text-[20px] poppins-medium text-[var(--color-electric-700)]">
+                            <a href="index.html" class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors">
                                 Home
                             </a>
                         </li>
@@ -43,22 +43,22 @@
                         </li>
 
                         <li>
-                            <a href="courses.html"
+                            <a href="./my-tickits.html"
                                 class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors">
                                 My Tickets
                             </a>
                         </li>
 
                         <li>
-                            <a href="#"
-                                class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors">
+                            <a href="./aboutus.html"
+                                class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors]">
                                 About Us
                             </a>
                         </li>
 
                         <li>
                             <a href="contact.html" target="_blank"
-                                class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors">
+                                class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors]">
                                 Contact
                             </a>
                         </li>
@@ -67,7 +67,10 @@
                     <!-- Right Side Icons -->
                     <div class="hidden lg:flex items-center justify-end gap-4 xl:gap-5 flex-shrink-0">
 
-                        <i data-lucide="search" class="w-6 h-6 cursor-pointer"></i>
+                        <button type="button" id="navbar-search-btn" aria-label="Open search"
+    class="flex items-center justify-center">
+    <i data-lucide="search" class="w-6 h-6 cursor-pointer"></i>
+</button>
                         <!-- Shopping Bag -->
                         <a href="#">
                             <i data-lucide="handbag"></i>
@@ -82,12 +85,35 @@
                         <!-- <a href="#">
                             <img src="./images/user.png" alt="User" class="w-[50px] h-[50px]" />
                         </a> -->
-                        <a href="./auth.html"
-                            class="poppins-medium text-[20px] cursor-pointer hover:text-[var(--color-electric-700)] transition-colors">
+                        <!-- Auth Buttons -->
+<div class="flex items-center gap-[24px]">
 
-                            Log In / Sign Up
+    <!-- Login -->
+    <button
+        type="button"
+        id="navbar-login-btn"
+        class="poppins-semibold text-[20px] lg:text-[20px]
+        text-[var(--color-electric-600)]
+        hover:text-[var(--color-electric-700)]
+        transition-colors duration-300 cursor-pointer">
+        Log In
+    </button>
 
-                        </a>
+    <!-- Sign Up -->
+    <button
+        type="button"
+        id="navbar-signup-btn"
+        class="poppins-semibold text-[20px]lg:text-[20px]
+        text-white
+        bg-[var(--color-electric-600)]
+        hover:bg-[var(--color-electric-700)]
+        rounded-[5px]
+        px-[10px] py-[5px]
+        transition-colors duration-300 cursor-pointer">
+        Sign Up
+    </button>
+
+</div>
                     </div>
 
                     <!-- Mobile Menu Button -->
@@ -98,7 +124,7 @@
             </div>
         </nav>
 
-        <!-- Mobile Menu -->
+        <!-- Before login Mobile Menu -->
         <div id="mobile-navbar" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50">
             <div id="navbar-slide"
                 class="w-[300px] h-full bg-white rounded-r-[24px] shadow-2xl p-6 -translate-x-full transition-transform duration-300 flex flex-col">
@@ -158,23 +184,40 @@
                 <!-- Bottom CTA -->
                 <div class="mt-auto pt-8 flex flex-col gap-4">
 
-                    <a href="./auth.html" class="w-full h-[54px]        rounded-xl border-2 border-[var(--color-electric-600)] text-[var(--color-electric-600)] poppins-medium text-[18px] flex items-center justify-center transition hover:bg-[var(--color-electric-50)]">
+                    <button
+                    class="open-auth-modal w-full h-[54px] rounded-xl border-2 border-[var(--color-electric-600)] text-[var(--color-electric-600)] poppins-medium text-[18px] flex items-center justify-center transition hover:bg-[var(--color-electric-50)]">
 
                     Log In
 
-                    </a>
+                    </button>
 
-                    <a href="./auth.html" class="w-full h-[54px]        rounded-xl border-2 border-[var(--color-electric-600)] text-[var(--color-electric-600)] poppins-medium text-[18px] flex items-center justify-center transition hover:bg-[var(--color-electric-50)]">
+                    <button
+                    class="open-auth-modal w-full h-[54px] rounded-xl border-2 border-[var(--color-electric-600)] text-[var(--color-electric-600)] poppins-medium text-[18px] flex items-center justify-center transition hover:bg-[var(--color-electric-50)]">
 
                     Sign Up
 
-                    </a>
+                    </button>
 
                 </div>
 
             </div>
         </div>
     </header>
+
+    <!-- Search Overlay -->
+    <div id="search-overlay"
+        class="fixed inset-0 z-[10000] hidden bg-black/35 backdrop-blur-[2px] items-start justify-center pt-[110px] px-[24px]">
+        <div id="search-box"
+            class="w-full max-w-[986px] h-[78px] bg-white rounded-full flex items-center pl-[32px] pr-[18px] shadow-[0_10px_35px_rgba(0,0,0,0.12)]">
+            <input id="navbar-search-input" type="text" placeholder="Search..." autocomplete="off"
+                class="flex-1 min-w-0 h-full bg-transparent outline-none border-none text-[22px] text-[#141B34] outfit-semibold placeholder:text-[#858585]" />
+
+            <button type="button" id="search-submit-btn" aria-label="Search"
+                class="w-[58px] h-[58px] shrink-0 rounded-full bg-[#A437E6] hover:bg-[#8D26C9] text-white flex items-center justify-center transition-colors duration-200">
+                <i data-lucide="search" class="w-[30px] h-[30px]"></i>
+            </button>
+        </div>
+    </div>
  
     <div class="bg-[var(--color-electric-100)] py-[20px]">
       <div class="container mx-auto">
@@ -192,9 +235,9 @@
       <div class="container mx-auto">
         <div class="max-w-[1320px]">
           <div class="text-center">
-            <span class="text-[40px] poppins-medium">Blog</span>
-            <h1 class="text-[64px] oswald-semibold">Trending News</h1>
-            <p class="text-[20px] poppins-semibold text-gray-400">
+            <span class="text-[42px] oswald-medium">Blog</span>
+            <h1 class="text-[68px] oswald-bold">Trending News</h1>
+            <p class="text-[20px] poppins-medium text-[#252525] opacity-50">
               The People Behind the Applause: Stories from Our Event Crew
               <br />While performers often take center stage, every successful
               event is powered by an incredible crew working behind the scenes.
@@ -210,15 +253,15 @@
         <div class="max-w-[1320px] mx-auto">
           <!-- Content -->
           <div>
-            <span class="text-[20px] poppins-medium text-gray-400 mb-[10px]"
+            <span class="text-[20px] poppins-medium text-[#252525] opacity-50 mb-[10px]"
               >PARTY TRENDS</span
             >
  
-            <h3 class="text-[40px] oswald-regular mb-[10px]">
+            <h3 class="text-[32px] oswald-medium mb-[10px]">
               THE ULTIMATE SUMMER MUSIC FESTIVAL EXPERIENCE
             </h3>
  
-            <div class="text-[20px] oswald-regular">
+            <div class="text-[20px] poppins-regular">
               <span class="mr-[15px]">by Eventix Team</span>
               <i class="fa-solid fa-clock-rotate-left"></i>
               <span class="text-gray-400 ml-1">2 Days ago</span>
@@ -231,12 +274,51 @@
           </figure>
  
           <!-- Description -->
-          <p class="pt-[20px] text-[20px] text-gray-400 oswald-regular">
+          <p class="pt-[20px] text-[20px] text-[#252525] opacity-50 poppins-medium">
             Experience electrifying performances from world-class artists,
             stunning stage productions, and an unforgettable atmosphere. Whether
             you're attending with friends or meeting fellow music lovers, this
             festival promises memories that last a lifetime.
           </p>
+
+
+          <!-- Social Engagement -->
+          <div class="flex items-center gap-[34px] pt-[28px]">
+
+              <!-- Likes -->
+              <button type="button"
+                  class="flex items-center gap-[10px] oswald-medium text-[24px] text-[#252525] hover:scale-105 transition-transform duration-200">
+
+                  <i class="fa-solid fa-heart text-[#F2455F] text-[36px]"></i>
+
+                  <span>2.3M</span>
+
+              </button>
+
+
+              <!-- Shares -->
+              <button type="button"
+                  class="flex items-center gap-[10px] oswald-medium text-[24px] text-[#252525] hover:scale-105 transition-transform duration-200">
+
+                  <img src="./images/share-icon.png" alt="" class="w-[48px] h-[48px]">
+
+                  <span>33k</span>
+
+              </button>
+
+
+              <!-- Comments -->
+              <button type="button"
+                  class="flex items-center gap-[10px] oswald-medium text-[24px] text-[#252525] hover:scale-105 transition-transform duration-200">
+
+                  <i class="fa-regular fa-comment text-[#777777] text-[36px]"></i>
+
+                  <span>78k</span>
+
+              </button>
+
+          </div>
+
         </div>
       </div>
     </section>
@@ -247,15 +329,15 @@
         <div class="max-w-[1320px] mx-auto">
           <!-- Content -->
           <div>
-            <span class="text-[20px] poppins-medium text-gray-400 mb-[10px]"
+            <span class="text-[20px] poppins-medium text-[#252525] opacity-50 mb-[10px]"
               >NIGHTLIFE</span
             >
  
-            <h3 class="text-[40px] oswald-regular mb-[10px]">
+            <h3 class="text-[32px] oswald-medium mb-[10px]">
               TOP 10 PARTY DESTINATIONS YOU CAN'T MISS THIS YEAR
             </h3>
  
-            <div class="text-[20px] oswald-regular">
+            <div class="text-[20px] poppins-regular">
               <span class="mr-[15px]">by Eventix Team</span>
               <i class="fa-solid fa-clock-rotate-left"></i>
               <span class="text-gray-400 ml-1">5 Days ago</span>
@@ -268,11 +350,48 @@
           </figure>
  
           <!-- Description -->
-          <p class="pt-[20px] text-[20px] text-gray-400 oswald-regular">
+          <p class="pt-[20px] text-[20px] text-[#252525] opacity-50 poppins-medium">
             From rooftop celebrations to beach festivals and luxury club nights,
             discover the hottest party destinations featuring incredible DJs,
             vibrant crowds, and unforgettable entertainment.
           </p>
+
+          <!-- Social Engagement -->
+          <div class="flex items-center gap-[34px] pt-[28px]">
+
+              <!-- Likes -->
+              <button type="button"
+                  class="flex items-center gap-[10px] oswald-medium text-[24px] text-[#252525] hover:scale-105 transition-transform duration-200">
+
+                  <i class="fa-solid fa-heart text-[#F2455F] text-[36px]"></i>
+
+                  <span>2.3M</span>
+
+              </button>
+
+
+              <!-- Shares -->
+              <button type="button"
+                  class="flex items-center gap-[10px] oswald-medium text-[24px] text-[#252525] hover:scale-105 transition-transform duration-200">
+
+                  <img src="./images/share-icon.png" alt="" class="w-[48px] h-[48px]">
+
+                  <span>33k</span>
+
+              </button>
+
+
+              <!-- Comments -->
+              <button type="button"
+                  class="flex items-center gap-[10px] oswald-medium text-[24px] text-[#252525] hover:scale-105 transition-transform duration-200">
+
+                  <i class="fa-regular fa-comment text-[#777777] text-[36px]"></i>
+
+                  <span>78k</span>
+
+              </button>
+
+          </div>
         </div>
       </div>
     </section>
@@ -282,20 +401,20 @@
       <div class="container mx-auto">
         <div class="max-w-[1320px] mx-auto">
           <div class="text-center">
-            <h2 class="text-[32px] sm:text-[42px] md:text-[52px] lg:text-[64px] oswald-semibold">FEATURED</h2>
+            <h2 class="text-[32px] sm:text-[42px] md:text-[52px] lg:text-[52px] oswald-semibold">FEATURED</h2>
           </div>
           <!-- Grid -->
           <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-12 gap-[20px] lg:gap-[24px] mt-[40px]">
             <!-- Left Card -->
             <div class="col-span-1 md:col-span-1 xl:col-span-3">
               <!-- Card 1 -->
-              <div class="border rounded-[10px] h-auto xl:h-[493px] overflow-hidden">
+              <div class="border border-[#25252520]  rounded-[10px] h-auto xl:h-[493px] overflow-hidden">
                 <div class="p-[20px]">
-                  <span class="text-[16px] sm:text-[18px] lg:text-[20px] poppins-semibold text-gray-400">
+                  <span class="text-[16px] sm:text-[18px] lg:text-[20px] poppins-semibold text-[#252525] opacity-50">
                     Food experiences
                   </span>
  
-                  <h3 class="text-[22px] sm:text-[26px] lg:text-[30px] oswald-semibold mt-[10px]">
+                  <h3 class="text-[22px] sm:text-[26px] lg:text-[30px] oswald-medium mt-[10px]">
                     our food experiences offer something for every taste.
                   </h3>
                 </div>
@@ -310,7 +429,7 @@
  
             <!-- Center 2 -->
             <div class="col-span-1 md:col-span-1 xl:col-span-6">
-              <div class="border rounded-[10px] h-auto xl:h-[531px] flex flex-col overflow-hidden">
+              <div class="border border-[#25252520] rounded-[10px] h-auto xl:h-[531px] flex flex-col overflow-hidden">
                 <img
                   src="./images/featured(2).png"
                   class="w-full h-[220px] sm:h-[260px] lg:h-[300px] object-cover"
@@ -318,11 +437,11 @@
                 />
  
                 <div class="p-[20px]">
-                  <span class="text-[16px] sm:text-[18px] lg:text-[20px] poppins-semibold text-gray-400">
+                  <span class="text-[16px] sm:text-[18px] lg:text-[20px] poppins-semibold text-[#252525] opacity-50">
                     Green Rooms
                   </span>
  
-                  <h3 class="text-[22px] sm:text-[26px] lg:text-[30px] oswald-semibold mt-[10px]">
+                  <h3 class="text-[22px] sm:text-[26px] lg:text-[30px] oswald-medium mt-[10px]">
                     Theatre Lives On: Why Live Performances Continue to Inspire
                     Audiences ,What Makes a Music Festival Truly Unforgettable?
                   </h3>
@@ -332,13 +451,13 @@
  
             <div class="col-span-1 md:col-span-2 xl:col-span-3">
               <!-- Card 3-->
-              <div class="border rounded-[10px] h-auto xl:h-[446px] overflow-hidden">
+              <div class="border border-[#25252520] rounded-[10px] h-auto xl:h-[446px] overflow-hidden">
                 <div class="p-[20px]">
-                  <span class="text-[16px] sm:text-[18px] lg:text-[20px] poppins-semibold text-gray-400">
+                  <span class="text-[16px] sm:text-[18px] lg:text-[20px] poppins-semibold text-[#252525] opacity-50">
                     Food experiences
                   </span>
  
-                  <h3 class="text-[22px] sm:text-[26px] lg:text-[30px] oswald-semibold mt-[10px]">
+                  <h3 class="text-[22px] sm:text-[26px] lg:text-[30px] oswald-medium mt-[10px]">
                     our food experiences offer something for every taste.
                   </h3>
                 </div>
@@ -353,7 +472,7 @@
  
             <!-- Bottom Left -->
             <div class="col-span-1 md:col-span-2 xl:col-span-8">
-              <div class="border rounded-[10px] h-auto xl:h-[531px] flex flex-col overflow-hidden">
+              <div class="border border-[#25252520] rounded-[10px] h-auto xl:h-[531px] flex flex-col overflow-hidden">
                 <img
                   src="./images/featured(4).png"
                   class="w-full h-[220px] sm:h-[260px] lg:h-[300px] object-cover"
@@ -361,11 +480,11 @@
                 />
  
                 <div class="p-[20px] flex-1">
-                  <span class="text-[16px] sm:text-[18px] lg:text-[20px] poppins-semibold text-gray-400">
+                  <span class="text-[16px] sm:text-[18px] lg:text-[20px] poppins-semibold text-[#252525] opacity-50">
                     Art Installations
                   </span>
  
-                  <h3 class="text-[24px] sm:text-[28px] lg:text-[32px] oswald-semibold mt-[10px]">
+                  <h3 class="text-[22px] sm:text-[26px] lg:text-[30px] oswald-medium mt-[10px]">
                     Art installations transform event spaces into immersive
                     visual experiences. From interactive sculptures and
                     illuminated displays to large-scale murals and digital art
@@ -377,13 +496,13 @@
  
             <!-- Bottom Right -->
             <div class="col-span-1 md:col-span-2 xl:col-span-4">
-              <div class="border rounded-[10px] h-auto xl:h-[531px] flex flex-col overflow-hidden">
+              <div class="border border-[#25252520] rounded-[10px] h-auto xl:h-[531px] flex flex-col overflow-hidden">
                 <div class="p-[20px]">
-                  <span class="text-[16px] sm:text-[18px] lg:text-[20px] poppins-semibold text-gray-400">
+                  <span class="text-[16px] sm:text-[18px] lg:text-[20px] poppins-semibold text-[#252525] opacity-50">
                     Food experiences
                   </span>
  
-                  <h3 class="text-[24px] sm:text-[28px] lg:text-[32px] oswald-semibold mt-[10px]">
+                  <h3 class="text-[22px] sm:text-[26px] lg:text-[30px] oswald-medium mt-[10px]">
                     Discover Style, Trends & Creativity
                   </h3>
                 </div>
@@ -538,12 +657,472 @@
             <img src="./images/gyt.png" class="w-[150px] animate-slow-spin" />
         </div>
     </footer>
+
+            <!-- AUTH MODAL -->
+    <div id="auth-modal" class="auth-modal">
+        <div class="auth-modal-content">
+            <section class="w-full flex justify-center">
+
+        <div class="w-full  h-auto bg-white rounded-[32px] shadow-[0_20px_50px_rgba(15,23,42,0.08)] ">
+
+            <!-- Back -->
+
+            <button type="button" id="back-btn"
+                class="w-[24px] h-[24px] flex items-center justify-center rounded-full hover:bg-gray-100 transition my-[20px] ml-[20px]">
+
+                <i class="fa-solid fa-arrow-left text-[22px] text-[#141B34]"></i>
+
+            </button>
+
+            <!-- Inner Wrapper -->
+
+            <div class="w-full px-[50px]">
+
+
+                <!-- AUTH SECTION -->
+
+                <div id="auth-section">
+
+
+
+                    <!-- Header -->
+
+                    <div class="text-center ">
+
+                        <h1 class="oswald-medium text-[29px] text-[#222222]">
+
+                            Welcome to Eventara
+
+                        </h1>
+
+                        <p class="poppins-regular text-[16px] text-[#727272] mt-[12px] leading-[26px]">
+
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+                        </p>
+
+                    </div>
+                    <!-- Tabs -->
+
+                    <div
+                        class="mt-[15px] h-[70px] border border-[#BFBFBF] rounded-[16px] p-[6px] flex max-w-[520px] mx-auto">
+
+                        <!-- Login -->
+
+                        <button id="login-tab"
+                            class="flex-1 rounded-[12px] bg-[#EAD6F9] poppins-medium text-[20px] text-[#111] shadow-sm transition"
+                            type="button">
+
+                            Log In
+
+                        </button>
+
+                        <!-- Signup -->
+
+                        <button id="signup-tab"
+                            class="flex-1 rounded-[12px] bg-white poppins-medium text-[20px] text-[#111] transition"
+                            type="button">
+
+                            Sign Up
+
+                        </button>
+
+                    </div>
+
+                    <!-- FORM STARTS HERE -->
+                    <form id="login-form" class="mt-[42px] flex flex-col">
+
+                        <!-- Email -->
+
+                        <div class="mb-[20px]">
+
+                            <label class="block poppins-regular text-[20px] text-[#2B2B2B] mb-[10px]">
+
+                                Email address
+
+                            </label>
+
+                            <input type="email" placeholder="Enter your email address"
+                                class="w-full h-[72px] rounded-[14px] border border-[#CFCFCF] px-[22px] text-[16px] poppins-regular text-[#2B2B2B] placeholder:text-[#A6A6A6] outline-none focus:border-[#AE40E4] transition" />
+
+                        </div>
+
+                        <!-- Password -->
+
+                        <div>
+
+                            <label class="block poppins-regular text-[20px] text-[#2B2B2B] mb-[10px]">
+
+                                Password
+
+                            </label>
+
+                            <div class="relative">
+
+                                <input id="login-password" type="password" placeholder="Enter your password"
+                                    class="w-full h-[72px] rounded-[14px] border border-[#CFCFCF] px-[22px] pr-[60px] text-[16px] poppins-regular text-[#2B2B2B] placeholder:text-[#A6A6A6] outline-none focus:border-[#AE40E4] transition" />
+
+                                <button type="button"
+                                    class="toggle-password absolute right-[20px] top-1/2 -translate-y-1/2 text-[#9D9D9D]">
+
+                                    <i class="fa-regular fa-eye-slash text-[22px]"></i>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Forgot -->
+
+                        <div class="flex justify-end mt-[15px]">
+
+                            <a href="#" id="forgot-password-link"
+                                class="poppins-regular text-[15px] text-[#6c6c6c] hover:underline">
+
+                                Forgot password?
+
+                            </a>
+
+                        </div>
+
+                        <!-- Button -->
+
+                        <button type="submit"
+                            class=" mt-[10px] w-full h-[60px] rounded-[5px] poppins-semibold text-[20px] bg-[var(--color-electric-600)] text-white">
+
+                            Log In
+
+                        </button>
+
+                    </form>
+
+                    <!-- SIGNUP FORM -->
+                    <form id="signup-form" class="mt-[42px] flex flex-col hidden">
+
+                        <!-- Full Name -->
+                        <div class="mb-[20px]">
+
+                            <label class="block poppins-regular text-[20px] text-[#2B2B2B] mb-[10px]">
+                                Full Name
+                            </label>
+
+                            <input type="text" placeholder="Enter your full name"
+                                class="w-full h-[72px] rounded-[14px] border border-[#CFCFCF] px-[22px] text-[16px] poppins-regular text-[#2B2B2B] placeholder:text-[#A6A6A6] outline-none focus:border-[#AE40E4] transition">
+
+                        </div>
+
+                        <!-- Email -->
+                        <div class="mb-[20px]">
+
+                            <label class="block poppins-regular text-[20px] text-[#2B2B2B] mb-[10px]">
+                                Email address
+                            </label>
+
+                            <input type="email" placeholder="Enter your email address"
+                                class="w-full h-[72px] rounded-[14px] border border-[#CFCFCF] px-[22px] text-[16px] poppins-regular text-[#2B2B2B] placeholder:text-[#A6A6A6] outline-none focus:border-[#AE40E4] transition">
+
+                        </div>
+
+                        <!-- Password -->
+                        <div class="mb-[20px]">
+
+                            <label class="block poppins-regular text-[20px] text-[#2B2B2B] mb-[10px]">
+                                Password
+                            </label>
+
+                            <div class="relative">
+
+                                <input id="signup-password" type="password" placeholder="Enter your password"
+                                    class="w-full h-[72px] rounded-[14px] border border-[#CFCFCF] px-[22px] pr-[60px] text-[16px] poppins-regular text-[#2B2B2B] placeholder:text-[#A6A6A6] outline-none focus:border-[#AE40E4] transition">
+
+                                <button type="button"
+                                    class="toggle-password absolute right-[20px] top-1/2 -translate-y-1/2 text-[#9D9D9D]">
+
+                                    <i class="fa-regular fa-eye-slash text-[22px]"></i>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Terms & Conditions -->
+
+                        <div class="flex items-start gap-[12px]">
+
+                            <input type="checkbox" id="terms-checkbox"
+                                class="mt-[5px] w-[22px] h-[22px] rounded-[6px] border border-[#D9D9D9] accent-[var(--color-electric-600)] cursor-pointer">
+
+                            <label for="terms-checkbox"
+                                class="poppins-regular text-[15px] leading-[30px] text-[#6C6C6C]">
+
+                                By clicking
+                                <span class="poppins-medium text-[#222]">Sign Up</span>,
+                                you agree to our
+
+                                <a href="#" class="text-[var(--color-electric-600)] hover:underline">
+                                    Terms &amp; Conditions
+                                </a>
+
+                                and
+
+                                <a href="#" class="text-[var(--color-electric-600)] hover:underline">
+                                    Privacy Policy
+                                </a>
+
+                            </label>
+
+                        </div>
+
+                        <!-- Button -->
+
+                        <button type="submit"
+                            class="mt-[10px] w-full h-[60px] rounded-[5px] poppins-semibold text-[20px] bg-[var(--color-electric-600)] text-white">
+
+                            Sign Up
+
+                        </button>
+
+                    </form>
+
+                    <!-- Divider -->
+
+                    <div class="mt-[10px]">
+
+                        <div class="flex items-center gap-[14px]">
+
+                            <div class="flex-1 h-[1px] bg-[#E5E5E5]"></div>
+
+                            <p class="poppins-medium text-[14px] text-[#8D8D8D] whitespace-nowrap">
+
+                                Or continue with
+
+                            </p>
+
+                            <div class="flex-1 h-[1px] bg-[#E5E5E5]"></div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Social -->
+
+                    <div class="flex justify-center items-center gap-[18px] my-[30px]">
+
+                        <!-- Google Button -->
+
+    <a href="#"
+
+        class=" px-[66px] py-[11.5px] rounded-[45px]
+
+        border border-[#F0F0F0]
+
+        bg-white
+
+        shadow-[0_8px_12px_rgba(0,0,0,0.16)]
+
+        flex items-center justify-center
+
+        gap-[20px]
+
+        hover:shadow-[0_10px_18px_rgba(0,0,0,0.20)]
+
+        transition-all duration-300">
+
+        <!-- Google Icon -->
+
+        <span
+
+            class="w-[38px] h-[38px] rounded-full
+
+            bg-[#F7F3F5]
+
+            flex items-center justify-center
+
+            shrink-0">
+
+            <img
+
+                src="./images/google.png"
+
+                class="w-[38px] h-[38px] object-contain"
+
+                alt="Google">
+
+        </span>
+
+        <!-- Text -->
+
+        <span
+
+            class="poppins-semibold text-[15px] text-[#222222]">
+
+            Sign up with Google
+
+        </span>
+
+    </a>
+
+                    </div>
+
+
+                </div>
+
+                <!-- Forgot password -->
+
+                <div id="forgot-section" class="hidden">
+
+                    <div class="text-center">
+
+                        <h1 class="oswald-medium text-[29px] text-[#222222]">
+                            Confirm Your Email Address
+                        </h1>
+
+                        <p class="poppins-regular text-[16px] text-[#727272] mt-[12px] leading-[26px]">
+                            Enter your email address to receive a one-time password (OTP).
+                        </p>
+
+                    </div>
+
+                    <form id="forgot-form" class="mt-[42px] flex flex-col">
+
+                        <div class="mb-[20px]">
+
+                            <label class="block poppins-regular text-[20px] text-[#2B2B2B] mb-[10px]">
+                                Email address
+                            </label>
+
+                            <input type="email" placeholder="Enter your email address"
+                                class="w-full h-[72px] rounded-[14px] border border-[#CFCFCF] px-[22px] text-[16px] poppins-regular text-[#2B2B2B] placeholder:text-[#A6A6A6] outline-none focus:border-[#AE40E4] transition">
+
+                        </div>
+
+                        <div class="flex justify-end mb-[5px]">
+
+                            <button type="button"
+                                class="text-[var(--color-electric-600)] poppins-medium hover:underline">
+                                Get OTP
+                            </button>
+
+                        </div>
+
+                        <div class="mb-[30px]">
+
+                            <label class="block poppins-regular text-[20px] text-[#2B2B2B] mb-[10px]">
+                                OTP
+                            </label>
+
+                            <input type="text" placeholder="Enter the 6-digit OTP"
+                                class="w-full h-[72px] rounded-[14px] border border-[#CFCFCF] px-[22px] text-[16px] poppins-regular text-[#2B2B2B] placeholder:text-[#A6A6A6] outline-none focus:border-[#AE40E4] transition">
+
+                        </div>
+
+                        <button type="submit"
+                            class="mb-[50px] w-full h-[60px] rounded-[5px] poppins-semibold text-[20px] bg-[var(--color-electric-600)] text-white">
+
+                            Confirm
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+                <!-- CREATE PASSWORD -->
+
+                <div id="create-password-section" class="hidden">
+
+                    <div class="text-center">
+
+                        <h1 class="oswald-medium text-[29px] text-[#222222]">
+                            Change Password
+                        </h1>
+
+                        <p class="poppins-regular text-[16px] text-[#727272] mt-[12px] leading-[26px]">
+                            Create a strong password for your Eventara account.
+                        </p>
+
+                    </div>
+
+                    <form id="create-password-form" class="mt-[42px] flex flex-col">
+
+                        <!-- New Password -->
+
+                        <div class="mb-[20px]">
+
+                            <label class="block poppins-regular text-[20px] text-[#2B2B2B] mb-[10px]">
+                                New Password
+                            </label>
+
+                            <div class="relative">
+
+                                <input id="new-password" type="password" placeholder="Enter your new password"
+                                    class="w-full h-[72px] rounded-[14px] border border-[#CFCFCF] px-[22px] pr-[60px] text-[16px] poppins-regular text-[#2B2B2B] placeholder:text-[#A6A6A6] outline-none focus:border-[#AE40E4] transition">
+
+                                <button type="button"
+                                    class="toggle-password absolute right-[20px] top-1/2 -translate-y-1/2 text-[#9D9D9D]">
+
+                                    <i class="fa-regular fa-eye-slash text-[22px]"></i>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Confirm Password -->
+
+                        <div class="mb-[30px]">
+
+                            <label class="block poppins-regular text-[20px] text-[#2B2B2B] mb-[10px]">
+                                Confirm Password
+                            </label>
+
+                            <div class="relative">
+
+                                <input id="confirm-password" type="password" placeholder="Confirm your password"
+                                    class="w-full h-[72px] rounded-[14px] border border-[#CFCFCF] px-[22px] pr-[60px] text-[16px] poppins-regular text-[#2B2B2B] placeholder:text-[#A6A6A6] outline-none focus:border-[#AE40E4] transition">
+
+                                <button type="button"
+                                    class="toggle-password absolute right-[20px] top-1/2 -translate-y-1/2 text-[#9D9D9D]">
+
+                                    <i class="fa-regular fa-eye-slash text-[22px]"></i>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                        <button type="submit"
+                            class="mb-[50px] w-full h-[60px] rounded-[5px] poppins-semibold text-[20px] bg-[var(--color-electric-600)] text-white">
+
+                            Confirm
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+
+    </section>
+        </div>
+    </div>
  
     <script src="https://cdn.jsdelivr.net/npm/swiper@14/swiper-bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>lucide.createIcons();</script>
     <script src="navbar.js"></script>
+    <script src="auth.js"></script>
   </body>
 </html>
  
