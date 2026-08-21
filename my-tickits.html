@@ -17,439 +17,610 @@
 
 
 <body>
-    <!-- heading -->
+    <!-- Header. -->
+
     <!-- After Login -->
     <header class="header poppins-medium">
-        <nav class="bg-white py-[10px]">
-            <div class="container mx-auto h-full">
-                <div class="flex items-center justify-between gap-6 xl:gap-10 h-full">
-                    <!-- Logo -->
-                    <div class="shrink-0">
-                        <a href="./index.html">
-                            <img src="./images/logo.png" alt="Eventara Logo"
-                                class="w-[80px] sm:w-[90px] xl:w-[105px] h-auto" loading="lazy" />
-                        </a>
-                    </div>
+      <nav class="bg-white py-[10px]">
+        <div class="container mx-auto h-full">
+          <div class="flex items-center justify-between gap-6 xl:gap-10 h-full">
+            <!-- Logo -->
+            <div class="shrink-0">
+              <a href="./index.html">
+                <img
+                  src="./images/logo.png"
+                  alt="Eventara Logo"
+                  class="w-[80px] sm:w-[90px] xl:w-[105px] h-auto"
+                  loading="lazy"
+                />
+              </a>
+            </div>
 
-                    <!-- Desktop Navigation -->
-                    <ul
-                        class="hidden lg:flex justify-center items-center gap-6 xl:gap-[80px] 2xl:gap-12 whitespace-nowrap">
-                        <li>
-                            <a href="./index.html" class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors">
-                                Home
-                            </a>
-                        </li>
+            <!-- Desktop Navigation -->
+            <ul
+              class="hidden lg:flex justify-center items-center gap-6 xl:gap-[80px] 2xl:gap-12 whitespace-nowrap"
+            >
+              <li>
+                <a
+                  href="./index.html"
+                  class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors"
+                >
+                  Home
+                </a>
+              </li>
 
-                        <li>
-                            <a href="./event.html" target="_self"
-                                class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors">
-                                Events
-                            </a>
-                        </li>
+              <li>
+                <a
+                  href="./event.html"
+                  target="_self"
+                  class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors"
+                >
+                  Events
+                </a>
+              </li>
 
-                        <li>
-                            <a href="./my-tickits.html"
-                                class="text-[20px] poppins-medium text-[var(--color-electric-700)]">
-                                My Tickets
-                            </a>
-                        </li>
+              <li>
+                <a
+                  href="./my-tickits.html"
+                  class="text-[20px] poppins-medium text-[var(--color-electric-700)]"
+                >
+                  My Tickets
+                </a>
+              </li>
 
-                        <li>
-                            <a href="aboutus.html"
-                                class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors">
-                                About Us
-                            </a>
-                        </li>
+              <li>
+                <a
+                  href="aboutus.html"
+                  class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors"
+                >
+                  About Us
+                </a>
+              </li>
 
-                        <li>
-                            <a href="contact.html" target="_blank"
-                                class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors">
-                                Contact
-                            </a>
-                        </li>
-                    </ul>
+              <li>
+                <a
+                  href="contact.html"
+                  target="_blank"
+                  class="text-[20px] poppins-medium hover:text-[var(--color-electric-700)] transition-colors"
+                >
+                  Contact
+                </a>
+              </li>
+            </ul>
 
-                    <!-- Right Side Icons -->
-                    <div class="hidden lg:flex items-center justify-end gap-4 xl:gap-5 flex-shrink-0">
-                        <button type="button" id="navbar-search-btn" aria-label="Open search"
-                            class="flex items-center justify-center">
-                            <i data-lucide="search" class="w-6 h-6 cursor-pointer"></i>
-                        </button>
-                        <!-- Shopping Bag -->
-                        <a href="#">
-                            <i data-lucide="handbag"></i>
-                        </a>
+            <!-- Right Side Icons -->
+            <div
+              class="hidden lg:flex items-center justify-end gap-4 xl:gap-5 flex-shrink-0"
+            >
+              <button
+                type="button"
+                id="navbar-search-btn"
+                aria-label="Open search"
+                class="flex items-center justify-center"
+              >
+                <i data-lucide="search" class="w-6 h-6 cursor-pointer"></i>
+              </button>
+              <!-- Shopping Bag -->
+              <a href="./cart.html">
+                <i data-lucide="handbag"></i>
+              </a>
 
-                        <!-- Bell -->
-                        <a href="#">
-                            <i class="" data-lucide="bell"></i>
-                        </a>
+              <!-- Bell -->
+              <a href="#">
+                <i class="" data-lucide="bell"></i>
+              </a>
 
-                        <!-- User -->
-                        <!-- User Profile -->
-                        <div class="relative" id="profile-dropdown-wrapper">
-                            <!-- Profile Button -->
-                            <button type="button" id="profile-dropdown-btn"
-                                class="block rounded-full focus:outline-none cursor-pointer"
-                                aria-label="Open profile menu" aria-expanded="false">
-                                <img src="./images/user.png" alt="User" class="w-[50px] h-[50px]" />
-                            </button>
+              <!-- User -->
+              <!-- User Profile -->
+              <div class="relative" id="profile-dropdown-wrapper">
+                <!-- Profile Button -->
+                <button
+                  type="button"
+                  id="profile-dropdown-btn"
+                  class="block rounded-full focus:outline-none cursor-pointer"
+                  aria-label="Open profile menu"
+                  aria-expanded="false"
+                >
+                  <img
+                    src="./images/user.png"
+                    alt="User"
+                    class="w-[50px] h-[50px]"
+                  />
+                </button>
 
-                            <!-- Profile Dropdown -->
-                            <div id="profile-dropdown"
-                                class="absolute right-0 top-[calc(100%+14px)] w-[430px] max-h-[calc(100vh-110px)] overflow-y-auto bg-[#F9EEFF] rounded-[28px] shadow-[0_12px_35px_rgba(0,0,0,0.18)] border border-[#E9D5FF] px-[20px] z-[9999] opacity-0 invisible pointer-events-none translate-y-[-8px] scale-[0.98] origin-top-right transition-all duration-200 ease-out">
-                                <!-- =========================
+                <!-- Profile Dropdown -->
+                <div
+                  id="profile-dropdown"
+                  class="absolute right-0 top-[calc(100%+14px)] w-[430px] max-h-[calc(100vh-110px)] overflow-y-auto bg-[#F9EEFF] rounded-[28px] shadow-[0_12px_35px_rgba(0,0,0,0.18)] border border-[#E9D5FF] px-[20px] z-[9999] opacity-0 invisible pointer-events-none translate-y-[-8px] scale-[0.98] origin-top-right transition-all duration-200 ease-out"
+                >
+                  <!-- =========================
              PROFILE HEADER
         ========================== -->
 
-                                <p class="outfit-semibold text-[20px] text-[#141B34] mt-[20px] mb-[20px]">
-                                    Profile
-                                </p>
+                  <p
+                    class="outfit-semibold text-[20px] text-[#141B34] mt-[20px] mb-[20px]"
+                  >
+                    Profile
+                  </p>
 
-                                <div class="bg-white rounded-[24px] overflow-hidden">
+                  <div class="bg-white rounded-[24px] overflow-hidden">
+                    <!-- User -->
+                    <div
+                      class="flex flex-col items-center justify-center px-[20px] py-[30px]"
+                    >
+                      <img
+                        src="./images/user.png"
+                        alt="Profile"
+                        class="w-[80px] h-[80px] rounded-full object-cover"
+                      />
 
-                                    <!-- User -->
-                                    <div class="flex flex-col items-center justify-center px-[20px] py-[30px]">
-                                        <img src="./images/user.png" alt="Profile"
-                                            class="w-[80px] h-[80px] rounded-full object-cover " />
+                      <h3
+                        class="outfit-semibold text-[20px] text-[#000000] mt-[22px]"
+                      >
+                        Eve Rozier
+                      </h3>
 
-                                        <h3 class="outfit-semibold text-[20px] text-[#000000] mt-[22px]">
-                                            Eve Rozier
-                                        </h3>
+                      <p
+                        class="outfit-regular text-[15px] text-[#000000] opacity-50 mt-[4px]"
+                      >
+                        abc@gmail.com
+                      </p>
 
-                                        <p class="outfit-regular text-[15px] text-[#000000] opacity-50 mt-[4px]">
-                                            abc@gmail.com
-                                        </p>
+                      <!-- Edit Profile -->
+                      <button
+                        type="button"
+                        class="mt-[22px] px-[73px] py-[19px] rounded-[10px] bg-[#C477F0] text-white outfit-medium text-[15px] flex items-center justify-center gap-4 hover:bg-[#B45BE8] transition-colors duration-300"
+                      >
+                        Edit profile
 
-                                        <!-- Edit Profile -->
-                                        <button type="button"
-                                            class="mt-[22px] px-[73px] py-[19px] rounded-[10px] bg-[#C477F0] text-white outfit-medium text-[15px] flex items-center justify-center gap-4 hover:bg-[#B45BE8] transition-colors duration-300">
-                                            Edit profile
+                        <i class="fa-solid fa-pen text-[15px]"></i>
+                      </button>
+                    </div>
+                  </div>
 
-                                            <i class="fa-solid fa-pen text-[15px]"></i>
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <!-- =========================
+                  <!-- =========================
              FIRST MENU GROUP
         ========================== -->
 
-                                <div class="mt-[12px] flex flex-col gap-[8px]">
-                                    <!-- My Tickets -->
-                                    <a href="#"
-                                        class=" w-full grid grid-cols-[44px_minmax(0,1fr)_32px] items-center gap-[14px] p-[20px] bg-white rounded-[10px] text-[#141B34] outfit-regular text-[15px] transition-all duration-200 hover:bg-[#FCF7FF] hover:-translate-y-[1px] [&>i:first-child]:justify-self-center">
-                                        <i data-lucide="ticket" class="w-[24px] h-[24px]"> </i>
+                  <div class="mt-[12px] flex flex-col gap-[8px]">
+                    <!-- My Tickets -->
+                    <a
+                      href="./my-tickits.html"
+                      class="w-full grid grid-cols-[44px_minmax(0,1fr)_32px] items-center gap-[14px] p-[20px] bg-white rounded-[10px] text-[#141B34] outfit-regular text-[15px] transition-all duration-200 hover:bg-[#FCF7FF] hover:-translate-y-[1px] [&>i:first-child]:justify-self-center"
+                    >
+                      <i data-lucide="ticket" class="w-[24px] h-[24px]"> </i>
 
-                                        <span> My Tickets </span>
+                      <span> My Tickets </span>
 
-                                        <i data-lucide="chevron-right"
-                                            class="justify-self-end w-[24px] h-[24px] p-[4px] border-2 border-[#141B34] rounded-full">
-                                        </i>
-                                    </a>
+                      <i
+                        data-lucide="chevron-right"
+                        class="justify-self-end w-[24px] h-[24px] p-[4px] border-2 border-[#141B34] rounded-full"
+                      >
+                      </i>
+                    </a>
 
-                                    <!-- Cart -->
-                                    <a href="#"
-                                        class=" w-full grid grid-cols-[44px_minmax(0,1fr)_32px] items-center gap-[14px] p-[20px] bg-white rounded-[10px] text-[#141B34] outfit-regular text-[15px] transition-all duration-200 hover:bg-[#FCF7FF] hover:-translate-y-[1px] [&>i:first-child]:justify-self-center">
-                                        <i data-lucide="shopping-bag" class="w-[24px] h-[24px]"> </i>
+                    <!-- Cart -->
+                    <a
+                      href="./cart.html"
+                      class="w-full grid grid-cols-[44px_minmax(0,1fr)_32px] items-center gap-[14px] p-[20px] bg-white rounded-[10px] text-[#141B34] outfit-regular text-[15px] transition-all duration-200 hover:bg-[#FCF7FF] hover:-translate-y-[1px] [&>i:first-child]:justify-self-center"
+                    >
+                      <i data-lucide="shopping-bag" class="w-[24px] h-[24px]">
+                      </i>
 
-                                        <span> My Cart </span>
+                      <span> My Cart </span>
 
-                                        <i data-lucide="chevron-right"
-                                            class="justify-self-end w-[24px] h-[24px] p-[4px] border-2 border-[#141B34] rounded-full">
-                                        </i>
-                                    </a>
+                      <i
+                        data-lucide="chevron-right"
+                        class="justify-self-end w-[24px] h-[24px] p-[4px] border-2 border-[#141B34] rounded-full"
+                      >
+                      </i>
+                    </a>
 
-                                    <!-- Wishlist -->
-                                    <a href="#"
-                                        class=" w-full grid grid-cols-[44px_minmax(0,1fr)_32px] items-center gap-[14px] p-[20px] bg-white rounded-[10px] text-[#141B34] outfit-regular text-[15px] transition-all duration-200 hover:bg-[#FCF7FF] hover:-translate-y-[1px] [&>i:first-child]:justify-self-center">
-                                        <i data-lucide="heart" class="w-[24px] h-[24px]"> </i>
+                    <!-- Wishlist -->
+                    <a
+                      href="./wishlist.html"
+                      class="w-full grid grid-cols-[44px_minmax(0,1fr)_32px] items-center gap-[14px] p-[20px] bg-white rounded-[10px] text-[#141B34] outfit-regular text-[15px] transition-all duration-200 hover:bg-[#FCF7FF] hover:-translate-y-[1px] [&>i:first-child]:justify-self-center"
+                    >
+                      <i data-lucide="heart" class="w-[24px] h-[24px]"> </i>
 
-                                        <span> Wishlist </span>
+                      <span> Wishlist </span>
 
-                                        <i data-lucide="chevron-right"
-                                            class="justify-self-end w-[24px] h-[24px] p-[4px] border-2 border-[#141B34] rounded-full">
-                                        </i>
-                                    </a>
-                                </div>
+                      <i
+                        data-lucide="chevron-right"
+                        class="justify-self-end w-[24px] h-[24px] p-[4px] border-2 border-[#141B34] rounded-full"
+                      >
+                      </i>
+                    </a>
+                  </div>
 
-                                <!-- Divider -->
-                                <div class="my-[12px] h-[1px] bg-[#transparent]"></div>
+                  <!-- Divider -->
+                  <div class="my-[12px] h-[1px] bg-[#transparent]"></div>
 
-                                <!-- =========================
+                  <!-- =========================
              SECOND MENU GROUP
         ========================== -->
 
-                                <div class="flex flex-col gap-[8px]">
-                                    
-                                    <!-- Get Help -->
-                                    <a href="#"
-                                        class=" w-full grid grid-cols-[44px_minmax(0,1fr)_32px] items-center gap-[14px] p-[20px] bg-white rounded-[10px] text-[#141B34] outfit-regular text-[15px] transition-all duration-200 hover:bg-[#FCF7FF] hover:-translate-y-[1px] [&>i:first-child]:justify-self-center">
-                                        <i data-lucide="headphones" class="w-[24px] h-[24px]">
-                                        </i>
+                  <div class="flex flex-col gap-[8px]">
+                    <!-- Get Help -->
+                    <a
+                      href="./contact.html"
+                      class="w-full grid grid-cols-[44px_minmax(0,1fr)_32px] items-center gap-[14px] p-[20px] bg-white rounded-[10px] text-[#141B34] outfit-regular text-[15px] transition-all duration-200 hover:bg-[#FCF7FF] hover:-translate-y-[1px] [&>i:first-child]:justify-self-center"
+                    >
+                      <i data-lucide="headphones" class="w-[24px] h-[24px]">
+                      </i>
 
-                                        <span> Get Help </span>
+                      <span> Get Help </span>
 
-                                        <i data-lucide="chevron-right"
-                                            class="justify-self-end w-[24px] h-[24px] p-[4px] border-2 border-[#141B34] rounded-full">
-                                        </i>
-                                    </a>
-
-                                    <!-- Change Password -->
-                                    <a href="#"
-                                        class=" w-full grid grid-cols-[44px_minmax(0,1fr)_32px] items-center gap-[14px] p-[20px] bg-white rounded-[10px] text-[#141B34] outfit-regular text-[15px] transition-all duration-200 hover:bg-[#FCF7FF] hover:-translate-y-[1px] [&>i:first-child]:justify-self-center">
-                                        <i data-lucide="shield" class="w-[24px] h-[24px]"> </i>
-
-                                        <span>
-                                            Change
-                                            Password
-                                        </span>
-
-                                        <i data-lucide="chevron-right"
-                                            class="justify-self-end w-[24px] h-[24px] p-[4px] border-2 border-[#141B34] rounded-full">
-                                        </i>
-                                    </a>
-
-                                    <!-- Logout -->
-                                    <a href="#"
-                                        class=" w-full grid grid-cols-[44px_minmax(0,1fr)_32px] items-center gap-[14px] p-[20px] bg-white rounded-[10px] text-[#141B34] outfit-regular text-[15px] transition-all duration-200 hover:bg-[#FCF7FF] hover:-translate-y-[1px] [&>i:first-child]:justify-self-center mb-[60px]">
-                                        <i data-lucide="log-out" class="w-[24px] h-[24px]"> </i>
-
-                                        <span>
-                                            Logout
-                                        </span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Mobile Menu Button -->
-                    <button id="navbar-toggle" class="lg:hidden ml-auto text-2xl text-gray-700">
-                        <i class="fa-solid fa-bars"></i>
-                    </button>
-                </div>
-            </div>
-        </nav>
-
-        <!-- After Login Mobile View -->
-        <div id="mobile-navbar" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50">
-
-            <div id="navbar-slide"
-                class="w-[300px] h-full bg-white rounded-r-[24px] shadow-2xl p-6
-                -translate-x-full transition-transform duration-300
-                flex flex-col overflow-y-auto">
-
-                <!-- Header -->
-                <div class="flex items-center justify-between pb-5 border-b border-gray-200 shrink-0">
-
-                    <img src="./images/logo.png"
-                        alt="Eventara"
-                        class="w-[95px] h-auto" />
-
-                    <button id="navbar-close"
-                        class="text-2xl text-gray-600 hover:text-black">
-
-                        <i class="fa-solid fa-xmark"></i>
-
-                    </button>
-
-                </div>
-
-
-                <!-- Profile -->
-                <div class="flex items-center gap-3 py-6 border-b border-gray-200">
-
-                    <img src="./images/user.png"
-                        alt="Profile"
-                        class="w-[52px] h-[52px] rounded-full object-cover" />
-
-                    <div class="min-w-0">
-
-                        <h3 class="outfit-semibold text-[17px] text-[#141B34] truncate">
-                            Eve Rozier
-                        </h3>
-
-                        <p class="outfit-regular text-[13px] text-gray-500 truncate">
-                            abc@gmail.com
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Navigation -->
-                <ul class="flex flex-col gap-2 mt-6">
-
-                    <!-- Home -->
-                    <li>
-                        <a href="index.html"
-                            class="flex items-center gap-4 rounded-xl px-4 py-3
-                            bg-violet-50 text-violet-700 transition">
-
-                            <i data-lucide="house"
-                                class="w-5 h-5"></i>
-
-                            <span>Home</span>
-
-                        </a>
-                    </li>
-
-
-                    <!-- Events -->
-                    <li>
-                        <a href="event.html"
-                            class="flex items-center gap-4 rounded-xl px-4 py-3
-                            hover:bg-violet-50 hover:text-violet-700 transition">
-
-                            <i data-lucide="calendar-days"
-                                class="w-5 h-5"></i>
-
-                            <span>Events</span>
-
-                        </a>
-                    </li>
-
-
-                    <!-- My Tickets -->
-                    <li>
-                        <a href="./my-tickits.html"
-                            class="flex items-center gap-4 rounded-xl px-4 py-3
-                            hover:bg-violet-50 hover:text-violet-700 transition">
-
-                            <i data-lucide="ticket"
-                                class="w-5 h-5"></i>
-
-                            <span>My Tickets</span>
-
-                        </a>
-                    </li>
-
-
-                    <!-- Wishlist -->
-                    <li>
-                        <a href="#"
-                            class="flex items-center gap-4 rounded-xl px-4 py-3
-                            hover:bg-violet-50 hover:text-violet-700 transition">
-
-                            <i data-lucide="heart"
-                                class="w-5 h-5"></i>
-
-                            <span>Wishlist</span>
-
-                        </a>
-                    </li>
-
-
-                    <!-- About -->
-                    <li>
-                        <a href="aboutus.html"
-                            class="flex items-center gap-4 rounded-xl px-4 py-3
-                            hover:bg-violet-50 hover:text-violet-700 transition">
-
-                            <i data-lucide="circle-alert"
-                                class="w-5 h-5"></i>
-
-                            <span>About Us</span>
-
-                        </a>
-                    </li>
-
-
-                    <!-- Contact -->
-                    <li>
-                        <a href="contact.html"
-                            class="flex items-center gap-4 rounded-xl px-4 py-3
-                            hover:bg-violet-50 hover:text-violet-700 transition">
-
-                            <i data-lucide="mail"
-                                class="w-5 h-5"></i>
-
-                            <span>Contact</span>
-
-                        </a>
-                    </li>
-
-                </ul>
-
-
-                <!-- Account Options -->
-                <div class="mt-6 pt-5 border-t border-gray-200 flex flex-col gap-2">
-                    <!-- Help -->
-                    <a href="#"
-                        class="flex items-center gap-4 rounded-xl px-4 py-3
-                        hover:bg-violet-50 hover:text-violet-700 transition">
-
-                        <i data-lucide="headphones"
-                            class="w-5 h-5"></i>
-
-                        <span>Get Help</span>
-
+                      <i
+                        data-lucide="chevron-right"
+                        class="justify-self-end w-[24px] h-[24px] p-[4px] border-2 border-[#141B34] rounded-full"
+                      >
+                      </i>
                     </a>
-
 
                     <!-- Change Password -->
-                    <a href="#"
-                        class="flex items-center gap-4 rounded-xl px-4 py-3
-                        hover:bg-violet-50 hover:text-violet-700 transition">
+                    <!-- Change Password -->
+                    <button
+                      type="button"
+                      id="change-password-btn"
+                      class="w-full grid grid-cols-[44px_minmax(0,1fr)_32px] items-center gap-[14px] p-[20px] bg-white rounded-[10px] text-[#141B34] outfit-regular text-[15px] transition-all duration-200 hover:bg-[#FCF7FF] hover:-translate-y-[1px] [&>i:first-child]:justify-self-center text-left"
+                    >
+                      <i data-lucide="shield" class="w-[24px] h-[24px]"></i>
 
-                        <i data-lucide="shield"
-                            class="w-5 h-5"></i>
+                      <span> Change Password </span>
 
-                        <span>Change Password</span>
-
-                    </a>
-
+                      <i
+                        data-lucide="chevron-right"
+                        class="justify-self-end w-[24px] h-[24px] p-[4px] border-2 border-[#141B34] rounded-full"
+                      >
+                      </i>
+                    </button>
 
                     <!-- Logout -->
-                    <a href="#"
-                        class="flex items-center gap-4 rounded-xl px-4 py-3
-                        text-red-500 hover:bg-red-50 transition">
+                    <!-- Logout -->
+                    <button
+                      type="button"
+                      id="logout-btn"
+                      class="w-full grid grid-cols-[44px_minmax(0,1fr)_32px] items-center gap-[14px] p-[20px] bg-white rounded-[10px] text-[#141B34] outfit-regular text-[15px] transition-all duration-200 hover:bg-[#FCF7FF] hover:-translate-y-[1px] mb-[60px] text-left"
+                    >
+                      <i data-lucide="log-out" class="w-[24px] h-[24px]"></i>
 
-                        <i data-lucide="log-out"
-                            class="w-5 h-5"></i>
+                      <span> Logout </span>
 
-                        <span>Logout</span>
-
-                    </a>
-
+                      <i
+                        data-lucide="chevron-right"
+                        class="justify-self-end w-[24px] h-[24px] p-[4px] border-2 border-[#141B34] rounded-full"
+                      ></i>
+                    </button>
+                  </div>
                 </div>
-
+              </div>
             </div>
 
+            <!-- Mobile Menu Button -->
+            <button
+              id="navbar-toggle"
+              class="lg:hidden ml-auto text-2xl text-gray-700"
+            >
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
         </div>
+      </nav>
+
+      <!-- After Login Mobile View -->
+      <div
+        id="mobile-navbar"
+        class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50"
+      >
+        <div
+          id="navbar-slide"
+          class="w-[300px] h-full bg-white rounded-r-[24px] shadow-2xl p-6 -translate-x-full transition-transform duration-300 flex flex-col overflow-y-auto"
+        >
+          <!-- Header -->
+          <div
+            class="flex items-center justify-between pb-5 border-b border-gray-200 shrink-0"
+          >
+            <img
+              src="./images/logo.png"
+              alt="Eventara"
+              class="w-[95px] h-auto"
+            />
+
+            <button
+              id="navbar-close"
+              class="text-2xl text-gray-600 hover:text-black"
+            >
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+
+          <!-- Profile -->
+          <div class="flex items-center gap-3 py-6 border-b border-gray-200">
+            <img
+              src="./images/user.png"
+              alt="Profile"
+              class="w-[52px] h-[52px] rounded-full object-cover"
+            />
+
+            <div class="min-w-0">
+              <h3 class="outfit-semibold text-[17px] text-[#141B34] truncate">
+                Eve Rozier
+              </h3>
+
+              <p class="outfit-regular text-[13px] text-gray-500 truncate">
+                abc@gmail.com
+              </p>
+            </div>
+          </div>
+
+          <!-- Navigation -->
+          <ul class="flex flex-col gap-2 mt-6">
+            <!-- Home -->
+            <li>
+              <a
+                href="index.html"
+                class="flex items-center gap-4 rounded-xl px-4 py-3 bg-violet-50 text-violet-700 transition"
+              >
+                <i data-lucide="house" class="w-5 h-5"></i>
+
+                <span>Home</span>
+              </a>
+            </li>
+
+            <!-- Events -->
+            <li>
+              <a
+                href="event.html"
+                class="flex items-center gap-4 rounded-xl px-4 py-3 hover:bg-violet-50 hover:text-violet-700 transition"
+              >
+                <i data-lucide="calendar-days" class="w-5 h-5"></i>
+
+                <span>Events</span>
+              </a>
+            </li>
+
+            <!-- My Tickets -->
+            <li>
+              <a
+                href="./my-tickits.html"
+                class="flex items-center gap-4 rounded-xl px-4 py-3 hover:bg-violet-50 hover:text-violet-700 transition"
+              >
+                <i data-lucide="ticket" class="w-5 h-5"></i>
+
+                <span>My Tickets</span>
+              </a>
+            </li>
+
+            <!-- Wishlist -->
+            <li>
+              <a
+                href="wishlist.html"
+                class="flex items-center gap-4 rounded-xl px-4 py-3 hover:bg-violet-50 hover:text-violet-700 transition"
+              >
+                <i data-lucide="heart" class="w-5 h-5"></i>
+
+                <span>Wishlist</span>
+              </a>
+            </li>
+            <!-- cart -->
+            <li>
+              <a
+                href="cart.html"
+                class="flex items-center gap-4 rounded-xl px-4 py-3 hover:bg-violet-50 hover:text-violet-700 transition"
+              >
+                <i class="fa-solid fa-cart-shopping"></i>
+
+                <span>Cart</span>
+              </a>
+            </li>
+
+            <!-- About -->
+            <li>
+              <a
+                href="aboutus.html"
+                class="flex items-center gap-4 rounded-xl px-4 py-3 hover:bg-violet-50 hover:text-violet-700 transition"
+              >
+                <i data-lucide="circle-alert" class="w-5 h-5"></i>
+
+                <span>About Us</span>
+              </a>
+            </li>
+
+            <!-- Contact -->
+            <li>
+              <a
+                href="contact.html"
+                class="flex items-center gap-4 rounded-xl px-4 py-3 hover:bg-violet-50 hover:text-violet-700 transition"
+              >
+                <i data-lucide="mail" class="w-5 h-5"></i>
+
+                <span>Contact</span>
+              </a>
+            </li>
+          </ul>
+
+          <!-- Account Options -->
+          <div class="mt-6 pt-5 border-t border-gray-200 flex flex-col gap-2">
+            <!-- Help -->
+            <a
+              href="#"
+              class="flex items-center gap-4 rounded-xl px-4 py-3 hover:bg-violet-50 hover:text-violet-700 transition"
+            >
+              <i data-lucide="headphones" class="w-5 h-5"></i>
+
+              <span>Get Help</span>
+            </a>
+
+            <!-- Change Password -->
+            <!-- Change Password -->
+            <button
+              type="button"
+              id="mobile-change-password-btn"
+              class="w-full flex items-center gap-4 rounded-xl px-4 py-3 hover:bg-violet-50 hover:text-violet-700 transition text-left"
+            >
+              <i data-lucide="shield" class="w-5 h-5"></i>
+
+              <span>Change Password</span>
+            </button>
+
+            <!-- Logout -->
+            <button
+              type="button"
+              id="mobile-logout-btn"
+              class="w-full flex items-center gap-4 rounded-xl px-4 py-3 text-red-500 hover:bg-red-50 transition text-left"
+            >
+              <i data-lucide="log-out" class="w-5 h-5"></i>
+
+              <span>Logout</span>
+            </button>
+          </div>
+        </div>
+      </div>
     </header>
 
+
     <!-- Search Overlay -->
+    <div id="search-overlay"
+        class="fixed inset-0 z-[10000] hidden bg-black/35 backdrop-blur-[2px] items-start justify-center pt-[110px] px-[24px]">
+        <div id="search-box"
+            class="w-full max-w-[986px] h-[78px] bg-white rounded-full flex items-center pl-[32px] pr-[18px] shadow-[0_10px_35px_rgba(0,0,0,0.12)]">
+            <input id="navbar-search-input" type="text" placeholder="Search..." autocomplete="off"
+                class="flex-1 min-w-0 h-full bg-transparent outline-none border-none text-[22px] text-[#141B34] outfit-semibold placeholder:text-[#858585]" />
+
+            <button type="button" id="search-submit-btn" aria-label="Search"
+                class="w-[58px] h-[58px] shrink-0 rounded-full bg-[#A437E6] hover:bg-[#8D26C9] text-white flex items-center justify-center transition-colors duration-200">
+                <i data-lucide="search" class="w-[30px] h-[30px]"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- CHANGE PASSWORD MODAL -->
     <div
-    id="search-overlay"
-    class="fixed inset-0 z-[10000] hidden bg-black/35 backdrop-blur-[2px] items-start justify-center pt-[110px] px-[24px]"
+      id="change-password-modal"
+      class="fixed inset-0 z-[10000] hidden items-center justify-center bg-black/30 backdrop-blur-[3px] px-3 sm:px-4 py-3 sm:py-5 overflow-y-auto"
     >
-    <div
-        id="search-box"
-        class="w-full max-w-[986px] h-[78px] bg-white rounded-full flex items-center pl-[32px] pr-[18px] shadow-[0_10px_35px_rgba(0,0,0,0.12)]"
-    >
-        <input
-        id="navbar-search-input"
-        type="text"
-        placeholder="Search..."
-        autocomplete="off"
-        class="flex-1 min-w-0 h-full bg-transparent outline-none border-none text-[22px] text-[#141B34] outfit-semibold placeholder:text-[#858585]"
-        />
+      <!-- Modal Content -->
+
+      <div
+        id="change-password-modal-content"
+        class="relative w-full max-w-[1075px] min-h-0 sm:min-h-[820px] max-h-[96vh] sm:max-h-[92vh] overflow-y-auto bg-white rounded-[20px] sm:rounded-[28px] shadow-[0_20px_60px_rgba(0,0,0,0.30)] flex flex-col px-[20px] sm:px-[45px] lg:px-[70px] py-[28px] sm:py-[45px] lg:py-[55px]"
+      >
+        <!-- ============================= -->
+        <!-- BACK BUTTON -->
+        <!-- ============================= -->
 
         <button
-        type="button"
-        id="search-submit-btn"
-        aria-label="Search"
-        class="w-[58px] h-[58px] shrink-0 rounded-full bg-[#A437E6] hover:bg-[#8D26C9] text-white flex items-center justify-center transition-colors duration-200"
+          type="button"
+          id="change-password-back-btn"
+          aria-label="Back"
+          class="absolute left-[18px] sm:left-[28px] lg:left-[32px] top-[18px] sm:top-[25px] lg:top-[30px] text-[#141B34] text-[24px] sm:text-[28px] lg:text-[32px] hover:text-[var(--color-electric-600)] transition-colors duration-200"
         >
-        <i
-            data-lucide="search"
-            class="w-[30px] h-[30px]"
-        ></i>
+          <i class="fa-solid fa-arrow-left"></i>
         </button>
-    </div>
+
+        <!-- ============================= -->
+        <!-- HEADING -->
+        <!-- ============================= -->
+
+        <h2
+          class="oswald-medium text-center text-[32px] sm:text-[40px] lg:text-[48px] leading-tight text-black mt-[48px] sm:mt-[55px] px-[20px]"
+        >
+          Change Password
+        </h2>
+
+        <!-- ============================= -->
+        <!-- DESCRIPTION -->
+        <!-- ============================= -->
+
+        <p
+          class="poppins-regular text-center text-[15px] sm:text-[18px] lg:text-[22px] leading-relaxed text-[#707070] mt-[14px] sm:mt-[20px] lg:mt-[25px] px-[10px]"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+
+        <!-- ============================= -->
+        <!-- FORM -->
+        <!-- ============================= -->
+
+        <div class="w-full mt-[45px] sm:mt-[60px] lg:mt-[90px]">
+          <!-- ============================= -->
+          <!-- NEW PASSWORD -->
+          <!-- ============================= -->
+
+          <label
+            for="change-password-new"
+            class="block poppins-regular text-[18px] sm:text-[21px] lg:text-[24px] text-black mb-[10px] sm:mb-[14px]"
+          >
+            New Password
+          </label>
+
+          <div class="password-field w-full">
+            <input
+              id="change-password-new"
+              type="password"
+              placeholder="Enter your new password"
+              autocomplete="new-password"
+              class="w-full h-[58px] sm:h-[72px] lg:h-[90px] rounded-[7px] border border-[#777777] px-[18px] sm:px-[22px] lg:px-[27px] pr-[55px] sm:pr-[60px] outline-none poppins-regular text-[15px] sm:text-[18px] lg:text-[20px] text-[#252525] placeholder:text-[#707070] focus:border-[var(--color-electric-600)] transition-colors"
+            />
+
+            <!-- Password Toggle -->
+
+            <button
+              type="button"
+              class="toggle-password"
+              data-target="change-password-new"
+              aria-label="Show new password"
+            >
+              <i class="fa-regular fa-eye-slash"></i>
+            </button>
+          </div>
+
+          <!-- ============================= -->
+          <!-- CONFIRM PASSWORD -->
+          <!-- ============================= -->
+
+          <label
+            for="change-password-confirm"
+            class="block poppins-regular text-[18px] sm:text-[21px] lg:text-[24px] text-black mt-[20px] sm:mt-[22px] lg:mt-[18px] mb-[10px] sm:mb-[14px]"
+          >
+            Confirm Password
+          </label>
+
+          <div class="password-field w-full">
+            <input
+              id="change-password-confirm"
+              type="password"
+              placeholder="Confirm your new password"
+              autocomplete="new-password"
+              class="w-full h-[58px] sm:h-[72px] lg:h-[90px] rounded-[7px] border border-[#777777] px-[18px] sm:px-[22px] lg:px-[27px] pr-[55px] sm:pr-[60px] outline-none poppins-regular text-[15px] sm:text-[18px] lg:text-[20px] text-[#252525] placeholder:text-[#707070] focus:border-[var(--color-electric-600)] transition-colors"
+            />
+
+            <!-- Password Toggle -->
+
+            <button
+              type="button"
+              class="toggle-password"
+              data-target="change-password-confirm"
+              aria-label="Show confirm password"
+            >
+              <i class="fa-regular fa-eye-slash"></i>
+            </button>
+          </div>
+
+          <!-- ============================= -->
+          <!-- CONFIRM BUTTON -->
+          <!-- ============================= -->
+
+          <button
+            type="button"
+            id="change-password-confirm-btn"
+            class="w-full h-[60px] sm:h-[76px] lg:h-[96px] mt-[20px] sm:mt-[24px] lg:mt-[28px] rounded-[7px] border border-[#777777] bg-[var(--color-electric-600)] text-white poppins-medium text-[20px] sm:text-[26px] lg:text-[32px] hover:bg-[var(--color-electric-700)] active:scale-[0.99] transition-all duration-200"
+          >
+            Confirm
+          </button>
+        </div>
+      </div>
     </div>
 
     <div class="bg-[var(--color-electric-100)] py-[20px]">
@@ -1098,326 +1269,932 @@
             </div>
         </footer>
 
-        <!-- AUTH MODAL -->
-        <div id="auth-modal" class="auth-modal">
-            <div class="auth-modal-content">
-                <section class="w-full flex justify-center">
-                    <div class="w-full h-auto bg-white rounded-[32px] shadow-[0_20px_50px_rgba(15,23,42,0.08)]">
-                        <!-- Back -->
-
-                        <button type="button" id="back-btn"
-                            class="w-[24px] h-[24px] flex items-center justify-center rounded-full hover:bg-gray-100 transition my-[20px] ml-[20px]">
-                            <i class="fa-solid fa-arrow-left text-[22px] text-[#141B34]"></i>
-                        </button>
-
-                        <!-- Inner Wrapper -->
-
-                        <div class="w-full px-[50px]">
-                            <!-- AUTH SECTION -->
-
-                            <div id="auth-section">
-                                <!-- Header -->
-
-                                <div class="text-center">
-                                    <h1 class="oswald-medium text-[29px] text-[#222222]">
-                                        Welcome to Eventara
-                                    </h1>
-
-                                    <p class="poppins-regular text-[16px] text-[#727272] mt-[12px] leading-[26px]">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    </p>
-                                </div>
-                                <!-- Tabs -->
-
-                                <div
-                                    class="mt-[15px] h-[70px] border border-[#BFBFBF] rounded-[16px] p-[6px] flex max-w-[520px] mx-auto">
-                                    <!-- Login -->
-
-                                    <button id="login-tab"
-                                        class="flex-1 rounded-[12px] bg-[#EAD6F9] poppins-medium text-[20px] text-[#111] shadow-sm transition"
-                                        type="button">
-                                        Log In
-                                    </button>
-
-                                    <!-- Signup -->
-
-                                    <button id="signup-tab"
-                                        class="flex-1 rounded-[12px] bg-white poppins-medium text-[20px] text-[#111] transition"
-                                        type="button">
-                                        Sign Up
-                                    </button>
-                                </div>
-
-                                <!-- FORM STARTS HERE -->
-                                <form id="login-form" class="mt-[42px] flex flex-col">
-                                    <!-- Email -->
-
-                                    <div class="mb-[20px]">
-                                        <label class="block poppins-regular text-[20px] text-[#2B2B2B] mb-[10px]">
-                                            Email address
-                                        </label>
-
-                                        <input type="email" placeholder="Enter your email address"
-                                            class="w-full h-[72px] rounded-[14px] border border-[#CFCFCF] px-[22px] text-[16px] poppins-regular text-[#2B2B2B] placeholder:text-[#A6A6A6] outline-none focus:border-[#AE40E4] transition" />
-                                    </div>
-
-                                    <!-- Password -->
-
-                                    <div>
-                                        <label class="block poppins-regular text-[20px] text-[#2B2B2B] mb-[10px]">
-                                            Password
-                                        </label>
-
-                                        <div class="relative">
-                                            <input id="login-password" type="password" placeholder="Enter your password"
-                                                class="w-full h-[72px] rounded-[14px] border border-[#CFCFCF] px-[22px] pr-[60px] text-[16px] poppins-regular text-[#2B2B2B] placeholder:text-[#A6A6A6] outline-none focus:border-[#AE40E4] transition" />
-
-                                            <button type="button"
-                                                class="toggle-password absolute right-[20px] top-1/2 -translate-y-1/2 text-[#9D9D9D]">
-                                                <i class="fa-regular fa-eye-slash text-[22px]"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                    <!-- Forgot -->
-
-                                    <div class="flex justify-end mt-[15px]">
-                                        <a href="#" id="forgot-password-link"
-                                            class="poppins-regular text-[15px] text-[#6c6c6c] hover:underline">
-                                            Forgot password?
-                                        </a>
-                                    </div>
-
-                                    <!-- Button -->
-
-                                    <button type="submit"
-                                        class="mt-[10px] w-full h-[60px] rounded-[5px] poppins-semibold text-[20px] bg-[var(--color-electric-600)] text-white">
-                                        Log In
-                                    </button>
-                                </form>
-
-                                <!-- SIGNUP FORM -->
-                                <form id="signup-form" class="mt-[42px] flex flex-col hidden">
-                                    <!-- Full Name -->
-                                    <div class="mb-[20px]">
-                                        <label class="block poppins-regular text-[20px] text-[#2B2B2B] mb-[10px]">
-                                            Full Name
-                                        </label>
-
-                                        <input type="text" placeholder="Enter your full name"
-                                            class="w-full h-[72px] rounded-[14px] border border-[#CFCFCF] px-[22px] text-[16px] poppins-regular text-[#2B2B2B] placeholder:text-[#A6A6A6] outline-none focus:border-[#AE40E4] transition" />
-                                    </div>
-
-                                    <!-- Email -->
-                                    <div class="mb-[20px]">
-                                        <label class="block poppins-regular text-[20px] text-[#2B2B2B] mb-[10px]">
-                                            Email address
-                                        </label>
-
-                                        <input type="email" placeholder="Enter your email address"
-                                            class="w-full h-[72px] rounded-[14px] border border-[#CFCFCF] px-[22px] text-[16px] poppins-regular text-[#2B2B2B] placeholder:text-[#A6A6A6] outline-none focus:border-[#AE40E4] transition" />
-                                    </div>
-
-                                    <!-- Password -->
-                                    <div class="mb-[20px]">
-                                        <label class="block poppins-regular text-[20px] text-[#2B2B2B] mb-[10px]">
-                                            Password
-                                        </label>
-
-                                        <div class="relative">
-                                            <input id="signup-password" type="password"
-                                                placeholder="Enter your password"
-                                                class="w-full h-[72px] rounded-[14px] border border-[#CFCFCF] px-[22px] pr-[60px] text-[16px] poppins-regular text-[#2B2B2B] placeholder:text-[#A6A6A6] outline-none focus:border-[#AE40E4] transition" />
-
-                                            <button type="button"
-                                                class="toggle-password absolute right-[20px] top-1/2 -translate-y-1/2 text-[#9D9D9D]">
-                                                <i class="fa-regular fa-eye-slash text-[22px]"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                    <!-- Terms & Conditions -->
-
-                                    <div class="flex items-start gap-[12px]">
-                                        <input type="checkbox" id="terms-checkbox"
-                                            class="mt-[5px] w-[22px] h-[22px] rounded-[6px] border border-[#D9D9D9] accent-[var(--color-electric-600)] cursor-pointer" />
-
-                                        <label for="terms-checkbox"
-                                            class="poppins-regular text-[15px] leading-[30px] text-[#6C6C6C]">
-                                            By clicking
-                                            <span class="poppins-medium text-[#222]">Sign Up</span>,
-                                            you agree to our
-
-                                            <a href="#" class="text-[var(--color-electric-600)] hover:underline">
-                                                Terms &amp; Conditions
-                                            </a>
-
-                                            and
-
-                                            <a href="#" class="text-[var(--color-electric-600)] hover:underline">
-                                                Privacy Policy
-                                            </a>
-                                        </label>
-                                    </div>
-
-                                    <!-- Button -->
-
-                                    <button type="submit"
-                                        class="mt-[10px] w-full h-[60px] rounded-[5px] poppins-semibold text-[20px] bg-[var(--color-electric-600)] text-white">
-                                        Sign Up
-                                    </button>
-                                </form>
-
-                                <!-- Divider -->
-
-                                <div class="mt-[10px]">
-                                    <div class="flex items-center gap-[14px]">
-                                        <div class="flex-1 h-[1px] bg-[#E5E5E5]"></div>
-
-                                        <p class="poppins-medium text-[14px] text-[#8D8D8D] whitespace-nowrap">
-                                            Or continue with
-                                        </p>
-
-                                        <div class="flex-1 h-[1px] bg-[#E5E5E5]"></div>
-                                    </div>
-                                </div>
-
-                                <!-- Social -->
-
-                                <div class="flex justify-center items-center gap-[18px] my-[30px]">
-                                    <!-- Google Button -->
-
-                                    <a href="#"
-                                        class="px-[66px] py-[11.5px] rounded-[45px] border border-[#F0F0F0] bg-white shadow-[0_8px_12px_rgba(0,0,0,0.16)] flex items-center justify-center gap-[20px] hover:shadow-[0_10px_18px_rgba(0,0,0,0.20)] transition-all duration-300">
-                                        <!-- Google Icon -->
-
-                                        <span
-                                            class="w-[38px] h-[38px] rounded-full bg-[#F7F3F5] flex items-center justify-center shrink-0">
-                                            <img src="./images/google.png" class="w-[38px] h-[38px] object-contain"
-                                                alt="Google" />
-                                        </span>
-
-                                        <!-- Text -->
-
-                                        <span class="poppins-semibold text-[15px] text-[#222222]">
-                                            Sign up with Google
-                                        </span>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <!-- Forgot password -->
-
-                            <div id="forgot-section" class="hidden">
-                                <div class="text-center">
-                                    <h1 class="oswald-medium text-[29px] text-[#222222]">
-                                        Confirm Your Email Address
-                                    </h1>
-
-                                    <p class="poppins-regular text-[16px] text-[#727272] mt-[12px] leading-[26px]">
-                                        Enter your email address to receive a one-time password
-                                        (OTP).
-                                    </p>
-                                </div>
-
-                                <form id="forgot-form" class="mt-[42px] flex flex-col">
-                                    <div class="mb-[20px]">
-                                        <label class="block poppins-regular text-[20px] text-[#2B2B2B] mb-[10px]">
-                                            Email address
-                                        </label>
-
-                                        <input type="email" placeholder="Enter your email address"
-                                            class="w-full h-[72px] rounded-[14px] border border-[#CFCFCF] px-[22px] text-[16px] poppins-regular text-[#2B2B2B] placeholder:text-[#A6A6A6] outline-none focus:border-[#AE40E4] transition" />
-                                    </div>
-
-                                    <div class="flex justify-end mb-[5px]">
-                                        <button type="button"
-                                            class="text-[var(--color-electric-600)] poppins-medium hover:underline">
-                                            Get OTP
-                                        </button>
-                                    </div>
-
-                                    <div class="mb-[30px]">
-                                        <label class="block poppins-regular text-[20px] text-[#2B2B2B] mb-[10px]">
-                                            OTP
-                                        </label>
-
-                                        <input type="text" placeholder="Enter the 6-digit OTP"
-                                            class="w-full h-[72px] rounded-[14px] border border-[#CFCFCF] px-[22px] text-[16px] poppins-regular text-[#2B2B2B] placeholder:text-[#A6A6A6] outline-none focus:border-[#AE40E4] transition" />
-                                    </div>
-
-                                    <button type="submit"
-                                        class="mb-[50px] w-full h-[60px] rounded-[5px] poppins-semibold text-[20px] bg-[var(--color-electric-600)] text-white">
-                                        Confirm
-                                    </button>
-                                </form>
-                            </div>
-
-                            <!-- CREATE PASSWORD -->
-
-                            <div id="create-password-section" class="hidden">
-                                <div class="text-center">
-                                    <h1 class="oswald-medium text-[29px] text-[#222222]">
-                                        Change Password
-                                    </h1>
-
-                                    <p class="poppins-regular text-[16px] text-[#727272] mt-[12px] leading-[26px]">
-                                        Create a strong password for your Eventara account.
-                                    </p>
-                                </div>
-
-                                <form id="create-password-form" class="mt-[42px] flex flex-col">
-                                    <!-- New Password -->
-
-                                    <div class="mb-[20px]">
-                                        <label class="block poppins-regular text-[20px] text-[#2B2B2B] mb-[10px]">
-                                            New Password
-                                        </label>
-
-                                        <div class="relative">
-                                            <input id="new-password" type="password"
-                                                placeholder="Enter your new password"
-                                                class="w-full h-[72px] rounded-[14px] border border-[#CFCFCF] px-[22px] pr-[60px] text-[16px] poppins-regular text-[#2B2B2B] placeholder:text-[#A6A6A6] outline-none focus:border-[#AE40E4] transition" />
-
-                                            <button type="button"
-                                                class="toggle-password absolute right-[20px] top-1/2 -translate-y-1/2 text-[#9D9D9D]">
-                                                <i class="fa-regular fa-eye-slash text-[22px]"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                    <!-- Confirm Password -->
-
-                                    <div class="mb-[30px]">
-                                        <label class="block poppins-regular text-[20px] text-[#2B2B2B] mb-[10px]">
-                                            Confirm Password
-                                        </label>
-
-                                        <div class="relative">
-                                            <input id="confirm-password" type="password"
-                                                placeholder="Confirm your password"
-                                                class="w-full h-[72px] rounded-[14px] border border-[#CFCFCF] px-[22px] pr-[60px] text-[16px] poppins-regular text-[#2B2B2B] placeholder:text-[#A6A6A6] outline-none focus:border-[#AE40E4] transition" />
-
-                                            <button type="button"
-                                                class="toggle-password absolute right-[20px] top-1/2 -translate-y-1/2 text-[#9D9D9D]">
-                                                <i class="fa-regular fa-eye-slash text-[22px]"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                    <button type="submit"
-                                        class="mb-[50px] w-full h-[60px] rounded-[5px] poppins-semibold text-[20px] bg-[var(--color-electric-600)] text-white">
-                                        Confirm
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
+    <!-- LOGOUT CONFIRMATION MODAL -->
+    <div
+      id="logout-modal"
+      class="fixed inset-0 z-[10001] hidden items-center justify-center bg-black/30 backdrop-blur-[3px] px-3 sm:px-4 py-3 sm:py-5 overflow-y-auto"
+    >
+      <!-- Modal Content -->
+
+      <div
+        id="logout-modal-content"
+        class="relative w-full max-w-[1100px] min-h-0 sm:min-h-[500px] max-h-[96vh] sm:max-h-[92vh] overflow-y-auto bg-white rounded-[20px] sm:rounded-[28px] shadow-[0_20px_60px_rgba(0,0,0,0.30)] flex flex-col items-center justify-center px-[20px] sm:px-[40px] lg:px-[60px] py-[45px] sm:py-[60px] lg:py-[70px]"
+      >
+        <!-- ============================= -->
+        <!-- BACK BUTTON -->
+        <!-- ============================= -->
+
+        <button
+          type="button"
+          id="logout-back-btn"
+          aria-label="Close logout confirmation"
+          class="absolute left-[18px] sm:left-[35px] lg:left-[60px] top-[20px] sm:top-[30px] lg:top-[35px] text-[#141B34] text-[24px] sm:text-[28px] lg:text-[32px] hover:text-[var(--color-electric-600)] transition-colors"
+        >
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+        <!-- ============================= -->
+        <!-- LOGOUT ICON -->
+        <!-- ============================= -->
+
+        <div
+          class="w-[65px] h-[65px] sm:w-[78px] sm:h-[78px] lg:w-[90px] lg:h-[90px] rounded-full bg-[#F1E2FF] flex items-center justify-center mb-[22px] sm:mb-[28px]"
+        >
+          <i
+            class="fa-solid fa-arrow-right-from-bracket text-[28px] sm:text-[34px] lg:text-[40px] text-[var(--color-electric-600)]"
+          ></i>
         </div>
 
+        <!-- ============================= -->
+        <!-- HEADING -->
+        <!-- ============================= -->
 
+        <h2
+          class="oswald-medium text-center text-[30px] sm:text-[38px] lg:text-[47px] leading-tight text-black px-[15px] sm:px-[30px]"
+        >
+          Are you sure you want to logout?
+        </h2>
+
+        <!-- ============================= -->
+        <!-- DESCRIPTION -->
+        <!-- ============================= -->
+
+        <p
+          class="poppins-regular text-center text-[14px] sm:text-[17px] lg:text-[20px] leading-relaxed text-[#707070] mt-[12px] sm:mt-[16px] px-[15px] sm:px-[30px]"
+        >
+          You can log back in anytime using your account credentials.
+        </p>
+
+        <!-- ============================= -->
+        <!-- BUTTONS -->
+        <!-- ============================= -->
+
+        <div
+          class="w-full flex flex-col sm:flex-row items-center justify-center gap-[14px] sm:gap-[25px] lg:gap-[34px] mt-[38px] sm:mt-[55px] lg:mt-[70px]"
+        >
+          <!-- ============================= -->
+          <!-- NO -->
+          <!-- ============================= -->
+
+          <button
+            type="button"
+            id="logout-no-btn"
+            class="w-full sm:w-[162px] lg:w-[175px] h-[58px] sm:h-[70px] lg:h-[76px] rounded-[8px] border border-[#777777] bg-[var(--color-electric-600)] text-white poppins-medium text-[20px] sm:text-[26px] lg:text-[30px] hover:bg-[var(--color-electric-700)] active:scale-[0.98] transition-all duration-200"
+          >
+            No
+          </button>
+
+          <!-- ============================= -->
+          <!-- YES -->
+          <!-- ============================= -->
+
+          <button
+            type="button"
+            id="logout-yes-btn"
+            class="w-full sm:w-[162px] lg:w-[175px] h-[58px] sm:h-[70px] lg:h-[76px] rounded-[8px] border border-[#777777] bg-white text-[#252525] poppins-medium text-[20px] sm:text-[26px] lg:text-[30px] hover:bg-[#F7F7F7] active:scale-[0.98] transition-all duration-200"
+          >
+            Yes
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- AUTH MODAL -->
+    <div
+      id="auth-modal"
+      class="auth-modal px-3 sm:px-4 py-3 sm:py-5 overflow-y-auto"
+    >
+      <div
+        class="auth-modal-content w-full max-w-[767px] max-h-[96dvh] sm:max-h-[94dvh] overflow-y-auto rounded-[20px] sm:rounded-[32px]"
+      >
+        <section class="w-full flex justify-center">
+          <div
+            class="w-full min-h-0 bg-white rounded-[20px] sm:rounded-[32px] shadow-[0_20px_50px_rgba(15,23,42,0.08)] overflow-hidden"
+          >
+            <!-- =================================================
+             BACK BUTTON
+        ================================================== -->
+
+            <button
+              type="button"
+              id="back-btn"
+              class="w-[36px] h-[36px] sm:w-[24px] sm:h-[24px] flex items-center justify-center rounded-full hover:bg-gray-100 transition my-[14px] sm:my-[20px] ml-[14px] sm:ml-[20px]"
+            >
+              <i
+                class="fa-solid fa-arrow-left text-[20px] sm:text-[22px] text-[#141B34]"
+              ></i>
+            </button>
+
+            <!-- =================================================
+             INNER WRAPPER
+        ================================================== -->
+
+            <div
+              class="w-full px-[18px] sm:px-[30px] md:px-[50px] pb-[10px] sm:pb-[15px]"
+            >
+              <!-- =================================================
+               AUTH SECTION
+          ================================================== -->
+
+              <div id="auth-section">
+                <!-- HEADER -->
+
+                <div class="text-center">
+                  <h1
+                    class="oswald-medium text-[24px] sm:text-[29px] text-[#222222] leading-tight"
+                  >
+                    Welcome to Eventara
+                  </h1>
+
+                  <p
+                    class="poppins-regular text-[14px] sm:text-[16px] text-[#727272] mt-[10px] sm:mt-[12px] leading-[22px] sm:leading-[26px]"
+                  >
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                </div>
+
+                <!-- =================================================
+                 TABS
+            ================================================== -->
+
+                <div
+                  class="mt-[15px] h-[56px] sm:h-[64px] md:h-[70px] border border-[#BFBFBF] rounded-[14px] sm:rounded-[16px] p-[5px] sm:p-[6px] flex w-full max-w-[520px] mx-auto"
+                >
+                  <!-- LOGIN TAB -->
+
+                  <button
+                    id="login-tab"
+                    class="flex-1 rounded-[10px] sm:rounded-[12px] bg-[#EAD6F9] poppins-medium text-[16px] sm:text-[18px] md:text-[20px] text-[#111] shadow-sm transition"
+                    type="button"
+                  >
+                    Log In
+                  </button>
+
+                  <!-- SIGNUP TAB -->
+
+                  <button
+                    id="signup-tab"
+                    class="flex-1 rounded-[10px] sm:rounded-[12px] bg-white poppins-medium text-[16px] sm:text-[18px] md:text-[20px] text-[#111] transition"
+                    type="button"
+                  >
+                    Sign Up
+                  </button>
+                </div>
+
+                <!-- =================================================
+                 LOGIN FORM
+            ================================================== -->
+
+                <form
+                  id="login-form"
+                  class="mt-[28px] sm:mt-[36px] md:mt-[42px] flex flex-col"
+                >
+                  <!-- EMAIL -->
+
+                  <div class="mb-[18px] sm:mb-[20px]">
+                    <label
+                      class="block poppins-regular text-[16px] sm:text-[18px] md:text-[20px] text-[#2B2B2B] mb-[8px] sm:mb-[10px]"
+                    >
+                      Email address
+                    </label>
+
+                    <input
+                      type="email"
+                      placeholder="Enter your email address"
+                      class="w-full h-[58px] sm:h-[66px] md:h-[72px] rounded-[12px] sm:rounded-[14px] border border-[#CFCFCF] px-[16px] sm:px-[22px] text-[14px] sm:text-[16px] poppins-regular text-[#2B2B2B] placeholder:text-[#A6A6A6] outline-none focus:border-[#AE40E4] transition"
+                    />
+                  </div>
+
+                  <!-- PASSWORD -->
+
+                  <div>
+                    <label
+                      class="block poppins-regular text-[16px] sm:text-[18px] md:text-[20px] text-[#2B2B2B] mb-[8px] sm:mb-[10px]"
+                    >
+                      Password
+                    </label>
+
+                    <div class="relative">
+                      <input
+                        id="login-password"
+                        type="password"
+                        placeholder="Enter your password"
+                        class="w-full h-[58px] sm:h-[66px] md:h-[72px] rounded-[12px] sm:rounded-[14px] border border-[#CFCFCF] px-[16px] sm:px-[22px] pr-[55px] sm:pr-[60px] text-[14px] sm:text-[16px] poppins-regular text-[#2B2B2B] placeholder:text-[#A6A6A6] outline-none focus:border-[#AE40E4] transition"
+                      />
+
+                      <button
+                        type="button"
+                        class="toggle-password absolute right-[16px] sm:right-[20px] top-1/2 -translate-y-1/2 text-[#9D9D9D]"
+                      >
+                        <i
+                          class="fa-regular fa-eye-slash text-[19px] sm:text-[22px]"
+                        ></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- FORGOT PASSWORD -->
+
+                  <div class="flex justify-end mt-[12px] sm:mt-[15px]">
+                    <a
+                      href="#"
+                      id="forgot-password-link"
+                      class="poppins-regular text-[13px] sm:text-[15px] text-[#6c6c6c] hover:underline"
+                    >
+                      Forgot password?
+                    </a>
+                  </div>
+
+                  <!-- LOGIN BUTTON -->
+
+                  <button
+                    type="submit"
+                    class="mt-[10px] w-full h-[54px] sm:h-[58px] md:h-[60px] rounded-[5px] poppins-semibold text-[16px] sm:text-[18px] md:text-[20px] bg-[var(--color-electric-600)] text-white"
+                  >
+                    Log In
+                  </button>
+                </form>
+
+                <!-- =================================================
+                 SIGNUP FORM
+            ================================================== -->
+
+                <form
+                  id="signup-form"
+                  class="mt-[28px] sm:mt-[36px] md:mt-[42px] flex flex-col hidden"
+                >
+                  <!-- FULL NAME -->
+
+                  <div class="mb-[18px] sm:mb-[20px]">
+                    <label
+                      class="block poppins-regular text-[16px] sm:text-[18px] md:text-[20px] text-[#2B2B2B] mb-[8px] sm:mb-[10px]"
+                    >
+                      Full Name
+                    </label>
+
+                    <input
+                      type="text"
+                      placeholder="Enter your full name"
+                      class="w-full h-[58px] sm:h-[66px] md:h-[72px] rounded-[12px] sm:rounded-[14px] border border-[#CFCFCF] px-[16px] sm:px-[22px] text-[14px] sm:text-[16px] poppins-regular text-[#2B2B2B] placeholder:text-[#A6A6A6] outline-none focus:border-[#AE40E4] transition"
+                    />
+                  </div>
+
+                  <!-- EMAIL -->
+
+                  <div class="mb-[18px] sm:mb-[20px]">
+                    <label
+                      class="block poppins-regular text-[16px] sm:text-[18px] md:text-[20px] text-[#2B2B2B] mb-[8px] sm:mb-[10px]"
+                    >
+                      Email address
+                    </label>
+
+                    <input
+                      type="email"
+                      placeholder="Enter your email address"
+                      class="w-full h-[58px] sm:h-[66px] md:h-[72px] rounded-[12px] sm:rounded-[14px] border border-[#CFCFCF] px-[16px] sm:px-[22px] text-[14px] sm:text-[16px] poppins-regular text-[#2B2B2B] placeholder:text-[#A6A6A6] outline-none focus:border-[#AE40E4] transition"
+                    />
+                  </div>
+
+                  <!-- PASSWORD -->
+
+                  <div class="mb-[18px] sm:mb-[20px]">
+                    <label
+                      class="block poppins-regular text-[16px] sm:text-[18px] md:text-[20px] text-[#2B2B2B] mb-[8px] sm:mb-[10px]"
+                    >
+                      Password
+                    </label>
+
+                    <div class="relative">
+                      <input
+                        id="signup-password"
+                        type="password"
+                        placeholder="Enter your password"
+                        class="w-full h-[58px] sm:h-[66px] md:h-[72px] rounded-[12px] sm:rounded-[14px] border border-[#CFCFCF] px-[16px] sm:px-[22px] pr-[55px] sm:pr-[60px] text-[14px] sm:text-[16px] poppins-regular text-[#2B2B2B] placeholder:text-[#A6A6A6] outline-none focus:border-[#AE40E4] transition"
+                      />
+
+                      <button
+                        type="button"
+                        class="toggle-password absolute right-[16px] sm:right-[20px] top-1/2 -translate-y-1/2 text-[#9D9D9D]"
+                      >
+                        <i
+                          class="fa-regular fa-eye-slash text-[19px] sm:text-[22px]"
+                        ></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- TERMS -->
+
+                  <div class="flex items-start gap-[9px] sm:gap-[12px]">
+                    <input
+                      type="checkbox"
+                      id="terms-checkbox"
+                      class="mt-[4px] sm:mt-[5px] w-[18px] h-[18px] sm:w-[22px] sm:h-[22px] shrink-0 rounded-[6px] border border-[#D9D9D9] accent-[var(--color-electric-600)] cursor-pointer"
+                    />
+
+                    <label
+                      for="terms-checkbox"
+                      class="poppins-regular text-[12px] sm:text-[15px] leading-[20px] sm:leading-[30px] text-[#6C6C6C]"
+                    >
+                      By clicking
+
+                      <span class="poppins-medium text-[#222]"> Sign Up </span>,
+                      you agree to our
+
+                      <a
+                        href="#"
+                        class="text-[var(--color-electric-600)] hover:underline"
+                      >
+                        Terms &amp; Conditions
+                      </a>
+
+                      and
+
+                      <a
+                        href="#"
+                        class="text-[var(--color-electric-600)] hover:underline"
+                      >
+                        Privacy Policy
+                      </a>
+                    </label>
+                  </div>
+
+                  <!-- SIGNUP BUTTON -->
+
+                  <button
+                    type="submit"
+                    class="mt-[10px] w-full h-[54px] sm:h-[58px] md:h-[60px] rounded-[5px] poppins-semibold text-[16px] sm:text-[18px] md:text-[20px] bg-[var(--color-electric-600)] text-white"
+                  >
+                    Sign Up
+                  </button>
+                </form>
+
+                <!-- =================================================
+                 DIVIDER
+            ================================================== -->
+
+                <div class="mt-[10px]">
+                  <div class="flex items-center gap-[8px] sm:gap-[14px]">
+                    <div class="flex-1 h-[1px] bg-[#E5E5E5]"></div>
+
+                    <p
+                      class="poppins-medium text-[11px] sm:text-[14px] text-[#8D8D8D] whitespace-nowrap"
+                    >
+                      Or continue with
+                    </p>
+
+                    <div class="flex-1 h-[1px] bg-[#E5E5E5]"></div>
+                  </div>
+                </div>
+
+                <!-- =================================================
+                 GOOGLE
+            ================================================== -->
+
+                <div
+                  class="flex justify-center items-center gap-[18px] my-[22px] sm:my-[30px]"
+                >
+                  <a
+                    href="#"
+                    class="w-full max-w-[520px] px-[20px] sm:px-[40px] md:px-[66px] py-[9px] sm:py-[11.5px] rounded-[45px] border border-[#F0F0F0] bg-white shadow-[0_8px_12px_rgba(0,0,0,0.16)] flex items-center justify-center gap-[10px] sm:gap-[20px] hover:shadow-[0_10px_18px_rgba(0,0,0,0.20)] transition-all duration-300"
+                  >
+                    <span
+                      class="w-[32px] h-[32px] sm:w-[38px] sm:h-[38px] rounded-full bg-[#F7F3F5] flex items-center justify-center shrink-0"
+                    >
+                      <img
+                        src="./images/google.png"
+                        class="w-[32px] h-[32px] sm:w-[38px] sm:h-[38px] object-contain"
+                        alt="Google"
+                      />
+                    </span>
+
+                    <span
+                      class="poppins-semibold text-[12px] sm:text-[15px] text-[#222222] text-center"
+                    >
+                      Sign up with Google
+                    </span>
+                  </a>
+                </div>
+
+                <!-- =================================================
+                 ADMIN LOGIN
+            ================================================== -->
+
+                <div
+                  class="flex justify-center mt-[28px] sm:mt-[48px] mb-[22px] sm:mb-[28px]"
+                >
+                  <button
+                    id="admin-login-link"
+
+                    type="button"
+                    class="poppins-regular text-[14px] sm:text-[16px] text-[var(--color-electric-600)] hover:underline cursor-pointer"
+                  >
+                    Admin Login
+                  </button>
+                </div>
+              </div>
+
+              <!-- =================================================
+               VERIFICATION EMAIL SECTION
+          ================================================== -->
+
+              <div id="verification-section" class="hidden">
+                <div class="text-center flex flex-col items-center">
+                  <!-- EMAIL ICON -->
+
+                  <div
+                    class="mt-[25px] sm:mt-[30px] mb-[55px] sm:mb-[80px] md:mb-[110px]"
+                  >
+                    <div
+                      class="w-[210px] h-[145px] sm:w-[250px] sm:h-[172px] md:w-[275px] md:h-[190px] bg-[#A9A8FF] rounded-[22px] sm:rounded-[28px] relative flex items-center justify-center overflow-hidden"
+                    >
+                      <div class="absolute inset-0">
+                        <div
+                          class="absolute w-[150px] h-[150px] sm:w-[185px] sm:h-[185px] md:w-[210px] md:h-[210px] border-[10px] sm:border-[12px] md:border-[14px] border-[#7777E8] rotate-45 -top-[75px] sm:-top-[92px] md:-top-[105px] left-[20px] sm:left-[28px] md:left-[32px] rounded-[22px] sm:rounded-[26px] md:rounded-[30px]"
+                        ></div>
+
+                        <div
+                          class="absolute w-[150px] h-[150px] sm:w-[185px] sm:h-[185px] md:w-[210px] md:h-[210px] border-[10px] sm:border-[12px] md:border-[14px] border-[#7777E8] rotate-45 -top-[75px] sm:-top-[92px] md:-top-[105px] right-[20px] sm:right-[28px] md:right-[32px] rounded-[22px] sm:rounded-[26px] md:rounded-[30px]"
+                        ></div>
+                      </div>
+
+                      <div
+                        class="relative z-10 flex items-center gap-[9px] sm:gap-[14px]"
+                      >
+                        <span
+                          class="w-[10px] h-[10px] sm:w-[12px] sm:h-[12px] md:w-[14px] md:h-[14px] rounded-full bg-white"
+                        ></span>
+
+                        <span
+                          class="w-[34px] h-[9px] sm:w-[42px] sm:h-[10px] md:w-[48px] md:h-[12px] rounded-full bg-white"
+                        ></span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- HEADING -->
+
+                  <h2
+                    class="oswald-medium text-[25px] sm:text-[29px] md:text-[32px] leading-tight text-black"
+                  >
+                    Verification link sent to your email!
+                  </h2>
+
+                  <p
+                    class="poppins-regular text-[15px] sm:text-[18px] lg:text-[20px] leading-[24px] sm:leading-[28px] text-[#707070] mt-[12px] sm:mt-[15px]"
+                  >
+                    We’ve sent a verification link to
+                  </p>
+
+                  <p
+                    id="verification-email"
+                    class="poppins-regular text-[15px] sm:text-[18px] lg:text-[20px] break-all text-[var(--color-electric-600)] mt-[12px] sm:mt-[15px]"
+                  >
+                    youremail@example.com
+                  </p>
+
+                  <p
+                    class="poppins-regular text-[15px] sm:text-[18px] lg:text-[20px] leading-[24px] sm:leading-[30px] text-[#707070] mt-[12px] sm:mt-[15px] max-w-[780px]"
+                  >
+                    Please check your inbox and click the link to
+                    <br class="hidden sm:block" />
+                    verify your account.
+                  </p>
+
+                  <!-- RESEND -->
+
+                  <div
+                    class="w-full max-w-[790px] mt-[40px] sm:mt-[60px] md:mt-[75px] mb-[40px] sm:mb-[60px] md:mb-[75px] bg-[#F1E2FF] rounded-[8px] px-[18px] sm:px-[30px] md:px-[50px] py-[18px] sm:py-[20px] flex flex-col sm:flex-row items-center gap-[18px] sm:gap-[25px] md:gap-[35px] text-center sm:text-left justify-center"
+                  >
+                    <div
+                      class="w-[64px] h-[64px] sm:w-[76px] sm:h-[76px] md:w-[87px] md:h-[87px] shrink-0 rounded-full bg-white flex items-center justify-center"
+                    >
+                      <i
+                        class="fa-solid fa-shield-halved text-[34px] sm:text-[42px] md:text-[50px] text-[#7138E8]"
+                      ></i>
+                    </div>
+
+                    <div>
+                      <p
+                        class="poppins-semibold text-[15px] sm:text-[18px] md:text-[20px] text-black"
+                      >
+                        Didn't receive the email?
+                      </p>
+
+                      <p
+                        class="poppins-regular text-[15px] sm:text-[18px] md:text-[20px] text-black mt-[3px]"
+                      >
+                        Check your spam or
+                      </p>
+
+                      <button
+                        id="resend-verification-btn"
+                        type="button"
+                        class="poppins-semibold text-[15px] sm:text-[18px] md:text-[20px] text-[#7138E8] hover:underline"
+                      >
+                        Resend Email
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- =================================================
+               FORGOT PASSWORD
+          ================================================== -->
+
+              <div id="forgot-section" class="hidden">
+                <div class="text-center">
+                  <h1
+                    class="oswald-medium text-[24px] sm:text-[29px] text-[#222222] leading-tight"
+                  >
+                    Confirm Your Email Address
+                  </h1>
+
+                  <p
+                    class="poppins-regular text-[14px] sm:text-[16px] text-[#727272] mt-[10px] sm:mt-[12px] leading-[22px] sm:leading-[26px]"
+                  >
+                    Enter your email address to receive a one-time password
+                    (OTP).
+                  </p>
+                </div>
+
+                <form
+                  id="forgot-form"
+                  class="mt-[28px] sm:mt-[36px] md:mt-[42px] flex flex-col"
+                >
+                  <div class="mb-[18px] sm:mb-[20px]">
+                    <label
+                      class="block poppins-regular text-[16px] sm:text-[18px] md:text-[20px] text-[#2B2B2B] mb-[8px] sm:mb-[10px]"
+                    >
+                      Email address
+                    </label>
+
+                    <input
+                      type="email"
+                      placeholder="Enter your email address"
+                      class="w-full h-[58px] sm:h-[66px] md:h-[72px] rounded-[12px] sm:rounded-[14px] border border-[#CFCFCF] px-[16px] sm:px-[22px] text-[14px] sm:text-[16px] poppins-regular text-[#2B2B2B] placeholder:text-[#A6A6A6] outline-none focus:border-[#AE40E4] transition"
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    class="mb-[30px] sm:mb-[50px] w-full h-[54px] sm:h-[58px] md:h-[60px] rounded-[5px] poppins-semibold text-[16px] sm:text-[18px] md:text-[20px] bg-[var(--color-electric-600)] text-white"
+                  >
+                    Very Email Address
+                  </button>
+                </form>
+              </div>
+
+              <!-- =================================================
+               SIGNUP VERIFICATION
+          ================================================== -->
+
+              <div id="verification-signup-section" class="hidden">
+                <div
+                  class="verification-signup-wrapper text-center flex flex-col items-center"
+                >
+                  <!-- ICON -->
+
+                  <div
+                    class="verification-signup-icon-area mt-[25px] sm:mt-[30px] mb-[55px] sm:mb-[80px] md:mb-[110px]"
+                  >
+                    <div
+                      class="verification-signup-envelope w-[210px] h-[145px] sm:w-[250px] sm:h-[172px] md:w-[275px] md:h-[190px] bg-[#A9A8FF] rounded-[22px] sm:rounded-[28px] relative flex items-center justify-center overflow-hidden"
+                    >
+                      <div
+                        class="verification-signup-envelope-lines absolute inset-0"
+                      >
+                        <div
+                          class="verification-signup-envelope-line-left absolute w-[150px] h-[150px] sm:w-[185px] sm:h-[185px] md:w-[210px] md:h-[210px] border-[10px] sm:border-[12px] md:border-[14px] border-[#7777E8] rotate-45 -top-[75px] sm:-top-[92px] md:-top-[105px] left-[20px] sm:left-[28px] md:left-[32px] rounded-[22px] sm:rounded-[26px] md:rounded-[30px]"
+                        ></div>
+
+                        <div
+                          class="verification-signup-envelope-line-right absolute w-[150px] h-[150px] sm:w-[185px] sm:h-[185px] md:w-[210px] md:h-[210px] border-[10px] sm:border-[12px] md:border-[14px] border-[#7777E8] rotate-45 -top-[75px] sm:-top-[92px] md:-top-[105px] right-[20px] sm:right-[28px] md:right-[32px] rounded-[22px] sm:rounded-[26px] md:rounded-[30px]"
+                        ></div>
+                      </div>
+
+                      <div
+                        class="verification-signup-envelope-details relative z-10 flex items-center gap-[9px] sm:gap-[14px]"
+                      >
+                        <span
+                          class="verification-signup-dot w-[10px] h-[10px] sm:w-[12px] sm:h-[12px] md:w-[14px] md:h-[14px] rounded-full bg-white"
+                        ></span>
+
+                        <span
+                          class="verification-signup-line w-[34px] h-[9px] sm:w-[42px] sm:h-[10px] md:w-[48px] md:h-[12px] rounded-full bg-white"
+                        ></span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <h2
+                    class="verification-signup-heading oswald-medium text-[25px] sm:text-[29px] md:text-[32px] leading-tight text-black"
+                  >
+                    Verification link sent to your email!
+                  </h2>
+
+                  <p
+                    class="verification-signup-description poppins-regular text-[15px] sm:text-[18px] lg:text-[20px] text-[#707070] mt-[12px] sm:mt-[15px]"
+                  >
+                    We’ve sent a verification link to
+                  </p>
+
+                  <p
+                    id="verification-signup-email"
+                    class="verification-signup-email-text poppins-regular text-[15px] sm:text-[18px] lg:text-[20px] break-all text-[var(--color-electric-600)] mt-[12px] sm:mt-[15px]"
+                  >
+                    youremail@example.com
+                  </p>
+
+                  <p
+                    class="verification-signup-instruction poppins-regular text-[15px] sm:text-[18px] lg:text-[20px] leading-[24px] sm:leading-[30px] text-[#707070] mt-[12px] sm:mt-[15px] max-w-[780px]"
+                  >
+                    Please check your inbox and click the link to
+                    <br class="hidden sm:block" />
+                    verify your account.
+                  </p>
+
+                  <!-- RESEND -->
+
+                  <div
+                    class="verification-signup-resend-box w-full max-w-[790px] mt-[40px] sm:mt-[60px] md:mt-[75px] mb-[40px] sm:mb-[60px] md:mb-[75px] bg-[#F1E2FF] rounded-[8px] px-[18px] sm:px-[30px] md:px-[50px] py-[18px] sm:py-[20px] flex flex-col sm:flex-row items-center gap-[18px] sm:gap-[25px] md:gap-[35px] text-center sm:text-left justify-center"
+                  >
+                    <div
+                      class="verification-signup-shield w-[64px] h-[64px] sm:w-[76px] sm:h-[76px] md:w-[87px] md:h-[87px] shrink-0 rounded-full bg-white flex items-center justify-center"
+                    >
+                      <i
+                        class="verification-signup-shield-icon fa-solid fa-shield-halved text-[34px] sm:text-[42px] md:text-[50px] text-[#7138E8]"
+                      ></i>
+                    </div>
+
+                    <div>
+                      <p
+                        class="verification-signup-resend-title poppins-semibold text-[15px] sm:text-[18px] md:text-[20px] text-black"
+                      >
+                        Didn't receive the email?
+                      </p>
+
+                      <p
+                        class="verification-signup-resend-text poppins-regular text-[15px] sm:text-[18px] md:text-[20px] text-black mt-[3px]"
+                      >
+                        Check your spam or
+                      </p>
+
+                      <button
+                        id="resend-verification-signup-btn"
+                        type="button"
+                        class="verification-signup-resend-link poppins-semibold text-[15px] sm:text-[18px] md:text-[20px] text-[#7138E8] hover:underline"
+                      >
+                        Resend Email
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- =================================================
+               SIGNUP SUCCESS
+          ================================================== -->
+
+              <div id="signup-success-section" class="hidden">
+                <div
+                  class="w-full max-w-[461px] mx-auto bg-white rounded-[20px] sm:rounded-[32px] px-[20px] sm:px-[40px] md:px-[60px] py-[45px] sm:py-[55px] md:py-[70px]"
+                >
+                  <!-- SUCCESS ICON -->
+
+                  <div class="flex justify-center">
+                    <div
+                      class="w-[72px] h-[72px] sm:w-[85px] sm:h-[85px] md:w-[100px] md:h-[100px] rounded-full bg-[#3FAE7A] flex items-center justify-center"
+                    >
+                      <i
+                        class="fa-solid fa-check text-white text-[48px] sm:text-[58px] md:text-[70px]"
+                      ></i>
+                    </div>
+                  </div>
+
+                  <!-- HEADING -->
+
+                  <h1
+                    class="oswald-medium text-center text-[32px] sm:text-[40px] md:text-[47px] text-[#111111] mt-[20px] sm:mt-[24px]"
+                  >
+                    Success
+                  </h1>
+
+                  <!-- DESCRIPTION -->
+
+                  <p
+                    class="poppins-regular text-center text-[14px] sm:text-[16px] text-[#6c6c6c] mt-[10px] sm:mt-[12px]"
+                  >
+                    Your Account has been Created
+                  </p>
+
+                  <!-- CONTINUE -->
+
+                  <button
+                    id="signup-success-continue"
+                    type="button"
+                    class="mt-[35px] sm:mt-[48px] w-full h-[54px] sm:h-[56px] rounded-[8px] bg-[#3FAE7A] flex items-center justify-center poppins-medium text-white text-[16px] sm:text-[20px] hover:opacity-90 transition"
+                  >
+                    Continue
+                  </button>
+                </div>
+              </div>
+
+              <!-- =================================================
+               ADMIN PORTAL
+          ================================================== -->
+
+              <div id="admin-portal-section" class="hidden">
+                <div class="text-center flex flex-col items-center">
+                  <!-- ADMIN HEADING -->
+
+                  <h2
+                    class="oswald-medium text-[25px] sm:text-[29px] md:text-[32px] leading-tight text-[#252525]"
+                  >
+                    Admin Portal
+                  </h2>
+
+                  <!-- DESCRIPTION -->
+
+                  <p
+                    class="poppins-medium text-[15px] sm:text-[18px] md:text-[20px] leading-[24px] sm:leading-[30px] text-[#707070] mt-[8px] sm:mt-[10px] max-w-[650px]"
+                  >
+                    Securely log in to manage events, users, tickets and
+                    payments.
+                  </p>
+
+                  <!-- ADMIN FORM -->
+
+                  <form
+                    id="admin-login-form"
+                    class="w-full mt-[38px] sm:mt-[55px] md:mt-[70px] text-left"
+                  >
+                    <!-- EMAIL -->
+
+                    <label
+                      for="admin-email"
+                      class="poppins-medium text-[16px] sm:text-[18px] md:text-[20px] text-[#252525]"
+                    >
+                      Email address
+                    </label>
+
+                    <input
+                      id="admin-email"
+                      name="admin-email"
+                      type="email"
+                      placeholder="Enter your email address"
+                      autocomplete="username"
+                      class="w-full h-[58px] sm:h-[61px] md:h-[64px] mt-[9px] sm:mt-[12px] px-[16px] sm:px-[22px] md:px-[30px] border border-[#777777] rounded-[8px] outline-none poppins-regular text-[14px] sm:text-[17px] md:text-[20px] text-[#252525] placeholder:text-[#707070] focus:border-[var(--color-electric-600)]"
+                    />
+
+                    <!-- PASSWORD -->
+
+                    <label
+                      for="admin-password"
+                      class="poppins-medium text-[16px] sm:text-[18px] md:text-[20px] text-[#252525] block mt-[20px] sm:mt-[25px]"
+                    >
+                      Password
+                    </label>
+
+                    <div class="password-field mt-[9px] sm:mt-[12px]">
+                      <input
+                        id="admin-password"
+                        name="admin-password"
+                        type="password"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        class="w-full h-[58px] sm:h-[61px] md:h-[64px] px-[16px] sm:px-[22px] md:px-[30px] pr-[55px] sm:pr-[60px] border border-[#777777] rounded-[8px] outline-none poppins-regular text-[14px] sm:text-[17px] md:text-[20px] text-[#252525] placeholder:text-[#707070] focus:border-[var(--color-electric-600)]"
+                      />
+
+                      <button
+                        type="button"
+                        class="toggle-password"
+                        aria-label="Show password"
+                      >
+                        <i class="fa-regular fa-eye-slash"></i>
+                      </button>
+                    </div>
+
+                    <!-- FORGOT -->
+
+                    <div class="flex justify-end mt-[15px] sm:mt-[20px]">
+                      <button
+                        id="admin-forgot-password"
+                        type="button"
+                        class="poppins-regular text-[14px] sm:text-[16px] md:text-[18px] text-[#707070] hover:text-[var(--color-electric-600)] transition-colors"
+                      >
+                        Forgot password?
+                      </button>
+                    </div>
+
+                    <!-- LOGIN -->
+
+                    <button
+                      id="admin-login-submit"
+                      type="submit"
+                      class="w-full h-[54px] sm:h-[60px] md:h-[64px] mt-[25px] sm:mt-[30px] mb-[30px] sm:mb-[45px] rounded-[8px] bg-[var(--color-electric-600)] hover:bg-[var(--color-electric-700)] poppins-medium text-white text-[18px] sm:text-[21px] md:text-[24px] transition-colors"
+                    >
+                      Login as Admin
+                    </button>
+                  </form>
+                </div>
+              </div>
+
+              <!-- =================================================
+               CREATE PASSWORD
+          ================================================== -->
+
+              <div id="create-password-section" class="hidden">
+                <div class="text-center">
+                  <h1
+                    class="oswald-medium text-[24px] sm:text-[29px] text-[#222222] leading-tight"
+                  >
+                    Change Password
+                  </h1>
+
+                  <p
+                    class="poppins-regular text-[14px] sm:text-[16px] text-[#727272] mt-[10px] sm:mt-[12px] leading-[22px] sm:leading-[26px]"
+                  >
+                    Create a strong password for your Eventara account.
+                  </p>
+                </div>
+
+                <form
+                  id="create-password-form"
+                  class="mt-[28px] sm:mt-[36px] md:mt-[42px] flex flex-col"
+                >
+                  <!-- NEW PASSWORD -->
+
+                  <div class="mb-[18px] sm:mb-[20px]">
+                    <label
+                      class="block poppins-regular text-[16px] sm:text-[18px] md:text-[20px] text-[#2B2B2B] mb-[8px] sm:mb-[10px]"
+                    >
+                      New Password
+                    </label>
+
+                    <div class="relative">
+                      <input
+                        id="new-password"
+                        type="password"
+                        placeholder="Enter your new password"
+                        class="w-full h-[58px] sm:h-[66px] md:h-[72px] rounded-[12px] sm:rounded-[14px] border border-[#CFCFCF] px-[16px] sm:px-[22px] pr-[55px] sm:pr-[60px] text-[14px] sm:text-[16px] poppins-regular text-[#2B2B2B] placeholder:text-[#A6A6A6] outline-none focus:border-[#AE40E4] transition"
+                      />
+
+                      <button
+                        type="button"
+                        class="toggle-password absolute right-[16px] sm:right-[20px] top-1/2 -translate-y-1/2 text-[#9D9D9D]"
+                      >
+                        <i
+                          class="fa-regular fa-eye-slash text-[19px] sm:text-[22px]"
+                        ></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- CONFIRM PASSWORD -->
+
+                  <div class="mb-[22px] sm:mb-[30px]">
+                    <label
+                      class="block poppins-regular text-[16px] sm:text-[18px] md:text-[20px] text-[#2B2B2B] mb-[8px] sm:mb-[10px]"
+                    >
+                      Confirm Password
+                    </label>
+
+                    <div class="relative">
+                      <input
+                        id="confirm-password"
+                        type="password"
+                        placeholder="Confirm your password"
+                        class="w-full h-[58px] sm:h-[66px] md:h-[72px] rounded-[12px] sm:rounded-[14px] border border-[#CFCFCF] px-[16px] sm:px-[22px] pr-[55px] sm:pr-[60px] text-[14px] sm:text-[16px] poppins-regular text-[#2B2B2B] placeholder:text-[#A6A6A6] outline-none focus:border-[#AE40E4] transition"
+                      />
+
+                      <button
+                        type="button"
+                        class="toggle-password absolute right-[16px] sm:right-[20px] top-1/2 -translate-y-1/2 text-[#9D9D9D]"
+                      >
+                        <i
+                          class="fa-regular fa-eye-slash text-[19px] sm:text-[22px]"
+                        ></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- CONFIRM BUTTON -->
+
+                  <button
+                    type="submit"
+                    class="mb-[30px] sm:mb-[50px] w-full h-[54px] sm:h-[58px] md:h-[60px] rounded-[5px] poppins-semibold text-[16px] sm:text-[18px] md:text-[20px] bg-[var(--color-electric-600)] text-white"
+                  >
+                    Confirm
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
 
 
 

@@ -97,7 +97,7 @@
                 <i data-lucide="search" class="w-6 h-6 cursor-pointer"></i>
               </button>
               <!-- Shopping Bag -->
-              <a href="#">
+              <a href="cart.html">
                 <i data-lucide="handbag"></i>
               </a>
 
@@ -204,7 +204,7 @@
 
             <li>
               <a
-                href="#"
+                href="aboutus.html"
                 class="flex items-center gap-4 rounded-xl px-4 py-3 hover:bg-violet-50 hover:text-violet-700 transition"
               >
                 <i data-lucide="circle-alert" class="w-5 h-5"></i>
@@ -242,30 +242,145 @@
     </header>
 
     <!-- Search Overlay -->
+    <div id="search-overlay"
+        class="fixed inset-0 z-[10000] hidden bg-black/35 backdrop-blur-[2px] items-start justify-center pt-[110px] px-[24px]">
+        <div id="search-box"
+            class="w-full max-w-[986px] h-[78px] bg-white rounded-full flex items-center pl-[32px] pr-[18px] shadow-[0_10px_35px_rgba(0,0,0,0.12)]">
+            <input id="navbar-search-input" type="text" placeholder="Search..." autocomplete="off"
+                class="flex-1 min-w-0 h-full bg-transparent outline-none border-none text-[22px] text-[#141B34] outfit-semibold placeholder:text-[#858585]" />
+
+            <button type="button" id="search-submit-btn" aria-label="Search"
+                class="w-[58px] h-[58px] shrink-0 rounded-full bg-[#A437E6] hover:bg-[#8D26C9] text-white flex items-center justify-center transition-colors duration-200">
+                <i data-lucide="search" class="w-[30px] h-[30px]"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- CHANGE PASSWORD MODAL -->
     <div
-      id="search-overlay"
-      class="fixed inset-0 z-[10000] hidden bg-black/35 backdrop-blur-[2px] items-start justify-center pt-[110px] px-[24px]"
+      id="change-password-modal"
+      class="fixed inset-0 z-[10000] hidden items-center justify-center bg-black/30 backdrop-blur-[3px] px-3 sm:px-4 py-3 sm:py-5 overflow-y-auto"
     >
+      <!-- Modal Content -->
+
       <div
-        id="search-box"
-        class="w-full max-w-[986px] h-[78px] bg-white rounded-full flex items-center pl-[32px] pr-[18px] shadow-[0_10px_35px_rgba(0,0,0,0.12)]"
+        id="change-password-modal-content"
+        class="relative w-full max-w-[1075px] min-h-0 sm:min-h-[820px] max-h-[96vh] sm:max-h-[92vh] overflow-y-auto bg-white rounded-[20px] sm:rounded-[28px] shadow-[0_20px_60px_rgba(0,0,0,0.30)] flex flex-col px-[20px] sm:px-[45px] lg:px-[70px] py-[28px] sm:py-[45px] lg:py-[55px]"
       >
-        <input
-          id="navbar-search-input"
-          type="text"
-          placeholder="Search..."
-          autocomplete="off"
-          class="flex-1 min-w-0 h-full bg-transparent outline-none border-none text-[22px] text-[#141B34] outfit-semibold placeholder:text-[#858585]"
-        />
+        <!-- ============================= -->
+        <!-- BACK BUTTON -->
+        <!-- ============================= -->
 
         <button
           type="button"
-          id="search-submit-btn"
-          aria-label="Search"
-          class="w-[58px] h-[58px] shrink-0 rounded-full bg-[#A437E6] hover:bg-[#8D26C9] text-white flex items-center justify-center transition-colors duration-200"
+          id="change-password-back-btn"
+          aria-label="Back"
+          class="absolute left-[18px] sm:left-[28px] lg:left-[32px] top-[18px] sm:top-[25px] lg:top-[30px] text-[#141B34] text-[24px] sm:text-[28px] lg:text-[32px] hover:text-[var(--color-electric-600)] transition-colors duration-200"
         >
-          <i data-lucide="search" class="w-[30px] h-[30px]"></i>
+          <i class="fa-solid fa-arrow-left"></i>
         </button>
+
+        <!-- ============================= -->
+        <!-- HEADING -->
+        <!-- ============================= -->
+
+        <h2
+          class="oswald-medium text-center text-[32px] sm:text-[40px] lg:text-[48px] leading-tight text-black mt-[48px] sm:mt-[55px] px-[20px]"
+        >
+          Change Password
+        </h2>
+
+        <!-- ============================= -->
+        <!-- DESCRIPTION -->
+        <!-- ============================= -->
+
+        <p
+          class="poppins-regular text-center text-[15px] sm:text-[18px] lg:text-[22px] leading-relaxed text-[#707070] mt-[14px] sm:mt-[20px] lg:mt-[25px] px-[10px]"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+
+        <!-- ============================= -->
+        <!-- FORM -->
+        <!-- ============================= -->
+
+        <div class="w-full mt-[45px] sm:mt-[60px] lg:mt-[90px]">
+          <!-- ============================= -->
+          <!-- NEW PASSWORD -->
+          <!-- ============================= -->
+
+          <label
+            for="change-password-new"
+            class="block poppins-regular text-[18px] sm:text-[21px] lg:text-[24px] text-black mb-[10px] sm:mb-[14px]"
+          >
+            New Password
+          </label>
+
+          <div class="password-field w-full">
+            <input
+              id="change-password-new"
+              type="password"
+              placeholder="Enter your new password"
+              autocomplete="new-password"
+              class="w-full h-[58px] sm:h-[72px] lg:h-[90px] rounded-[7px] border border-[#777777] px-[18px] sm:px-[22px] lg:px-[27px] pr-[55px] sm:pr-[60px] outline-none poppins-regular text-[15px] sm:text-[18px] lg:text-[20px] text-[#252525] placeholder:text-[#707070] focus:border-[var(--color-electric-600)] transition-colors"
+            />
+
+            <!-- Password Toggle -->
+
+            <button
+              type="button"
+              class="toggle-password"
+              data-target="change-password-new"
+              aria-label="Show new password"
+            >
+              <i class="fa-regular fa-eye-slash"></i>
+            </button>
+          </div>
+
+          <!-- ============================= -->
+          <!-- CONFIRM PASSWORD -->
+          <!-- ============================= -->
+
+          <label
+            for="change-password-confirm"
+            class="block poppins-regular text-[18px] sm:text-[21px] lg:text-[24px] text-black mt-[20px] sm:mt-[22px] lg:mt-[18px] mb-[10px] sm:mb-[14px]"
+          >
+            Confirm Password
+          </label>
+
+          <div class="password-field w-full">
+            <input
+              id="change-password-confirm"
+              type="password"
+              placeholder="Confirm your new password"
+              autocomplete="new-password"
+              class="w-full h-[58px] sm:h-[72px] lg:h-[90px] rounded-[7px] border border-[#777777] px-[18px] sm:px-[22px] lg:px-[27px] pr-[55px] sm:pr-[60px] outline-none poppins-regular text-[15px] sm:text-[18px] lg:text-[20px] text-[#252525] placeholder:text-[#707070] focus:border-[var(--color-electric-600)] transition-colors"
+            />
+
+            <!-- Password Toggle -->
+
+            <button
+              type="button"
+              class="toggle-password"
+              data-target="change-password-confirm"
+              aria-label="Show confirm password"
+            >
+              <i class="fa-regular fa-eye-slash"></i>
+            </button>
+          </div>
+
+          <!-- ============================= -->
+          <!-- CONFIRM BUTTON -->
+          <!-- ============================= -->
+
+          <button
+            type="button"
+            id="change-password-confirm-btn"
+            class="w-full h-[60px] sm:h-[76px] lg:h-[96px] mt-[20px] sm:mt-[24px] lg:mt-[28px] rounded-[7px] border border-[#777777] bg-[var(--color-electric-600)] text-white poppins-medium text-[20px] sm:text-[26px] lg:text-[32px] hover:bg-[var(--color-electric-700)] active:scale-[0.99] transition-all duration-200"
+          >
+            Confirm
+          </button>
+        </div>
       </div>
     </div>
 
@@ -1021,6 +1136,97 @@
         <img src="./images/gyt.png" class="w-[150px] animate-slow-spin" />
       </div>
     </footer>
+
+
+      <!-- LOGOUT CONFIRMATION MODAL -->
+    <div
+      id="logout-modal"
+      class="fixed inset-0 z-[10001] hidden items-center justify-center bg-black/30 backdrop-blur-[3px] px-3 sm:px-4 py-3 sm:py-5 overflow-y-auto"
+    >
+      <!-- Modal Content -->
+
+      <div
+        id="logout-modal-content"
+        class="relative w-full max-w-[1100px] min-h-0 sm:min-h-[500px] max-h-[96vh] sm:max-h-[92vh] overflow-y-auto bg-white rounded-[20px] sm:rounded-[28px] shadow-[0_20px_60px_rgba(0,0,0,0.30)] flex flex-col items-center justify-center px-[20px] sm:px-[40px] lg:px-[60px] py-[45px] sm:py-[60px] lg:py-[70px]"
+      >
+        <!-- ============================= -->
+        <!-- BACK BUTTON -->
+        <!-- ============================= -->
+
+        <button
+          type="button"
+          id="logout-back-btn"
+          aria-label="Close logout confirmation"
+          class="absolute left-[18px] sm:left-[35px] lg:left-[60px] top-[20px] sm:top-[30px] lg:top-[35px] text-[#141B34] text-[24px] sm:text-[28px] lg:text-[32px] hover:text-[var(--color-electric-600)] transition-colors"
+        >
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+        <!-- ============================= -->
+        <!-- LOGOUT ICON -->
+        <!-- ============================= -->
+
+        <div
+          class="w-[65px] h-[65px] sm:w-[78px] sm:h-[78px] lg:w-[90px] lg:h-[90px] rounded-full bg-[#F1E2FF] flex items-center justify-center mb-[22px] sm:mb-[28px]"
+        >
+          <i
+            class="fa-solid fa-arrow-right-from-bracket text-[28px] sm:text-[34px] lg:text-[40px] text-[var(--color-electric-600)]"
+          ></i>
+        </div>
+
+        <!-- ============================= -->
+        <!-- HEADING -->
+        <!-- ============================= -->
+
+        <h2
+          class="oswald-medium text-center text-[30px] sm:text-[38px] lg:text-[47px] leading-tight text-black px-[15px] sm:px-[30px]"
+        >
+          Are you sure you want to logout?
+        </h2>
+
+        <!-- ============================= -->
+        <!-- DESCRIPTION -->
+        <!-- ============================= -->
+
+        <p
+          class="poppins-regular text-center text-[14px] sm:text-[17px] lg:text-[20px] leading-relaxed text-[#707070] mt-[12px] sm:mt-[16px] px-[15px] sm:px-[30px]"
+        >
+          You can log back in anytime using your account credentials.
+        </p>
+
+        <!-- ============================= -->
+        <!-- BUTTONS -->
+        <!-- ============================= -->
+
+        <div
+          class="w-full flex flex-col sm:flex-row items-center justify-center gap-[14px] sm:gap-[25px] lg:gap-[34px] mt-[38px] sm:mt-[55px] lg:mt-[70px]"
+        >
+          <!-- ============================= -->
+          <!-- NO -->
+          <!-- ============================= -->
+
+          <button
+            type="button"
+            id="logout-no-btn"
+            class="w-full sm:w-[162px] lg:w-[175px] h-[58px] sm:h-[70px] lg:h-[76px] rounded-[8px] border border-[#777777] bg-[var(--color-electric-600)] text-white poppins-medium text-[20px] sm:text-[26px] lg:text-[30px] hover:bg-[var(--color-electric-700)] active:scale-[0.98] transition-all duration-200"
+          >
+            No
+          </button>
+
+          <!-- ============================= -->
+          <!-- YES -->
+          <!-- ============================= -->
+
+          <button
+            type="button"
+            id="logout-yes-btn"
+            class="w-full sm:w-[162px] lg:w-[175px] h-[58px] sm:h-[70px] lg:h-[76px] rounded-[8px] border border-[#777777] bg-white text-[#252525] poppins-medium text-[20px] sm:text-[26px] lg:text-[30px] hover:bg-[#F7F7F7] active:scale-[0.98] transition-all duration-200"
+          >
+            Yes
+          </button>
+        </div>
+      </div>
+    </div>
 
     <!-- AUTH MODAL -->
     <div
